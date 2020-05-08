@@ -1,19 +1,18 @@
 <?php
 namespace frontend\models;
 
+use common\models\MyUser;
 use Yii;
 use yii\base\Model;
-use common\models\User;
 
 /**
  * Signup form
  */
 class SignupForm extends Model
 {
-    public $username;
-    public $email;
+    public $account;
     public $password;
-
+    public $username;
 
     /**
      * {@inheritdoc}
@@ -21,19 +20,17 @@ class SignupForm extends Model
     public function rules()
     {
         return [
+            ['account', 'trim'],
+            ['account', 'required'],
+            ['account', 'unique', 'targetClass' => '\common\models\MyUser', 'message' => 'This account has already been taken.'],
+            ['account', 'string', 'length' => 18],
+
             ['username', 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
-
-            ['email', 'trim'],
-            ['email', 'required'],
-            ['email', 'email'],
-            ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['username', 'string', 'min' => 1, 'max' => 20],
 
             ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            ['password', 'string', 'min' => 4],
         ];
     }
 
@@ -48,32 +45,12 @@ class SignupForm extends Model
             return null;
         }
         
-        $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
+        $user = new MyUser();
+        $user->account = $this->account;
         $user->setPassword($this->password);
+        $user->setUsername($this->username);
         $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
-        return $user->save() && $this->sendEmail($user);
+        return $user->save() ;
 
-    }
-
-    /**
-     * Sends confirmation email to user
-     * @param User $user user model to with email should be send
-     * @return bool whether the email was sent
-     */
-    protected function sendEmail($user)
-    {
-        return Yii::$app
-            ->mailer
-            ->compose(
-                ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-                ['user' => $user]
-            )
-            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
-            ->setTo($this->email)
-            ->setSubject('Account registration at ' . Yii::$app->name)
-            ->send();
     }
 }

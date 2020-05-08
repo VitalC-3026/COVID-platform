@@ -1,4 +1,5 @@
 <?php
+
 namespace common\models;
 
 use Yii;
@@ -9,7 +10,7 @@ use yii\base\Model;
  */
 class LoginForm extends Model
 {
-    public $username;
+    public $account;
     public $password;
     public $rememberMe = true;
 
@@ -23,7 +24,7 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['account', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
@@ -60,19 +61,19 @@ class LoginForm extends Model
 
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
-        
+
         return false;
     }
 
     /**
      * Finds user by [[username]]
-     *
-     * @return User|null
+     * 返回通过表单的用户名找到的MyUser （其实是用account找）
+     * @return MyUser|null
      */
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = MyUser::findIdentity($this->account);
         }
 
         return $this->_user;
