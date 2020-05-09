@@ -52,6 +52,14 @@ AppAsset::register($this);
             )
             . Html::endForm()
             . '</li>';
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/modify'], 'post')
+            . Html::submitButton(
+                'modifyInfo',
+                ['class' => 'btn btn-link logout']
+            )
+            . Html::endForm()
+            . '</li>';
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
