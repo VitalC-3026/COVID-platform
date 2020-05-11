@@ -4,7 +4,7 @@
  * 本类为系统的用户类，每个登录的用户都是这个类的实例，实现的方式模仿本目录下的User.php
  * 由于数据库中的熟悉有所差别，因此只能重写，当前数据库属性如下：
  * 身份证号 （主键） |  姓名  | 用户名 | 密码 （加密存储） | 性别 | 年龄 | ****（其他）
- * 对于数据库的接口（用户名，密码，数据库名称等等），请再/common/config/main-local.php中进行修改
+ * 对于数据库的接口（用户名，密码，数据库名称等等），请在/common/config/main-local.php中进行修改
  *
  */
 
@@ -40,7 +40,7 @@ class MyUser extends ActiveRecord implements IdentityInterface
      */
     public static function tableName()
     {
-        return '{{%user}}';
+        return '{{%User}}';
     }
     /*
      * 通过身份证号寻找唯一的用户
