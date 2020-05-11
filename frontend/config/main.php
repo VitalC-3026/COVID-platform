@@ -45,5 +45,10 @@ return [
         ],
         */
     ],
+    'modules' =>[
+        'backend' =>[ 'class'=>'frontend\modules\backend\backend',
+            'layout'=>'main'
+            ]
+    ],
     'params' => $params,
 ];

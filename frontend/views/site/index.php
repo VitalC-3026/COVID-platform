@@ -1,5 +1,8 @@
 <?php
-
+for ($i=0;$i<5;$i++)
+{
+    echo \Yii::$app->controller->module->layoutPath;
+}
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
