@@ -40,4 +40,28 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    /**
+     * Residence Information page.
+     *
+     * @return mixed
+     */
+    public function actionResinfo()
+    {
+        $button1 = Button::begin ( 
+        [ 'label' => 'Button 1','options' => [
+            'class' => 'btn btn-primary','onclick' => 'alert("Button 1 clicked");',],]);
+        $button1->run();
+        return $this->render('resinfo');
+    }
+
+    /**
+     * Workers Information page.
+     *
+     * @return mixed
+     */
+    public function actionWorkerinfo()
+    {
+        return $this->render('workerinfo');
+    }
+
 }

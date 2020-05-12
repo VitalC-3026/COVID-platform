@@ -36,7 +36,7 @@ class AppAsset_b extends AssetBundle
         'assets/js/jquery-1.10.2.min.js',
         'assets/plugins/bootstrap/js/bootstrap.min.js',
         'assets/plugins/waypoints/waypoints.min.js',
-        'assets/js/application.js',
+        'assets/js/application.js'
     ];
     public $depends = [
         /* bootstrap.js ������
@@ -49,13 +49,13 @@ class AppAsset_b extends AssetBundle
     ];
     public static function addScript($view, $jsfile)
     {
-        $view->registerJsFile($jsfile, [AppAsset::className(), 'depends' => 'backend\assets\AppAsset_b']);
+        $view->registerJsFile($jsfile, [AppAsset::className(), 'depends' => 'frontend\assets\AppAsset_b']);
     
     }
     
     public static function addCss($view, $cssfile)
     {
-        $view->registerCssFile($cssfile, [AppAsset::className(), 'depends' => 'backend\assets\AppAsset_b']);
+        $view->registerCssFile($cssfile, [AppAsset::className(), 'depends' => 'frontend\assets\AppAsset_b']);
     }
     
    
