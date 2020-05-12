@@ -32,7 +32,11 @@ use yii\web\IdentityInterface;
 
 class MyUser extends ActiveRecord implements IdentityInterface
 {
-
+    private $name;
+    private $sex;
+    private $age;
+    private $tel;
+    private $priority;
 
     /*
      * @return 返回的是数据库中存储用户使用的表名
@@ -110,4 +114,15 @@ class MyUser extends ActiveRecord implements IdentityInterface
     {
         $this->username = $username;
     }
+
+    public function setPriority($priority)
+    {
+        $this->priority = $priority;
+    }
+
+    public function getName() { return $this->name; }
+    public function getSex() { return $this->sex; }
+    public function getAge() { return $this->age; }
+    public function getTel() { return $this->tel; }
+    public function getPriority() { return $this->priority; }
 }
