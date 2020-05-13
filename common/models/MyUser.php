@@ -115,11 +115,14 @@ class MyUser extends ActiveRecord implements IdentityInterface
         $this->username = $username;
     }
 
-    public function setPriority($priority)
-    {
-        $this->priority = $priority;
-    }
+    // basic setters
+    public function setName($name) { $this->name = $name; }
+    public function setSex($sex) { $this->sex; }
+    public function setAge($age) { $this->age; }
+    public function setTel($tel) { $this->tel; }
+    public function setPriority($priority) { $this->priority = $priority; }
 
+    // basic getters
     public function getName() { return $this->name; }
     public function getSex() { return $this->sex; }
     public function getAge() { return $this->age; }
