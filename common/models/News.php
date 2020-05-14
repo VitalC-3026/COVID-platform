@@ -3,19 +3,19 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
- * 信息模型
+ * 新闻模型
  *
+ * @property string $date           日期
+ * @property string $time           时间
+ * @property string $title          标题
+ * @property string $abstract       摘要
+ * @property string $link           链接
  */
-class News
+class News extends ActiveRecord
 {
-    private $date;
-    private $time;
-    private $title;
-    private $abstract;
-    private $link;
-
     /**
      * 检查日期、时间、链接是否符合格式
      *
@@ -35,7 +35,6 @@ class News
     {
         // check date
         $len = strlen($date);
-        $year = 2020;   $month = 2; $day = 10;
         if ($len == 8)
         {
             // format like 20200210
