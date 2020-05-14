@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
 use frontend\models\SignupForm;
+use common\models\Resident;
 
 /**
  * Site controller
@@ -71,6 +72,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $resident = new Resident();
         return $this->render('index');
     }
 

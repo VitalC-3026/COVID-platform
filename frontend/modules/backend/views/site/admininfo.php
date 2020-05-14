@@ -21,7 +21,7 @@ AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.
                 <div class="col-xs-6">
                     <h1 class="h1">社区工作者信息</h1>
                 </div>
-                <div class="col-xs-6" align="pull-right">
+                <div class="col-md-6" align="right">
                     <button id="addWorker" type="button" class="btn btn-primary" onclick="javascript:jump()">添加新工作人员</button>
                     <script type="text/javascript">
                         <?php //TODO: 通过路由跳转地址 ?>
@@ -64,7 +64,7 @@ AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.
                                 </label>
                         </div>
                     </div>
-                    <table id="example" class="table table-striped table-bordered" cellspacing="2" width="100%">
+                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>身份证号码</th>

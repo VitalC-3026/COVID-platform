@@ -7,7 +7,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-
+use frontend\modules\backend\models\ResidentForm;
+use frontend\modules\backend\models\AdminForm;
 /**
  * Site controller
  */
@@ -47,10 +48,7 @@ class SiteController extends Controller
      */
     public function actionResinfo()
     {
-        $button1 = Button::begin ( 
-        [ 'label' => 'Button 1','options' => [
-            'class' => 'btn btn-primary','onclick' => 'alert("Button 1 clicked");',],]);
-        $button1->run();
+        
         return $this->render('resinfo');
     }
 
@@ -59,9 +57,36 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionWorkerinfo()
+    public function actionAdmininfo()
     {
-        return $this->render('workerinfo');
+        return $this->render('admininfo');
+    }
+
+    /**
+     * Workers Information page.
+     *
+     * @return mixed
+     */
+    public function actionAddres()
+    {
+        $model = new ResidentForm();
+        if ($model->load(Yii::$app->request->post())) {
+
+            echo $model->account;
+            return $this->render('resinfo', ['model' => $model,]);
+        }
+        return $this->render('addres', ['model' => $model,]);
+    }
+
+    public function actionAddadmin(){
+        $model = new AdminForm();
+        if ($model->load(Yii::$app->request->post())){
+            if ($model->setAdministator()){
+                Yii::$app->session->setFlash('success', '你成功添加了新职员');
+                return $this->render('admininfo');
+            }
+        }
+        return $this->render('addadmin', ['model' => $model,]);
     }
 
 }

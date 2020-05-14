@@ -28,5 +28,8 @@ class AdminForm extends Model
     }
 
 
-    
+    public function setAdministator() 
+    {
+        return true;
+    }
 }

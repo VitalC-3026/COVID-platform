@@ -1,5 +1,6 @@
 <?php 
 use frontend\assets\AppAsset_b;
+use yii\helpers\Html;
 
 AppAsset_b::addCss($this, 'assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -11,7 +12,8 @@ AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.
         <div class="col-md-12">
             <!--breadcrumbs start -->
             <ul class="breadcrumb">
-                <li><a href="#">首页</a>
+                <!-- TODO: 通过路由跳转地址 -->
+                <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Findex">首页</a>
                 </li>
                 <li>社区数据库</li>
                 <li class="active">社区居民信息</li>
@@ -21,8 +23,12 @@ AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.
                 <div class="col-md-6">
                     <h1 class="h1">社区居民信息</h1>
                 </div>
-                <div class="col-md-6">
-                    <button id="addRes" type="button" class="btn btn-primary" name="addNewRes">添加新居民</button>
+                <div class="col-md-6" align="right">
+                    <button id="addRes" type="button" class="btn btn-primary" name="addNewRes" onclick="javascript:jump()">添加新居民</button>
+                    <script type="text/javascript">
+                        <?php //TODO: 通过路由跳转地址 ?>
+                        function jump(){ window.location.href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Faddres"; }
+                    </script>
                 </div>
             </div>
         </div>
