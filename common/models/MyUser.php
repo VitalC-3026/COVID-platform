@@ -10,34 +10,28 @@
 
 namespace common\models;
 
-
 use Yii;
 use yii\base\Component;
 use yii\base\NotSupportedException;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
-
-
-
-/*
+/**
  * 用户模型
- * string $account      身份证号
- * string $username     用户名
- * string $password_hash加密存储的密码
- * string $password     登录时传入的密码，未加密
- * string $auth_key     认证信息
- * 其他属性自行添加，和登录没有联系
+ *
+ * @property string $account       身份证号
+ * @property string $username      用户名
+ * @property string $password_hash 加密存储的密码
+ * @property string $password      登录时传入的密码，未加密
+ * @property string $auth_key      认证信息
+ * @property string $name          姓名
+ * @property bool   $sex           性别
+ * @property int    $age           年龄
+ * @property string $tel           联系方式
+ * @property int    $priority      权限类别
  */
-
 class MyUser extends ActiveRecord implements IdentityInterface
 {
-    private $name;
-    private $sex;
-    private $age;
-    private $tel;
-    private $priority;
-
     /*
      * @return 返回的是数据库中存储用户使用的表名
      * {@inheritdoc}
@@ -116,6 +110,7 @@ class MyUser extends ActiveRecord implements IdentityInterface
     }
 
     // basic setters
+    public function setAccount($account) { $this->account = $account; }
     public function setName($name) { $this->name = $name; }
     public function setSex($sex) { $this->sex; }
     public function setAge($age) { $this->age; }
@@ -123,6 +118,7 @@ class MyUser extends ActiveRecord implements IdentityInterface
     public function setPriority($priority) { $this->priority = $priority; }
 
     // basic getters
+    public function getAccount() { return $this->account; }
     public function getName() { return $this->name; }
     public function getSex() { return $this->sex; }
     public function getAge() { return $this->age; }

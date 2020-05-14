@@ -4,10 +4,34 @@ namespace common\models;
 
 use Yii;
 
+/**
+ * 社区工作者模型
+ *
+ * @property string $inDate         入职时间
+ * @property bool   $isAdmin        是否为超管
+ */
 class Committee extends MyUser
 {
-    private $inDate;
-    private $isAdmin;
+
+    /**
+     * 授权
+     *
+     * @param $account - 被授权的用户
+     * @param $priority - 被授予的权限
+     *
+     * @return bool - 授权成功返回true，否则false
+     */
+    public function givePriority($account, $priority)
+    {
+        if (!$this->isAdmin)
+        {
+            echo 'Access failed.';
+            return false;
+        }
+        $user = self::findOne($account);
+        $user->setPriority($priority);
+        return true;
+    }
 
     // basic setters
     public function setInDate($inDate) { $this->inDate = $inDate; }
