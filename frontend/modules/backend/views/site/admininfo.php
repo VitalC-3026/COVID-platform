@@ -1,5 +1,8 @@
 <?php 
 use frontend\assets\AppAsset_b;
+use yii\helpers\Html;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
 
 AppAsset_b::addCss($this, 'assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'assets/plugins/nanoScroller/jquery.nanoscroller.min.js');

@@ -59,6 +59,7 @@ class SiteController extends Controller
      */
     public function actionAdmininfo()
     {
+        $model = new AdminForm();
         return $this->render('admininfo');
     }
 
@@ -70,23 +71,28 @@ class SiteController extends Controller
     public function actionAddres()
     {
         $model = new ResidentForm();
-        if ($model->load(Yii::$app->request->post())) {
-
+        if (Yii::$app->request->post()) {
+            $request = Yii::$app->request;
+            $model->account = $request->post('account');
             echo $model->account;
+            Yii::$app->session->setFlash('success', '你成功添加了新职员');
             return $this->render('resinfo', ['model' => $model,]);
         }
         return $this->render('addres', ['model' => $model,]);
     }
 
-    public function actionAddadmin(){
+    public function actionAddadmin()
+    {
         $model = new AdminForm();
         if ($model->load(Yii::$app->request->post())){
             if ($model->setAdministator()){
+                $("modal fade").aria_hidden = false;
                 Yii::$app->session->setFlash('success', '你成功添加了新职员');
-                return $this->render('admininfo');
+                return $this->render('addadmin', ['model' => $model,]);
             }
         }
         return $this->render('addadmin', ['model' => $model,]);
     }
 
+    
 }

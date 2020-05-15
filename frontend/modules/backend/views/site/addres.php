@@ -31,12 +31,12 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-sm-3">
-                                <h2 class="title">基本信息</h2>
-                            </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h2 class="title">基本信息</h2>
                         </div>
+                    </div>
+                    <div class="row">
                         <?php $form = ActiveForm::begin(['id' => 'resident-form',
                             'options' => [
                                 'class'=>'form-horizontal'],
@@ -45,23 +45,22 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                                     'labelOptions' => ['class'=>'col-lg-3 control-label' ],
                                     'inputOptions' => ['class'=>'col-lg-6'],
                                  ],]); ?>
-                                <?= $form->field($model, 'account')->textInput(['autofocus' => true])->label('身份证号'); ?>
-                                <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('居民姓名'); ?>
-                                <?= $form->field($model, 'sex')->radioList(['1'=>'男','2'=>'女'],['class'=>'control-label col-sm-1'])->label('性别'); ?>
-                                <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
-                                <?= $form->field($model, 'unit')->textInput(['autofocus' => true])->label('单元号'); ?>
-                                <?= $form->field($model, 'building')->textInput(['autofocus' => true])->label('楼层'); ?>
-                                <?= $form->field($model, 'room')->textInput(['autofocus' => true])->label('房间号') ?>
-                            
-                                <div class="form-group">
-                                    <div class="col-sm-6" align="right">
-                                        <?= Html::submitButton('提交', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
-                                    </div>
-                                </div>
+                        <?= $form->field($model, 'account')->textInput(['autofocus' => true])->label('身份证号'); ?>
+                        <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('居民姓名'); ?>
+                        <?= $form->field($model, 'sex')->radioList(['1'=>'男','2'=>'女'],['class'=>'control-label col-sm-1'])->label('性别'); ?>
+                        <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
+                        <?= $form->field($model, 'unit')->textInput(['autofocus' => true])->label('单元号'); ?>
+                        <?= $form->field($model, 'building')->textInput(['autofocus' => true])->label('楼层'); ?>
+                        <?= $form->field($model, 'room')->textInput(['autofocus' => true])->label('房间号') ?>
+                    
+                        <div class="form-group">
+                            <div class="col-sm-6" align="right">
+                                <?= Html::submitButton('提交', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
+                            </div>
+                        </div>
                                                            
                         <?php ActiveForm::end(); ?>
-                        
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
