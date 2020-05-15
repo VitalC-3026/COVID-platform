@@ -194,6 +194,7 @@ AppAsset_b::register($this);
                         <ul>
                         	<li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Fresinfo">居民数据库</a></li>
                         	<li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Fadmininfo">职员数据库</a></li>
+                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
                         </ul>
                     </li>
 
