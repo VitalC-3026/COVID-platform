@@ -17,11 +17,11 @@ class Committee extends MyUser
      * 授权
      *
      * @param $account - 被授权的用户
-     * @param $priority - 被授予的权限
+     * @param $type - 被授予的权限
      *
      * @return bool - 授权成功返回true，否则false
      */
-    public function givePriority($account, $priority)
+    public function givePriority($account, $type)
     {
         if (!$this->isAdmin)
         {
@@ -29,7 +29,7 @@ class Committee extends MyUser
             return false;
         }
         $user = self::findOne($account);
-        $user->setPriority($priority);
+        $user->setType($type);
         return true;
     }
 

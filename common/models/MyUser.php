@@ -28,7 +28,7 @@ use yii\web\IdentityInterface;
  * @property bool   $sex           性别
  * @property int    $age           年龄
  * @property string $tel           联系方式
- * @property int    $priority      权限类别
+ * @property int    $type          权限类别
  */
 class MyUser extends ActiveRecord implements IdentityInterface
 {
@@ -115,7 +115,7 @@ class MyUser extends ActiveRecord implements IdentityInterface
     public function setSex($sex) { $this->sex; }
     public function setAge($age) { $this->age; }
     public function setTel($tel) { $this->tel; }
-    public function setPriority($priority) { $this->priority = $priority; }
+    public function setType($type) { $this->type = $type; }
 
     // basic getters
     public function getAccount() { return $this->account; }
@@ -123,5 +123,5 @@ class MyUser extends ActiveRecord implements IdentityInterface
     public function getSex() { return $this->sex; }
     public function getAge() { return $this->age; }
     public function getTel() { return $this->tel; }
-    public function getPriority() { return $this->priority; }
+    public function getType() { return $this->type; }
 }
