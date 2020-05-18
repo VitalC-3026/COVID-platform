@@ -109,6 +109,15 @@ class MyUser extends ActiveRecord implements IdentityInterface
         $this->username = $username;
     }
 
+    // basic checkers
+    private function checkAccount()
+    {
+        $len = strlen($this->account);
+        if ($len != 18)
+            return false;
+        return true;
+    }
+
     // basic setters
     public function setAccount($account) { $this->account = $account; }
     public function setName($name) { $this->name = $name; }

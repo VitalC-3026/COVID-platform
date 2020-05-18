@@ -121,14 +121,33 @@ class News extends ActiveRecord
         return true;
     }
 
-    // basic setters
-    public function setDate($date) {  if ($this->checkDate($date)) $this->date = $date; }
-    public function setTime($time) { if ($this->checkTime($time)) $this->time = $time; }
+    /**
+     * set方法整合
+     *
+     * @param {$value} - 要设置的参数
+     * @return bool - set成功返回true，否则false
+     */
+    public function setDate($date)
+    {
+        $f = $this->checkDate($date);
+        if ($f) $this->date = $date;
+        return $f;
+    }
+    public function setTime($time)
+    {
+        $f = checkTime($time);
+        if ($f) $this->time = $time;
+        return $f;
+    }
     public function setTitle($title) { $this->title = $title; }
     public function setAbstract($abstract) { $this->abstract = $abstract; }
     public function setLink($link) { if ($this->checkLink($link)) $this->link = $link; }
 
-    // basic getters
+    /**
+     * get
+     *
+     * @return string
+     */
     public function getDate() { return $this->date; }
     public function getTime() { return $this->time; }
     public function getTitle() { return $this->title; }
