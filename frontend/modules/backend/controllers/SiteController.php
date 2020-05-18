@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
+use frontend\modules\backend\models\HealthForm;
 use common\models\PriorityType;
 /**
  * Site controller
@@ -87,9 +88,8 @@ class SiteController extends Controller
         $model = new AdminForm();
         if ($model->load(Yii::$app->request->post())){
             if ($model->setAdministator()){
-                
                 Yii::$app->session->setFlash('success', '你成功添加了新职员');
-                return $this->render('addadmin', ['model' => $model,]);
+                return $this->http_redirect('admininfo', ['model' => $model,]);
             }
         }
         return $this->render('addadmin', ['model' => $model,]);
@@ -106,5 +106,36 @@ class SiteController extends Controller
         $view->params['rights'] = $rights;
         $view->params['description'] = $description;
         return $this->render('rights');
+    }
+
+    public function actionHealthreport()
+    {
+        $model = new HealthForm();
+        date_default_timezone_set('prc');
+        $time = date('Y-m-d H:i:s',time());
+        Yii::$app->view->params['time'] = $time;
+        Yii::$app->view->params['info'] = '';
+        if($model->load(Yii::$app->request->post())){
+            // 为什么数据无法传送？
+            Yii::$app->view->params['info'] = $model->createTime;
+            Yii::$app->session->setFlash('success', '你成功填写了健康日报');
+            return $this->redirect(['admininfo']);
+        }
+        return $this->render('healthreport',['model' => $model,]);
+    }
+
+    public function actionSite($pid, $typeid=1)
+    {
+        
+        $model = $model->getCityList($pid);
+
+        if($typeid == 1){$aa="--请选择市--";}else if($typeid == 2 && $model){$aa="--请选择区--";}
+
+        echo Html::tag('option',$aa, ['value'=>'empty']) ;
+
+        foreach($model as $value=>$name)
+        {
+            echo Html::tag('option',Html::encode($name),array('value'=>$value));
+        }
     }
 }

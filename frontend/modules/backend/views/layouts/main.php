@@ -197,24 +197,12 @@ AppAsset_b::register($this);
                             <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
                         </ul>
                     </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Pages</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                    <li class="active">
+                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-                            <li><a href="pages-blank.html">Blank Page</a>
-                            </li>
-                            <li><a href="pages-login.html">Login</a>
-                            </li>
-                            <li><a href="pages-sign-up.html">Sign Up</a>
-                            </li>
-                            <li><a href="pages-calendar.html">Calendar</a>
-                            </li>
-                            <li><a href="pages-timeline.html">Timeline</a>
-                            </li>
-                            <li><a href="pages-404.html">404</a>
-                            </li>
-                            <li><a href="pages-500.html">500</a>
-                            </li>
+                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Fhealthreport">健康日报</a></li>
+                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Frequestlist">求助信息</a></li>
+                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
                         </ul>
                     </li>
                 </ul>

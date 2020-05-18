@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 
-AppAsset_b::addCss($this, 'assets/plugins/dataTables/css/dataTables.css');
-AppAsset_b::addScript($this, 'assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
-AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/jquery.dataTables.js');
-AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.js');
+AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
+AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
+AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/jquery.dataTables.js');
+AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <div id="main-content">
     <div class="row">
