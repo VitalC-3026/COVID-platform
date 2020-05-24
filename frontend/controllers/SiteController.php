@@ -72,7 +72,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $resident = new Resident();
+        // $resident = new Resident();
         return $this->render('index');
     }
 
@@ -83,7 +83,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+        /*if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
         $model = new LoginForm();
@@ -95,7 +95,7 @@ class SiteController extends Controller
             return $this->render('login', [
                 'model' => $model,
             ]);
-        }
+        }*/
     }
 
     /**
@@ -105,9 +105,9 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->user->logout();
+        /*Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->goHome();*/
     }
 
     /**
@@ -127,7 +127,7 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        $model = new SignupForm();
+        /*$model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. You can login with your account.');
             return $this->goHome();
@@ -135,7 +135,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
-        ]);
+        ]);*/
     }
 
 
@@ -144,7 +144,7 @@ class SiteController extends Controller
      */
     public function actionModify()
     {
-        if (Yii::$app->user->isGuest) {
+        /*if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
         $model = new ModifyForm();
@@ -161,8 +161,57 @@ class SiteController extends Controller
         }
         return $this->render('modify', [
             'model' => $model,
-        ]);
+        ]);*/
     }
 
+    /**
+     * Displays contact page.
+     *
+     * @return mixed
+     */
+    public function actionContact()
+    {
+        return $this->render('contact');
+    }
+
+    /**
+     * Displays prevention page.
+     *
+     * @return mixed
+     */
+    public function actionPrevention()
+    {
+        return $this->render('prevention');
+    }
+
+    /**
+     * Displays symptoms page.
+     *
+     * @return mixed
+     */
+    public function actionSymptoms()
+    {
+        return $this->render('symptoms');
+    }
+
+    /**
+     * Displays news page.
+     *
+     * @return mixed
+     */
+    public function actionNews()
+    {
+        return $this->render('news');
+    }
+
+    /**
+     * Displays community page.
+     *
+     * @return mixed
+     */
+    public function actionCommunity()
+    {
+        return $this->render('community');
+    }
     
 }
