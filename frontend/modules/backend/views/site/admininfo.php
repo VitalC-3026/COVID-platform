@@ -28,7 +28,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                     <button id="addWorker" type="button" class="btn btn-primary" onclick="javascript:jump()">添加新工作人员</button>
                     <script type="text/javascript">
                         <?php //TODO: 通过路由跳转地址 ?>
-                        function jump(){ window.location.href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Faddadmin"; }
+                        function jump(){ window.location.href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddadmin"; }
                     </script>
                 </div>
                 

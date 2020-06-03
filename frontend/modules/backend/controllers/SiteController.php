@@ -11,6 +11,7 @@ use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
 use common\models\PriorityType;
+use common\models\Resident;
 /**
  * Site controller
  */
@@ -50,8 +51,13 @@ class SiteController extends Controller
      */
     public function actionResinfo()
     {
+        $resident = new Resident();
+        $provider = $user->search(Yii::$app->request->get());
         
-        return $this->render('resinfo');
+        return $this->render('resinfo',[
+            'model' => $resident,
+            'provider' => $provider,
+        ]);
     }
 
     /**

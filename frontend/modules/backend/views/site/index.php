@@ -34,7 +34,6 @@ AppAsset_b::addCss($this, 'web/assets/plugins/morris/css/morris.css');
     <div class="alert alert-info alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <strong align="center">细心填报，大家安心！</strong>
-        <p><?php echo $this->params['info']?></p>
     </div>
     <div class="row">
         <div class="col-md-3 col-sm-6">

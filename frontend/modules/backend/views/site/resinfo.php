@@ -1,6 +1,7 @@
 <?php 
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
+use yii\data\ArrayDataProvider;
 
 AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -13,7 +14,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
             <!--breadcrumbs start -->
             <ul class="breadcrumb">
                 <!-- TODO: 通过路由跳转地址 -->
-                <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Findex">首页</a>
+                <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Findex">首页</a>
                 </li>
                 <li>社区数据库</li>
                 <li class="active">社区居民信息</li>
@@ -27,7 +28,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                     <button id="addRes" type="button" class="btn btn-primary" name="addNewRes" onclick="javascript:jump()">添加新居民</button>
                     <script type="text/javascript">
                         <?php //TODO: 通过路由跳转地址 ?>
-                        function jump(){ window.location.href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Faddres"; }
+                        function jump(){ window.location.href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddres"; }
                     </script>
                 </div>
             </div>
@@ -69,7 +70,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                 </div>
                             </div>
                         </div>
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <!-- <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>身份证号码</th>
@@ -85,6 +86,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
 
                             <tbody>
                                 <tr>
+
                                     <td>440440199001011010</td>
                                     <td>李华</td>
                                     <td>我的朋友</td>
@@ -313,24 +315,90 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                         <li class="paginate_button previous disabled" aria-controls="example" tabindex="0" id="example_previous">
                                             <a href="#">Previous</a>
                                         </li>
-                                        <li class="paginate_button active" aria-controls="example" tabindex="0"><a href="#">1</a>
+                                        <li class="paginate_button active" aria-controls="example" tabindex="1"><a href="#">1</a>
                                         </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">2</a>
+                                        <li class="paginate_button " aria-controls="example" tabindex="2"><a href="#">2</a>
                                         </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">3</a>
+                                        <li class="paginate_button " aria-controls="example" tabindex="3"><a href="#">3</a>
                                         </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">4</a>
+                                        <li class="paginate_button " aria-controls="example" tabindex="4"><a href="#">4</a>
                                         </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">5</a>
+                                        <li class="paginate_button " aria-controls="example" tabindex="5"><a href="#">5</a>
                                         </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">6</a>
+                                        <li class="paginate_button " aria-controls="example" tabindex="6"><a href="#">6</a>
                                         </li>
                                         <li class="paginate_button next" aria-controls="example" tabindex="0" id="example_next"><a href="#">Next</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                              <?php echo GridView::widget([
+                                //设置GridView的ID
+                                'id' => 'myUserGridView',
+                                //设置数据提供器
+                                'dataProvider' => $provider,
+                                //设置筛选模型
+                                'filterModel' => $model,
+                                'columns' => [
+                                  //复选框列
+                                  ['class' => 'yii\grid\CheckboxColumn'],
+                                  //显示序号列
+                                  ['class' => 'yii\grid\SerialColumn'],
+                                  [
+                                    //设置字段显示标题
+                                    'label' => 'ID',
+                                    //字段名
+                                    'attribute' => 'id',
+                                    //格式化
+                                    'format' => 'raw',
+                                    //设置单元格样式
+                                    'headerOptions' => [
+                                      'style' => 'width:120px;',
+                                    ],
+                                  ],
+                                  [
+                                    'label' => '姓名',
+                                    'attribute' => 'name',
+                                    'format' => 'raw',
+                                  ],
+                                  [
+                                    'label' => '性别',
+                                    //设置筛选选项
+                                    'filter' => [0 => '男', 1 => '女'],
+                                    'attribute' => 'sex',
+                                    'format' => 'raw',
+                                    'value' => function ($data) {
+                                      return ($data->sex == 0) ? '男' : '女';
+                                    }
+                                  ],
+                                  [
+                                    'label' => '年龄',
+                                    'attribute' => 'age',
+                                    'format' => 'raw',
+                                  ],
+                                  [
+                                    'header' => '操作',
+                                    'class' => 'yii\grid\ActionColumn',
+                                    //设置显示模板
+                                    'template' => '{upd} {del}',
+                                    //下面的按钮设置，与上面的模板设置相关联
+                                    'buttons' => [
+                                      'upd' => function ($url, $model, $key) {
+                                        return '<a href="' . Url::toRoute(['test/upd', 'id' => $key]) . '" rel="external nofollow" class="btn btn-warning">修改</a>';
+                                      },
+                                      'del' => function ($url, $model, $key) {
+                                        return '<a href="' . Url::toRoute(['test/del', 'id' => $key]) . '" rel="external nofollow" class="btn btn-danger">删除</a>';
+                                      },
+                                    ],
+                                  ],
+                                ],
+                              ]); ?>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>

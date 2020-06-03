@@ -22,4 +22,41 @@ class Resident extends MyUser
     public function getBuilding() { return $this->building; }
     public function getUnit() { return $this->unit; }
     public function getRoom() { return $this->room; }
+
+    // rules
+    public function rules(){
+		return [
+		  [['id', 'name', 'sex', 'age'], 'trim'],
+		  [['age'], 'integer'],
+		  ['name', 'string'],
+		];
+	}
+
+    public function search($params) {
+    	$query = self::find();
+    	$provider = new ActiveDataProvider([
+    		'query' => $query,
+    		'pagination' => [
+    			'pageSize' => 10,
+    			'pageParam' => 'p',
+    			'pageSizeParam' => 'pageSize',
+    		],
+    		'sort' => [
+    			'defaultOrder' => [
+    				'id' => SORT_DESC,
+    			],
+    			'attributes' => [
+    				'id', 'name', 'sex', 'age'
+    			]
+    		]	
+    	]);
+
+    	if (!($this->load($params) && $this->validate())) {
+    		return $provider;
+    	}
+
+    	$query->andFilterWhere(['id' => $this->id])->andFilterWhere(['like', 'name' => $this->name])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
+
+    	return $provider;
+    } 
 }

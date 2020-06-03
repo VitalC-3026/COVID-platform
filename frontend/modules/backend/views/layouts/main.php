@@ -22,11 +22,12 @@ AppAsset_b::register($this);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SpaceLab</title>
+    <title>COVID-Platform</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Fonts from Font Awsome -->
@@ -187,22 +188,21 @@ AppAsset_b::register($this);
                 <ul class="nano-content">
                     <?php //TODO: 路由跳转?>
                     <li class="active">
-                        <a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Findex"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Findex"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                     </li>
                     <li class="active">
                         <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>社区数据库</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-                        	<li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Fresinfo">居民数据库</a></li>
-                        	<li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Fadmininfo">职员数据库</a></li>
-                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
+                        	<li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fresinfo">居民数据库</a></li>
+                        	<li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fadmininfo">职员数据库</a></li>
+                            <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
                         </ul>
                     </li>
                     <li class="active">
                         <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Fhealthreport">健康日报</a></li>
-                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Frequestlist">求助信息</a></li>
-                            <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
+                            <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fhealthreport">健康日报</a></li>
+                            <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frequestlist">求助信息</a></li>
                         </ul>
                     </li>
                 </ul>
