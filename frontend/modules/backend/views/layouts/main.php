@@ -193,18 +193,26 @@ AppAsset_b::register($this);
                     <li class="active">
                         <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>社区数据库</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-                        	<li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fresinfo">居民数据库</a></li>
-                        	<li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fadmininfo">职员数据库</a></li>
-                            <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
+                        	<li><a href="http://localhost:8080/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fresinfo">居民数据库</a></li>
+                        	<li><a href="http://localhost:8080/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fadmininfo">职员数据库</a></li>
+                            <li><a href="http://localhost:8080/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights">职员权限分配</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>信息发布平台</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="http://localhost:8080/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fhealthreport">信息列表</a></li>
+                            <li><a href="http://localhost:8080/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frequestlist">信息发布</a></li>
                         </ul>
                     </li>
                     <li class="active">
                         <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-                            <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fhealthreport">健康日报</a></li>
-                            <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frequestlist">求助信息</a></li>
+                            <li><a href="http://localhost:8080/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fhealthreport">健康日报</a></li>
+                            <li><a href="http://localhost:8080/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frequestlist">求助信息</a></li>
                         </ul>
                     </li>
+                
                 </ul>
             </div>
 
