@@ -130,26 +130,21 @@ class SiteController extends Controller
         return $this->render('healthreport',['model' => $model,]);
     }
 
-    public function actionSite($pid, $typeid=1)
-    {
-        
-        $model = $model->getCityList($pid);
-
-        if($typeid == 1){$aa="--请选择市--";}else if($typeid == 2 && $model){$aa="--请选择区--";}
-
-        echo Html::tag('option',$aa, ['value'=>'empty']) ;
-
-        foreach($model as $value=>$name)
-        {
-            echo Html::tag('option',Html::encode($name),array('value'=>$value));
-        }
-    }
 
     public function actionEdit(){
+
         return $this->render('edit');
     }
 
     public function actionCensor(){
+        date_default_timezone_set('prc');
+        $time = date('Y-m-d H:i:s',time());
+        Yii::$app->view->params['time'] = $time;
         return $this->render('censor');
+    }
+
+    public function actionInfo(){
+        
+        return $this->render('info');
     }
 }

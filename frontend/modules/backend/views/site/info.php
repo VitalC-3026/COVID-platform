@@ -1,42 +1,126 @@
-<?php 
-use frontend\assets\AppAsset_b;
-
-AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
-?>
 <section id="main-content">
+    <!--mail wrapper start-->
     <div class="row">
-        <div class="col-md-12">
-            <!--breadcrumbs start -->
-            <ul class="breadcrumb">
-                <li><a href="#">首页</a>
-                </li>
-                <li>信息发布</li>
-                <li class="active">信息审核</li>
-            </ul>
-            <!--breadcrumbs end -->
-            <h1 class="h1">信息审核</h1>
+        <div class="col-md-2 col-sm-12" id="compose-wrapper">
+            <div class="panel">
+                <aside class="panel-body">
+                    <a href="mail-compose.html" class="btn btn-primary btn-block">Compose Mail</a>
+                    <ul class="nav nav-pills nav-stacked compose-nav">
+                        <li class="active">
+                            <a href="#"> <i class="fa fa-inbox"></i> Inbox
+                                <span class="label label-danger pull-right inbox-notification">83</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-star-o"></i> Starred
+                                <span class="label label-warning pull-right inbox-notification">8</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-envelope-o"></i> Sent Mail</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-bookmark-o"></i> Important</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-pencil-square-o"></i> Drafts
+                                <span class="label label-info pull-right inbox-notification">1</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-trash-o"></i> Trash</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="panel">
+                <aside class="panel-body">
+                    <button class="btn btn-default btn-block">Manage Labels</button>
+                    <ul class="nav nav-pills nav-stacked compose-nav">
+                        <li>
+                            <a href="#"> <i class="fa fa-bookmark danger-txt"></i> Urgent
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-bookmark warning-txt"></i> Social
+                                <span class="label label-warning pull-right"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-bookmark primary-txt"></i> Follow-up</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-bookmark success-txt"></i> Work Inquiry</a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-bookmark info-txt"></i> Save
+                                <span class="label label-info pull-right inbox-notification"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-bookmark default-txt"></i> ToDo</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-5 col-sm-12" id="inbox-wrapper">
+        <div class="col-md-4 col-sm-12" id="inbox-wrapper">
 
             <section class="panel">
                 <header class="panel-heading wht-bg">
-                    <h3 class="gen-case">待审核消息
-                    </h3>
+                    <h4 class="gen-case">Inbox (83)
+                        <form action="#" class="pull-right mail-src-position">
+                            <div class="input-append">
+                                <input type="text" class="form-control " placeholder="Search Mail">
+                            </div>
+                        </form>
+                    </h4>
                 </header>
                 <div class="panel-body minimal">
                     <div class="mail-option">
+                        <div class="pull-left mail-checkbox ">
+                            <input type="checkbox">
+                        </div>
                         <div class="btn-group">
-                            <a data-original-title="Refresh" data-placement="top" data-toggle="tooltip" href="#" class="btn btn-info btn-sm tooltips">
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                All
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">None</a>
+                                </li>
+                                <li><a href="#">Read</a>
+                                </li>
+                                <li><a href="#">Unread</a>
+                                </li>
+                                <li><a href="#">Starred</a>
+                                </li>
+                                <li><a href="#">Unstarred</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a data-original-title="Refresh" data-placement="top" data-toggle="tooltip" href="#" class="btn btn-default btn-sm tooltips">
                                 <i class=" fa fa-refresh"></i>
                             </a>
                         </div>
 
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
-                               批量通过
+                            <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown">
+                                More
+                                <span class="caret"></span>
                             </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-ban"></i> Spam</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a>
+                                </li>
+                            </ul>
                         </div>
                         <ul class="inbox-pag pull-right">
                             <li>
@@ -351,24 +435,17 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
             </section>
 
         </div>
-        <div class="col-md-7 col-sm-12" id="view-mail-wrapper">
+        <div class="col-md-6 col-sm-12" id="view-mail-wrapper">
             <div class="panel">
                 <div class="panel-body">
                     <header>
-                        <h2 class="gen-case" style="color: #484848">图文消息</h2>
-                        <p class="pull-right"><?php echo $this->params['time'];  ?></p>
+                        <h2>New Message</h2>
                     </header>
                     <div class="row view-mail-header">
-                        <div class="col-md-8 ">
-                            <img src="assets/img/avatar4.gif" alt="" class="img-circle">
-                            <strong>Ivan Bella</strong>
-                            
-                        </div>
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <div class="view-mail-reply pull-right">
-                                <button class="btn btn-sm btn-primary"><i class="fa fa-reply"></i> 发布</button>
-
-                                <button class="btn btn-danger btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title="Trash"><i class="fa fa-trash-o"></i>
+                                <button class="btn btn-sm btn-primary">Send</button>
+                                <button class="btn btn-default btn-sm tooltips" data-original-title="Discard" data-toggle="tooltip" data-placement="top" title="Discard"><i class="fa fa-times"></i> Discard
                                 </button>
                             </div>
                         </div>
@@ -376,14 +453,32 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
 
                     <div class="row">
                         <div class="col-md-12">
-
-                            <div class="panel view-mail-body">
+                            <div class="panel view-compose-body">
                                 <div class="panel-body">
-                                    <p>Hello Mike,</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-                                    <p>Regards,
-                                        <br>Ivan Bella</p>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="to" placeholder="To:">
+                                        <div class="send-options">
+                                            <a href="javascript:void(0);" class="ccLink">Cc</a>
+                                            <a href="javascript:void(0);" class="bccLink">Bcc</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="form-group-cc">
+                                        <input type="text" class="form-control" id="cc" placeholder="Cc:">
+                                    </div>
+                                    <div class="form-group" id="form-group-bcc">
+                                        <input type="text" class="form-control" id="bcc" placeholder="Bcc:">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject:">
+                                    </div>
+
+                                    <textarea class="textarea form-control" rows="5" cols="40" placeholder="Enter text ..." style="width: 100%; height: 200px"></textarea>
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-sm btn-primary ">Send</button>
+                                    <button class="btn btn-default btn-sm "><i class="fa fa-times"></i> Discard</button>
+                                    <button class="btn btn-default btn-sm pull-right"><i class="fa fa-paperclip"></i> Attach a File</button>
+
                                 </div>
                             </div>
                         </div>
@@ -397,22 +492,3 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
     </div>
     <!--mail wrapper end-->
 </section>
-
-<script>
-    $(document).ready(function() {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_flat-green'
-        });
-        $('.tooltips').tooltip()
-        $('.textarea').wysihtml5();
-        $('.ccLink').click(function() {
-            $(this).hide();
-            $('#form-group-cc').slideDown();
-        });
-        $('.bccLink').click(function() {
-            $(this).hide();
-            $('#form-group-bcc').slideDown();
-        });
-
-    });
-</script>
