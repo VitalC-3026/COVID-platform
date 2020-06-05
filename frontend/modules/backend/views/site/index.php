@@ -31,10 +31,6 @@ AppAsset_b::addCss($this, 'yii2020/COVID-platform/web/frontend/assets/plugins/mo
 ?>
 <div id="main-content">
     <!--tiles start-->
-    <div class="alert alert-info alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <strong align="center">细心填报，大家安心！</strong>
-    </div>
     <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-red">

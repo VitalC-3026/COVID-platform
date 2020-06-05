@@ -144,4 +144,12 @@ class SiteController extends Controller
             echo Html::tag('option',Html::encode($name),array('value'=>$value));
         }
     }
+
+    public function actionEdit(){
+        return $this->render('edit');
+    }
+
+    public function actionCensor(){
+        return $this->render('censor');
+    }
 }
