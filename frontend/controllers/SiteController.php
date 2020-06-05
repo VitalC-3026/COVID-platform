@@ -83,9 +83,10 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        /*if (!Yii::$app->user->isGuest) {
+        if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -95,7 +96,7 @@ class SiteController extends Controller
             return $this->render('login', [
                 'model' => $model,
             ]);
-        }*/
+        }
     }
 
     /**
@@ -105,9 +106,9 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-        /*Yii::$app->user->logout();
+        Yii::$app->user->logout();
 
-        return $this->goHome();*/
+        return $this->goHome();
     }
 
     /**
@@ -127,7 +128,7 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        /*$model = new SignupForm();
+        $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. You can login with your account.');
             return $this->goHome();
@@ -135,7 +136,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
-        ]);*/
+        ]);
     }
 
 
@@ -144,7 +145,7 @@ class SiteController extends Controller
      */
     public function actionModify()
     {
-        /*if (Yii::$app->user->isGuest) {
+        if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
         $model = new ModifyForm();
@@ -161,7 +162,7 @@ class SiteController extends Controller
         }
         return $this->render('modify', [
             'model' => $model,
-        ]);*/
+        ]);
     }
 
     /**
