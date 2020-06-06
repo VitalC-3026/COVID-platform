@@ -90,29 +90,16 @@ AppAsset::register($this);
                                 $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
                                 $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
                             } else {
-                                $menuItems[] = '<li>'
-                                    . Html::beginForm(['/site/modify'], 'post')
-                                    . Html::submitButton(
-                                        '修改信息',
-                                        ["class" => 'btn green pull-right']
-                                    )
-                                    . Html::endForm()
-                                    . '</li>';
-                                $menuItems[] = '<li>'
-                                    . Html::beginForm(['/backend/site/index'], 'post')
-                                    . Html::submitButton(
-                                        '后台管理',
-                                        ["class" => 'btn green pull-right']
-                                    )
-                                    . Html::endForm()
-                                    . '</li>';
-                                $menuItems[] = "<li class=\"nav-item\">"
+                                $menuItems[] = ['label' => '修改信息', 'url' => ['/site/modify']];
+
+                                $menuItems[] = ['label' => '后台管理', 'url' => ['/backend/site/index']];
+                                $menuItems[] = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><span>"
                                     . Html::beginForm(['/site/logout'], 'post')
-                                    . "<button class='nav-link'>登出("
+                                    . "<button class='btn btn-outline-secondary'>登出("
                                     . Yii::$app->user->identity->username . ')'
                                     . "</button>"
                                     . Html::endForm()
-                                    . '</li>';
+                                    . '</span></li>';
 
                             }
 
