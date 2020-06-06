@@ -158,4 +158,15 @@ class News extends ActiveRecord
     public function getTitle() { return $this->title; }
     public function getAbstract() { return $this->abstract; }
     public function getLink() { return $this->link; }
+
+    /**
+     * 查询获得所有的新闻
+     */
+    public function getNews() 
+    {
+        return self::find()->asArray()->all();
+
+    }
+
+
 }

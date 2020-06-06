@@ -1,5 +1,7 @@
 <?php 
 use frontend\assets\AppAsset_b;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
 
 AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
 ?>
@@ -38,20 +40,30 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                                批量通过
                             </button>
                         </div>
-                        <ul class="inbox-pag pull-right">
-                            <li>
-                                <span>1-50 of 83</span>
-                            </li>
-                            <li>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa fa-angle-left  pag-left"></i></a>
-                            </li>
-                            <li>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa fa-angle-right pag-right"></i></a>
-                            </li>
-                        </ul>
 
                     </div>
-                    <div class="table-responsive">
+                    <hr style="width: 100%">
+                    <div>
+                        <?php echo ListView::widget([
+                            'dataProvider' => $provider,
+                            'itemView' => 'newsList',
+                            'viewParams' => [
+                            ],
+                            'layout' => '{items}<div class="col-lg-12 sum-pager">{summary}{pager}</div>',
+                            'itemOptions' => [
+                                'tag' => 'div',
+                                'class' => 'col-lg-12'
+                            ],
+                            'pager' => [
+                                'maxButtonCount' => 5,
+                                'firstPageLabel' => '首页',
+                                'prevPageLabel' => '<i class="fa fa-angle-double-left"></i>',
+                                'nextPageLabel' => '<i class="fa fa-angle-double-right"></i>',
+                                'lastPageLabel' => '尾页'
+                            ]
+                        ]); ?>
+                    </div>
+                    <!-- <div class="table-responsive">
                         <table class="table table-inbox table-hover">
                             <tbody>
                                 <tr class="unread">
@@ -345,8 +357,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
 
                             </tbody>
                         </table>
-
-                    </div>
+                    </div> -->
                 </div>
             </section>
 

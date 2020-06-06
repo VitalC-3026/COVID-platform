@@ -7,11 +7,13 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataProvider;
 use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
 use common\models\PriorityType;
 use common\models\Resident;
+use common\models\News;
 /**
  * Site controller
  */
@@ -140,11 +142,26 @@ class SiteController extends Controller
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s',time());
         Yii::$app->view->params['time'] = $time;
-        return $this->render('censor');
+        $dataProvider = new ActiveDataProvider([
+            'query' => News::find(),
+            'pagination' => [
+                'pagesize' => 4
+            ]
+        ]); 
+        return $this->render('censor', [
+            'provider' => $dataProvider
+        ]);
     }
 
     public function actionInfo(){
-        
-        return $this->render('info');
+        $dataProvider = new ActiveDataProvider([
+            'query' => News::find(),
+            'pagination' => [
+                'pagesize' => 4
+            ]
+        ]); 
+        return $this->render('info', [
+            'provider' => $dataProvider
+        ]);
     }
 }
