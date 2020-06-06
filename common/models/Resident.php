@@ -7,17 +7,16 @@ use yii\data\ActiveDataProvider;
 
 /**
  * 居民模型
- *
  * @property string $building       楼
  * @property string $unit           单元
  * @property string $room           房间
  */
 class Resident extends MyUser
 {
-    public static function tableName()
+    /*public static function tableName()
     {
         return '{{%Resident}}';
-    }
+    }*/
 
     // basic setters
     public function setBuilding($building) { $this->building = $building; }
@@ -52,7 +51,7 @@ class Resident extends MyUser
                     'account' => SORT_DESC,
                 ],
                 'attributes' => [
-                    'account', 'username', 'sex', 'age'
+                    'account', 'username', 'age','sex'
                 ]
             ]   
         ]);
@@ -61,7 +60,7 @@ class Resident extends MyUser
             return $provider;
         }
 
-        $query->andFilterWhere(['id' => $this->id])->andFilterWhere(['like', 'name' => $this->name])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
+        $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like', 'username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
 
         return $provider;
     } 

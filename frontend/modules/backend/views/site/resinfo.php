@@ -67,7 +67,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     //设置字段显示标题
                                     'label' => '身份证号码',
                                     //字段名
-                                    'attribute' => 'myuser.account',
+                                    'attribute' => 'account',
                                     //格式化
                                     'format' => 'raw',
                                     //设置单元格样式
@@ -77,14 +77,14 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   ],
                                   [
                                     'label' => '姓名',
-                                    'attribute' => 'myuser.username',
+                                    'attribute' => 'username',
                                     'format' => 'raw',
                                   ],
                                   [
                                     'label' => '性别',
                                     //设置筛选选项
                                     'filter' => [0 => '男', 1 => '女'],
-                                    'attribute' => 'myuser.sex',
+                                    'attribute' => 'sex',
                                     'format' => 'raw',
                                     'value' => function ($data) {
                                       return ($data->sex == 0) ? '男' : '女';
@@ -95,7 +95,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   ],
                                   [
                                     'label' => '年龄',
-                                    'attribute' => 'myuser.age',
+                                    'attribute' => 'age',
                                     'format' => 'raw',
                                     'headerOptions' => [
                                       'style' => 'width:60px;',
@@ -103,10 +103,10 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   ],
                                   [
                                     'label' => '联系方式',
-                                    'attribute' => 'myuser.tel',
+                                    'attribute' => 'tel',
                                     'format' => 'raw',
                                   ],
-                                  [
+                                  /*[
                                     'label' => '单元号',
                                     'attribute' => 'unit',
                                     'format' => 'raw',
@@ -121,7 +121,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     'label' => '房间号',
                                     'attribute' => 'room',
                                     'format' => 'raw',
-                                  ],
+                                  ],*/
                                   /*[
                                     'header' => '操作',
                                     'class' => 'yii\grid\ActionColumn',

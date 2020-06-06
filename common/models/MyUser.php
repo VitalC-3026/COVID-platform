@@ -25,13 +25,13 @@ use yii\web\IdentityInterface;
  * @property string $password      登录时传入的密码，未加密
  * @property string $auth_key      认证信息
  * @property string $name          姓名
+ * @property bool $sex             性别
  * @property int    $age           年龄
  * @property string $tel           联系方式
  * @property int    $type          权限类别
  */
 class MyUser extends ActiveRecord implements IdentityInterface
 {
-    protected bool $sex;
     /*
      * @return 返回的是数据库中存储用户使用的表名
      * {@inheritdoc}
