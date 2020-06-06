@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models;
 
-use common\models\MyUser;
+use common\models\User;
 use Yii;
 use yii\base\Model;
 
@@ -22,7 +22,7 @@ class SignupForm extends Model
         return [
             ['account', 'trim'],
             ['account', 'required','message' => '账户不能为空'],
-            ['account', 'unique', 'targetClass' => '\common\models\MyUser', 'message' => '账户已存在'],
+            ['account', 'unique', 'targetClass' => '\common\models\User', 'message' => '账户已存在'],
             ['account', 'string', 'min' => 18, 'max' => 18,'tooShort'=> '账户应为18位身份证号','tooLong' => '账户应为18位身份证号'],
 
             ['username', 'trim'],
@@ -45,7 +45,7 @@ class SignupForm extends Model
             return null;
         }
         
-        $user = new MyUser();
+        $user = new User();
         $user->account = $this->account;
         $user->setPassword($this->password);
         $user->setUsername($this->username);

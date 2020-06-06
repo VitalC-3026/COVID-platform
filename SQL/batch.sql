@@ -1,8 +1,10 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/5/18 21:43:06                           */
+/* Created on:     2020/6/6 22:37:51                            */
 /*==============================================================*/
 
+
+drop table if exists Comments;
 
 drop table if exists Committee;
 
@@ -23,6 +25,18 @@ drop table if exists TrackIn;
 drop table if exists User;
 
 drop table if exists Visitor;
+
+/*==============================================================*/
+/* Table: Comments                                              */
+/*==============================================================*/
+create table Comments
+(
+   id                   int not null,
+   New_id               int not null,
+   content              text,
+   author               varchar(10),
+   primary key (id)
+);
 
 /*==============================================================*/
 /* Table: Committee                                             */
@@ -62,13 +76,15 @@ create table HealthCard
 /*==============================================================*/
 create table News
 (
+   id                   int not null,
+   account              char(18) not null,
    date                 date,
    time                 time,
-   title                varchar(50) not null,
-   account              char(18) not null,
+   title                varchar(50),
    abstract             text,
    link                 varchar(50),
-   primary key (title)
+   cnt                  int,
+   primary key (id)
 );
 
 /*==============================================================*/
@@ -145,6 +161,9 @@ create table Visitor
    tel                  varchar(11),
    primary key (identity)
 );
+
+alter table Comments add constraint FK_Commentary foreign key (New_id)
+      references News (id) on delete restrict on update restrict;
 
 alter table Committee add constraint FK_isA_committee foreign key (account)
       references User (account) on delete restrict on update restrict;

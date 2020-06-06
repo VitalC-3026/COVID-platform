@@ -7,7 +7,7 @@
 namespace frontend\models;
 
 
-use common\models\MyUser;
+use common\models\User;
 use phpDocumentor\Reflection\Types\This;
 use yii\base\Model;
 
@@ -49,7 +49,7 @@ class ModifyForm extends Model
      */
     public function setMyUser()
     {
-        $this->user = MyUser::findIdentity($this->account);
+        $this->user = User::findIdentity($this->account);
         //未找到对应的用户或者密码不正确
         return $this->user != null && $this->user->validatePassword($this->password);
     }

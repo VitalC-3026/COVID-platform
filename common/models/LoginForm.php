@@ -24,7 +24,7 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['account', 'password'], 'required'],
+            [['account', 'password'], 'required','message'=>"用户名不能为空"],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
@@ -44,7 +44,7 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, '用户名或密码不正确');
             }
         }
     }
@@ -68,12 +68,12 @@ class LoginForm extends Model
     /**
      * Finds user by [[username]]
      * 返回通过表单的用户名找到的MyUser （其实是用account找）
-     * @return MyUser|null
+     * @return User|null
      */
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = MyUser::findIdentity($this->account);
+            $this->_user = User::findIdentity($this->account);
         }
 
         return $this->_user;

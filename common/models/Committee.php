@@ -10,7 +10,7 @@ use Yii;
  * @property string $inDate         入职时间
  * @property bool   $isAdmin        是否为超管
  */
-class Committee extends MyUser
+class Committee extends User
 {
 
     public static function tableName()

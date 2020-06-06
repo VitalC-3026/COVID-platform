@@ -78,50 +78,49 @@ AppAsset::register($this);
                     <!-- 导航栏 BEGIN: #main-nav  TODO 导航栏调转-->
                     <div class="collapse navbar-collapse" id="main-nav">
                         <ul class="navbar-nav ml-auto">
-                        <?php
+                            <?php
 
-                        $menuItems = [
-                            ['label' => '主页', 'url' => ['/site/index']],
-                            ['label' => '关于', 'url' => ['/site/about']],
-                            ['label' => '联系我们', 'url' => ['/site/contact']],
-                        ];
+                            $menuItems = [
+                                ['label' => '主页', 'url' => ['/site/index']],
+                                ['label' => '关于', 'url' => ['/site/about']],
+                                ['label' => '联系我们', 'url' => ['/site/contact']],
+                            ];
 
-                        if (Yii::$app->user->isGuest) {
-                            $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
-                            $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
-                        } else {
-                            $menuItems[] = '<li>'
-                                . Html::beginForm(['/site/modify'], 'post')
-                                . Html::submitButton(
-                                    '修改信息',
-                                    ['class' => 'btn btn-link logout']
-                                )
-                                . Html::endForm()
-                                . '</li>';
-                            $menuItems[] = '<li>'
-                                . Html::beginForm(['/backend/site/index'], 'post')
-                                . Html::submitButton(
-                                    '后台管理',
-                                    ['class' => 'btn btn-link logout']
-                                )
-                                . Html::endForm()
-                                . '</li>';
-                            $menuItems[] = '<li>'
-                                . Html::beginForm(['/site/logout'], 'post')
-                                . Html::submitButton(
-                                    'Logout (' . Yii::$app->user->identity->username . ')',
-                                    ['class' => 'btn btn-link logout']
-                                )
-                                . Html::endForm()
-                                . '</li>';
+                            if (Yii::$app->user->isGuest) {
+                                $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
+                                $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
+                            } else {
+                                $menuItems[] = '<li>'
+                                    . Html::beginForm(['/site/modify'], 'post')
+                                    . Html::submitButton(
+                                        '修改信息',
+                                        ["class" => 'btn green pull-right']
+                                    )
+                                    . Html::endForm()
+                                    . '</li>';
+                                $menuItems[] = '<li>'
+                                    . Html::beginForm(['/backend/site/index'], 'post')
+                                    . Html::submitButton(
+                                        '后台管理',
+                                        ["class" => 'btn green pull-right']
+                                    )
+                                    . Html::endForm()
+                                    . '</li>';
+                                $menuItems[] = "<li class=\"nav-item\">"
+                                    . Html::beginForm(['/site/logout'], 'post')
+                                    . "<button class='nav-link'>登出("
+                                    . Yii::$app->user->identity->username . ')'
+                                    . "</button>"
+                                    . Html::endForm()
+                                    . '</li>';
 
-                        }
+                            }
 
-                        echo Nav::widget([
-                            'options' => ['class' => 'nav-item'],
-                            'items' => $menuItems
-                        ]);
-                        ?>
+                            echo Nav::widget([
+                                'options' => ['class' => 'nav-item'],
+                                'items' => $menuItems
+                            ]);
+                            ?>
                         </ul>
                     </div>
                     <!-- END: #main-nav -->
@@ -133,9 +132,9 @@ AppAsset::register($this);
 
 
         <!--      这里是页面显示的部分-->
-            <div>
-            	<?= $content ?>
-            </div>
+        <div>
+            <?= $content ?>
+        </div>
 
 
         <!-- BEGIN: .cover -->
@@ -156,18 +155,18 @@ AppAsset::register($this);
                     <div class="col-md-9">
                         <h3 class="mt-2">生命重于泰山，疫情就是命令，防控就是责任。</h3>
                     </div>
-<!--                    这段注释掉的是一个邮件注册，由于没有用，就注册掉了-->
-<!--                    <div class="col-md-6">-->
-<!--                        <form action="#" id="mc-form" class="form-subscribe">-->
-<!--                            <div class="d-flex align-items-stretch w-100">-->
-<!--                                <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
-<!--                                <input type="submit" value="Sign up" class="btn btn-outline-white-reverse">-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="mc-email"></label>-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                    </div>-->
+                    <!--                    这段注释掉的是一个邮件注册，由于没有用，就注册掉了-->
+                    <!--                    <div class="col-md-6">-->
+                    <!--                        <form action="#" id="mc-form" class="form-subscribe">-->
+                    <!--                            <div class="d-flex align-items-stretch w-100">-->
+                    <!--                                <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
+                    <!--                                <input type="submit" value="Sign up" class="btn btn-outline-white-reverse">-->
+                    <!--                            </div>-->
+                    <!--                            <div class="form-group">-->
+                    <!--                                <label for="mc-email"></label>-->
+                    <!--                            </div>-->
+                    <!--                        </form>-->
+                    <!--                    </div>-->
                 </div>
                 <!-- END: .footer-subscribe -->
 
@@ -196,7 +195,8 @@ AppAsset::register($this);
                             <h3>相关网站</h3>
                             <ul class="nav-link">
                                 <li><a href="http://www.nhc.gov.cn/">国家卫健委</a></li>
-                                <li><a href="https://ncov.dxy.cn/ncovh5/view/pneumonia?from=timeline">丁香医生实时疫情数据</a></li>
+                                <li><a href="https://ncov.dxy.cn/ncovh5/view/pneumonia?from=timeline">丁香医生实时疫情数据</a>
+                                </li>
                                 <li><a href="http://www.piyao.org.cn/2020yqpy/">辟谣专区</a></li>
                                 <li><a href="http://www.nhc.gov.cn/xcs/kpzs/list_gzbd.shtml">防疫小知识</a></li>
                                 <li><a href="https://www.chinavolunteer.cn/app/user/login.php">报名志愿者</a></li>
@@ -237,8 +237,9 @@ AppAsset::register($this);
                             </a>
                         </div>
                         <div class="d-block">
-                            <p>有任何问题请联系管理员</p><p><a href="#"
-             class="link-underline text-primary">这是个邮箱@南开.com</a>
+                            <p>有任何问题请联系管理员</p>
+                            <p><a href="#"
+                                  class="link-underline text-primary">这是个邮箱@南开.com</a>
                             </p>
                         </div>
                     </div>
@@ -265,10 +266,10 @@ AppAsset::register($this);
 
     <!-- Loader -->
 
-<!--    <div id="site-overlayer"></div>-->
-<!--    <div class="site-loader-wrap">-->
-<!--        <div class="site-loader"></div>-->
-<!--    </div>-->
+    <!--    <div id="site-overlayer"></div>-->
+    <!--    <div class="site-loader-wrap">-->
+    <!--        <div class="site-loader"></div>-->
+    <!--    </div>-->
 
     <!-- BEGIN: JavaScripts -->
     <script src="assets/frontend/js/jquery-3.4.1.min.js"></script>

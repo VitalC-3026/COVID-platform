@@ -11,7 +11,7 @@ use yii\data\ActiveDataProvider;
  * @property string $unit           单元
  * @property string $room           房间
  */
-class Resident extends MyUser
+class Resident extends User
 {
     /*public static function tableName()
     {
