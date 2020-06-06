@@ -60,7 +60,7 @@ AppAsset_b::register($this);
     <section id="container">
         <header id="header">
             <!--logo start-->
-            <div class="brand">
+            <div class="brand" style="background-color: #2fcbce">
                 <a href="index.html" class="logo">
                     <span>Space</span>Lab</a>
             </div>

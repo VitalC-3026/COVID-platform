@@ -2,6 +2,7 @@
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
 use yii\data\ArrayDataProvider;
+use yii\grid\GridView;
 
 AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -48,296 +49,11 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                 <div class="panel-body">
                     
                     <div role="grid" id="example_wrapper" class="dataTables_wrapper form-inline no-footer">
-                    
-                        <div class="row" margin-top="10px">
-                            <div class="col-xs-6">
-                                <div class="dataTables_length" id="example_length">
-                                    <label>
-                                        <select name="example_length" aria-controls="example" class="form-control input-sm">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select> records per page
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-6" align="right">
-                                <div id="example_filter" class="dataTables_filter">
-                                    <label>Search:
-                                        <input type="search" class="form-control input-sm" aria-controls="example">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>身份证号码</th>
-                                    <th>姓名</th>
-                                    <th>用户名</th>
-                                    <th>性别</th>
-                                    <th>联系方式</th>
-                                    <th>单元楼</th>
-                                    <th>楼层</th>
-                                    <th>房间号</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>12</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Colleen Hurst</td>
-                                    <td>Javascript Developer</td>
-                                    <td>San Francisco</td>
-                                    <td>39</td>
-                                    <td>2009/09/15</td>
-                                    <td>$205,500</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Sonya Frost</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>23</td>
-                                    <td>2008/12/13</td>
-                                    <td>$103,600</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Jena Gaines</td>
-                                    <td>Office Manager</td>
-                                    <td>London</td>
-                                    <td>30</td>
-                                    <td>2008/12/19</td>
-                                    <td>$90,560</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Quinn Flynn</td>
-                                    <td>Support Lead</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>2013/03/03</td>
-                                    <td>$342,000</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Charde Marshall</td>
-                                    <td>Regional Director</td>
-                                    <td>San Francisco</td>
-                                    <td>36</td>
-                                    <td>2008/10/16</td>
-                                    <td>$470,600</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Haley Kennedy</td>
-                                    <td>Senior Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>43</td>
-                                    <td>2012/12/18</td>
-                                    <td>$313,500</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Tatyana Fitzpatrick</td>
-                                    <td>Regional Director</td>
-                                    <td>London</td>
-                                    <td>19</td>
-                                    <td>2010/03/17</td>
-                                    <td>$385,750</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Michael Silva</td>
-                                    <td>Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>66</td>
-                                    <td>2012/11/27</td>
-                                    <td>$198,500</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Paul Byrd</td>
-                                    <td>Chief Financial Officer (CFO)</td>
-                                    <td>New York</td>
-                                    <td>64</td>
-                                    <td>2010/06/09</td>
-                                    <td>$725,000</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Olivia Liang</td>
-                                    <td>Support Engineer</td>
-                                    <td>Singapore</td>
-                                    <td>64</td>
-                                    <td>2011/02/03</td>
-                                    <td>$234,500</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Bruno Nash</td>
-                                    <td>Software Engineer</td>
-                                    <td>London</td>
-                                    <td>38</td>
-                                    <td>2011/05/03</td>
-                                    <td>$163,500</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Sakura Yamamoto</td>
-                                    <td>Support Engineer</td>
-                                    <td>Tokyo</td>
-                                    <td>37</td>
-                                    <td>2009/08/19</td>
-                                    <td>$139,575</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Thor Walton</td>
-                                    <td>Developer</td>
-                                    <td>New York</td>
-                                    <td>61</td>
-                                    <td>2013/08/11</td>
-                                    <td>$98,540</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                                <tr>
-                                    <td>Finn Camacho</td>
-                                    <td>Support Engineer</td>
-                                    <td>San Francisco</td>
-                                    <td>47</td>
-                                    <td>2009/07/07</td>
-                                    <td>$87,500</td>
-                                    <td>9</td>
-                                    <td>902</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="row">
-                            <div class="col-xs-12" align="right">
-                                <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button previous disabled" aria-controls="example" tabindex="0" id="example_previous">
-                                            <a href="#">Previous</a>
-                                        </li>
-                                        <li class="paginate_button active" aria-controls="example" tabindex="1"><a href="#">1</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="2"><a href="#">2</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="3"><a href="#">3</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="4"><a href="#">4</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="5"><a href="#">5</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="6"><a href="#">6</a>
-                                        </li>
-                                        <li class="paginate_button next" aria-controls="example" tabindex="0" id="example_next"><a href="#">Next</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="row">
                             <div class="col-lg-12">
                               <?php echo GridView::widget([
                                 //设置GridView的ID
-                                'id' => 'myUserGridView',
+                                'id' => 'residentGridView',
                                 //设置数据提供器
                                 'dataProvider' => $provider,
                                 //设置筛选模型
@@ -349,19 +65,19 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   ['class' => 'yii\grid\SerialColumn'],
                                   [
                                     //设置字段显示标题
-                                    'label' => 'ID',
+                                    'label' => '身份证号码',
                                     //字段名
-                                    'attribute' => 'id',
+                                    'attribute' => 'account',
                                     //格式化
                                     'format' => 'raw',
                                     //设置单元格样式
                                     'headerOptions' => [
-                                      'style' => 'width:120px;',
+                                      'style' => 'width:180px;',
                                     ],
                                   ],
                                   [
                                     'label' => '姓名',
-                                    'attribute' => 'name',
+                                    'attribute' => 'username',
                                     'format' => 'raw',
                                   ],
                                   [
@@ -372,14 +88,41 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                     'format' => 'raw',
                                     'value' => function ($data) {
                                       return ($data->sex == 0) ? '男' : '女';
-                                    }
+                                    },
+                                    'headerOptions' => [
+                                      'style' => 'width:60px;',
+                                    ],
                                   ],
                                   [
                                     'label' => '年龄',
                                     'attribute' => 'age',
                                     'format' => 'raw',
+                                    'headerOptions' => [
+                                      'style' => 'width:60px;',
+                                    ],
                                   ],
                                   [
+                                    'label' => '联系方式',
+                                    'attribute' => 'tel',
+                                    'format' => 'raw',
+                                  ],
+                                  [
+                                    'label' => '单元号',
+                                    'attribute' => 'unit',
+                                    'format' => 'raw',
+                                  ],
+                                  
+                                  [
+                                    'label' => '楼',
+                                    'attribute' => 'building',
+                                    'format' => 'raw',
+                                  ],
+                                  [
+                                    'label' => '房间号',
+                                    'attribute' => 'room',
+                                    'format' => 'raw',
+                                  ],
+                                  /*[
                                     'header' => '操作',
                                     'class' => 'yii\grid\ActionColumn',
                                     //设置显示模板
@@ -393,7 +136,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                         return '<a href="' . Url::toRoute(['test/del', 'id' => $key]) . '" rel="external nofollow" class="btn btn-danger">删除</a>';
                                       },
                                     ],
-                                  ],
+                                  ],*/
                                 ],
                               ]); ?>
                             </div>

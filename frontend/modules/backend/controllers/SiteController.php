@@ -52,7 +52,7 @@ class SiteController extends Controller
     public function actionResinfo()
     {
         $resident = new Resident();
-        $provider = $user->search(Yii::$app->request->get());
+        $provider = $resident->search(Yii::$app->request->get());
         
         return $this->render('resinfo',[
             'model' => $resident,

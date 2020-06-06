@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\data\ActiveDataProvider;
 
 /**
  * 居民模型
@@ -43,10 +44,10 @@ class Resident extends MyUser
     		],
     		'sort' => [
     			'defaultOrder' => [
-    				'id' => SORT_DESC,
+    				'account' => SORT_DESC,
     			],
     			'attributes' => [
-    				'id', 'name', 'sex', 'age'
+    				'account', 'username', 'sex', 'age'
     			]
     		]	
     	]);
@@ -59,4 +60,13 @@ class Resident extends MyUser
 
     	return $provider;
     } 
+
+
+    /**
+     * 获取社区中所有的居民信息
+    */
+    public static function getAllResident(){
+        $model = self::find() -> asArray() -> all();
+        return $model;
+    }
 }
