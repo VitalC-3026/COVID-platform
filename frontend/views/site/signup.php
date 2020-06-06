@@ -18,8 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="row align-items-end">
                 <div class="col-lg-7">
                     <h1 class="mb-0 heading text-white">注册</h1>
-                    <p class="mb-0 text-white">A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. </p>
+                    <p class="mb-0 text-white">成为社区人员时需要完成注册，这样你就可以使用自己的账号进行完成信息发布和信息获取工作。
+                    账户使用自己的身份证号呦。</p>
                 </div>
             </div>
         </div>
