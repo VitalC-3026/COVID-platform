@@ -14,6 +14,11 @@ use yii\data\ActiveDataProvider;
  */
 class Resident extends MyUser
 {
+    public static function tableName()
+    {
+        return '{{%Resident}}';
+    }
+
     // basic setters
     public function setBuilding($building) { $this->building = $building; }
     public function setUnit($unit) { $this->unit = $unit; }
@@ -26,39 +31,39 @@ class Resident extends MyUser
 
     // rules
     public function rules(){
-		return [
-		  [['id', 'name', 'sex', 'age'], 'trim'],
-		  [['age'], 'integer'],
-		  ['name', 'string'],
-		];
-	}
+        return [
+          [['id', 'name', 'sex', 'age'], 'trim'],
+          [['age'], 'integer'],
+          ['name', 'string'],
+        ];
+    }
 
     public function search($params) {
-    	$query = self::find();
-    	$provider = new ActiveDataProvider([
-    		'query' => $query,
-    		'pagination' => [
-    			'pageSize' => 10,
-    			'pageParam' => 'p',
-    			'pageSizeParam' => 'pageSize',
-    		],
-    		'sort' => [
-    			'defaultOrder' => [
-    				'account' => SORT_DESC,
-    			],
-    			'attributes' => [
-    				'account', 'username', 'sex', 'age'
-    			]
-    		]	
-    	]);
+        $query = self::find();
+        $provider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 10,
+                'pageParam' => 'p',
+                'pageSizeParam' => 'pageSize',
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'account' => SORT_DESC,
+                ],
+                'attributes' => [
+                    'account', 'username', 'sex', 'age'
+                ]
+            ]   
+        ]);
 
-    	if (!($this->load($params) && $this->validate())) {
-    		return $provider;
-    	}
+        if (!($this->load($params) && $this->validate())) {
+            return $provider;
+        }
 
-    	$query->andFilterWhere(['id' => $this->id])->andFilterWhere(['like', 'name' => $this->name])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
+        $query->andFilterWhere(['id' => $this->id])->andFilterWhere(['like', 'name' => $this->name])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
 
-    	return $provider;
+        return $provider;
     } 
 
 

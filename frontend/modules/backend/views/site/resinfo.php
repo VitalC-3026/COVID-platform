@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
 
-AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
-AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
-AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/jquery.dataTables.js');
-AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
+AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/css/dataTables.css');
+AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
+AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/jquery.dataTables.js');
+AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <div id="main-content">
     <div class="row">
@@ -67,7 +67,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                     //设置字段显示标题
                                     'label' => '身份证号码',
                                     //字段名
-                                    'attribute' => 'account',
+                                    'attribute' => 'myuser.account',
                                     //格式化
                                     'format' => 'raw',
                                     //设置单元格样式
@@ -77,14 +77,14 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   ],
                                   [
                                     'label' => '姓名',
-                                    'attribute' => 'username',
+                                    'attribute' => 'myuser.username',
                                     'format' => 'raw',
                                   ],
                                   [
                                     'label' => '性别',
                                     //设置筛选选项
                                     'filter' => [0 => '男', 1 => '女'],
-                                    'attribute' => 'sex',
+                                    'attribute' => 'myuser.sex',
                                     'format' => 'raw',
                                     'value' => function ($data) {
                                       return ($data->sex == 0) ? '男' : '女';
@@ -95,7 +95,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   ],
                                   [
                                     'label' => '年龄',
-                                    'attribute' => 'age',
+                                    'attribute' => 'myuser.age',
                                     'format' => 'raw',
                                     'headerOptions' => [
                                       'style' => 'width:60px;',
@@ -103,7 +103,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   ],
                                   [
                                     'label' => '联系方式',
-                                    'attribute' => 'tel',
+                                    'attribute' => 'myuser.tel',
                                     'format' => 'raw',
                                   ],
                                   [
