@@ -14,6 +14,11 @@ use yii\data\ActiveDataProvider;
  */
 class Resident extends MyUser
 {
+    public static function tableName()
+    {
+        return '{{%Resident}}';
+    }
+
     // basic setters
     public function setBuilding($building) { $this->building = $building; }
     public function setUnit($unit) { $this->unit = $unit; }

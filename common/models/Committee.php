@@ -13,6 +13,11 @@ use Yii;
 class Committee extends MyUser
 {
 
+    public static function tableName()
+    {
+        return '{{%Committee}}';
+    }
+
     /**
      * 授权
      *

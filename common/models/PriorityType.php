@@ -14,6 +14,11 @@ use yii\db\ActiveRecord;
  */
 class PriorityType extends ActiveRecord
 {
+    public static function tableName()
+    {
+        return "{{%PriorityType}}";
+    }
+
     // basic setters
     public function setType($type) { $this->type = $type; }
     public function setName($name) { $this->name = $name; }
