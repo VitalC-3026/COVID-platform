@@ -15,6 +15,10 @@ use yii\db\ActiveRecord;
  */
 class Health extends ActiveRecord
 {
+    public static function tableName()
+    {
+        return '{{%Health}}';
+    }
 
     /**
      * set 方法整合
