@@ -20,7 +20,7 @@ AppAsset::register($this);
 
     <head>
         <!-- BEGIN: Title -->
-        <title>NoCov &mdash; Coronavirus Social Awareness Template</title>
+        <title>让我们的社区远离病毒</title>
         <!-- END: Title -->
 
         <!-- BEGIN: Meta -->
@@ -60,9 +60,8 @@ AppAsset::register($this);
                 <div class="container">
 
                     <!--  导航栏左侧logo BEGIN: .navbar-brand -->
-                    <a class="navbar-brand" href="index.html">
-                        <img src="assets/frontend/images/logo_light.png" alt="Covid" id="logo_light">
-                        <img src="assets/frontend/images/logo_dark.png" alt="Covid" id="logo_dark">
+                    <a class="navbar-brand" href="<?php echo Yii::$app->getHomeUrl(); ?>">
+                        <img src="assets/frontend/images/logo.png" alt="Covid" id="logo_dark">
                     </a>
                     <!-- END: .navbar-brand -->
 
@@ -154,20 +153,21 @@ AppAsset::register($this);
 
                 <!--       页脚  BEGIN: .footer-subscribe -->
                 <div class="row footer-subscribe">
-                    <div class="col-md-6">
-                        <h3 class="mt-2">Get our newsletter, join the community.</h3>
+                    <div class="col-md-9">
+                        <h3 class="mt-2">生命重于泰山，疫情就是命令，防控就是责任。</h3>
                     </div>
-                    <div class="col-md-6">
-                        <form action="#" id="mc-form" class="form-subscribe">
-                            <div class="d-flex align-items-stretch w-100">
-                                <input type="email" id="mc-email" placeholder="Email address" class="form-control">
-                                <input type="submit" value="Sign up" class="btn btn-outline-white-reverse">
-                            </div>
-                            <div class="form-group">
-                                <label for="mc-email"></label>
-                            </div>
-                        </form>
-                    </div>
+<!--                    这段注释掉的是一个邮件注册，由于没有用，就注册掉了-->
+<!--                    <div class="col-md-6">-->
+<!--                        <form action="#" id="mc-form" class="form-subscribe">-->
+<!--                            <div class="d-flex align-items-stretch w-100">-->
+<!--                                <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
+<!--                                <input type="submit" value="Sign up" class="btn btn-outline-white-reverse">-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="mc-email"></label>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
                 </div>
                 <!-- END: .footer-subscribe -->
 
@@ -176,13 +176,13 @@ AppAsset::register($this);
 
                         <!-- 导航栏BEGIN: .widget -->
                         <div class="widget">
-                            <h3>About</h3>
+                            <h3>功能</h3>
                             <ul class="nav-link">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Situation</a></li>
-                                <li><a href="#">Prevention</a></li>
-                                <li><a href="#">Symptoms</a></li>
-                                <li><a href="#">Community</a></li>
+                                <li><a href="#">主页</a></li>
+                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系我们</a></li>
+                                <li><a href="#">注册</a></li>
+                                <li><a href="#">登录</a></li>
                             </ul>
                         </div>
                         <!-- END: .widget -->
@@ -193,13 +193,13 @@ AppAsset::register($this);
                         <!-- BEGIN: .widget -->
 
                         <div class="widget">
-                            <h3>Helpful Links</h3>
+                            <h3>相关网站</h3>
                             <ul class="nav-link">
-                                <li><a href="#">Reduce The Spread</a></li>
-                                <li><a href="#">Who Are At Risk</a></li>
-                                <li><a href="#">Social Distancing</a></li>
-                                <li><a href="#">Community Advice</a></li>
-                                <li><a href="#">Technical Guidance</a></li>
+                                <li><a href="http://www.nhc.gov.cn/">国家卫健委</a></li>
+                                <li><a href="https://ncov.dxy.cn/ncovh5/view/pneumonia?from=timeline">丁香医生实时疫情数据</a></li>
+                                <li><a href="http://www.piyao.org.cn/2020yqpy/">辟谣专区</a></li>
+                                <li><a href="http://www.nhc.gov.cn/xcs/kpzs/list_gzbd.shtml">防疫小知识</a></li>
+                                <li><a href="https://www.chinavolunteer.cn/app/user/login.php">报名志愿者</a></li>
                             </ul>
                         </div>
 
@@ -209,13 +209,13 @@ AppAsset::register($this);
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                         <!-- BEGIN: .widget -->
                         <div class="widget">
-                            <h3>Protect Yourself</h3>
+                            <h3>防疫小贴士</h3>
                             <ul class="nav-link">
-                                <li><a href="#">Wash Your Hands Often</a></li>
-                                <li><a href="#">Wear a Face Mask</a></li>
-                                <li><a href="#">Avoid Contact With Sick People</a></li>
-                                <li><a href="#">Always Cover Your Cough or Sneeze</a></li>
-                                <li><a href="#">Protect Your Family</a></li>
+                                <li><a href="#">勤洗手</a></li>
+                                <li><a href="#">戴口罩</a></li>
+                                <li><a href="#">宅家中</a></li>
+                                <li><a href="#">量体温</a></li>
+                                <li><a href="#">护家人</a></li>
                             </ul>
                         </div>
                         <!-- END: .widget -->
@@ -223,22 +223,22 @@ AppAsset::register($this);
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                         <div class="d-block">
                             <ul class="list-unstyled d-flex social-29021">
-                                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                                <li><a href="#"><span class="icon-instagram"></span></a></li>
-                                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                                <li><a href="#"><span class="icon-qq"></span></a></li>
+                                <li><a href="#"><span class="icon-weixin"></span></a></li>
+                                <li><a href="#"><span class="icon-weibo"></span></a></li>
+                                <li><a href="#"><span class="icon-television"></span></a></li>
                             </ul>
                         </div>
 
                         <div class="d-block mb-4">
                             <a href="#" class="d-flex call align-items-center">
                                 <span class="lni lni-mobile wrap-icon"></span>
-                                <span class="number">329 4902 392</span>
+                                <span class="number">110 120 119</span>
                             </a>
                         </div>
                         <div class="d-block">
-                            <p>If you have any question, please contact us at <a href="#"
-                                                                                 class="link-underline text-primary">info@unslate.co</a>
+                            <p>有任何问题请联系管理员</p><p><a href="#"
+             class="link-underline text-primary">这是个邮箱@南开.com</a>
                             </p>
                         </div>
                     </div>
@@ -247,7 +247,7 @@ AppAsset::register($this);
                 <!-- BEGIN: .copyright -->
                 <div class="row copyright">
                     <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span
-                                    class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>
+                                    class="icon-long-arrow-up mr-2"></span> 返回顶部</a></div>
                     <div class="col-md-6 text-center text-md-left">
                         <p>&copy; 2020. All Rights Reserved. Design by <a href="http://www.bootstrapmb.com"
                                                                           target="_blank"
