@@ -16,7 +16,7 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 
     <!doctype html>
-    <html lang="en">
+    <html lang="cn">
 
     <head>
         <!-- BEGIN: Title -->
@@ -78,22 +78,23 @@ AppAsset::register($this);
 
                     <!-- 导航栏 BEGIN: #main-nav  TODO 导航栏调转-->
                     <div class="collapse navbar-collapse" id="main-nav">
+                        <ul class="navbar-nav ml-auto">
                         <?php
 
                         $menuItems = [
-                            ['label' => 'Home', 'url' => ['/site/index']],
-                            ['label' => 'About', 'url' => ['/site/about']],
-                            ['label' => 'Contact', 'url' => ['/site/contact']],
+                            ['label' => '主页', 'url' => ['/site/index']],
+                            ['label' => '关于', 'url' => ['/site/about']],
+                            ['label' => '联系我们', 'url' => ['/site/contact']],
                         ];
 
                         if (Yii::$app->user->isGuest) {
-                            $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                            $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                            $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
+                            $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
                         } else {
                             $menuItems[] = '<li>'
                                 . Html::beginForm(['/site/modify'], 'post')
                                 . Html::submitButton(
-                                    'modifyInfo',
+                                    '修改信息',
                                     ['class' => 'btn btn-link logout']
                                 )
                                 . Html::endForm()
@@ -116,12 +117,13 @@ AppAsset::register($this);
                                 . '</li>';
 
                         }
+
                         echo Nav::widget([
-                            'options' => ['class' => 'navbar-nav navbar-right'],
+                            'options' => ['class' => 'nav-item'],
                             'items' => $menuItems
                         ]);
                         ?>
-
+                        </ul>
                     </div>
                     <!-- END: #main-nav -->
 
@@ -262,10 +264,11 @@ AppAsset::register($this);
     <!-- END: .site-wrap -->
 
     <!-- Loader -->
-    <div id="site-overlayer"></div>
-    <div class="site-loader-wrap">
-        <div class="site-loader"></div>
-    </div>
+
+<!--    <div id="site-overlayer"></div>-->
+<!--    <div class="site-loader-wrap">-->
+<!--        <div class="site-loader"></div>-->
+<!--    </div>-->
 
     <!-- BEGIN: JavaScripts -->
     <script src="assets/frontend/js/jquery-3.4.1.min.js"></script>
