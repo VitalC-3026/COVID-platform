@@ -5,6 +5,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/bootstrap-wysihtml5/css/bootstrap-
 AppAsset_b::addScript($this, 'web/assets/plugins/ckeditor/ckeditor.js');
 AppAsset_b::addScript($this, 'web/assets/plugins/bootstrap-wysihtml5/js/bootstrap3-wysihtml5.js');
 AppAsset_b::addScript($this, 'web/assets/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js');
+AppAsset_b::addScript($this, 'web/assets/ckeditor/ckeditor.js');
 ?>
 <section id="main-content">
     <div class="row">
@@ -55,10 +56,17 @@ AppAsset_b::addScript($this, 'web/assets/plugins/bootstrap-wysihtml5/js/wysihtml
                     </div>
                     <div class="row" style="margin: 10px">
                         <label class="control-label">正文内容：</label>
-                        <textarea class="textarea form-control" rows="10" cols="80" placeholder="请输入文字 ..." style="width: 100%; height: 200px; max-width: 100%">
+                        <textarea id="editor" class="textarea form-control ckeditor" rows="10" cols="80" placeholder="请输入文字 ..." style="width: 100%; height: 200px; max-width: 100%">
                             
                         </textarea>
                     </div>
+                    <script>
+                        ClassicEditor
+                            .create( document.querySelector( '#editor' ) )
+                            .catch( error => {
+                                console.error( error );
+                            } );
+                    </script>
                     <div class="row" style="margin: 10px" align="right">
                         <button type="button" class="btn btn-primary">提交审核</button>
                     </div>
