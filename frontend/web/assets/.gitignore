@@ -1,9 +1,16 @@
 *
 !ckeditor
+!ckeditor/*
 !css
+!css/*
 !fonts
+!fonts/*
 !frontend
+!frontend/*
 !img
+!img/*
 !js
+!js/*
 !plugins
+!plugins/*
 !.gitignore
