@@ -92,7 +92,10 @@ AppAsset::register($this);
                             } else {
                                 $menuItems[] = ['label' => '修改信息', 'url' => ['/site/modify']];
 
-                                $menuItems[] = ['label' => '后台管理', 'url' => ['/backend/site/index']];
+                                if (Yii::$app->user->identity->type == 2 || Yii::$app->user->identity->type == 3) {
+                                    $menuItems[] = ['label' => '后台管理', 'url' => ['/backend/site/index']];
+                                }
+
                                 $menuItems[] = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><span>"
                                     . Html::beginForm(['/site/logout'], 'post')
                                     . "<button class='btn btn-outline-secondary'>登出("
