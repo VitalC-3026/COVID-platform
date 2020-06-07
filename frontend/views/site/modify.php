@@ -2,7 +2,10 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
+
 /* @var $model \..\models\ModifyForm */
+
+/* @var $message string 发送的通知信息 */
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
@@ -10,29 +13,68 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Modify';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>填入想要修改的信息，并完成验证</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'modify-form']); ?>
-
-            <?= $form->field($model, 'account')->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->account]) ?>
-
-            <?= $form->field($model, 'password')->passwordInput() ?>
-
-            <?= $form->field($model, 'newpassword')->passwordInput() ?>
-
-            <?= $form->field($model, 'newusername')->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->username]) ?>
-
-
-            <div class="form-group">
-                <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'modify-button']) ?>
+<div class="site-modify">
+    <!-- BEGIN: .cover -->
+    <div class="page-heading-85912" style="background-image: url('assets/frontend/images/hero_bg_3.jpg')">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-7">
+                    <h1 class="mb-0 heading text-white">修改信息</h1>
+                    <p class="mb-0 text-white">在这里，您可以修改您的账户密码和用户名，如果想要修改账户或者进行其他信息修改，请联系管理员。</p>
+                </div>
             </div>
-
-            <?php ActiveForm::end(); ?>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-6">
+                <?php
+                if (isset($message))
+                    echo "<h5 class=\"text-danger\">" . $message . "</h5>";
+                ?>
+            </div>
+        </div>
+    </div>
+    <div class="custom-breadcrumns-23195 border-bottom">
+        <div class="container">
+            <a href="<?php echo Yii::$app->getHomeUrl(); ?>">主页</a>
+            <span class="mx-3 icon-keyboard_arrow_right"></span>
+            <span class="current">修改信息</span>
+        </div>
+    </div>
+    <!-- END: .cover -->
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+
+
+                <?php $form = ActiveForm::begin(['id' => 'modify-form',
+                    'fieldConfig' => [
+                        'errorOptions' => ['class' => 'text-danger']
+                    ]
+                ]); ?>
+                <div class="form-group">
+                    <?= $form->field($model, 'account', ['labelOptions' => ['label' => '账户']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->account]) ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'password', ['labelOptions' => ['label' => '旧密码']])->passwordInput() ?>
+                </div>
+
+                <div class="form-group">
+                    <?= $form->field($model, 'newpassword', ['labelOptions' => ['label' => '新密码']])->passwordInput() ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'newusername', ['labelOptions' => ['label' => '新用户名']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->username]) ?>
+                </div>
+                <div class="form-group">
+                    <?= Html::submitButton('提交修改', ['class' => 'btn btn-primary', 'name' => 'modify-button']) ?>
+                </div>
+
+                <?php ActiveForm::end(); ?>
+            </div>
+        </div>
+    </div>
+
+
 </div>

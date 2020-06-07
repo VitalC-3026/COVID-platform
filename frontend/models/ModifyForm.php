@@ -27,18 +27,18 @@ class ModifyForm extends Model
     {
         return [
             ['account', 'trim'],
-            ['account', 'required'],
-            ['account', 'string', 'length' => 18],
+            ['account', 'required', 'message' => '账户不能为空'],
+            ['account', 'string', 'min' => 18, 'max' => 18, 'tooShort' => '账户应为18位身份证号', 'tooLong' => '账户应为18位身份证号'],
 
             ['newusername', 'trim'],
-            ['newusername', 'required'],
-            ['newusername', 'string', 'min' => 1, 'max' => 20],
+            ['newusername', 'required', 'message' => '新用户名不能为空'],
+            ['newusername', 'string', 'min' => 1, 'max' => 20, 'tooShort' => '用户名的长度必须在1到10之间', 'tooLong' => '用户名的长度必须在1到10之间'],
 
-            ['password', 'required'],
-            ['password', 'string', 'min' => 4],
+            ['password', 'required', 'message' => '密码不能为空'],
+            ['password', 'string'],
 
-            ['newpassword', 'required'],
-            ['newpassword', 'string', 'min' => 4]
+            ['newpassword', 'required', 'message' => '新密码不能为空'],
+            ['newpassword', 'string', 'min' => 4, 'tooShort' => "密码长度必须大于等于4位"]
         ];
     }
 

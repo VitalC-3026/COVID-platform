@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use common\models\MyUser;
@@ -130,8 +131,9 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Thank you for registration. You can login with your account.');
-            return $this->goHome();
+            return $this->render('index', [
+                'message' => "您已成功注册成为社区会员，请登录您的账户。"
+            ]);
         }
 
         return $this->render('signup', [
@@ -153,11 +155,14 @@ class SiteController extends Controller
             if ($model->setMyUser()) {
                 $model->setInfo();
                 Yii::$app->user->logout();
-                Yii::$app->session->setFlash('success', '你成功修改了你的信息');
-                return $this->goHome();
+                return $this->render('index', [
+                    'message' => "信息修改成功，请重新登录。"
+                ]);
             } else {
-                Yii::$app->session->setFlash('error', '用户名或密码错误');
-//                return $this->goHome();
+                return $this->render('modify', [
+                    'model' => $model,
+                    'message' => "用户名或密码错误"
+                ]);
             }
         }
         return $this->render('modify', [
@@ -214,5 +219,5 @@ class SiteController extends Controller
     {
         return $this->render('community');
     }
-    
+
 }
