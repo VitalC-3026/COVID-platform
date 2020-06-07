@@ -3,6 +3,8 @@ use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\data\ArrayDataProvider;
+use yii\grid\GridView;
 
 AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -51,176 +53,78 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                 <div class="panel-body">
                     
                     <div role="grid" id="example_wrapper" class="dataTables_wrapper form-inline no-footer">
-                    
-                        <div class="row" margin-top="10px">
-                            <div class="col-xs-6">
-                                <div class="dataTables_length" id="example_length">
-                                    <label>
-                                        <select name="example_length" aria-controls="example" class="form-control input-sm">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select> records per page
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-xs-6" align="right">
-                                <div id="example_filter" class="dataTables_filter">
-                                    <label>Search:
-                                        <input type="search" class="form-control input-sm" aria-controls="example">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>身份证号码</th>
-                                    <th>姓名</th>
-                                    <th>用户名</th>
-                                    <th>性别</th>
-                                    <th>联系方式</th>
-                                    <th>入职时间</th>
-                                    <th>工作类型</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>我的朋友</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2019-10-12</td>
-                                    <td>超级管理员</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>Colleen Hurst</td>
-                                    <td>Javascript Developer</td>
-                                    <td>San Francisco</td>
-                                    <td>39</td>
-                                    <td>2009/09/15</td>
-                                    <td>$205,500</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>Sonya Frost</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>23</td>
-                                    <td>2008/12/13</td>
-                                    <td>$103,600</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>Jena Gaines</td>
-                                    <td>Office Manager</td>
-                                    <td>London</td>
-                                    <td>30</td>
-                                    <td>2008/12/19</td>
-                                    <td>$90,560</td>
-                                </tr>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>Quinn Flynn</td>
-                                    <td>Support Lead</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>2013/03/03</td>
-                                    <td>$342,000</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
                         <div class="row">
-                            <div class="col-xs-12" align="right">
-                                <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button previous disabled" aria-controls="example" tabindex="0" id="example_previous">
-                                            <a href="#">Previous</a>
-                                        </li>
-                                        <li class="paginate_button active" aria-controls="example" tabindex="0"><a href="#">1</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">2</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">3</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">4</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">5</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="example" tabindex="0"><a href="#">6</a>
-                                        </li>
-                                        <li class="paginate_button next" aria-controls="example" tabindex="0" id="example_next"><a href="#">Next</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="col-lg-12">
+                              <?php echo GridView::widget([
+                                //设置GridView的ID
+                                'id' => 'residentGridView',
+                                //设置数据提供器
+                                'dataProvider' => $provider,
+                                //设置筛选模型
+                                'filterModel' => $model,
+                                'columns' => [
+                                  //复选框列
+                                  ['class' => 'yii\grid\CheckboxColumn'],
+                                  //显示序号列
+                                  ['class' => 'yii\grid\SerialColumn'],
+                                  [
+                                    //设置字段显示标题
+                                    'label' => '身份证号码',
+                                    //字段名
+                                    'attribute' => 'account',
+                                    //格式化
+                                    'format' => 'raw',
+                                    //设置单元格样式
+                                    'headerOptions' => [
+                                      'style' => 'width:180px;',
+                                    ],
+                                  ],
+                                  [
+                                    'label' => '姓名',
+                                    'attribute' => 'username',
+                                    'format' => 'raw',
+                                  ],
+                                  [
+                                    'label' => '性别',
+                                    //设置筛选选项
+                                    'filter' => [0 => '男', 1 => '女'],
+                                    'attribute' => 'sex',
+                                    'format' => 'raw',
+                                    'value' => function($data){
+                                      return ($data->sex === 0) ? '男' : '女';
+                                    },
+                                    'headerOptions' => [
+                                      'style' => 'width:60px;',
+                                    ],
+                                  ],
+                                  [
+                                    'label' => '年龄',
+                                    'attribute' => 'age',
+                                    'format' => 'raw',
+                                    'headerOptions' => [
+                                      'style' => 'width:60px;',
+                                    ],
+                                  ],
+                                  [
+                                    'label' => '联系方式',
+                                    'attribute' => 'tel',
+                                    'format' => 'raw',
+                                  ],
+                                  [
+                                    'label' => '入职时间',
+                                    'attribute' => 'committee.in_date',
+                                    'format' => 'raw',
+                                  ],
+                                  [
+                                    'label' => '等级',
+                                    'attribute' => 'type',
+                                    'format' => 'raw',
+                                    'value' => function($data) {
+                                        return ($data->type === 2) ? '超级管理员' : '普通管理员' ;
+                                    }
+                                  ],
+                                ],
+                              ]); ?>
                             </div>
                         </div>
                     </div>

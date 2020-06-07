@@ -3,14 +3,15 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * 社区工作者模型
- *
- * @property string $inDate         入职时间
- * @property bool   $isAdmin        是否为超管
+ * @property string $account        身份证号
+ * @property string $in_date         入职时间
+ * @property bool   $is_admin        是否为超管
  */
-class Committee extends User
+class Committee extends ActiveRecord
 {
 
     public static function tableName()
@@ -28,7 +29,7 @@ class Committee extends User
      */
     public function givePriority($account, $type)
     {
-        if (!$this->isAdmin)
+        if (!$this->is_admin)
         {
             echo 'Access failed.';
             return false;
@@ -39,10 +40,14 @@ class Committee extends User
     }
 
     // basic setters
-    public function setInDate($inDate) { $this->inDate = $inDate; }
-    public function setIsAdmin($isAdmin) { $this->isAdmin = $isAdmin; }
+    public function setInDate($inDate) { $this->in_date = $inDate; }
+    public function setIsAdmin($isAdmin) { $this->is_admin = $isAdmin; }
 
     // basic getters
-    public function getInDate() { return $this->inDate; }
-    public function getIsAdmin() { return $this->isAdmin; }
+    public function getInDate() { return $this->in_date; }
+    public function getIsAdmin() { return $this->is_admin; }
+
+    public function getUser() {
+        return $this->hasOne(User::className(), ['account' => 'account']);
+    }
 }

@@ -86,8 +86,8 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     'filter' => [0 => '男', 1 => '女'],
                                     'attribute' => 'sex',
                                     'format' => 'raw',
-                                    'value' => function ($data) {
-                                      return ($data->sex == 0) ? '男' : '女';
+                                    'value' => function($data){
+                                      return ($data->sex === 0) ? '男' : '女';
                                     },
                                     'headerOptions' => [
                                       'style' => 'width:60px;',
@@ -106,37 +106,22 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     'attribute' => 'tel',
                                     'format' => 'raw',
                                   ],
-                                  /*[
+                                  [
                                     'label' => '单元号',
-                                    'attribute' => 'unit',
+                                    'attribute' => 'resident.unit',
                                     'format' => 'raw',
                                   ],
                                   
                                   [
                                     'label' => '楼',
-                                    'attribute' => 'building',
+                                    'attribute' => 'resident.building',
                                     'format' => 'raw',
                                   ],
                                   [
                                     'label' => '房间号',
-                                    'attribute' => 'room',
+                                    'attribute' => 'resident.room',
                                     'format' => 'raw',
-                                  ],*/
-                                  /*[
-                                    'header' => '操作',
-                                    'class' => 'yii\grid\ActionColumn',
-                                    //设置显示模板
-                                    'template' => '{upd} {del}',
-                                    //下面的按钮设置，与上面的模板设置相关联
-                                    'buttons' => [
-                                      'upd' => function ($url, $model, $key) {
-                                        return '<a href="' . Url::toRoute(['test/upd', 'id' => $key]) . '" rel="external nofollow" class="btn btn-warning">修改</a>';
-                                      },
-                                      'del' => function ($url, $model, $key) {
-                                        return '<a href="' . Url::toRoute(['test/del', 'id' => $key]) . '" rel="external nofollow" class="btn btn-danger">删除</a>';
-                                      },
-                                    ],
-                                  ],*/
+                                  ],
                                 ],
                               ]); ?>
                             </div>

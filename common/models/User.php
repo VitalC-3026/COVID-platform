@@ -25,7 +25,7 @@ use yii\web\IdentityInterface;
  * @property string $password      登录时传入的密码，未加密
  * @property string $auth_key      认证信息
  * @property string $name          姓名
- * @property bool $sex             性别
+ * @property bool   $sex           性别
  * @property int    $age           年龄
  * @property string $tel           联系方式
  * @property int    $type          权限类别
@@ -121,7 +121,13 @@ class User extends ActiveRecord implements IdentityInterface
     // 获取所有的居民
     public function getResident()
     {
-        return $this->hasOne(Resident::className(), ['account' => 'account']) -> asArray();
+        return $this->hasOne(Resident::className(), ['account' => 'account']);
+    }
+
+    // 获取所有的职员
+    public function getCommittee()
+    {
+        return $this->hasOne(Committee::className(), ['account' => 'account']);
     }
 
     // basic setters

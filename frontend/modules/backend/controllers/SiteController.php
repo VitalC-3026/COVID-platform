@@ -11,9 +11,12 @@ use yii\data\ActiveDataProvider;
 use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
+use frontend\modules\backend\models\ResidentSearch;
+use frontend\modules\backend\models\CommitteeSearch;
 use common\models\PriorityType;
 use common\models\Resident;
 use common\models\News;
+
 /**
  * Site controller
  */
@@ -53,7 +56,7 @@ class SiteController extends Controller
      */
     public function actionResinfo()
     {
-        $resident = new Resident();
+        $resident = new ResidentSearch();
         $provider = $resident->search(Yii::$app->request->get());
         
         return $this->render('resinfo',[
@@ -69,8 +72,12 @@ class SiteController extends Controller
      */
     public function actionAdmininfo()
     {
-        $model = new AdminForm();
-        return $this->render('admininfo');
+        $committee = new CommitteeSearch();
+        $provider = $committee->search(Yii::$app->request->get());
+        return $this->render('admininfo',[
+            'model' => $committee,
+            'provider' => $provider,
+        ]);
     }
 
     /**

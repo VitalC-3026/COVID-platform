@@ -4,19 +4,23 @@ namespace common\models;
 
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\db\ActiveRecord;
+use common\models\User;
 
 /**
  * 居民模型
+ * @property string $account        身份证号
  * @property string $building       楼
  * @property string $unit           单元
  * @property string $room           房间
  */
-class Resident extends User
+class Resident extends ActiveRecord
 {
-    /*public static function tableName()
+
+    public static function tableName()
     {
         return '{{%Resident}}';
-    }*/
+    }
 
     // basic setters
     public function setBuilding($building) { $this->building = $building; }
@@ -37,8 +41,10 @@ class Resident extends User
         ];
     }
 
-    public function search($params) {
-        $query = self::find();
+    /*public function search($params) {
+        // $query = $this->getAllResident();
+        // $query = self::find()->with('user');
+        // $query = self::find()->where(['account' => Yii::$app->user->identity->account]);
         $provider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -51,7 +57,7 @@ class Resident extends User
                     'account' => SORT_DESC,
                 ],
                 'attributes' => [
-                    'account', 'username', 'age','sex'
+                    'account', 'user.username', 'user.age','user.sex'
                 ]
             ]   
         ]);
@@ -63,14 +69,13 @@ class Resident extends User
         $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like', 'username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
 
         return $provider;
-    } 
+    } */
 
 
     /**
      * 获取社区中所有的居民信息
     */
-    public static function getAllResident(){
-        $model = self::find() -> asArray() -> all();
-        return $model;
+    public function getUser(){
+        return $this->hasOne(User::className(), ['account' => 'account']);
     }
 }
