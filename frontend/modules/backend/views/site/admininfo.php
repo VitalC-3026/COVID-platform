@@ -30,7 +30,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                     <button id="addWorker" type="button" class="btn btn-primary" onclick="javascript:jump()">添加新工作人员</button>
                     <script type="text/javascript">
                         <?php //TODO: 通过路由跳转地址 ?>
-                        function jump(){ window.location.href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddadmin"; }
+                        function jump(){ window.location.href="http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddadmin"; }
                     </script>
                 </div>
                 
@@ -87,11 +87,11 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   [
                                     'label' => '性别',
                                     //设置筛选选项
-                                    'filter' => [0 => '男', 1 => '女'],
+                                    'filter' => [1 => '男', 0 => '女'],
                                     'attribute' => 'sex',
                                     'format' => 'raw',
                                     'value' => function($data){
-                                      return ($data->sex === 0) ? '男' : '女';
+                                      return ($data->sex === 1) ? '男' : '女';
                                     },
                                     'headerOptions' => [
                                       'style' => 'width:60px;',

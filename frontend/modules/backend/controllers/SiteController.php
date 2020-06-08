@@ -88,12 +88,16 @@ class SiteController extends Controller
     public function actionAddres()
     {
         $model = new ResidentForm();
-        if (Yii::$app->request->post()) {
-            $request = Yii::$app->request;
-            $model->account = $request->post('account');
-            echo $model->account;
-            Yii::$app->session->setFlash('success', '你成功添加了新职员');
-            return $this->render('resinfo', ['model' => $model,]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->addResident()) {
+                Yii::$app->session->setFlash('success', '成功添加新居民');
+                $resident = new ResidentSearch();
+                $provider = $resident->search(Yii::$app->request->get());
+                return $this->render('resinfo', ['message' => '成功添加新居民', 'model' => $resident, 'provider' => $provider]);
+            } else {
+                return $this->render('addres', ['model' => $model,]);
+            }
+            
         }
         return $this->render('addres', ['model' => $model,]);
     }
@@ -102,9 +106,11 @@ class SiteController extends Controller
     {
         $model = new AdminForm();
         if ($model->load(Yii::$app->request->post())){
-            if ($model->setAdministator()){
-                Yii::$app->session->setFlash('success', '你成功添加了新职员');
-                return $this->http_redirect('admininfo', ['model' => $model,]);
+            if ($model->addAdministator()){
+                Yii::$app->session->setFlash('success', '成功添加新职员');
+                $committee = new CommitteeSearch();
+                $provider = $committee->search(Yii::$app->request->get());
+                return $this->render('admininfo', ['message' => '成功添加新职员', 'model' => $committee, 'provider' => $provider]);
             }
         }
         return $this->render('addadmin', ['model' => $model,]);

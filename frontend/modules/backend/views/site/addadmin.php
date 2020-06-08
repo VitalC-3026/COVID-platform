@@ -50,9 +50,9 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                                 <?= $form->field($model, 'account')->textInput(['autofocus' => true])->label('身份证号'); ?>
                                 <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('职员姓名'); ?>
                                 <?= $form->field($model, 'sex')->radioList(['1'=>'男','2'=>'女'],['class'=>'control-label col-sm-1'])->label('性别'); ?>
+                                <?= $form->field($model, 'age')->textInput(['autofocus' => true])->label('年龄'); ?>
                                 <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
-                                <?= $form->field($model, 'enterdate')->textInput(['autofocus' => true])->label('入职时间'); ?>
-                                <?= $form->field($model, 'priority')->radioList(['1'=>'超级管理员','2'=>'职员'],['class'=>'control-label col-sm-2'])->label('权限分配'); ?>
+                                <?= $form->field($model, 'priority')->radioList(['2'=>'超级管理员','1'=>'普通职员'],['class'=>'control-label col-sm-2'])->label('权限分配'); ?>
                                 <?= $form->field($model, 'rights')->checkBoxList(['1'=>'填写健康报表','2'=>'发布公告新闻','3' => '查看数据库'],['class'=>'control-label col-sm-2'])->label('职权分配'); ?>
                                 <div class="form-group">
                                     <div class="col-sm-6" align="right">

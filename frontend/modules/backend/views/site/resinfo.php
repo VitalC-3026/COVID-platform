@@ -29,7 +29,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                     <button id="addRes" type="button" class="btn btn-primary" name="addNewRes" onclick="javascript:jump()">添加新居民</button>
                     <script type="text/javascript">
                         <?php //TODO: 通过路由跳转地址 ?>
-                        function jump(){ window.location.href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddres"; }
+                        function jump(){ window.location.href="http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddres"; }
                     </script>
                 </div>
             </div>
@@ -83,11 +83,11 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   [
                                     'label' => '性别',
                                     //设置筛选选项
-                                    'filter' => [0 => '男', 1 => '女'],
+                                    'filter' => [1 => '男', 0 => '女'],
                                     'attribute' => 'sex',
                                     'format' => 'raw',
                                     'value' => function($data){
-                                      return ($data->sex === 0) ? '男' : '女';
+                                      return ($data->sex === 1) ? '男' : '女';
                                     },
                                     'headerOptions' => [
                                       'style' => 'width:60px;',

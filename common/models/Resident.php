@@ -35,47 +35,21 @@ class Resident extends ActiveRecord
     // rules
     public function rules(){
         return [
-          [['id', 'name', 'sex', 'age'], 'trim'],
-          [['age'], 'integer'],
-          ['name', 'string'],
+          [['account', 'room'], 'trim'],
         ];
     }
-
-    /*public function search($params) {
-        // $query = $this->getAllResident();
-        // $query = self::find()->with('user');
-        // $query = self::find()->where(['account' => Yii::$app->user->identity->account]);
-        $provider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => [
-                'pageSize' => 10,
-                'pageParam' => 'p',
-                'pageSizeParam' => 'pageSize',
-            ],
-            'sort' => [
-                'defaultOrder' => [
-                    'account' => SORT_DESC,
-                ],
-                'attributes' => [
-                    'account', 'user.username', 'user.age','user.sex'
-                ]
-            ]   
-        ]);
-
-        if (!($this->load($params) && $this->validate())) {
-            return $provider;
-        }
-
-        $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like', 'username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
-
-        return $provider;
-    } */
-
 
     /**
      * 获取社区中所有的居民信息
     */
     public function getUser(){
         return $this->hasOne(User::className(), ['account' => 'account']);
+    }
+
+    /**
+     *  根据身份证号判断是否已经存在居民
+    */
+    public function getResidentByIdentity($account) {
+        return static::findOne(['account' => $account]);
     }
 }

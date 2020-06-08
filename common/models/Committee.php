@@ -50,4 +50,8 @@ class Committee extends ActiveRecord
     public function getUser() {
         return $this->hasOne(User::className(), ['account' => 'account']);
     }
+
+    public function getCommitteeByIdentity($account){
+        return static::findOne(['account' => $account]);
+    }
 }
