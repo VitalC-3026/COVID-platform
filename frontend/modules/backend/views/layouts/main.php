@@ -1,5 +1,5 @@
 <?php
-
+/* @var $content string */
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
 use yii\heplers\Url;

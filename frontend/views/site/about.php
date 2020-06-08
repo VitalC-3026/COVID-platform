@@ -3,8 +3,8 @@
   <div class="container">
     <div class="row align-items-end">
       <div class="col-lg-7">
-        <h1 class="mb-0 heading text-white">About Us</h1>
-        <p class="mb-0 text-white">A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
+        <h1 class="mb-0 heading text-white">关于我们</h1>
+        <p class="mb-0 text-white">本页面用来介绍我们的团队，下面也展示了我们团队的每个人的个人作业链接地址和团队的整体介绍。对于网站的任何问题都可以通过邮件联系我们。</p>
       </div>
     </div>
   </div>
@@ -12,9 +12,9 @@
 
 <div class="custom-breadcrumns-23195 border-bottom">
   <div class="container">
-    <a href="index.html">Home</a>
+    <a href="<?php echo Yii::$app->getHomeUrl(); ?>">主页</a>
     <span class="mx-3 icon-keyboard_arrow_right"></span>
-    <span class="current">About Us</span>
+    <span class="current">关于</span>
   </div>
 </div>
 <!-- END: .cover -->
@@ -69,10 +69,10 @@
           <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 
             <div class="counter-78529 d-flex align-items-start">
-              <div class="icon-wrap"><span class="flaticon-muscle text-primary icon-stethoscope"></span></div>
+              <div class="icon-wrap"><span class="flaticon-muscle text-primary icon-github"></span></div>
               <div class="counter-text">
-                <strong class="block-counter-78529" data-number="2260">0</strong>
-                <span>Number of Medical Staffs</span>
+                <strong class="block-counter-78529" data-number="100">0</strong>
+                <span>git提交次数</span>
               </div>
             </div>
 
@@ -81,28 +81,28 @@
             <div class="counter-78529 d-flex align-items-start">
               <div class="icon-wrap"><span class="flaticon-stationary-bike text-primary icon-person"></span></div>
               <div class="counter-text">
-                <strong class="block-counter-78529" data-number="210">0</strong>
-                <span>Person Under Monitoring</span>
+                <strong class="block-counter-78529" data-number="5">0</strong>
+                <span>团队成员数量</span>
               </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-3  mb-4 mb-lg-0">
 
             <div class="counter-78529 d-flex align-items-star">
-              <div class="icon-wrap"><span class="flaticon-banana text-primary icon-healing"></span></div>
+              <div class="icon-wrap"><span class="flaticon-banana text-primary icon-sun-o"></span></div>
               <div class="counter-text">
-                <strong class="block-counter-78529" data-number="887">0</strong>
-                <span>Person Under Investigation</span>
+                <strong class="block-counter-78529" data-number="32">0</strong>
+                <span>开发项目所花的天数</span>
               </div>
             </div>
 
           </div>
           <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
             <div class="counter-78529 d-flex align-items-start">
-              <div class="icon-wrap"><span class="flaticon-heart text-primary icon-heartbeat"></span></div>
+              <div class="icon-wrap"><span class="flaticon-heart text-primary icon-file-text"></span></div>
               <div class="counter-text">
-                <strong class="block-counter-78529" data-number="1920">0</strong>
-                <span>Number of Health Program</span>
+                <strong class="block-counter-78529" data-number="35">0</strong>
+                <span>项目文件数</span>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
       <div class="row justify-content-between">
         <div class="col-md-8 col-lg-8">
           <!-- Add '.heading-sm' to make heading smaller  -->
-          <h2 class="section-heading line-primary mb-4 mb-md-4 mb-lg-5">NoCov Team</h2>
+          <h2 class="section-heading line-primary mb-4 mb-md-4 mb-lg-5">专业团队</h2>
         </div>
         <div class="col-md-4 text-md-right col-lg-4 mb-4">
           <a href="#" class="slider-21934-prev" id="team-prev">
@@ -145,7 +145,7 @@
               <div class="media-29191">
                 <a href="#">
                   <figure>
-                    <img src="assets/frontend/images/person_man_1.jpg" alt="Image" class="img-fluid">
+                    <img src="assets/frontend/images/left_2.png" alt="Image" class="img-fluid">
                   </figure> 
                 </a>
                 <div class="media-29191-body">
@@ -161,7 +161,7 @@
               <div class="media-29191">
                 <a href="#">
                   <figure>
-                    <img src="assets/frontend/images/person_man_2.jpg" alt="Image" class="img-fluid">
+                    <img src="assets/frontend/images/left_1.png" alt="Image" class="img-fluid">
                   </figure> 
                 </a>
                 <div class="media-29191-body">
@@ -177,7 +177,7 @@
               <div class="media-29191">
                 <a href="#">
                   <figure>
-                    <img src="assets/frontend/images/person_woman_1.jpg" alt="Image" class="img-fluid">
+                    <img src="assets/frontend/images/center.png" alt="Image" class="img-fluid">
                   </figure> 
                 </a>
                 <div class="media-29191-body">
@@ -194,7 +194,7 @@
               <div class="media-29191">
                 <a href="#">
                   <figure>
-                    <img src="assets/frontend/images/person_man_3.jpg" alt="Image" class="img-fluid">
+                    <img src="assets/frontend/images/right_1.png" alt="Image" class="img-fluid">
                   </figure> 
                 </a>
                 <div class="media-29191-body">
@@ -210,7 +210,7 @@
               <div class="media-29191">
                 <a href="#">
                   <figure>
-                    <img src="assets/frontend/images/person_woman_2.jpg" alt="Image" class="img-fluid">
+                    <img src="assets/frontend/images/right_2.png" alt="Image" class="img-fluid">
                   </figure> 
                 </a>
                 <div class="media-29191-body">
@@ -222,20 +222,20 @@
             <!-- END: .item -->
 
             <!-- BEGIN: .item -->
-            <div class="item">
-              <div class="media-29191">
-                <a href="#">
-                  <figure>
-                    <img src="assets/frontend/images/person_woman_1.jpg" alt="Image" class="img-fluid">
-                  </figure> 
-                </a>
-                <div class="media-29191-body">
-                  <h2>Joann Byers</h2>
-                  <span class="d-block position">VP &amp; Co-Founder</span>
-                </div>
-              </div>
-            </div>
-            <!-- END: .item -->
+<!--            <div class="i-->
+            <!-- END: tem">-->
+              <!--              <div class="media-29191">-->
+              <!--                <a href="#">-->
+              <!--                  <figure>-->
+              <!--                    <img src="assets/frontend/images/person_woman_1.jpg" alt="Image" class="img-fluid">-->
+              <!--                  </figure> -->
+              <!--                </a>-->
+              <!--                <div class="media-29191-body">-->
+              <!--                  <h2>Joann Byers</h2>-->
+              <!--                  <span class="d-block position">VP &amp; Co-Founder</span>-->
+              <!--                </div>-->
+              <!--              </div>-->
+              <!--            </div>.item -->
 
           </div>
           <!-- END: .slider-21934 -->
@@ -244,7 +244,7 @@
 
       <div class="row justify-content-center">
         <div class="col-md-4">
-          <a href="#" class="btn btn-primary btn-block">Become a volunteer</a>
+          <a href="https://github.com/VitalC-3026/COVID-platform" class="btn btn-primary btn-block">为社区系统贡献代码</a>
         </div>
       </div>
 
@@ -260,10 +260,10 @@
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-md-5">
-          <h2 class="section-heading line-primary">Community Preventive Measures</h2>
+          <h2 class="section-heading line-primary">组员作业展示</h2>
         </div>
         <div class="col-md-6">
-          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+          <p>作业中主要包括3次个人作业和7份团队作业，部分作业在本页面均有github链接，下面为小组成员的个人作业展示。</p>
         </div>
       </div>
       <div class="row">
@@ -346,6 +346,7 @@
           </div>
           <!-- END: .widget-29182 -->
         </div>
+
         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
           <!-- BEGIN: .widget-29182 -->
           <!-- 
