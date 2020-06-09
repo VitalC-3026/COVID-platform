@@ -2,6 +2,8 @@
 use frontend\assets\AppAsset_b;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use yii\datetime\DateTimePicker;
+
 AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
 ?>
 <section id="main-content">
@@ -53,6 +55,19 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                                 <?= $form->field($model, 'age')->textInput(['autofocus' => true])->label('年龄'); ?>
                                 <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
                                 <?= $form->field($model, 'priority')->radioList(['2'=>'超级管理员','1'=>'普通职员'],['class'=>'control-label col-sm-2'])->label('权限分配'); ?>
+                                <?= $form->field($model, 'enterdate')->widget(DateTimePicker::classname(), [
+                                    'options' => ['value' => $currentYear],
+                                    'removeButton' => false,
+                                    'pluginOptions' => [
+                                        'autoclose' => true,
+                                        'todayHighlight' => true,
+                                        'format' => 'yyyy-mm-dd',// yyyy选择到年，yyyy-mm到月，yyyy-mm-dd到天
+                                        'startView'=>0,    // 范围（0：日  1：天 2：年）
+                                        'maxViewMode'=>2,  // 最大选择范围（年）
+                                        'minViewMode'=>0,  // 最小选择范围（年）
+                             
+                                    ]
+                                ]); ?>
                                 <?= $form->field($model, 'rights')->checkBoxList(['1'=>'填写健康报表','2'=>'发布公告新闻','3' => '查看数据库'],['class'=>'control-label col-sm-2'])->label('职权分配'); ?>
                                 <div class="form-group">
                                     <div class="col-sm-6" align="right">

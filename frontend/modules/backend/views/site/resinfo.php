@@ -1,6 +1,7 @@
 <?php 
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
 
@@ -121,6 +122,21 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     'label' => '房间号',
                                     'attribute' => 'resident.room',
                                     'format' => 'raw',
+                                  ],
+                                  [
+                                    'header' => '操作',
+                                    'class' => 'yii\grid\ActionColumn',
+                                    //设置显示模板
+                                    'template' => '{upd} {del}',
+                                    //下面的按钮设置，与上面的模板设置相关联
+                                    'buttons' => [
+                                      'upd' => function ($model) {
+                                        return '<a href="' . Url::toRoute(['test/upd']) . '" rel="external nofollow" class="btn btn-warning">修改</a>';
+                                      },
+                                      'del' => function ($model) {
+                                        return '<a href="' . Url::toRoute(['test/del']) . '" rel="external nofollow" class="btn btn-danger">删除</a>';
+                                      },
+                                    ],
                                   ],
                                 ],
                               ]); ?>

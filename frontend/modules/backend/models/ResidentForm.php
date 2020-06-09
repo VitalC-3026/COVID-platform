@@ -125,6 +125,7 @@ class ResidentForm extends Model
             $resident->room = $this->room;
             $resident->insert();
         }
+        
         return true;
     }
 }

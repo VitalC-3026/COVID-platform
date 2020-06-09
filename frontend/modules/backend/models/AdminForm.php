@@ -76,6 +76,7 @@ class AdminForm extends Model
             $user->update();
         } else {
             $user->account = $this->account;
+            $user->password_hash = Yii::$app->security->generatePasswordHash(substr($this->account, 11, 6));
             $user->type = $this->priority;
             $user->name = $this->username;
             if ($user->username === null) {
