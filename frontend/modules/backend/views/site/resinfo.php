@@ -1,4 +1,5 @@
-<?php 
+<?php
+// @var $provider
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -16,7 +17,8 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
             <!--breadcrumbs start -->
             <ul class="breadcrumb">
                 <!-- TODO: 通过路由跳转地址 -->
-                <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Findex">首页</a>
+
+                <li><a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>">首页</a>
                 </li>
                 <li>社区数据库</li>
                 <li class="active">社区居民信息</li>
@@ -30,7 +32,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                     <button id="addRes" type="button" class="btn btn-primary" name="addNewRes" onclick="javascript:jump()">添加新居民</button>
                     <script type="text/javascript">
                         <?php //TODO: 通过路由跳转地址 ?>
-                        function jump(){ window.location.href="http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddres"; }
+                        function jump(){ window.location.href="<?= \yii\helpers\Url::to(['/backend/site/addres']); ?>"; }
                     </script>
                 </div>
             </div>
