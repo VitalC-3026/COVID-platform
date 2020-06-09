@@ -13,7 +13,7 @@ AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.
             <!--breadcrumbs start -->
             <ul class="breadcrumb">
                 <!-- TODO: 通过路由跳转地址 -->
-                <li><a href="http://localhost:8080/web/index.php?r=backend%2Fsite%2Findex">首页</a>
+                <li><a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>">首页</a>
                 </li>
                 <li>社区数据库</li>
                 <li class="active">分配职员权限</li>
