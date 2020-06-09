@@ -12,6 +12,7 @@ use yii\data\ActiveDataProvider;
 use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
+use frontend\modules\backend\models\EditForm;
 use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\CommitteeSearch;
 use common\models\PriorityType;
@@ -165,8 +166,9 @@ class SiteController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $model = new EditForm();
 
-        return $this->render('edit');
+        return $this->render('edit', ['model' => $model]);
     }
 
     public function actionCensor()

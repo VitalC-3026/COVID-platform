@@ -28,7 +28,8 @@
         "codeception/module-yii2": "^1.0",
         "codeception/module-filesystem": "^1.0",
         "codeception/verify": "~0.5.0 || ~1.1.0",
-        "symfony/browser-kit": ">=2.7 <=4.2.4"
+        "symfony/browser-kit": ">=2.7 <=4.2.4",
+		"kartik-v/yii2-widget-datepicker": "*"
     },
     "config": {
         "process-timeout": 1800,

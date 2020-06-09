@@ -29,6 +29,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Command
 {
+    public const SUCCESS = 0;
+    public const FAILURE = 1;
+
     /**
      * @var string|null The default command name
      */
@@ -55,7 +58,7 @@ class Command
      */
     public static function getDefaultName()
     {
-        $class = \get_called_class();
+        $class = static::class;
         $r = new \ReflectionProperty($class, 'defaultName');
 
         return $class === $r->class ? static::$defaultName : null;
@@ -255,7 +258,7 @@ class Command
             $statusCode = $this->execute($input, $output);
 
             if (!\is_int($statusCode)) {
-                throw new \TypeError(sprintf('Return value of "%s::execute()" must be of the type int, %s returned.', \get_class($this), \gettype($statusCode)));
+                throw new \TypeError(sprintf('Return value of "%s::execute()" must be of the type int, "%s" returned.', static::class, get_debug_type($statusCode)));
             }
         }
 
@@ -344,7 +347,7 @@ class Command
     public function getDefinition()
     {
         if (null === $this->definition) {
-            throw new LogicException(sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', \get_class($this)));
+            throw new LogicException(sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', static::class));
         }
 
         return $this->definition;
@@ -450,10 +453,13 @@ class Command
 
     /**
      * @param bool $hidden Whether or not the command should be hidden from the list of commands
+     *                     The default value will be true in Symfony 6.0
      *
      * @return Command The current instance
+     *
+     * @final since Symfony 5.1
      */
-    public function setHidden(bool $hidden)
+    public function setHidden(bool $hidden /*= true*/)
     {
         $this->hidden = $hidden;
 
