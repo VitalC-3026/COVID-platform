@@ -47,7 +47,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         return $this->render('index');
     }
@@ -59,7 +59,7 @@ class SiteController extends Controller
      */
     public function actionResinfo()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $resident = new ResidentSearch();
         $provider = $resident->search(Yii::$app->request->get());
@@ -77,7 +77,7 @@ class SiteController extends Controller
      */
     public function actionAdmininfo()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $committee = new CommitteeSearch();
         $provider = $committee->search(Yii::$app->request->get());
@@ -94,7 +94,7 @@ class SiteController extends Controller
      */
     public function actionAddres()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $model = new ResidentForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -113,7 +113,7 @@ class SiteController extends Controller
 
     public function actionAddadmin()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $model = new AdminForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -129,7 +129,7 @@ class SiteController extends Controller
 
     public function actionRights()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $PriorityType = new PriorityType();
         // 实现可以把priorityType所有内容从数据库取出以数组形式返回给priorityType这个变量
@@ -144,7 +144,7 @@ class SiteController extends Controller
 
     public function actionHealthreport()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $model = new HealthForm();
         date_default_timezone_set('prc');
@@ -163,7 +163,7 @@ class SiteController extends Controller
 
     public function actionEdit()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
 
         return $this->render('edit');
@@ -171,7 +171,7 @@ class SiteController extends Controller
 
     public function actionCensor()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s', time());
@@ -189,7 +189,7 @@ class SiteController extends Controller
 
     public function actionInfo()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $dataProvider = new ActiveDataProvider([
             'query' => News::find(),

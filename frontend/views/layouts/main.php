@@ -92,7 +92,7 @@ AppAsset::register($this);
                             } else {
                                 $menuItems[] = ['label' => '修改信息', 'url' => ['/site/modify']];
 
-                                if (Yii::$app->user->identity->type == 2 || Yii::$app->user->identity->type == 3) {
+                                if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2) {
                                     $menuItems[] = ['label' => '后台管理', 'url' => ['/backend/site/index']];
                                 }
 
