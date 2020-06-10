@@ -66,7 +66,7 @@ class SiteController extends Controller
         $resident = new ResidentSearch();
         if ($resident->load(Yii::$app->request->post())) {
             
-            $result = Resident::find()->where(['account' => $model->account])->all();
+            $result = Resident::find()->where(['account' => $resident->account])->all();
             $result->delete();
             
         }
