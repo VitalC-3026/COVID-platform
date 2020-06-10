@@ -133,7 +133,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     //下面的按钮设置，与上面的模板设置相关联
                                     'buttons' => [
                                       'update' => function ($model) {
-                                        return Html::a('<span class="glyphicon glyphicon-pencil"></span>', Url::toRoute(['site/resinfo']), []);
+                                        return Html::a('<span class="glyphicon glyphicon-pencil"></span>', \yii\helpers\Url::to(['/backend/site/resinfo']), []);
                                       },
                                       'delete' => function ($url, $model, $key) {
                                         $options = [
@@ -146,7 +146,8 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                               'model' => $model,
                                             ]
                                         ];
-                                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', Url::toRoute(['site/resinfo']), $options);
+
+                                          return Html::a('<span class="glyphicon glyphicon-trash"></span>', \yii\helpers\Url::to(['/backend/site/resinfo']), $options);
                                       },
                                     ],
                                   ],
@@ -157,7 +158,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
 
                     </div>
                 </div>
-            </div>s
+            </div>
         </div>
     </div>
 </div>
