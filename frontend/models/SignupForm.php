@@ -1,6 +1,7 @@
 <?php
 namespace frontend\models;
 
+use common\models\Resident;
 use common\models\User;
 use Yii;
 use yii\base\Model;
@@ -49,6 +50,8 @@ class SignupForm extends Model
         $user->account = $this->account;
         $user->setPassword($this->password);
         $user->setUsername($this->username);
+        if(Resident::getResidentByIdentity($this->account)!=null)
+            $user->setType(0);
         $user->generateAuthKey();
         return $user->save() ;
     }

@@ -105,7 +105,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <!-- BEGIN: .feature-29103 -->
 
     </div>

@@ -12,6 +12,7 @@ use yii\db\ActiveRecord;
  * @property string $time           时间
  * @property string $title          标题
  * @property string $abstract       摘要
+ * @property string $content        正文
  * @property string $link           链接
  */
 class News extends ActiveRecord

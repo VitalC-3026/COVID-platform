@@ -2,7 +2,7 @@
 use frontend\assets\AppAsset_b;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-use yii\datetime\DateTimePicker;
+use kartik\date\DatePicker;
 
 AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
 ?>
@@ -56,9 +56,8 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                                 <?= $form->field($model, 'age')->textInput(['autofocus' => true])->label('年龄'); ?>
                                 <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
                                 <?= $form->field($model, 'priority')->radioList(['2'=>'超级管理员','1'=>'普通职员'],['class'=>'control-label col-sm-2'])->label('权限分配'); ?>
-                                <?= $form->field($model, 'enterdate')->widget(DateTimePicker::classname(), [
-                                    'options' => ['value' => $currentYear],
-                                    'removeButton' => false,
+                                <?= $form->field($model, 'enterdate')->widget(DatePicker::classname(), [
+                                    'options' => ['placeholder' => ''],
                                     'pluginOptions' => [
                                         'autoclose' => true,
                                         'todayHighlight' => true,
