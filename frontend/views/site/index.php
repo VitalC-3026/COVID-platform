@@ -761,13 +761,14 @@
     <script language="JavaScript">
         <?php $this->beginBlock('js_end') ?>
         function match(source,id){
-            if(parseInt(source)<0){
-                document.getElementById(id).innerText = source;
+            if(source === undefined)document.getElementById(id).innerText = "待国家卫健委数据公布中";
+            else if(parseInt(source)<0){
+                document.getElementById(id).innerText =  source;
             }
             else if(parseInt(source) === 0){
                 document.getElementById(id).innerText = "无变化";
             }
-            else document.getElementById(id).innerText = "+"+source;
+            else document.getElementById(id).innerText = "+" + source;
         }
         function data() {
             var dataApi = "http://49.232.173.220:3001/data/getStatisticsService";
@@ -782,31 +783,35 @@
                 var confirmedIncr = summaryDataIn["confirmedIncr"];
                 var curedIncr = summaryDataIn["curedIncr"];
                 var deadIncr = summaryDataIn["deadIncr"];
-                document.getElementById("globalTotal").innerText = confirmedCount;
-                document.getElementById("globalToday").innerText = confirmedIncr;
-                document.getElementById("globalNow").innerText = currentConfirmedCount;
-                document.getElementById("globalDeath").innerText = deadCount;
-                document.getElementById("globalDeathToday").innerText = deadIncr;
-                var deathRank = (parseInt(deadCount)/parseInt(confirmedCount)).toFixed(3)+ "";
-                var cureRank = (parseInt(curedCount)/parseInt(confirmedCount)).toFixed(3) + "";
-                document.getElementById("globalDeathRank").innerText = deathRank;
-                document.getElementById("globalCure").innerText = curedCount;
-                document.getElementById("globalCureToday").innerText = curedIncr;
-                document.getElementById("globalCureRank").innerText = cureRank;
+                document.getElementById("globalTotal").setAttribute("data-number",confirmedCount);
+                document.getElementById("globalToday").setAttribute("data-number",confirmedIncr);
+                console.log(confirmedIncr);
+                document.getElementById("globalNow").setAttribute("data-number",currentConfirmedCount);
+                document.getElementById("globalDeath").setAttribute("data-number",deadCount);
+                document.getElementById("globalDeathToday").setAttribute("data-number", deadIncr);
+                var deathRank = (parseInt(deadCount) * 100 /parseInt(confirmedCount)).toFixed(1)+ "";
+                var cureRank = (parseInt(curedCount) * 100/parseInt(confirmedCount)).toFixed(1) + "";
+                document.getElementById("globalDeathRank").setAttribute("data-number", deathRank);
+                document.getElementById("globalCure").setAttribute("data-number", curedCount);
+                document.getElementById("globalCureToday").setAttribute("data-number", curedIncr);
+                document.getElementById("globalCureRank").setAttribute("data-number", cureRank);
 
                 var nationData = newpneumoniadata;
-                document.getElementById("confirmTotal").innerText = nationData["confirmedCount"];
-                document.getElementById("inputTotal").innerText = nationData["suspectedCount"];
-                document.getElementById("cureTotal").innerText = nationData["curedCount"];
-                document.getElementById("deathTotal").innerText = nationData["deadCount"];
+                document.getElementById("confirmTotal").setAttribute("data-number", nationData["confirmedCount"]);
+                document.getElementById("inputTotal").setAttribute("data-number", nationData["suspectedCount"]);
+                document.getElementById("cureTotal").setAttribute("data-number", nationData["curedCount"]);
+                document.getElementById("deathTotal").setAttribute("data-number", nationData["deadCount"]);
                 match(nationData["confirmedIncr"],"confirmToday");
                 match(nationData["suspectedIncr"],"inputToday");
                 match(nationData["curedIncr"],"cureToday");
                 match(nationData["deadIncr"],"deathToday");
-
-
             })
         }
+        window.onbeforeunload = function(){
+            document.documentElement.scrollTop = 0;  //ie下
+            document.body.scrollTop = 0;  //非ie
+        }
+
         <?php $this->endBlock(); ?>
     </script>
 <?php $this->registerJs($this->blocks['js_end'],\yii\web\View::POS_END);//将编写的js代码注册到页面底部 ?>

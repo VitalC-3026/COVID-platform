@@ -32,12 +32,12 @@ class AppAsset_b extends AssetBundle
 
     ];
     public $js = [
-        'vendor/bootstrap/js/bootstrap.min.js',
-        'vendor/jquery/jquery-1.11.1.min.js',
-        'assets/js/jquery-1.10.2.min.js',
-        'assets/plugins/bootstrap/js/bootstrap.min.js',
-        'assets/plugins/waypoints/waypoints.min.js',
-        'assets/js/application.js'
+//        'vendor/bootstrap/js/bootstrap.min.js',
+//        'vendor/jquery/jquery-1.11.1.min.js',
+//        'assets/js/jquery-1.10.2.min.js',
+//        'assets/plugins/bootstrap/js/bootstrap.min.js',
+//        'assets/plugins/waypoints/waypoints.min.js',
+//        'assets/js/application.js'
     ];
     public $depends = [
         /* bootstrap.js ������
