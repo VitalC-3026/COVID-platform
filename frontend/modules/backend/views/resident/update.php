@@ -47,7 +47,7 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                                  ],]); ?>
                         <?= $form->field($model, 'account')->textInput(['autofocus' => true, 'value' => $model->account, 'readonly' => true])->label('身份证号'); ?>
                         <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('居民姓名'); ?>
-                        <?= $form->field($model, 'sex')->radioList(['1'=>'男','2'=>'女'],['class'=>'control-label col-sm-1'])->label('性别'); ?>
+                        <?= $form->field($model, 'sex')->radioList(['1'=>'男','0'=>'女'],['class'=>'control-label col-sm-1'])->label('性别'); ?>
                         <?= $form->field($model, 'age')->textInput(['autofocus' => true])->label('年龄'); ?>
                         <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
                         <?= $form->field($model, 'unit')->textInput(['autofocus' => true])->label('单元号'); ?>

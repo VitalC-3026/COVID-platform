@@ -535,3 +535,723 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1591794811.099
     'REQUEST_TIME' => 1591794811
 ]
+2020-06-10 19:00:15 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'frontend\modules\backend\controllers\CommitteeController' in file: D:\xampp\htdocs\yii\COVID-platform/frontend/modules/backend/controllers/CommitteeController.php. Namespace missing? in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\module...')
+#1 [internal function]: spl_autoload_call('frontend\\module...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(637): class_exists('frontend\\module...')
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('committee')
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(588): yii\base\Module->createController('admininfo')
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('committee/admin...')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-06-10 19:00:14 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/admininfo'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新居民'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fadmininfo'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51270'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Fadmininfo'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fadmininfo'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808414.987
+    'REQUEST_TIME' => 1591808414
+]
+2020-06-10 19:00:36 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: backend/committee/admininfo in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('admininfo', Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2020-06-10 19:00:36 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/admininfo'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新居民'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fadmininfo'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51283'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Fadmininfo'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fadmininfo'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808436.725
+    'REQUEST_TIME' => 1591808436
+]
+2020-06-10 19:00:56 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: backend/committee/admininfo in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('admininfo', Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2020-06-10 19:00:56 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/admininfo'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新居民'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fadmininfo'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51294'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Fadmininfo'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fadmininfo'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808456.433
+    'REQUEST_TIME' => 1591808456
+]
+2020-06-10 19:00:59 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: resident in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\CommitteeController.php:49
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\CommitteeController.php(49): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 49, Array)
+#1 [internal function]: frontend\modules\backend\controllers\CommitteeController->actionIndex()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-10 19:00:59 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新居民'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Fadmininfo'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51294'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Findex'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808459.565
+    'REQUEST_TIME' => 1591808459
+]
+2020-06-10 19:01:39 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: backend/committee/addadmin in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('addadmin', Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2020-06-10 19:01:39 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/addadmin'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新居民'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51323'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Faddadmin'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Faddadmin'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808499.65
+    'REQUEST_TIME' => 1591808499
+]
+2020-06-10 19:03:01 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][ArgumentCountError] ArgumentCountError: Too few arguments to function frontend\modules\backend\models\CommitteeForm::addCommittee(), 0 passed in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\CommitteeController.php on line 73 and exactly 1 expected in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\models\CommitteeForm.php:54
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\CommitteeController.php(73): frontend\modules\backend\models\CommitteeForm->addCommittee()
+#1 [internal function]: frontend\modules\backend\controllers\CommitteeController->actionCreate()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-10 19:03:01 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/create'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'js8EMsYJdJJVaiVpAqNW3U7Tmuw5Bk70deam0shWoce7olJ4_mAg2BEnfQM3_B-2e6vFhg1pPpIy3-uA5TTK8A=='
+    'CommitteeForm' => [
+        'account' => '250197199202043442'
+        'username' => '张心梅'
+        'sex' => '2'
+        'age' => '28'
+        'tel' => '12304428765'
+        'priority' => '1'
+        'rights' => [
+            0 => '1'
+        ]
+    ]
+    'save-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新居民'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '452'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51349'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Fcreate'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fcreate'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808581.484
+    'REQUEST_TIME' => 1591808581
+]
+2020-06-11 01:05:33 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: common\models\Committee::2020-06-11 in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Component.php:209
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\db\BaseActiveRecord.php(324): yii\base\Component->__set('2020-06-11', '2020-06-11')
+#1 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\models\CommitteeForm.php(103): yii\db\BaseActiveRecord->__set('2020-06-11', '2020-06-11')
+#2 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\CommitteeController.php(74): frontend\modules\backend\models\CommitteeForm->addCommittee('2020-06-11')
+#3 [internal function]: frontend\modules\backend\controllers\CommitteeController->actionCreate()
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2020-06-11 01:05:32 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/create'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'js8EMsYJdJJVaiVpAqNW3U7Tmuw5Bk70deam0shWoce7olJ4_mAg2BEnfQM3_B-2e6vFhg1pPpIy3-uA5TTK8A=='
+    'CommitteeForm' => [
+        'account' => '250197199202043442'
+        'username' => '张心梅'
+        'sex' => '2'
+        'age' => '28'
+        'tel' => '12304428765'
+        'priority' => '1'
+        'rights' => [
+            0 => '1'
+        ]
+    ]
+    'save-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新居民'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '452'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51378'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Fcreate'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fcreate'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808732.712
+    'REQUEST_TIME' => 1591808732
+]
+2020-06-10 19:08:47 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: resident in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\CommitteeController.php:94
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\CommitteeController.php(94): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 94, Array)
+#1 [internal function]: frontend\modules\backend\controllers\CommitteeController->actionUpdate('652255198402086...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/committ...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-10 19:08:47 [::1][440440200001012345][h5ie2t4rkk9hed81n6p863n7te][info][application] $_GET = [
+    'r' => 'backend/committee/update'
+    'id' => '652255198402086315'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'h5ie2t4rkk9hed81n6p863n7te'
+    '_identity-frontend' => 'e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => '62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__captcha/site/captcha' => 'fafmqob'
+    '__captcha/site/captchacount' => 1
+    '__id' => '440440200001012345'
+    'success' => '成功添加新职员'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=h5ie2t4rkk9hed81n6p863n7te; _identity-frontend=e32bec5c83246d951c6c3d079f0c4fc14152d33ea96c0f55d57466d129fb2681a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=62c01d713bf992b1a1611a26b23ad848f168f291722584ae193df21e249dfec6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225mVJ8iTJDMXj5_Ik5x_j4opfG9MR-bk7%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '51397'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fcommittee%2Fupdate&id=652255198402086315'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Fupdate&id=652255198402086315'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591808927.079
+    'REQUEST_TIME' => 1591808927
+]

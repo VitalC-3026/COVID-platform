@@ -22,18 +22,18 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
               <li><a href="#">首页</a>
               </li>
               <li>社区数据库</li>
-              <li class="active">社区工作者信息</li>
+              <li class="active">社区职员信息</li>
           </ul>
           <!--breadcrumbs end -->
           <div class="row">
               <div class="col-xs-6">
-                  <h1 class="h1">社区工作者信息</h1>
+                  <h1 class="h1">社区职员信息</h1>
               </div>
               <div class="col-md-6" align="right">
-                  <button id="addWorker" type="button" class="btn btn-primary" onclick="javascript:jump()">添加新工作人员</button>
+                  <button id="addWorker" type="button" class="btn btn-primary" onclick="javascript:jump()">添加新职员</button>
                   <script type="text/javascript">
                       <?php //TODO: 通过路由跳转地址 ?>
-                      function jump(){ window.location.href="<?= \yii\helpers\Url::to(['/backend/committee/addadmin']); ?>"; }
+                      function jump(){ window.location.href="<?= \yii\helpers\Url::to(['/backend/committee/create']); ?>"; }
                   </script>
               </div>
               
@@ -45,7 +45,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
       <div class="col-md-12">
           <div class="panel panel-default">
               <div class="panel-heading">
-                  <h3 class="panel-title">社区工作者信息</h3>
+                  <h3 class="panel-title">社区职员信息</h3>
                   <div class="actions pull-right">
                       <i class="fa fa-chevron-down"></i>
                       <i class="fa fa-times"></i>
@@ -66,8 +66,6 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                               //设置筛选模型
                               'filterModel' => $model,
                               'columns' => [
-                                //复选框列
-                                ['class' => 'yii\grid\CheckboxColumn'],
                                 //显示序号列
                                 ['class' => 'yii\grid\SerialColumn'],
                                 [
@@ -125,6 +123,23 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   'value' => function($data) {
                                       return ($data->type === 2) ? '超级管理员' : '普通管理员' ;
                                   }
+                                ],
+                                [
+                                  'header' => '操作',
+                                  'class' => 'yii\grid\ActionColumn',
+                                  //设置显示模板
+                                  'template' => '{update} {del}',
+                                  //下面的按钮设置，与上面的模板设置相关联
+                                  'buttons' => [
+                                    'del' => function ($url, $model, $key) {
+                                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
+                                          'data' => [
+                                              'confirm' => '您确定要删除这条信息?',
+                                              'method' => 'post',
+                                          ],
+                                      ]);
+                                    },
+                                  ],
                                 ],
                               ],
                             ]); ?>
