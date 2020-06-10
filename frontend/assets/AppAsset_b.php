@@ -18,7 +18,7 @@ class AppAsset_b extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        //'css/site.css',
+        'css/site.css',
 //        'assets/plugins/bootstrap/css/bootstrap.min.css',
 //        'assets/css/font-awesome.min.css',
 //        'assets/css/animate.css',

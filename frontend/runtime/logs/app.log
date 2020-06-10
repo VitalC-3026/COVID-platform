@@ -1,0 +1,537 @@
+2020-06-10 15:11:34 [::1][-][-][error][yii\base\InvalidCallException] yii\base\InvalidCallException: Unexpected yii\widgets\Block::end() call. A matching begin() is not found. in D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Widget.php:120
+Stack trace:
+#0 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(491): yii\base\Widget::end()
+#1 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php(771): yii\base\View->endBlock()
+#2 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xmapp\\htdocs...')
+#3 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xmapp\\htdocs...', Array)
+#4 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xmapp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#5 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#6 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#7 [internal function]: frontend\controllers\SiteController->actionIndex()
+#8 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#11 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#12 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+2020-06-10 15:11:33 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-c6307801' => 'ee53518c-973f-411d-b968-c09cda933b4c'
+    'Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf' => '1591625175'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xmapp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xmapp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8081'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-c6307801=ee53518c-973f-411d-b968-c09cda933b4c; Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf=1591625175'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program File (x86)\\Java\\jre6\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;D:\\CTex\\UserData\\miktex\\bin;D:\\CTex\\MiKTeX\\miktex\\bin;D:\\CTex\\CTeX\\ctex\\bin;D:\\CTex\\CTeX\\cct\\bin;D:\\CTex\\CTeX\\ty\\bin;D:\\CTex\\Ghostscript\\gs9.05\\bin;D:\\CTex\\GSview\\gsview;D:\\CTex\\WinEdt;D:\\Matlab\\runtime\\win64;D:\\Matlab\\bin;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;D:\\QT\\5.13.0\\msvc2017_64\\bin;D:\\QT\\5.13.0\\mingw73_64\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_121\\jre\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\cygwin64\\bin;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;D:\\apache-tomcat-8.5.49\\bin;D:\\apache-tomcat-8.5.49\\lib;D:\\apache-maven-3.6.0\\bin;D:\\Python3.7.4;D:\\android-sdk;D:\\Python3.7.4\\Scripts;C:\\Users\\肖中遥\\AppData\\Local\\Google\\Chrome;D:\\android-sdk\\platform-tools;D:\\android-sdk\\tools;C:\\Program Files\\Pandoc\\;D:\\xmapp\\php;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\肖中遥\\AppData\\Local\\Microsoft\\WindowsApps;D:\\CLion\\CLion 2019.2.4\\bin;D:\\PhpStorm\\PhpStorm 2019.3.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8081'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xmapp/htdocs/yii2020/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '55807'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2020/COVID-platform/frontend/web/'
+    'SCRIPT_NAME' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591794693.581
+    'REQUEST_TIME' => 1591794693
+]
+2020-06-10 15:11:53 [::1][-][-][error][yii\base\InvalidCallException] yii\base\InvalidCallException: Unexpected yii\widgets\Block::end() call. A matching begin() is not found. in D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Widget.php:120
+Stack trace:
+#0 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(491): yii\base\Widget::end()
+#1 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php(771): yii\base\View->endBlock()
+#2 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xmapp\\htdocs...')
+#3 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xmapp\\htdocs...', Array)
+#4 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xmapp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#5 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#6 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#7 [internal function]: frontend\controllers\SiteController->actionIndex()
+#8 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#11 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#12 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+2020-06-10 15:11:52 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-c6307801' => 'ee53518c-973f-411d-b968-c09cda933b4c'
+    'Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf' => '1591625175'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xmapp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xmapp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8081'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-c6307801=ee53518c-973f-411d-b968-c09cda933b4c; Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf=1591625175'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program File (x86)\\Java\\jre6\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;D:\\CTex\\UserData\\miktex\\bin;D:\\CTex\\MiKTeX\\miktex\\bin;D:\\CTex\\CTeX\\ctex\\bin;D:\\CTex\\CTeX\\cct\\bin;D:\\CTex\\CTeX\\ty\\bin;D:\\CTex\\Ghostscript\\gs9.05\\bin;D:\\CTex\\GSview\\gsview;D:\\CTex\\WinEdt;D:\\Matlab\\runtime\\win64;D:\\Matlab\\bin;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;D:\\QT\\5.13.0\\msvc2017_64\\bin;D:\\QT\\5.13.0\\mingw73_64\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_121\\jre\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\cygwin64\\bin;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;D:\\apache-tomcat-8.5.49\\bin;D:\\apache-tomcat-8.5.49\\lib;D:\\apache-maven-3.6.0\\bin;D:\\Python3.7.4;D:\\android-sdk;D:\\Python3.7.4\\Scripts;C:\\Users\\肖中遥\\AppData\\Local\\Google\\Chrome;D:\\android-sdk\\platform-tools;D:\\android-sdk\\tools;C:\\Program Files\\Pandoc\\;D:\\xmapp\\php;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\肖中遥\\AppData\\Local\\Microsoft\\WindowsApps;D:\\CLion\\CLion 2019.2.4\\bin;D:\\PhpStorm\\PhpStorm 2019.3.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8081'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xmapp/htdocs/yii2020/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '55820'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2020/COVID-platform/frontend/web/'
+    'SCRIPT_NAME' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591794712.906
+    'REQUEST_TIME' => 1591794712
+]
+2020-06-10 15:11:54 [::1][-][-][error][yii\base\InvalidCallException] yii\base\InvalidCallException: Unexpected yii\widgets\Block::end() call. A matching begin() is not found. in D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Widget.php:120
+Stack trace:
+#0 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(491): yii\base\Widget::end()
+#1 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php(771): yii\base\View->endBlock()
+#2 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xmapp\\htdocs...')
+#3 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xmapp\\htdocs...', Array)
+#4 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xmapp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#5 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#6 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#7 [internal function]: frontend\controllers\SiteController->actionIndex()
+#8 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#11 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#12 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+2020-06-10 15:11:54 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-c6307801' => 'ee53518c-973f-411d-b968-c09cda933b4c'
+    'Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf' => '1591625175'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xmapp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xmapp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8081'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-c6307801=ee53518c-973f-411d-b968-c09cda933b4c; Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf=1591625175'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program File (x86)\\Java\\jre6\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;D:\\CTex\\UserData\\miktex\\bin;D:\\CTex\\MiKTeX\\miktex\\bin;D:\\CTex\\CTeX\\ctex\\bin;D:\\CTex\\CTeX\\cct\\bin;D:\\CTex\\CTeX\\ty\\bin;D:\\CTex\\Ghostscript\\gs9.05\\bin;D:\\CTex\\GSview\\gsview;D:\\CTex\\WinEdt;D:\\Matlab\\runtime\\win64;D:\\Matlab\\bin;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;D:\\QT\\5.13.0\\msvc2017_64\\bin;D:\\QT\\5.13.0\\mingw73_64\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_121\\jre\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\cygwin64\\bin;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;D:\\apache-tomcat-8.5.49\\bin;D:\\apache-tomcat-8.5.49\\lib;D:\\apache-maven-3.6.0\\bin;D:\\Python3.7.4;D:\\android-sdk;D:\\Python3.7.4\\Scripts;C:\\Users\\肖中遥\\AppData\\Local\\Google\\Chrome;D:\\android-sdk\\platform-tools;D:\\android-sdk\\tools;C:\\Program Files\\Pandoc\\;D:\\xmapp\\php;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\肖中遥\\AppData\\Local\\Microsoft\\WindowsApps;D:\\CLion\\CLion 2019.2.4\\bin;D:\\PhpStorm\\PhpStorm 2019.3.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8081'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xmapp/htdocs/yii2020/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '55821'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2020/COVID-platform/frontend/web/'
+    'SCRIPT_NAME' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591794714.147
+    'REQUEST_TIME' => 1591794714
+]
+2020-06-10 15:12:20 [::1][-][-][error][yii\base\InvalidCallException] yii\base\InvalidCallException: Unexpected yii\widgets\Block::end() call. A matching begin() is not found. in D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Widget.php:120
+Stack trace:
+#0 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(491): yii\base\Widget::end()
+#1 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php(771): yii\base\View->endBlock()
+#2 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xmapp\\htdocs...')
+#3 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xmapp\\htdocs...', Array)
+#4 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xmapp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#5 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#6 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#7 [internal function]: frontend\controllers\SiteController->actionIndex()
+#8 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#11 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#12 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+2020-06-10 15:12:20 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-c6307801' => 'ee53518c-973f-411d-b968-c09cda933b4c'
+    'Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf' => '1591625175'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xmapp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xmapp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8081'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-c6307801=ee53518c-973f-411d-b968-c09cda933b4c; Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf=1591625175'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program File (x86)\\Java\\jre6\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;D:\\CTex\\UserData\\miktex\\bin;D:\\CTex\\MiKTeX\\miktex\\bin;D:\\CTex\\CTeX\\ctex\\bin;D:\\CTex\\CTeX\\cct\\bin;D:\\CTex\\CTeX\\ty\\bin;D:\\CTex\\Ghostscript\\gs9.05\\bin;D:\\CTex\\GSview\\gsview;D:\\CTex\\WinEdt;D:\\Matlab\\runtime\\win64;D:\\Matlab\\bin;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;D:\\QT\\5.13.0\\msvc2017_64\\bin;D:\\QT\\5.13.0\\mingw73_64\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_121\\jre\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\cygwin64\\bin;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;D:\\apache-tomcat-8.5.49\\bin;D:\\apache-tomcat-8.5.49\\lib;D:\\apache-maven-3.6.0\\bin;D:\\Python3.7.4;D:\\android-sdk;D:\\Python3.7.4\\Scripts;C:\\Users\\肖中遥\\AppData\\Local\\Google\\Chrome;D:\\android-sdk\\platform-tools;D:\\android-sdk\\tools;C:\\Program Files\\Pandoc\\;D:\\xmapp\\php;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\肖中遥\\AppData\\Local\\Microsoft\\WindowsApps;D:\\CLion\\CLion 2019.2.4\\bin;D:\\PhpStorm\\PhpStorm 2019.3.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8081'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xmapp/htdocs/yii2020/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '55841'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2020/COVID-platform/frontend/web/'
+    'SCRIPT_NAME' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591794740.797
+    'REQUEST_TIME' => 1591794740
+]
+2020-06-10 15:12:21 [::1][-][-][error][yii\base\InvalidCallException] yii\base\InvalidCallException: Unexpected yii\widgets\Block::end() call. A matching begin() is not found. in D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Widget.php:120
+Stack trace:
+#0 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(491): yii\base\Widget::end()
+#1 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php(771): yii\base\View->endBlock()
+#2 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xmapp\\htdocs...')
+#3 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xmapp\\htdocs...', Array)
+#4 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xmapp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#5 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#6 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#7 [internal function]: frontend\controllers\SiteController->actionIndex()
+#8 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#11 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#12 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+2020-06-10 15:12:21 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-c6307801' => 'ee53518c-973f-411d-b968-c09cda933b4c'
+    'Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf' => '1591625175'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xmapp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xmapp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8081'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-c6307801=ee53518c-973f-411d-b968-c09cda933b4c; Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf=1591625175'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program File (x86)\\Java\\jre6\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;D:\\CTex\\UserData\\miktex\\bin;D:\\CTex\\MiKTeX\\miktex\\bin;D:\\CTex\\CTeX\\ctex\\bin;D:\\CTex\\CTeX\\cct\\bin;D:\\CTex\\CTeX\\ty\\bin;D:\\CTex\\Ghostscript\\gs9.05\\bin;D:\\CTex\\GSview\\gsview;D:\\CTex\\WinEdt;D:\\Matlab\\runtime\\win64;D:\\Matlab\\bin;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;D:\\QT\\5.13.0\\msvc2017_64\\bin;D:\\QT\\5.13.0\\mingw73_64\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_121\\jre\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\cygwin64\\bin;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;D:\\apache-tomcat-8.5.49\\bin;D:\\apache-tomcat-8.5.49\\lib;D:\\apache-maven-3.6.0\\bin;D:\\Python3.7.4;D:\\android-sdk;D:\\Python3.7.4\\Scripts;C:\\Users\\肖中遥\\AppData\\Local\\Google\\Chrome;D:\\android-sdk\\platform-tools;D:\\android-sdk\\tools;C:\\Program Files\\Pandoc\\;D:\\xmapp\\php;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\肖中遥\\AppData\\Local\\Microsoft\\WindowsApps;D:\\CLion\\CLion 2019.2.4\\bin;D:\\PhpStorm\\PhpStorm 2019.3.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8081'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xmapp/htdocs/yii2020/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '55842'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2020/COVID-platform/frontend/web/'
+    'SCRIPT_NAME' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591794741.799
+    'REQUEST_TIME' => 1591794741
+]
+2020-06-10 15:13:19 [::1][-][-][error][ArgumentCountError] ArgumentCountError: Too few arguments to function yii\base\View::beginBlock(), 0 passed in D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php on line 762 and at least 1 expected in D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php:477
+Stack trace:
+#0 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php(762): yii\base\View->beginBlock()
+#1 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xmapp\\htdocs...')
+#2 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xmapp\\htdocs...', Array)
+#3 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xmapp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#4 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#5 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#6 [internal function]: frontend\controllers\SiteController->actionIndex()
+#7 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#10 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#11 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2020-06-10 15:13:18 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-c6307801' => 'ee53518c-973f-411d-b968-c09cda933b4c'
+    'Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf' => '1591625175'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xmapp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xmapp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8081'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-c6307801=ee53518c-973f-411d-b968-c09cda933b4c; Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf=1591625175'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program File (x86)\\Java\\jre6\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;D:\\CTex\\UserData\\miktex\\bin;D:\\CTex\\MiKTeX\\miktex\\bin;D:\\CTex\\CTeX\\ctex\\bin;D:\\CTex\\CTeX\\cct\\bin;D:\\CTex\\CTeX\\ty\\bin;D:\\CTex\\Ghostscript\\gs9.05\\bin;D:\\CTex\\GSview\\gsview;D:\\CTex\\WinEdt;D:\\Matlab\\runtime\\win64;D:\\Matlab\\bin;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;D:\\QT\\5.13.0\\msvc2017_64\\bin;D:\\QT\\5.13.0\\mingw73_64\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_121\\jre\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\cygwin64\\bin;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;D:\\apache-tomcat-8.5.49\\bin;D:\\apache-tomcat-8.5.49\\lib;D:\\apache-maven-3.6.0\\bin;D:\\Python3.7.4;D:\\android-sdk;D:\\Python3.7.4\\Scripts;C:\\Users\\肖中遥\\AppData\\Local\\Google\\Chrome;D:\\android-sdk\\platform-tools;D:\\android-sdk\\tools;C:\\Program Files\\Pandoc\\;D:\\xmapp\\php;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\肖中遥\\AppData\\Local\\Microsoft\\WindowsApps;D:\\CLion\\CLion 2019.2.4\\bin;D:\\PhpStorm\\PhpStorm 2019.3.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8081'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xmapp/htdocs/yii2020/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '55883'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2020/COVID-platform/frontend/web/'
+    'SCRIPT_NAME' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591794798.911
+    'REQUEST_TIME' => 1591794798
+]
+2020-06-10 15:13:31 [::1][-][-][error][ArgumentCountError] ArgumentCountError: Too few arguments to function yii\base\View::beginBlock(), 0 passed in D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php on line 762 and at least 1 expected in D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php:477
+Stack trace:
+#0 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\views\site\index.php(762): yii\base\View->beginBlock()
+#1 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xmapp\\htdocs...')
+#2 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xmapp\\htdocs...', Array)
+#3 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xmapp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#4 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#5 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#6 [internal function]: frontend\controllers\SiteController->actionIndex()
+#7 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#10 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#11 D:\xmapp\htdocs\yii2020\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xmapp\htdocs\yii2020\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2020-06-10 15:13:31 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-c6307801' => 'ee53518c-973f-411d-b968-c09cda933b4c'
+    'Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf' => '1591625175'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xmapp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xmapp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8081'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-c6307801=ee53518c-973f-411d-b968-c09cda933b4c; Hm_lvt_cdcc4d7a702f0597c5bfc96ec9508cbf=1591625175'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program File (x86)\\Java\\jre6\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;D:\\CTex\\UserData\\miktex\\bin;D:\\CTex\\MiKTeX\\miktex\\bin;D:\\CTex\\CTeX\\ctex\\bin;D:\\CTex\\CTeX\\cct\\bin;D:\\CTex\\CTeX\\ty\\bin;D:\\CTex\\Ghostscript\\gs9.05\\bin;D:\\CTex\\GSview\\gsview;D:\\CTex\\WinEdt;D:\\Matlab\\runtime\\win64;D:\\Matlab\\bin;C:\\Strawberry\\c\\bin;C:\\Strawberry\\perl\\site\\bin;C:\\Strawberry\\perl\\bin;D:\\QT\\5.13.0\\msvc2017_64\\bin;D:\\QT\\5.13.0\\mingw73_64\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Java\\jdk1.8.0_121\\jre\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\cygwin64\\bin;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;D:\\apache-tomcat-8.5.49\\bin;D:\\apache-tomcat-8.5.49\\lib;D:\\apache-maven-3.6.0\\bin;D:\\Python3.7.4;D:\\android-sdk;D:\\Python3.7.4\\Scripts;C:\\Users\\肖中遥\\AppData\\Local\\Google\\Chrome;D:\\android-sdk\\platform-tools;D:\\android-sdk\\tools;C:\\Program Files\\Pandoc\\;D:\\xmapp\\php;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\肖中遥\\AppData\\Local\\Microsoft\\WindowsApps;D:\\CLion\\CLion 2019.2.4\\bin;D:\\PhpStorm\\PhpStorm 2019.3.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at localhost Port 8081</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8081'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xmapp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xmapp/htdocs/yii2020/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '55892'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2020/COVID-platform/frontend/web/'
+    'SCRIPT_NAME' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii2020/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591794811.099
+    'REQUEST_TIME' => 1591794811
+]

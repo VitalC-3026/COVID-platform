@@ -12,6 +12,8 @@ use yii\data\ActiveDataProvider;
 use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
+use frontend\modules\backend\models\EditForm;
+use frontend\modules\backend\models\CensorForm;
 use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\CommitteeSearch;
 use common\models\PriorityType;
@@ -47,7 +49,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         return $this->render('index');
     }
@@ -59,9 +61,13 @@ class SiteController extends Controller
      */
     public function actionResinfo()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $resident = new ResidentSearch();
+        if ($resident->load(Yii::$app->request->post())) {
+            $result = Resident::find()->where(['account' => $resident->account])->all();
+            $result->delete();
+        }
         $provider = $resident->search(Yii::$app->request->get());
 
         return $this->render('resinfo', [
@@ -77,7 +83,7 @@ class SiteController extends Controller
      */
     public function actionAdmininfo()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $committee = new CommitteeSearch();
         $provider = $committee->search(Yii::$app->request->get());
@@ -94,7 +100,7 @@ class SiteController extends Controller
      */
     public function actionAddres()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $model = new ResidentForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -113,11 +119,12 @@ class SiteController extends Controller
 
     public function actionAddadmin()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $model = new AdminForm();
         if ($model->load(Yii::$app->request->post())) {
-            if ($model->addAdministator()) {
+            date_default_timezone_set('prc');
+            if ($model->addAdministator(date('Y-m-d', time()))) {
                 Yii::$app->session->setFlash('success', '成功添加新职员');
                 $committee = new CommitteeSearch();
                 $provider = $committee->search(Yii::$app->request->get());
@@ -129,7 +136,7 @@ class SiteController extends Controller
 
     public function actionRights()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $PriorityType = new PriorityType();
         // 实现可以把priorityType所有内容从数据库取出以数组形式返回给priorityType这个变量
@@ -144,7 +151,7 @@ class SiteController extends Controller
 
     public function actionHealthreport()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $model = new HealthForm();
         date_default_timezone_set('prc');
@@ -163,42 +170,76 @@ class SiteController extends Controller
 
     public function actionEdit()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        Yii::$app->view->params['time'] = date('Y-m-d H:i:s', time());
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $model = new EditForm();
+        if ($model->load(Yii::$app->request->post())) {
+            date_default_timezone_set('prc');
+            $date = date('Y-m-d', time());
+            $time = date('H:i:s', time());
+            if ($model->edit(Yii::$app->user->identity->account, $date, $time)) {
+                $dataProvider = new ActiveDataProvider([
+                    'query' => News::find(),
+                    'pagination' => [
+                        'pagesize' => 4
+                    ]
+                ]);
+                return $this->render('censor', ['provider' => $dataProvider]);
+            }
+        }
 
-        return $this->render('edit');
+        return $this->render('edit', ['model' => $model]);
     }
 
     public function actionCensor()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $request = Yii::$app->request;
+        if ($request) {
+            if ($request->post('action') === 'delete') {
+                $newsId = $request->post('id');
+                if ($newsId !== null) {
+                    $result = News::find()->where(['id' => $newsId])->all();
+                    $result->delete();
+                } 
+            }
+            
+        }
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s', time());
         Yii::$app->view->params['time'] = $time;
         $dataProvider = new ActiveDataProvider([
-            'query' => News::find(),
+            'query' => News::find()->where(['visible' => 0]),
             'pagination' => [
                 'pagesize' => 4
             ]
         ]);
         return $this->render('censor', [
-            'provider' => $dataProvider
+            'provider' => $dataProvider,
         ]);
     }
 
-    public function actionInfo()
-    {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 3))
-            return $this->goHome();
-        $dataProvider = new ActiveDataProvider([
-            'query' => News::find(),
-            'pagination' => [
-                'pagesize' => 4
-            ]
-        ]);
-        return $this->render('info', [
-            'provider' => $dataProvider
-        ]);
+    public function actionDelete(){
+        $model = new ResidentSearch();
+        if ($model->load(Yii::$app->request->post())) {
+            
+            $result = Resident::find()->where(['account' => $model->account])->all();
+            $result->delete();
+            
+        }
+        return $this->render('index');
+    }
+
+    public function actionUpd(){
+        $model = new ResidentSearch();
+        if ($model->load(Yii::$app->request->post())) {
+            
+            $result = Resident::find()->where(['account' => $model->account])->all();
+            $result->delete();
+            
+        }
+        return $this->render('index');
     }
 }

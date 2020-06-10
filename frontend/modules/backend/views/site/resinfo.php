@@ -1,6 +1,8 @@
-<?php 
+<?php
+// @var $provider
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
 
@@ -15,7 +17,8 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
             <!--breadcrumbs start -->
             <ul class="breadcrumb">
                 <!-- TODO: 通过路由跳转地址 -->
-                <li><a href="http://localhost:80/yii2020/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Findex">首页</a>
+
+                <li><a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>">首页</a>
                 </li>
                 <li>社区数据库</li>
                 <li class="active">社区居民信息</li>
@@ -29,7 +32,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                     <button id="addRes" type="button" class="btn btn-primary" name="addNewRes" onclick="javascript:jump()">添加新居民</button>
                     <script type="text/javascript">
                         <?php //TODO: 通过路由跳转地址 ?>
-                        function jump(){ window.location.href="http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Faddres"; }
+                        function jump(){ window.location.href="<?= \yii\helpers\Url::to(['/backend/site/addres']); ?>"; }
                     </script>
                 </div>
             </div>
@@ -121,6 +124,32 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     'label' => '房间号',
                                     'attribute' => 'resident.room',
                                     'format' => 'raw',
+                                  ],
+                                  [
+                                    'header' => '操作',
+                                    'class' => 'yii\grid\ActionColumn',
+                                    //设置显示模板
+                                    'template' => '{update} {delete}',
+                                    //下面的按钮设置，与上面的模板设置相关联
+                                    'buttons' => [
+                                      'update' => function ($model) {
+                                        return Html::a('<span class="glyphicon glyphicon-pencil"></span>', \yii\helpers\Url::to(['/backend/site/resinfo']), []);
+                                      },
+                                      'delete' => function ($url, $model, $key) {
+                                        $options = [
+                                            'title' => Yii::t('yii', 'Delete'),
+                                            'aria-label' => Yii::t('yii', 'Delete'),
+                                            'data-confirm' => Yii::t('yii', '您确定要删除该居民的信息吗？'),
+                                            'data-method' => 'post',
+                                            'data-pjax' => '0',
+                                            'params' => [
+                                              'model' => $model,
+                                            ]
+                                        ];
+
+                                          return Html::a('<span class="glyphicon glyphicon-trash"></span>', \yii\helpers\Url::to(['/backend/site/resinfo']), $options);
+                                      },
+                                    ],
                                   ],
                                 ],
                               ]); ?>

@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/6/6 22:37:51                            */
+/* Created on:     2020/6/9 9:55:41                             */
 /*==============================================================*/
 
 
@@ -35,6 +35,7 @@ create table Comments
    New_id               int not null,
    content              text,
    author               varchar(10),
+   visible              bool,
    primary key (id)
 );
 
@@ -82,6 +83,7 @@ create table News
    time                 time,
    title                varchar(50),
    abstract             text,
+   content              text,
    link                 varchar(50),
    cnt                  int,
    primary key (id)

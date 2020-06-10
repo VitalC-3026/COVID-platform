@@ -28,16 +28,28 @@
     <div class="col">
         <div class="data h-100 cases">
 
+<<<<<<< HEAD
             <span class="number number-counter" id="globalTotal">0</span>
+=======
+            <span class="number number-counter" data-number="7062712">0</span>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
             <span class="caption d-block mb-5">累计确诊</span>
             <div class="last-record d-flex justify-content-between">
                 <div class="data">
                     <span class="caption">今日确诊</span>
+<<<<<<< HEAD
                     <span class="number">+ <span class="number-counter" id="globalToday">0</span></span>
                 </div>
                 <div class="data">
                     <span class="caption">现存确诊</span>
                     <span class="number number-counter" id="globalNow">0</span>
+=======
+                    <span class="number">+ <span class="number-counter" data-number="9766">0</span></span>
+                </div>
+                <div class="data">
+                    <span class="caption">现存确诊</span>
+                    <span class="number number-counter" data-number="3543568">0</span>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                 </div>
             </div>
 
@@ -47,32 +59,56 @@
     <div class="col">
         <div class="data h-100 deaths">
 
+<<<<<<< HEAD
             <span class="number number-counter" id="globalDeath">0</span>
+=======
+            <span class="number number-counter" data-number="405197">0</span>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
             <span class="caption d-block mb-5">累计死亡</span>
             <div class="last-record d-flex justify-content-between">
                 <div class="data">
                     <span class="caption number-counter">今日死亡</span>
+<<<<<<< HEAD
                     <span class="number">+<span class="number-counter" id="globalDeathToday">0</span></span>
                 </div>
                 <div class="data">
                     <span class="caption">病死率(%)</span>
                     <span class="number number-counter" id="globalDeathRank">0</span>
+=======
+                    <span class="number">+<span class="number-counter" data-number="0">0</span></span>
+                </div>
+                <div class="data">
+                    <span class="caption">病死率(%)</span>
+                    <span class="number number-counter" data-number="5">0</span>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                 </div>
             </div>
         </div>
     </div>
     <div class="col">
         <div class="data h-100 recovered">
+<<<<<<< HEAD
             <span class="number number-counter" id="globalCure">0</span>
+=======
+            <span class="number number-counter" data-number="3113947">0</span>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
             <span class="caption d-block mb-5">累计治愈</span class="caption d-block mb-5">
             <div class="last-record d-flex justify-content-between">
                 <div class="data">
                     <span class="caption">今日治愈</span>
+<<<<<<< HEAD
                     <span class="number">+<span class="number-counter" id="globalCureToday">0</span></span>
                 </div>
                 <div class="data">
                     <span class="caption">治愈率(%)</span>
                     <span class="number number-counter" id="globalCureRank">0</span>
+=======
+                    <span class="number">+<span class="number-counter" data-number="9564"></span></span>
+                </div>
+                <div class="data">
+                    <span class="caption">治愈率(%)</span>
+                    <span class="number number-counter" data-number="44">0</span>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                 </div>
             </div>
         </div>
@@ -105,7 +141,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <!-- BEGIN: .feature-29103 -->
 
     </div>
@@ -124,6 +159,7 @@
                             <div class="icon-wrap"><span class="flaticon-muscle text-primary icon-stethoscope"></span>
                             </div>
                             <div class="counter-text">
+<<<<<<< HEAD
                                 <span class="caption" >较昨日</span>
                                 <span class="block-counter-78529" id="confirmToday">0</span>
                                 <strong class="block-counter-78529" id="confirmTotal">0</strong>
@@ -155,6 +191,47 @@
                                 <h5 class="caption">累计治愈</h5>
                             </div>
                         </div>
+=======
+                                <span class="caption">较昨日+</span>
+                                <span class="block-counter-78529" data-number="4">0</span>
+                                <strong class="block-counter-78529" data-number="84638">0</strong>
+                                <h5 class="caption">累计确诊</h5>
+                            </div>
+                        </div>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
+
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="counter-78529 d-flex align-items-start">
+<<<<<<< HEAD
+                            <div class="icon-wrap"><span class="flaticon-heart text-primary icon-heartbeat"></span>
+                            </div>
+                            <div class="counter-text">
+                                <span class="caption" >较昨日</span>
+                                <span class="block-counter-78529" id="deathToday">0</span>
+                                <strong class="block-counter-78529" id="deathTotal">0</strong>
+=======
+                            <div class="icon-wrap"><span
+                                        class="flaticon-stationary-bike text-primary icon-person"></span></div>
+                            <div class="counter-text">
+                                <span class="caption">较昨日+</span>
+                                <span class="block-counter-78529" data-number="3">0</span>
+                                <strong class="block-counter-78529" data-number="1783">0</strong>
+                                <h5 class="caption">境外输入</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3  mb-4 mb-lg-0">
+
+                        <div class="counter-78529 d-flex align-items-star">
+                            <div class="icon-wrap"><span class="flaticon-banana text-primary icon-healing"></span></div>
+                            <div class="counter-text">
+                                <span class="caption">较昨日+</span>
+                                <span class="block-counter-78529" data-number="10">0</span>
+                                <strong class="block-counter-78529" data-number="79875">0</strong>
+                                <h5 class="caption">累计治愈</h5>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -162,9 +239,10 @@
                             <div class="icon-wrap"><span class="flaticon-heart text-primary icon-heartbeat"></span>
                             </div>
                             <div class="counter-text">
-                                <span class="caption" >较昨日</span>
-                                <span class="block-counter-78529" id="deathToday">0</span>
-                                <strong class="block-counter-78529" id="deathTotal">0</strong>
+                                <span class="caption">较昨日+</span>
+                                <span class="block-counter-78529" data-number="0">0</span>
+                                <strong class="block-counter-78529" data-number="4645">0</strong>
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                                 <h5 class="caption">累计死亡</h5>
                             </div>
                         </div>
@@ -487,13 +565,21 @@
                             <h2 class="mb-0" id="headingTwo">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<<<<<<< HEAD
                                     冠状病毒的致病性如何？
+=======
+                                    新型冠状病毒的传染性和致死性如何？
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                  data-parent="#accordion_1">
                                 <div class="accordion-body">
+<<<<<<< HEAD
                                     冠状病毒主要感染成人或较大儿童，引起普通感冒和咽喉炎，某些毒株还可引起成人腹泻。病毒经飞沫传播，粪口途径亦可以传播。主要在冬春季流行。病毒的潜伏期平均 3～7 天。
+=======
+                                    若无有效遏制措施，患者可能感染1.5至3.5个人，具有中等传染性，与SARS大致相当。致死率低于另外两种冠状病毒MERS（致死率大约为三分之一）和SARS（致死率大约为十分之一）。
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                                 </div>
                             </div>
                         </div> <!-- .accordion-item -->
@@ -501,7 +587,11 @@
                             <h2 class="mb-0" id="headingThree">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseThree" aria-expanded="false"
+<<<<<<< HEAD
                                         aria-controls="collapseThree">哪些野生动物会携带冠状病毒？
+=======
+                                        aria-controls="collapseThree">哪些野生动物会携带新型冠状病毒？
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                                 </button>
                             </h2>
 
@@ -544,6 +634,25 @@
                                  data-parent="#accordion_1">
                                 <div class="accordion-body">
                                     冠状病毒属于单链 RNA 病毒，容易变异，所以很难形成持续性免疫力。比如每年流行的流感病毒，都需要接种最新的疫苗，也是因为病毒类型经常会发生变化。新冠肺炎患者康复出院后仍有传播病毒风险，要求继续 14 天健康监测和医学观察。
+<<<<<<< HEAD
+=======
+                                </div>
+                            </div>
+
+                        </div> <!-- .accordion-item -->
+                        <div class="accordion-item">
+                            <h2 class="mb-0" id="headingFive">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    疫苗研发大概需要多久？
+                                </button>
+                            </h2>
+
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                 data-parent="#accordion_1">
+                                <div class="accordion-body">
+                                    已有多家公司和机构正在研制疫苗。初步试验后，可能需要几个月甚至几年的时间来进行广泛测试，以证明疫苗安全性。在最好的情况下，疫苗可能在一年后对公众开放。
+>>>>>>> 6074cafdd5338cd02bb01966b3ad4ab10c9df093
                                 </div>
                             </div>
 

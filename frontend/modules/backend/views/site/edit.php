@@ -1,5 +1,7 @@
 <?php
 use frontend\assets\AppAsset_b;
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css');
 /*AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/ckeditor/ckeditor.js');*/
@@ -25,15 +27,24 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/ckeditor/ck
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="row" style="margin: 10px">
-                        <label class="control-label">标题：</label><input type="text" class="textarea form-control" rows="10" cols="80"  style="width: 100%">
+                    <?php $form = ActiveForm::begin(['id' => 'news-edit',
+                        'fieldConfig' =>[
+                            'errorOptions' => ['class' => 'text-danger']
+                        ]
+                    ]); ?>
+                    <div class="form-group">
+                        <?= $form->field($model, 'title',['labelOptions' => ['label' => '标题']])->textInput(['class' => 'textarea form-control', 'autofocus' => true]) ?>
                     </div>
-                    <div class="row" style="margin: 10px">
-                        <label class="control-label">正文内容：</label>
-                        <textarea id="editor" class="textarea form-control ckeditor" rows="10" cols="80" placeholder="请输入文字 ..." style="width: 100%; height: 400px; max-width: 100%">
-                            
-                        </textarea>
+                    <div class="form-group">
+                        <?= $form->field($model, 'abstract',['labelOptions' => ['label' => '摘要']])->textInput(['class' => 'textarea form-control', 'row' => 10, 'cols' => 80, 'autofocus' => true]) ?>
                     </div>
+                    <div class="form-group">
+                        <?= $form->field($model, 'content',['labelOptions' => ['label' => '正文内容']])->textInput(['id' => 'editor', 'class' => 'textarea form-control ckeditor', 'autofocus' => true, 'placeholder' => '请输入文字 ...']) ?>
+                    </div>
+                    <div class="row" style="margin: 10px" align="right">
+                        <?= Html::submitButton('提交审核', ['class' => 'btn btn-primary', 'name' => 'submitButton']) ?>
+                    </div>
+                    <?php ActiveForm::end(); ?>
                     <script>
                         ClassicEditor
                             .create( document.querySelector( '#editor' ) )
