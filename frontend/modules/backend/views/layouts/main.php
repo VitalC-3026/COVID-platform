@@ -216,7 +216,7 @@ AppAsset_b::register($this);
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/site/resinfo']); ?>">居民数据库</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/resident/index']); ?>">居民数据库</a>
                             </li>
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/site/admininfo']); ?>">职员数据库</a>
