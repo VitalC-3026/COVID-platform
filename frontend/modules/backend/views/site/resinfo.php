@@ -5,12 +5,16 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
+use common\models\User;
+use common\models\Resident;
 
 AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/jquery.dataTables.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
+<?= Html::csrfMetaTags() ?>
 <div id="main-content">
     <div class="row">
         <div class="col-md-12">
@@ -61,9 +65,8 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                 'dataProvider' => $provider,
                                 //设置筛选模型
                                 'filterModel' => $model,
+                                'emptyText' => '数据库中无数据',
                                 'columns' => [
-                                  //复选框列
-                                  ['class' => 'yii\grid\CheckboxColumn'],
                                   //显示序号列
                                   ['class' => 'yii\grid\SerialColumn'],
                                   [
@@ -82,6 +85,11 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     'label' => '姓名',
                                     'attribute' => 'username',
                                     'format' => 'raw',
+                                    /*'value' => function($data) {
+                                      $arr = ArrayHelper::map(User::find()->all(), 'account', 'name');
+                                      return $arr[$data->account];
+                                    },*/
+                                    /*'filter' => Helps::get_correspond_list('get_name_list','account', 'name'),*/
                                   ],
                                   [
                                     'label' => '性别',
@@ -135,19 +143,13 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                       'update' => function ($model) {
                                         return Html::a('<span class="glyphicon glyphicon-pencil"></span>', \yii\helpers\Url::to(['/backend/site/resinfo']), []);
                                       },
-                                      'delete' => function ($url, $model, $key) {
-                                        $options = [
-                                            'title' => Yii::t('yii', 'Delete'),
-                                            'aria-label' => Yii::t('yii', 'Delete'),
-                                            'data-confirm' => Yii::t('yii', '您确定要删除该居民的信息吗？'),
-                                            'data-method' => 'post',
-                                            'data-pjax' => '0',
-                                            'params' => [
-                                              'model' => $model,
-                                            ]
-                                        ];
-
-                                          return Html::a('<span class="glyphicon glyphicon-trash"></span>', \yii\helpers\Url::to(['/backend/site/resinfo']), $options);
+                                      'del' => function ($url, $model, $key) {
+                                          return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['deleteResident', 'id' => $model->account], [
+                                            'data' => [
+                                                'confirm' => '您确定要删除这条信息?',
+                                                'method' => 'post',
+                                            ],
+                                        ]);
                                       },
                                     ],
                                   ],

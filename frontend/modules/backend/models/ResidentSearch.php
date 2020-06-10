@@ -72,5 +72,10 @@ class ResidentSearch extends User
         return $provider;
     } 
 
+    public function getIdentity($account) {
+        
+        $query = User::find()->joinWith(Resident::className(), ['account' => 'account'], true, 'INNER_JOIN')->asArray()->all();
+        return $query;
+    }
 
 }

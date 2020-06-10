@@ -76,7 +76,7 @@ class ResidentForm extends Model
     /**
      * Add Resident.
      *
-     * @return bool whether the creating new resident is successful
+     * @return bool whether creating new resident is successful
      */
     public function addResident() 
     {
@@ -120,10 +120,43 @@ class ResidentForm extends Model
             return false;
         } else {
             $resident->account = $this->account;
-            $resident->unit = $this->unit;
-            $resident->building = $this->building;
+            $resident->unit = $this->unit."单元";
+            $resident->building = $this->building."号楼";
             $resident->room = $this->room;
             $resident->insert();
+        }
+        
+        return true;
+    }
+
+    /**
+     * Update Resident.
+     *
+     * @return bool whether updating new resident is successful
+     */
+    public function updateResident($id) {
+        $user = User::findOne($id);
+        $resident = Resident::findOne($id);
+        if(!$this->validate() && $resident === null) {
+            return false;
+        }
+
+        
+        if($user !== null) {
+            $user->name = $this->username;
+            $user->tel = $this->tel;
+            if ($this->sex !== null) {
+                $user->sex = $this->sex; 
+            }
+            $user->age = $this->age;
+            $user->update();
+        }
+
+        if($resident !== null) {
+            $resident->room = $this->room;
+            $resident->unit = $this->unit."单元";
+            $resident->building = $this->building."号楼";
+            $resident->update();
         }
         
         return true;

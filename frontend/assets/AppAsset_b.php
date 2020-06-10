@@ -29,14 +29,15 @@ class AppAsset_b extends AssetBundle
 //        'assets/plugins/todo/css/todos.css',
 //        'assets/plugins/morris/css/morris.css',
 //        'assets/js/modernizr-2.6.2.min.js'
+
     ];
     public $js = [
-        //'vendor/bootstrap/js/bootstrap.min.js',
-        //'vendor/jquery/jquery-1.11.1.min.js',
-//        'assets/js/jquery-1.10.2.min.js',
-//        'assets/plugins/bootstrap/js/bootstrap.min.js',
-//        'assets/plugins/waypoints/waypoints.min.js',
-//        'assets/js/application.js'
+        'vendor/bootstrap/js/bootstrap.min.js',
+        'vendor/jquery/jquery-1.11.1.min.js',
+        'assets/js/jquery-1.10.2.min.js',
+        'assets/plugins/bootstrap/js/bootstrap.min.js',
+        'assets/plugins/waypoints/waypoints.min.js',
+        'assets/js/application.js'
     ];
     public $depends = [
         /* bootstrap.js ������
@@ -50,7 +51,6 @@ class AppAsset_b extends AssetBundle
     public static function addScript($view, $jsfile)
     {
         $view->registerJsFile($jsfile, [AppAsset::className(), 'depends' => 'frontend\assets\AppAsset_b']);
-    
     }
     
     public static function addCss($view, $cssfile)

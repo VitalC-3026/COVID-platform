@@ -64,10 +64,6 @@ class SiteController extends Controller
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $resident = new ResidentSearch();
-        if ($resident->load(Yii::$app->request->post())) {
-            $result = Resident::find()->where(['account' => $resident->account])->all();
-            $result->delete();
-        }
         $provider = $resident->search(Yii::$app->request->get());
 
         return $this->render('resinfo', [
@@ -192,26 +188,22 @@ class SiteController extends Controller
         return $this->render('edit', ['model' => $model]);
     }
 
-    public function actionCensor()
+    public function actionCensor($id = 0)
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $request = Yii::$app->request;
-        if ($request) {
-            if ($request->post('action') === 'delete') {
-                $newsId = $request->post('id');
-                if ($newsId !== null) {
-                    $result = News::find()->where(['id' => $newsId])->all();
-                    $result->delete();
-                } 
-            }
-            
-        }
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s', time());
         Yii::$app->view->params['time'] = $time;
+        if ($id === 0) {
+            $news = News::find()->where(['visible' => 0])->orderBY(['id' => SORT_DESC])->one();
+        } else {
+            $news = News::findOne($id);
+        } 
+        
+        Yii::$app->view->params['news'] = $news;
         $dataProvider = new ActiveDataProvider([
-            'query' => News::find()->where(['visible' => 0]),
+            'query' => News::find()->where(['visible' => 0])->orderBY(['id' => SORT_DESC]),
             'pagination' => [
                 'pagesize' => 4
             ]
@@ -221,7 +213,18 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionDelete(){
+    public function actionDeleteResident($id){
+        $model = Resident::findOne($id);
+        if ($model !== null) {
+            $model->delete();
+            
+        }
+        $resident = new ResidentSearch();
+        $provider = $resident->search(Yii::$app->request->get());
+        return $this->render('resinfo', ['model' => $resident, 'provider' => $provider]);
+    }
+
+    public function actionUpd(){
         $model = new ResidentSearch();
         if ($model->load(Yii::$app->request->post())) {
             
@@ -232,13 +235,10 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionUpd(){
-        $model = new ResidentSearch();
-        if ($model->load(Yii::$app->request->post())) {
-            
-            $result = Resident::find()->where(['account' => $model->account])->all();
-            $result->delete();
-            
+    public function actionDeleteNews($id) {
+        $model = News::findOne($id);
+        if ($model !== null) {
+            $model->delete();
         }
         return $this->render('index');
     }
