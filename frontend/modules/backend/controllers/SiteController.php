@@ -118,7 +118,8 @@ class SiteController extends Controller
             return $this->goHome();
         $model = new AdminForm();
         if ($model->load(Yii::$app->request->post())) {
-            if ($model->addAdministator()) {
+            date_default_timezone_set('prc');
+            if ($model->addAdministator(date('Y-m-d', time()))) {
                 Yii::$app->session->setFlash('success', '成功添加新职员');
                 $committee = new CommitteeSearch();
                 $provider = $committee->search(Yii::$app->request->get());
@@ -164,9 +165,24 @@ class SiteController extends Controller
 
     public function actionEdit()
     {
+        Yii::$app->view->params['time'] = date('Y-m-d H:i:s', time());
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $model = new EditForm();
+        if ($model->load(Yii::$app->request->post())) {
+            date_default_timezone_set('prc');
+            $date = date('Y-m-d', time());
+            $time = date('H:i:s', time());
+            if ($model->edit(Yii::$app->user->identity->account, $date, $time)) {
+                $dataProvider = new ActiveDataProvider([
+                    'query' => News::find(),
+                    'pagination' => [
+                        'pagesize' => 4
+                    ]
+                ]);
+                return $this->render('censor', ['provider' => $dataProvider]);
+            }
+        }
 
         return $this->render('edit', ['model' => $model]);
     }
@@ -179,27 +195,12 @@ class SiteController extends Controller
         $time = date('Y-m-d H:i:s', time());
         Yii::$app->view->params['time'] = $time;
         $dataProvider = new ActiveDataProvider([
-            'query' => News::find(),
+            'query' => News::find()->where(['visible' => 0]),
             'pagination' => [
                 'pagesize' => 4
             ]
         ]);
         return $this->render('censor', [
-            'provider' => $dataProvider
-        ]);
-    }
-
-    public function actionInfo()
-    {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
-        $dataProvider = new ActiveDataProvider([
-            'query' => News::find(),
-            'pagination' => [
-                'pagesize' => 4
-            ]
-        ]);
-        return $this->render('info', [
             'provider' => $dataProvider
         ]);
     }

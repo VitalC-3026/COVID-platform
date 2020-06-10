@@ -40,6 +40,9 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/ckeditor/ck
                     <div class="form-group">
                         <?= $form->field($model, 'content',['labelOptions' => ['label' => '正文内容']])->textInput(['id' => 'editor', 'class' => 'textarea form-control ckeditor', 'autofocus' => true, 'placeholder' => '请输入文字 ...']) ?>
                     </div>
+                    <div class="row" style="margin: 10px" align="right">
+                        <?= Html::submitButton('提交审核', ['class' => 'btn btn-primary', 'name' => 'submitButton']) ?>
+                    </div>
                     <?php ActiveForm::end(); ?>
                     <script>
                         ClassicEditor

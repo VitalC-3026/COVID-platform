@@ -51,7 +51,7 @@ class AdminForm extends Model
      *
      * @return bool whether the creating new committee is successful
      */
-    public function addAdministator() 
+    public function addAdministator($in_date) 
     {
         if(!$this->validate()) {
             return false;
@@ -95,13 +95,12 @@ class AdminForm extends Model
             return false;
         } else {
             $committee->account = $this->account;
-            /*$dateTime = new DateTime();
-            $commitee->in_date = $dateTime->format('Y-m-d');*/
             if($this->priority === 2) {
                 $committee->is_admin = 1;
             } else {
                 $committee->is_admin = 0;
             }
+            $committee->$in_date = $in_date;
             $committee->insert(); 
         }
         return true;
