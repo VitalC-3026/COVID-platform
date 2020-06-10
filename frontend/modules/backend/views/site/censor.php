@@ -28,20 +28,6 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                     </h3>
                 </header>
                 <div class="panel-body minimal">
-                    <div class="mail-option">
-                        <div class="btn-group">
-                            <a data-original-title="Refresh" data-placement="top" data-toggle="tooltip" href="#" class="btn btn-info btn-sm tooltips">
-                                <i class=" fa fa-refresh"></i>
-                            </a>
-                        </div>
-
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown">
-                               批量通过
-                            </button>
-                        </div>
-
-                    </div>
                     <hr style="width: 100%">
                     <div>
                         <?php echo ListView::widget([
@@ -71,7 +57,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
             <div class="panel">
                 <div class="panel-body">
                     <header>
-                        <h2 class="gen-case" style="color: #484848">图文消息</h2>
+                        <h2 class="gen-case" style="color: #484848">新闻公告</h2>
                         <p class="pull-right"><?php echo $this->params['time'];  ?></p>
                     </header>
                     <div class="row view-mail-header">

@@ -13,6 +13,7 @@ use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
 use frontend\modules\backend\models\EditForm;
+use frontend\modules\backend\models\CensorForm;
 use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\CommitteeSearch;
 use common\models\PriorityType;
@@ -63,6 +64,12 @@ class SiteController extends Controller
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $resident = new ResidentSearch();
+        if ($resident->load(Yii::$app->request->post())) {
+            
+            $result = Resident::find()->where(['account' => $model->account])->all();
+            $result->delete();
+            
+        }
         $provider = $resident->search(Yii::$app->request->get());
 
         return $this->render('resinfo', [
@@ -191,6 +198,17 @@ class SiteController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $request = Yii::$app->request;
+        if ($request) {
+            if ($request->post('action') === 'delete') {
+                $newsId = $request->post('id');
+                if ($newsId !== null) {
+                    $result = News::find()->where(['id' => $newsId])->all();
+                    $result->delete();
+                } 
+            }
+            
+        }
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s', time());
         Yii::$app->view->params['time'] = $time;
@@ -201,7 +219,29 @@ class SiteController extends Controller
             ]
         ]);
         return $this->render('censor', [
-            'provider' => $dataProvider
+            'provider' => $dataProvider,
         ]);
+    }
+
+    public function actionDelete(){
+        $model = new ResidentSearch();
+        if ($model->load(Yii::$app->request->post())) {
+            
+            $result = Resident::find()->where(['account' => $model->account])->all();
+            $result->delete();
+            
+        }
+        return $this->render('index');
+    }
+
+    public function actionUpd(){
+        $model = new ResidentSearch();
+        if ($model->load(Yii::$app->request->post())) {
+            
+            $result = Resident::find()->where(['account' => $model->account])->all();
+            $result->delete();
+            
+        }
+        return $this->render('index');
     }
 }

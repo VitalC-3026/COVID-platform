@@ -24,7 +24,7 @@ class EditForm extends Model
             ['title', 'string', 'min' => 1, 'max' => 20, 'tooShort' => '标题长度不得超过20个字', 'tooLong' => '标题长度不得超过20个字'],
             ['abstract', 'trim'],
             ['abstract', 'string', 'min' => 1, 'max' => 50, 'tooShort' => '摘要长度不得超过50个字', 'tooLong' => '摘要长度不得超过50个字'],
-            /*['content', 'required', 'message' => '内容不能为空']*/
+            ['content', 'required', 'message' => '内容不能为空']
 
         ];
     }
@@ -44,7 +44,7 @@ class EditForm extends Model
         } else {
             $news->abstract = $this->abstract;
         }
-        $news->content = 'content';
+        $news->content = $this->content;
         $news->date = $date;
         $news->time = $time;
         $news->id = News::find()->count();

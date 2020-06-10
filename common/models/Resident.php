@@ -49,7 +49,7 @@ class Resident extends ActiveRecord
     /**
      *  根据身份证号判断是否已经存在居民
     */
-    public function getResidentByIdentity($account) {
+    public static function getResidentByIdentity($account) {
         return static::findOne(['account' => $account]);
     }
 }

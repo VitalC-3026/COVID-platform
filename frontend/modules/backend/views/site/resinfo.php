@@ -129,14 +129,24 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     'header' => '操作',
                                     'class' => 'yii\grid\ActionColumn',
                                     //设置显示模板
-                                    'template' => '{upd} {del}',
+                                    'template' => '{update} {delete}',
                                     //下面的按钮设置，与上面的模板设置相关联
                                     'buttons' => [
-                                      'upd' => function ($model) {
-                                        return '<a href="' . Url::toRoute(['test/upd']) . '" rel="external nofollow" class="btn btn-warning">修改</a>';
+                                      'update' => function ($model) {
+                                        return Html::a('<span class="glyphicon glyphicon-pencil"></span>', Url::toRoute(['site/resinfo']), []);
                                       },
-                                      'del' => function ($model) {
-                                        return '<a href="' . Url::toRoute(['test/del']) . '" rel="external nofollow" class="btn btn-danger">删除</a>';
+                                      'delete' => function ($url, $model, $key) {
+                                        $options = [
+                                            'title' => Yii::t('yii', 'Delete'),
+                                            'aria-label' => Yii::t('yii', 'Delete'),
+                                            'data-confirm' => Yii::t('yii', '您确定要删除该居民的信息吗？'),
+                                            'data-method' => 'post',
+                                            'data-pjax' => '0',
+                                            'params' => [
+                                              'model' => $model,
+                                            ]
+                                        ];
+                                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', Url::toRoute(['site/resinfo']), $options);
                                       },
                                     ],
                                   ],
@@ -147,7 +157,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
 
                     </div>
                 </div>
-            </div>
+            </div>s
         </div>
     </div>
 </div>
