@@ -71,7 +71,7 @@
                     <span class="number">+<span class="number-counter" data-number="9564"></span></span>
                 </div>
                 <div class="data">
-                    <span class="caption">治愈率()</span>
+                    <span class="caption">治愈率(%)</span>
                     <span class="number number-counter" data-number="44">0</span>
                 </div>
             </div>
@@ -96,13 +96,12 @@
         <h2 class="section-heading line-primary text-center">全球疫情数据</h2>
 
         <!-- BEGIN: .feature-29103 -->
-            <div class="cover overlay" style="background-image: url('assets/frontend/images/hero_bg_2.jpg');">
-                <div class="container">
+        <div class="cover overlay" style="background-image: url('assets/frontend/images/hero_bg_2.jpg');">
+            <div class="container">
 
-                    <div class="row align-items-center">
-                        <div class="col-4 col-lg-7">
-                            <h2>这里是世界地图</h2>
-                        </div>
+                <div class="row align-items-center">
+                    <div class="col-4 col-lg-7">
+                        <h2>这里是世界地图</h2>
                     </div>
                 </div>
             </div>
