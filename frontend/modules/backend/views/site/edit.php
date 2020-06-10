@@ -1,6 +1,7 @@
 <?php
 use frontend\assets\AppAsset_b;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css');
 /*AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/ckeditor/ckeditor.js');*/
