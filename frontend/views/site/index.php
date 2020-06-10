@@ -486,13 +486,13 @@
                             <h2 class="mb-0" id="headingTwo">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    冠状病毒的致病性如何？
+                                    新型冠状病毒的传染性和致死性如何？
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                  data-parent="#accordion_1">
                                 <div class="accordion-body">
-                                    冠状病毒主要感染成人或较大儿童，引起普通感冒和咽喉炎，某些毒株还可引起成人腹泻。病毒经飞沫传播，粪口途径亦可以传播。主要在冬春季流行。病毒的潜伏期平均 3～7 天。
+                                    若无有效遏制措施，患者可能感染1.5至3.5个人，具有中等传染性，与SARS大致相当。致死率低于另外两种冠状病毒MERS（致死率大约为三分之一）和SARS（致死率大约为十分之一）。
                                 </div>
                             </div>
                         </div> <!-- .accordion-item -->
@@ -500,7 +500,7 @@
                             <h2 class="mb-0" id="headingThree">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">哪些野生动物会携带冠状病毒？
+                                        aria-controls="collapseThree">哪些野生动物会携带新型冠状病毒？
                                 </button>
                             </h2>
 
@@ -543,6 +543,22 @@
                                  data-parent="#accordion_1">
                                 <div class="accordion-body">
                                     冠状病毒属于单链 RNA 病毒，容易变异，所以很难形成持续性免疫力。比如每年流行的流感病毒，都需要接种最新的疫苗，也是因为病毒类型经常会发生变化。新冠肺炎患者康复出院后仍有传播病毒风险，要求继续 14 天健康监测和医学观察。
+                                </div>
+                            </div>
+
+                        </div> <!-- .accordion-item -->
+                        <div class="accordion-item">
+                            <h2 class="mb-0" id="headingFive">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    疫苗研发大概需要多久？
+                                </button>
+                            </h2>
+
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                 data-parent="#accordion_1">
+                                <div class="accordion-body">
+                                    已有多家公司和机构正在研制疫苗。初步试验后，可能需要几个月甚至几年的时间来进行广泛测试，以证明疫苗安全性。在最好的情况下，疫苗可能在一年后对公众开放。
                                 </div>
                             </div>
 
