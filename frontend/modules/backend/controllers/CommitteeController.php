@@ -9,21 +9,15 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
-use frontend\modules\backend\models\ResidentForm;
-use frontend\modules\backend\models\AdminForm;
-use frontend\modules\backend\models\HealthForm;
-use frontend\modules\backend\models\EditForm;
-use frontend\modules\backend\models\CensorForm;
-use frontend\modules\backend\models\ResidentSearch;
+use frontend\modules\backend\models\CommitteeForm;
 use frontend\modules\backend\models\CommitteeSearch;
-use common\models\PriorityType;
-use common\models\Resident;
+use common\models\Committee;
 use common\models\User;
 
 /**
  * Site controller
  */
-class ResidentController extends Controller
+class CommitteeController extends Controller
 {
     // public $enableCsrfValidation = false;
     /**
@@ -43,7 +37,7 @@ class ResidentController extends Controller
     }
 
     /**
-     * 社区居民数据库主页.
+     * 社区职员数据库主页.
      *
      * @return mixed
      */
@@ -51,36 +45,37 @@ class ResidentController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $resident = new ResidentSearch();
-        $provider = $resident->search(Yii::$app->request->get());
+        $committee = new CommitteeSearch();
+        $provider = $committee->search(Yii::$app->request->get());
 
         return $this->render('index', [
-            'model' => $resident,
+            'model' => $committee,
             'provider' => $provider,
         ]);
     }
 
-
-    // 删除社区居民
+    
+    // 删除职员
     public function actionDelete($id) {
-        $model = Resident::findOne($id);
+        $model = Committee::findOne($id);
         if ($model !== null) {
             $model->delete();
         }
         return $this->redirect(['index']);
     }
 
-    // 创建新居民
+    // 添加新职员
     public function actionCreate() {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $model = new ResidentForm();
+        $model = new CommitteeForm();
         if ($model->load(Yii::$app->request->post())) {
-            if ($model->addResident()) {
-                Yii::$app->session->setFlash('success', '成功添加新居民');
-                $resident = new ResidentSearch();
-                $provider = $resident->search(Yii::$app->request->get());
-                return $this->render('index', ['message' => '成功添加新居民', 'model' => $resident, 'provider' => $provider]);
+            date_default_timezone_set('prc');
+            if ($model->addCommittee(date('Y-m-d', time()))) {
+                Yii::$app->session->setFlash('success', '成功添加新职员');
+                $committee = new CommitteeSearch();
+                $provider = $committee->search(Yii::$app->request->get());
+                return $this->redirect(['index']);
             } else {
                 return $this->render('create', ['model' => $model,]);
             }
@@ -89,29 +84,25 @@ class ResidentController extends Controller
         return $this->render('create', ['model' => $model,]);
     }
 
-    // 更新居民数据
+    // 更新职员数据
     public function actionUpdate($id) {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $model = new ResidentForm();
-        $resident = Resident::findOne($id);
+        $model = new CommitteeForm();
+        $committee = Committee::findOne($id);
         $user = User::findOne($id);
-        if ($resident !== null && $user !== null) {
-            $building = substr($resident->building, 0, strlen($resident->building) - 6);
-            $model->building = $building;
-            $unit = substr($resident->unit, 0, strlen($resident->unit) - 6);
-            $model->unit = $unit;
-            $model->room = $resident->room;
-            $model->account = $resident->account;
+        if ($committee !== null && $user !== null) {
+            $model->account = $user->account;
             $model->tel = $user->tel;
             $model->sex = $user->sex;
             $model->username = $user->name;
             $model->age = $user->age;
+            $model->priority = $user->type;
         }
-        if ($model->load(Yii::$app->request->post()) && $model->updateResident($id)) {
-            $res = new ResidentSearch();
-            $provider = $res->search(Yii::$app->request->get());
-            return $this->render('index', ['model' => $res, 'provider' => $provider]);
+        if ($model->load(Yii::$app->request->post()) && $model->updateCommittee($id)) {
+            $com = new CommitteeSearch();
+            $provider = $com->search(Yii::$app->request->get());
+            return $this->redirect(['index']);
         }
         return $this->render('update', ['model' => $model]);
     }

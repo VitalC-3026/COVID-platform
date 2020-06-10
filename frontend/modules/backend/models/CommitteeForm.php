@@ -7,7 +7,7 @@ use yii\base\Model;
 use common\models\User;
 use common\models\Committee;
 
-class AdminForm extends Model
+class CommitteeForm extends Model
 {
     public $account;
     public $username;
@@ -51,7 +51,7 @@ class AdminForm extends Model
      *
      * @return bool whether the creating new committee is successful
      */
-    public function addAdministator($in_date) 
+    public function addCommittee($in_date) 
     {
         if(!$this->validate()) {
             return false;
@@ -61,7 +61,7 @@ class AdminForm extends Model
         $committee = new Committee();
         if($user->findIdentity($this->account)) {
             $user->account = $this->account;
-            $user->type = $this->priority + 1;
+            $user->type = $this->priority;
             $user->name = $this->username;
             if ($user->username === null) {
                 $user->username = $this->username;
@@ -100,8 +100,45 @@ class AdminForm extends Model
             } else {
                 $committee->is_admin = 0;
             }
-            $committee->$in_date = $in_date;
+            $committee->in_date = $in_date;
             $committee->insert(); 
+        }
+        return true;
+    }
+
+    /**
+     * Add committee.
+     *
+     * @return bool whether the creating new committee is successful
+     */
+    public function updateCommittee($id) 
+    {
+        $user = User::findOne($id);
+        $committee = Committee::findOne($id);
+        if(!$this->validate() && $user === null) {
+            return false;
+        }
+        
+        $user->account = $this->account;
+        $user->type = $this->priority;
+        $user->name = $this->username;
+        if ($user->username === null) {
+            $user->username = $this->username;
+        }
+        $user->tel = $this->tel;
+        $user->sex = $this->sex;     
+        $user->age = $this->age;
+        $user->update();
+        
+        if($committee !== null) {
+            if($this->priority === 2) {
+                $committee->is_admin = 1;
+            } else {
+                $committee->is_admin = 0;
+            }
+            $committee->update();
+        } else {
+            return false;
         }
         return true;
     }

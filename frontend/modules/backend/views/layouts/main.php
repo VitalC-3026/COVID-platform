@@ -181,8 +181,7 @@ AppAsset_b::register($this);
                                 <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-danager"
-                                                                                       id="user-inbox">5</span></a>
+                                <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-danager" id="user-inbox">5</span></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-power-off"></i> Logout</a>
@@ -219,7 +218,7 @@ AppAsset_b::register($this);
                                 <a href="<?= \yii\helpers\Url::to(['/backend/resident/index']); ?>">居民数据库</a>
                             </li>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/site/admininfo']); ?>">职员数据库</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/committee/index']); ?>">职员数据库</a>
                             </li>
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/site/rights']); ?>">职员权限分配</a>
