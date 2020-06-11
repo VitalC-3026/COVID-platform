@@ -24,7 +24,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5 col-sm-12" id="inbox-wrapper">
+        <div class="col-md-6 col-sm-12" id="inbox-wrapper">
 
             <section class="panel">
                 <header class="panel-heading wht-bg">
@@ -45,7 +45,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                                 'class' => 'col-lg-12'
                             ],
                             'pager' => [
-                                'maxButtonCount' => 5,
+                                /*'maxButtonCount' => 5,*/
                                 'firstPageLabel' => '首页',
                                 'prevPageLabel' => '<i class="fa fa-angle-double-left"></i>',
                                 'nextPageLabel' => '<i class="fa fa-angle-double-right"></i>',
@@ -57,7 +57,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
             </section>
 
         </div>
-        <div class="col-md-7 col-sm-12" id="view-mail-wrapper">
+        <div class="col-md-6 col-sm-12" id="view-mail-wrapper">
             <div class="panel">
                 <div class="panel-body">
                     <header>

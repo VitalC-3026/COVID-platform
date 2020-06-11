@@ -1,7 +1,7 @@
 <?php 
 use frontend\assets\AppAsset_b;
 
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/countTo/jquery.countTo.js');
+/*AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/countTo/jquery.countTo.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/weather/js/skycons.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.min.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.resize.min.js');
@@ -27,7 +27,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/jve
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/todo/js/todos.js');
 AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/jvectormap/css/jquery-jvectormap-1.2.2.css');
 AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/todo/css/todos.css');
-AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris/css/morris.css');
+AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris/css/morris.css');*/
 ?>
 <div id="main-content">
     <!--tiles start-->

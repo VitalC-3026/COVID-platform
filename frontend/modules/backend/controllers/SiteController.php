@@ -14,11 +14,14 @@ use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
 use frontend\modules\backend\models\EditForm;
 use frontend\modules\backend\models\CensorForm;
+use frontend\modules\backend\models\RightsForm;
 use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\CommitteeSearch;
 use common\models\PriorityType;
+use common\models\PriorityList;
 use common\models\Resident;
 use common\models\News;
+use common\models\User;
 
 /**
  * Site controller
@@ -58,15 +61,39 @@ class SiteController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $PriorityType = new PriorityType();
-        // 实现可以把priorityType所有内容从数据库取出以数组形式返回给priorityType这个变量
-        // 其中权限名字给rights，权限介绍给description，都要以数组形式，或者callme改前端展示方式
-        $description = array('职员有权限对公告、新闻进行编辑，在通过审核后进行发布和删除；允许筛选评论，发布精选评论，回复评论', '职员每日走访重点对象之后需完成健康信息的上报，并及时记录重点对象的突发状况和状态变更等信息', '职员可以查看社区数据库，并进行添加用户与删除用户的操作');
-        $rights = array('发布公告', '填报健康信息', '查看数据库');
-        $view = Yii::$app->view;
-        $view->params['rights'] = $rights;
-        $view->params['description'] = $description;
-        return $this->render('rights');
+        $committee = new CommitteeSearch();
+        if ($committee->load(Yii::$app->request->post()) && $committee->searchByAccount($committee->account) !== null) {
+            $id = $committee->searchByAccount($committee->account)->account;
+        } else {
+            $id = Yii::$app->user->identity->account;
+        }
+        $user = new ActiveDataProvider([
+            'query' => User::find()->where(['account' => $id]),
+        ]); 
+        $priorityType = new ActiveDataProvider([
+            'query' => PriorityType::find(),
+            
+        ]);
+        $priority = PriorityType::find()->all();
+        $rights = array();
+        $i = 0;
+        foreach ($priority as $p) {
+            $rights[$i] = $p->priority;
+            $i++;
+        }
+        $i = 0;
+        $old = PriorityList::find()->where(["account" => $id]);
+        $oldRights = array();
+        foreach ($old as $o) {
+            $oldRights[$i] = $o->priority;
+            $i++;
+        }
+        $rightsForm = new RightsForm();
+        return $this->render('rights', [
+            'provider' => $user, 'priorityProvider' => $priorityType,
+            'searchForm' => $committee, 'rightsForm' => $rightsForm,
+            'rights' => $rights, 'oldRights' => $oldRights
+        ]);
     }
 
     public function actionHealthreport()
@@ -87,63 +114,5 @@ class SiteController extends Controller
         return $this->render('healthreport', ['model' => $model,]);
     }
 
-
-    public function actionEdit()
-    {
-        Yii::$app->view->params['time'] = date('Y-m-d H:i:s', time());
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
-        $model = new EditForm();
-        if ($model->load(Yii::$app->request->post())) {
-            date_default_timezone_set('prc');
-            $date = date('Y-m-d', time());
-            $time = date('H:i:s', time());
-            if ($model->edit(Yii::$app->user->identity->account, $date, $time)) {
-                $dataProvider = new ActiveDataProvider([
-                    'query' => News::find()->where(['visible' => 0])->orderBY(['id' => SORT_DESC]),
-                    'pagination' => [
-                        'pagesize' => 4
-                    ]
-                ]);
-                return $this->render('index', ['provider' => $dataProvider]);
-            }
-        }
-
-        return $this->render('edit', ['model' => $model]);
-    }
-
-    public function actionCensor($id = 0)
-    {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
-        date_default_timezone_set('prc');
-        $time = date('Y-m-d H:i:s', time());
-        Yii::$app->view->params['time'] = $time;
-        if ($id === 0) {
-            $news = News::find()->where(['visible' => 0])->orderBY(['id' => SORT_DESC])->one();
-        } else {
-            $news = News::findOne($id);
-        } 
-        
-        Yii::$app->view->params['news'] = $news;
-        Yii::$app->view->params['id'] = $id;
-        $dataProvider = new ActiveDataProvider([
-            'query' => News::find()->where(['visible' => 0])->orderBY(['id' => SORT_DESC]),
-            'pagination' => [
-                'pagesize' => 4
-            ]
-        ]);
-        return $this->render('censor', [
-            'provider' => $dataProvider,
-        ]);
-    }
-
-    public function actionDeleteNews($id){
-        $model = News::findOne($id);
-        if ($model !== null) {
-            $model->delete();
-        }
-        return $this->redirect(['censor']);
-    }
 
 }

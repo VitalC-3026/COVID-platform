@@ -1,11 +1,14 @@
 <?php 
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\ListView;
+use yii\widgets\ActiveForm;
 
-AppAsset_b::addCss($this, 'assets/plugins/dataTables/css/dataTables.css');
-AppAsset_b::addScript($this, 'assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
-AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/jquery.dataTables.js');
-AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.js');
+AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/css/dataTables.css');
+AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
+AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/jquery.dataTables.js');
+AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <div id="main-content">
     <div class="row">
@@ -38,82 +41,80 @@ AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.
                     </div>
                 </div>
                 <div class="panel-body">
-                    
                     <div role="grid" id="example_wrapper" class="dataTables_wrapper form-inline no-footer">
                     
                         <div class="row" margin-top="10px">
-                            <div class="col-xs-4">    
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                    <input type="search" class=" form-control input-sm" aria-controls="example">
-                                </div>     
-                            </div>
-                            <div class="col-xs-4">    
-                                <button class="btn btn-primary">查找</button>   
+                            <?php $form = ActiveForm::begin(); ?>
+                                <?= $form->field($searchForm, 'account')->textInput(['autofocus' => true])->label('身份证号') ?>
+                                <div class="form-group">
+                                    <div class="col-sm-6" align="right">
+                                        <?= Html::submitButton('<i class="fa fa-search"></i>', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
+                                    </div>
+                                </div>
+                            <?php ActiveForm::end(); ?>
+                        </div>
+                        <div role="grid" id="example_wrapper" class="dataTables_wrapper form-inline no-footer">
+                            <div class="row">
+                              <div class="col-lg-6">
+                                <?php echo GridView::widget([
+                                  //设置GridView的ID
+                                  'id' => 'committeeRightsGridView',
+                                  //设置数据提供器
+                                  'dataProvider' => $provider,
+                                  /*//设置筛选模型
+                                  'filterModel' => $model,*/
+                                  'emptyText' => '数据库中无数据',
+                                  'showOnEmpty' => true,
+                                  'summary' => '',
+                                  'columns' => [
+                                    [
+                                      'label' => '姓名',
+                                      'attribute' => 'name',
+                                      'format' => 'raw',
+                                    ],
+                                    [
+                                      'label' => '性别',
+                                      //设置筛选选项
+                                      'filter' => [1 => '男', 0 => '女'],
+                                      'attribute' => 'sex',
+                                      'format' => 'raw',
+                                      'value' => function($data){
+                                        return ($data->sex === 1) ? '男' : '女';
+                                      },
+                                    ],
+                                    [
+                                      'label' => '年龄',
+                                      'attribute' => 'age',
+                                      'format' => 'raw',
+                                      'headerOptions' => [
+                                        'style' => 'width:60px;',
+                                      ],
+                                    ],
+                                    [
+                                      'label' => '联系方式',
+                                      'attribute' => 'tel',
+                                      'format' => 'raw',
+                                    ],
+
+                                  ],
+                                ]); ?>
+                              </div>
+                              <div class="col-lg-6">
+                                  <?php $form = ActiveForm::begin([
+                                        'id' => 'rights-form',
+                                        'options' => ['class' => 'form-horizontal'],
+                                    ]); ?>
+                                    <?= $form->field($rightsForm, 'rights')->checkboxList($rights, ['value' => $oldRights]); ?>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-1 col-lg-11">
+                                            <?= Html::submitButton('确认', ['class' => 'btn btn-primary']) ?>
+                                        </div>
+                                    </div>
+                                <?php ActiveForm::end(); ?>
+                              </div>
                             </div>
                         </div>
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th width="183px">身份证号码</th>
-                                    <th width="100px">姓名</th>
-                                    <th width="50px">性别</th>
-                                    <th width="120px">联系方式</th>
-                                    <th width="100px">入职时间</th>
-                                    <th width="100px">工作类型</th>
-                                    <th>分配权限</th>
-                                </tr>
-                            </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>440440199001011010</td>
-                                    <td>李华</td>
-                                    <td>男</td>
-                                    <td>13000001111</td>
-                                    <td>2020-1-10</td>
-                                    <td>普通职员</td>
-                                    <td>
-                                        <div class="radio">
-
-                                            <input class="icheck" type="checkbox" checked="" name="check1">
-                                            <label><?php echo $this->params['rights'][0]?></label>
-                                        </div>
-                                        <div class="radio">
-
-                                            <input class="icheck" type="checkbox" name="check2">
-                                            <label><?php echo $this->params['rights'][1]?></label>
-                                        </div>
-                                        <div class="radio">
-
-                                            <input class="icheck" type="checkbox" name="check3">
-                                            <label><?php echo $this->params['rights'][2]?></label>
-                                        </div>
-                                         <div class="radio">
-
-                                            <input class="icheck" type="checkbox" checked="" name="check1">
-                                            <label>买菜</label>
-                                        </div>
-                                        <div class="radio">
-
-                                            <input class="icheck" type="checkbox" name="check2">
-                                            <label>送菜</label>
-                                        </div>
-                                        <div class="radio">
-
-                                            <input class="icheck" type="checkbox" name="check3">
-                                            <label>教居民如何买菜</label>
-                                        </div>   
-                                    </td>
-                                </tr>
-                               
-                            </tbody>
-                        </table>
-                        <div class="row">
-                            <div class="col-md-12" align="right">
-                                <button class="btn btn-primary">确认</button>
-                            </div>
-                        </div>
                         <div class="panel panel-default" margin-top="50px">
                             <div class="panel-heading">
                                 <h3 class="panel-title">职权简介</h3>
@@ -123,44 +124,63 @@ AppAsset_b::addScript($this, 'assets/plugins/dataTables/js/dataTables.bootstrap.
                                 </div>
                             </div>
                             <div class="panel-body">
-                               <div class="panel-group accordion" id="accordion" margin-top="40px">
+                                
+                                <?php echo ListView::widget([
+                                    'dataProvider' => $priorityProvider,
+                                    'itemView' => 'priorityList',
+                                    'viewParams' => [
+                                    ],
+                                    'layout' => '{items}',
+                                    'itemOptions' => [
+                                        'tag' => 'div',
+                                        'class' => 'col-lg-12'
+                                    ],
+                                    'pager' => [
+                                        'firstPageLabel' => '首页',
+                                        'prevPageLabel' => '<i class="fa fa-angle-double-left"></i>',
+                                        'nextPageLabel' => '<i class="fa fa-angle-double-right"></i>',
+                                        'lastPageLabel' => '尾页'
+                                    ]
+                                ]); ?>    
+                                <!-- <div class="panel-group accordion" id="accordion">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed"><?php echo $this->params['rights'][0]?></a>
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">Collapsible Group Item #1</a>
                                             </h4>
                                         </div>
                                         <div id="collapseOne" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <p><?php echo $this->params['description'][0]?></p>
+                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><?php echo $this->params['rights'][1]?></a>
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2</a>
                                             </h4>
                                         </div>
                                         <div id="collapseTwo" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <p><?php echo $this->params['description'][1]?></p>
+                                                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
                                             </div>
                                         </div>
                                     </div>
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><?php echo $this->params['rights'][2]?></a>
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Collapsible Group Item #3</a>
                                             </h4>
                                         </div>
                                         <div id="collapseThree" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <p><?php echo $this->params['description'][2]?></p>
+                                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
                                             </div>
                                         </div>
                                     </div>
-                                </div>                                               
+                                </div> -->
+                                                                               
                             </div>
                         </div>
                     </div>

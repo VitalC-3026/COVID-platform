@@ -4667,3 +4667,2246 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1591843827.2
     'REQUEST_TIME' => 1591843827
 ]
+2020-06-11 06:08:54 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][ParseError] ParseError: syntax error, unexpected 'foreach' (T_FOREACH) in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:66
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\module...')
+#1 [internal function]: spl_autoload_call('frontend\\module...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(637): class_exists('frontend\\module...')
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(588): yii\base\Module->createController('rights')
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('site/rights')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-06-11 06:08:54 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '57668'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591848534.586
+    'REQUEST_TIME' => 1591848534
+]
+2020-06-11 06:09:09 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][ParseError] ParseError: syntax error, unexpected 'for' (T_FOR) in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:66
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\module...')
+#1 [internal function]: spl_autoload_call('frontend\\module...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(637): class_exists('frontend\\module...')
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(588): yii\base\Module->createController('rights')
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('site/rights')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-06-11 06:09:09 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '57677'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591848549.887
+    'REQUEST_TIME' => 1591848549
+]
+2020-06-11 06:09:25 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][Error] Error: Call to undefined function frontend\modules\backend\controllers\PriorityType() in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:62
+Stack trace:
+#0 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2020-06-11 06:09:25 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '57686'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591848565.537
+    'REQUEST_TIME' => 1591848565
+]
+2020-06-11 06:09:49 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'information' of non-object in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:67
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(67): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'D:\\xampp\\htdocs...', 67, Array)
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 06:09:49 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '57700'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591848589.031
+    'REQUEST_TIME' => 1591848589
+]
+2020-06-11 06:41:26 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'information' of non-object in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:67
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(67): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'D:\\xampp\\htdocs...', 67, Array)
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 06:41:26 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '58240'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591850486.121
+    'REQUEST_TIME' => 1591850486
+]
+2020-06-11 09:25:05 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: rights in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:78
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(78): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 78, Array)
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 09:25:05 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60186'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860305.26
+    'REQUEST_TIME' => 1591860305
+]
+2020-06-11 09:25:17 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][Error] Error: Class 'GridView' not found in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:57
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#4 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(80): yii\base\Controller->render('rights', Array)
+#5 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-06-11 09:25:17 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60193'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860317.307
+    'REQUEST_TIME' => 1591860317
+]
+2020-06-11 09:25:45 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][Error] Error: Class 'yii\widget\GridView' not found in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:59
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#4 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(80): yii\base\Controller->render('rights', Array)
+#5 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-06-11 09:25:45 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60208'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860345.836
+    'REQUEST_TIME' => 1591860345
+]
+2020-06-11 09:26:09 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][Error] Error: Class 'yii\widgets\GridView' not found in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:59
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#4 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(80): yii\base\Controller->render('rights', Array)
+#5 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-06-11 09:26:08 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60222'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860368.967
+    'REQUEST_TIME' => 1591860368
+]
+2020-06-11 09:26:44 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: yii\web\User::getCount() in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Component.php:300
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(190): yii\base\Component->__call('getCount', Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(158): yii\widgets\BaseListView->renderSummary()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{summary}')
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{summary}')
+#4 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(138): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#8 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php(61): yii\base\Widget::widget(Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xampp\\htdocs...')
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#11 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#12 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#13 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(80): yii\base\Controller->render('rights', Array)
+#14 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#15 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#18 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#19 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#21 {main}
+2020-06-11 09:26:44 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60231'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860404.598
+    'REQUEST_TIME' => 1591860404
+]
+2020-06-11 09:29:55 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: common\models\User::getCount() in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Component.php:300
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(190): yii\base\Component->__call('getCount', Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(158): yii\widgets\BaseListView->renderSummary()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{summary}')
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{summary}')
+#4 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(138): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#8 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php(61): yii\base\Widget::widget(Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xampp\\htdocs...')
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#11 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#12 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#13 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(80): yii\base\Controller->render('rights', Array)
+#14 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#15 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#18 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#19 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#21 {main}
+2020-06-11 09:29:55 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60274'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860595.028
+    'REQUEST_TIME' => 1591860595
+]
+2020-06-11 09:33:24 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][Error] Error: Class 'frontend\modules\backend\controllers\User' not found in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:62
+Stack trace:
+#0 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2020-06-11 09:33:24 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60304'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860804.882
+    'REQUEST_TIME' => 1591860804
+]
+2020-06-11 09:33:44 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: model in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:83
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 83, Array)
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 09:33:44 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60317'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860824.054
+    'REQUEST_TIME' => 1591860824
+]
+2020-06-11 09:33:55 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The "query" property must be an instance of a class that implements the QueryInterface e.g. yii\db\Query or its subclasses. in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\data\ActiveDataProvider.php:102
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\data\BaseDataProvider.php(101): yii\data\ActiveDataProvider->prepareModels()
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\data\BaseDataProvider.php(114): yii\data\BaseDataProvider->prepare()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\data\BaseDataProvider.php(155): yii\data\BaseDataProvider->getModels()
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(190): yii\data\BaseDataProvider->getCount()
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(158): yii\widgets\BaseListView->renderSummary()
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{summary}')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{summary}')
+#7 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\widgets\BaseListView.php(138): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#11 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php(61): yii\base\Widget::widget(Array)
+#12 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#14 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#15 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#16 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\Controller->render('rights', Array)
+#17 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#18 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#21 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#22 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#24 {main}
+2020-06-11 09:33:55 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60323'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591860835.553
+    'REQUEST_TIME' => 1591860835
+]
+2020-06-11 09:39:32 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: rights in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:140
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php(140): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\xampp\\htdocs...', 140, Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#5 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\Controller->render('rights', Array)
+#6 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#11 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2020-06-11 09:39:32 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60400'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591861172.432
+    'REQUEST_TIME' => 1591861172
+]
+2020-06-11 09:40:04 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: rights in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:140
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php(140): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\xampp\\htdocs...', 140, Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#5 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\Controller->render('rights', Array)
+#6 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#11 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2020-06-11 09:40:03 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60407'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591861203.969
+    'REQUEST_TIME' => 1591861203
+]
+2020-06-11 09:48:27 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: rights in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:140
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php(140): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\xampp\\htdocs...', 140, Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#5 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\Controller->render('rights', Array)
+#6 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#11 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2020-06-11 09:48:27 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60464'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591861707.001
+    'REQUEST_TIME' => 1591861707
+]
+2020-06-11 09:49:15 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: rights in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:140
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php(140): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\xampp\\htdocs...', 140, Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(348): require('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#5 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\Controller->render('rights', Array)
+#6 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#10 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#11 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2020-06-11 09:49:15 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '60476'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591861755.134
+    'REQUEST_TIME' => 1591861755
+]
+2020-06-11 10:56:37 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][ParseError] ParseError: syntax error, unexpected ''columns'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:69
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#3 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\Controller->render('rights', Array)
+#4 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#11 {main}
+2020-06-11 10:56:37 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+    'dp-1-sort' => 'priority'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights&dp-1-sort=information'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '61627'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights&dp-1-sort=priority'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights&dp-1-sort=priority'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591865797.086
+    'REQUEST_TIME' => 1591865797
+]
+2020-06-11 11:01:40 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][ParseError] ParseError: syntax error, unexpected ''columns'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\views\site\rights.php:69
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(frontend\modules\backend\controllers\SiteController))
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('rights', Array, Object(frontend\modules\backend\controllers\SiteController))
+#3 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(83): yii\base\Controller->render('rights', Array)
+#4 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#8 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#9 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#11 {main}
+2020-06-11 11:01:40 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+    'dp-1-sort' => 'priority'
+    'sort' => '-account'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights&dp-1-sort=priority&sort=account'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '61889'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights&dp-1-sort=priority&sort=-account'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights&dp-1-sort=priority&sort=-account'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591866100.523
+    'REQUEST_TIME' => 1591866100
+]
+2020-06-11 11:59:30 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][ParseError] ParseError: syntax error, unexpected ':' in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:78
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\module...')
+#1 [internal function]: spl_autoload_call('frontend\\module...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(637): class_exists('frontend\\module...')
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(588): yii\base\Module->createController('rights')
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('site/rights')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-06-11 11:59:30 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '62656'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591869570.765
+    'REQUEST_TIME' => 1591869570
+]
+2020-06-11 12:00:02 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: p in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:78
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(78): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 78, Array)
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 12:00:02 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '62665'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591869602.505
+    'REQUEST_TIME' => 1591869602
+]
+2020-06-11 12:00:04 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: p in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:78
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(78): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 78, Array)
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 12:00:03 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '62666'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591869603.951
+    'REQUEST_TIME' => 1591869603
+]
+2020-06-11 12:43:56 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][Error] Error: Class 'frontend\modules\backend\controllers\PriorityList' not found in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:83
+Stack trace:
+#0 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#1 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2020-06-11 12:43:56 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '62959'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591872236.537
+    'REQUEST_TIME' => 1591872236
+]
+2020-06-11 12:44:17 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: yii\data\ActiveDataProvider::account in D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(84): yii\base\Component->__get('account')
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 12:44:17 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '62969'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591872257.275
+    'REQUEST_TIME' => 1591872257
+]
+2020-06-11 12:46:17 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][ParseError] ParseError: syntax error, unexpected '}' in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:69
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\module...')
+#1 [internal function]: spl_autoload_call('frontend\\module...')
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(637): class_exists('frontend\\module...')
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(588): yii\base\Module->createController('rights')
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('site/rights')
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#7 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-06-11 12:46:17 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '62990'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591872377.544
+    'REQUEST_TIME' => 1591872377
+]
+2020-06-11 12:46:35 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'priority' of non-object in D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php:88
+Stack trace:
+#0 D:\xampp\htdocs\yii\COVID-platform\frontend\modules\backend\controllers\SiteController.php(88): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'D:\\xampp\\htdocs...', 88, Array)
+#1 [internal function]: frontend\modules\backend\controllers\SiteController->actionRights()
+#2 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('rights', Array)
+#5 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/site/ri...', Array)
+#6 D:\xampp\htdocs\yii\COVID-platform\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\yii\COVID-platform\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-06-11 12:46:35 [::1][440440200001012345][nb1epdngl568vbf5i0n3f5seiu][info][application] $_GET = [
+    'r' => 'backend/site/rights'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'nb1epdngl568vbf5i0n3f5seiu'
+    '_identity-frontend' => '877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"440440200001012345\",\"n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As\",2592000]\";}'
+    '_csrf-frontend' => 'f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '440440200001012345'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/yii/COVID-platform/frontend/web/index.php?r=backend%2Fcommittee%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=nb1epdngl568vbf5i0n3f5seiu; _identity-frontend=877dfad9e2bad6b45a007ad4b22cad0d410a47f08753a33e80dd539f0404cc96a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22440440200001012345%22%2C%22n0BaiMY__JdWCiq0KdjD-VuLrJ3Nt5As%22%2C2592000%5D%22%3B%7D; _csrf-frontend=f1041324ec337ec7bff363c2356fc541319d66f6ce72800b3cc281408c61467ca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JFQiWSkIe5eo5bqCHXJ1-2KGK-g080Ib%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\XAMPP\\mysql\\bin;D:\\xampp\\tomcat\\bin;D:\\xampp\\tomcat\\lib;D:\\SDK\\platform-tools;D:\\SDK;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/yii/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '63001'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=backend%2Fsite%2Frights'
+    'REQUEST_URI' => '/yii/COVID-platform/frontend/web/index.php?r=backend%2Fsite%2Frights'
+    'SCRIPT_NAME' => '/yii/COVID-platform/frontend/web/index.php'
+    'PHP_SELF' => '/yii/COVID-platform/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1591872395.318
+    'REQUEST_TIME' => 1591872395
+]

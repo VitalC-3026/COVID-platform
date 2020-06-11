@@ -66,6 +66,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                               //设置筛选模型
                               'filterModel' => $model,
                               'emptyText' => '数据库中无数据',
+                              'summary' => '第{page}页，共{pageCount}页，{totalCount}条数据',
                               'columns' => [
                                 //显示序号列
                                 ['class' => 'yii\grid\SerialColumn'],
