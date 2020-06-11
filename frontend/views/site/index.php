@@ -121,10 +121,11 @@
                         <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 
                             <div class="counter-78529 d-flex align-items-start">
-                                <div class="icon-wrap"><span class="flaticon-muscle text-primary icon-stethoscope"></span>
+                                <div class="icon-wrap"><span
+                                            class="flaticon-muscle text-primary icon-stethoscope"></span>
                                 </div>
                                 <div class="counter-text">
-                                    <span class="caption" >较昨日</span>
+                                    <span class="caption">较昨日</span>
                                     <span class="block-counter-78529" id="confirmToday">0</span>
                                     <strong class="block-counter-78529" id="confirmTotal">0</strong>
                                     <h5 class="caption">累计确诊</h5>
@@ -137,7 +138,7 @@
                                 <div class="icon-wrap"><span
                                             class="flaticon-stationary-bike text-primary icon-person"></span></div>
                                 <div class="counter-text">
-                                    <span class="caption" >较昨日</span>
+                                    <span class="caption">较昨日</span>
                                     <span class="block-counter-78529" id="inputToday">0</span>
                                     <strong class="block-counter-78529" id="inputTotal">0</strong>
                                     <h5 class="caption">境外输入</h5>
@@ -147,9 +148,10 @@
                         <div class="col-md-6 col-lg-3  mb-4 mb-lg-0">
 
                             <div class="counter-78529 d-flex align-items-star">
-                                <div class="icon-wrap"><span class="flaticon-banana text-primary icon-healing"></span></div>
+                                <div class="icon-wrap"><span class="flaticon-banana text-primary icon-healing"></span>
+                                </div>
                                 <div class="counter-text">
-                                    <span class="caption" >较昨日</span>
+                                    <span class="caption">较昨日</span>
                                     <span class="block-counter-78529" id="cureToday">0</span>
                                     <strong class="block-counter-78529" id="cureTotal">0</strong>
                                     <h5 class="caption">累计治愈</h5>
@@ -162,7 +164,7 @@
                                 <div class="icon-wrap"><span class="flaticon-heart text-primary icon-heartbeat"></span>
                                 </div>
                                 <div class="counter-text">
-                                    <span class="caption" >较昨日</span>
+                                    <span class="caption">较昨日</span>
                                     <span class="block-counter-78529" id="deathToday">0</span>
                                     <strong class="block-counter-78529" id="deathTotal">0</strong>
                                     <h5 class="caption">累计死亡</h5>
@@ -419,7 +421,8 @@
                         <!-- END: .widget-29182 -->
 
                         <a href="#" class="btn btn-primary btn-block text-center has-icon d-flex"><span
-                                    class="mx-auto d-flex align-items-center"><span class="lni lni-stethoscope mr-3"></span> <span>I have Covid19</span></span></a>
+                                    class="mx-auto d-flex align-items-center"><span
+                                        class="lni lni-stethoscope mr-3"></span> <span>I have Covid19</span></span></a>
                         <a href="#" class="btn btn-primary btn-block text-center has-icon d-flex"><span
                                     class="mx-auto d-flex align-items-center"><span
                                         class="lni lni-envelope mr-3"></span> <span>Get In Touch</span></span></a>
@@ -459,7 +462,8 @@
                                     <span class="icon icon-play"></span>
                                 </a>
                                 <!-- END: .video-play-button -->
-                                <img src="assets/frontend/images/person_transparent_2.png" alt="Image" class="img-fluid">
+                                <img src="assets/frontend/images/person_transparent_2.png" alt="Image"
+                                     class="img-fluid">
                             </figure>
                         </div>
 
@@ -471,14 +475,16 @@
                             <div class="accordion-item">
                                 <h2 class="mb-0" id="headingOne">
                                     <button class="btn btn-link" type="button" data-toggle="collapse"
-                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">什么是新型冠状病毒？
+                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        什么是新型冠状病毒？
                                     </button>
                                 </h2>
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                      data-parent="#accordion_1">
                                     <div class="accordion-body">
-                                        冠状病毒是一个大型病毒家族，已知可引起感冒以及中东呼吸综合征（MERS）和严重急性呼吸综合征（SARS）等较严重疾病。新型冠状病毒是以前从未在人体中发现的冠状病毒新毒株。
+                                        冠状病毒是一个大型病毒家族，已知可引起感冒以及中东呼吸综合征（MERS）和严重急性呼吸综合征（SARS）等较严重疾病。
+                                        新型冠状病毒是以前从未在人体中发现的冠状病毒新毒株。
                                     </div>
                                 </div>
                             </div> <!-- .accordion-item -->
@@ -486,14 +492,16 @@
                             <div class="accordion-item">
                                 <h2 class="mb-0" id="headingTwo">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        冠状病毒的致病性如何？
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                        新型冠状病毒的传染性和致死性如何？
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                      data-parent="#accordion_1">
                                     <div class="accordion-body">
-                                        冠状病毒主要感染成人或较大儿童，引起普通感冒和咽喉炎，某些毒株还可引起成人腹泻。病毒经飞沫传播，粪口途径亦可以传播。主要在冬春季流行。病毒的潜伏期平均 3～7 天。
+                                        若无有效遏制措施，患者可能感染1.5至3.5个人，具有中等传染性，与SARS大致相当。
+                                        致死率低于另外两种冠状病毒MERS（致死率大约为三分之一）和SARS（致死率大约为十分之一）。
                                     </div>
                                 </div>
                             </div> <!-- .accordion-item -->
@@ -501,14 +509,15 @@
                                 <h2 class="mb-0" id="headingThree">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                             data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">哪些野生动物会携带冠状病毒？
+                                            aria-controls="collapseThree">哪些野生动物会携带新型冠状病毒？
                                     </button>
                                 </h2>
 
                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                      data-parent="#accordion_1">
                                     <div class="accordion-body">
-                                        很多野生动物都可能携带病原体，进而成为传播源。果子狸、蝙蝠、竹鼠、獾等是冠状病毒的常见宿主。为了安全起见，千万不要吃未经检疫的野生动物、生鲜等食品。
+                                        很多野生动物都可能携带病原体，进而成为传播源。果子狸、蝙蝠、竹鼠、獾等是新型冠状病毒的常见宿主。
+                                        为了安全起见，千万不要吃未经检疫的野生动物、生鲜等食品。
                                     </div>
                                 </div>
 
@@ -517,7 +526,8 @@
                             <div class="accordion-item">
                                 <h2 class="mb-0" id="headingFour">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseFour">
                                         为什么要对密切接触者医学观察 14 天？
                                     </button>
                                 </h2>
@@ -535,7 +545,8 @@
                             <div class="accordion-item">
                                 <h2 class="mb-0" id="headingFive">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            data-target="#collapseFive" aria-expanded="false"
+                                            aria-controls="collapseFive">
                                         被治愈的人还会继续患病（被传染）吗？
                                     </button>
                                 </h2>
@@ -543,9 +554,30 @@
                                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
                                      data-parent="#accordion_1">
                                     <div class="accordion-body">
-                                        冠状病毒属于单链 RNA 病毒，容易变异，所以很难形成持续性免疫力。比如每年流行的流感病毒，都需要接种最新的疫苗，也是因为病毒类型经常会发生变化。新冠肺炎患者康复出院后仍有传播病毒风险，要求继续 14 天健康监测和医学观察。
+                                        冠状病毒属于单链 RNA
+                                        病毒，容易变异，所以很难形成持续性免疫力。比如每年流行的流感病毒，都需要接种最新的疫苗，也是因为病毒类型经常会发生变化。
+                                        新冠肺炎患者康复出院后仍有传播病毒风险，要求继续 14 天健康监测和医学观察。
                                     </div>
                                 </div>
+
+                            </div> <!-- .accordion-item -->
+                            <div class="accordion-item">
+                                <h2 class="mb-0" id="headingSix">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseSix" aria-expanded="false"
+                                            aria-controls="collapseSix">
+                                        疫苗研发大概需要多久？
+                                    </button>
+                                </h2>
+
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                     data-parent="#accordion_1">
+                                    <div class="accordion-body">
+                                        已有多家公司和机构正在研制疫苗。初步试验后，可能需要几个月甚至几年的时间来进行广泛测试，以证明疫苗安全性。
+                                        在最好的情况下，疫苗可能在一年后对公众开放。
+                                    </div>
+                                </div>
+
 
                             </div> <!-- .accordion-item -->
 
@@ -588,7 +620,10 @@
                                             <span class="mx-1">/</span>
                                             <a href="#">Covid</a>, <a href="#">News</a>
                                         </div>
-                                        <h3 class="post-heading"><a href="#">湖北鄂州开展核酸检测筛查</a></h3>
+                                        <h3 class="post-heading"><a
+                                                    href="http://baijiahao.baidu.com/s?id=1669064014333218250&wfr=newsapp">
+                                                湖北鄂州开展核酸检测筛查</a>
+                                        </h3>
                                     </div>
                                 </div>
 
@@ -601,7 +636,10 @@
                                             <span class="mx-1">/</span>
                                             <a href="#">Health</a>, <a href="#">News</a>
                                         </div>
-                                        <h3 class="post-heading"><a href="#">阿布扎比酋长国宣布延长一周人员流动禁令</a></h3>
+                                        <h3 class="post-heading"><a
+                                                    href="https://baijiahao.baidu.com/s?id=1668999359026391729&wfr=spider&for=pc">
+                                                阿布扎比酋长国宣布延长一周人员流动禁令</a>
+                                        </h3>
                                     </div>
                                 </div>
 
@@ -614,7 +652,9 @@
                                             <span class="mx-1">/</span>
                                             <a href="#">Health</a>, <a href="#">News</a>
                                         </div>
-                                        <h3 class="post-heading"><a href="#">200余名员工感染新冠病毒 巴西淡水河谷暂停伊塔比拉综合矿区业务</a></h3>
+                                        <h3 class="post-heading"><a
+                                                    href="http://finance.sina.com.cn/roll/2020-06-09/doc-iirczymk6047865.shtml">
+                                                200余名员工感染新冠病毒 巴西淡水河谷暂停伊塔比拉综合矿区业务</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -673,10 +713,22 @@
 
                             <div class="widget-inner">
                                 <ul class="list-unstyled">
-                                    <li><a href="#">电子体温计</a></li>
-                                    <li><a href="#">消毒液</a></li>
-                                    <li><a href="#">一次性口罩</a></li>
-                                    <li><a href="#">电动喷雾机</a></li>
+                                    <li>
+                                        <a href="https://www.sohu.com/a/369773520_120058454">
+                                            电子体温计</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.sohu.com/a/369773520_120058454">
+                                            消毒液</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.sohu.com/a/369773520_120058454">
+                                            一次性口罩</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.sohu.com/a/369773520_120058454">
+                                            电动喷雾机</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -696,10 +748,22 @@
                             </div>
                             <div class="widget-inner">
                                 <ul class="list-unstyled">
-                                    <li><a href="#">蔬菜粮油</a></li>
-                                    <li><a href="#">水果</a></li>
-                                    <li><a href="#">饮用水</a></li>
-                                    <li><a href="#">液化气</a></li>
+                                    <li>
+                                        <a href="http://k.sina.com.cn/article_1893892941_70e2834d02000og34.html?from=society">
+                                            蔬菜粮油</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k.sina.com.cn/article_1893892941_70e2834d02000og34.html?from=society">
+                                            水果</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k.sina.com.cn/article_1893892941_70e2834d02000og34.html?from=society">
+                                            饮用水</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://k.sina.com.cn/article_1893892941_70e2834d02000og34.html?from=society">
+                                            液化气</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -719,9 +783,21 @@
                             </div>
                             <div class="widget-inner">
                                 <ul class="list-unstyled">
-                                    <li><a href="#">上门随访，健康检测</a></li>
-                                    <li><a href="#">居家隔离，体温监测</a></li>
-                                    <li><a href="#">专户专人，隔离值守</a></li>
+                                    <li>
+                                        <a href="http://gdgz.wenming.cn/gzjj/202002/t20200207_6274584.htm">
+                                            上门随访，健康检测
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://gdgz.wenming.cn/gzjj/202002/t20200207_6274584.htm">
+                                            居家隔离，体温监测
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://gdgz.wenming.cn/gzjj/202002/t20200207_6274584.htm">
+                                            专户专人，隔离值守
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -741,9 +817,15 @@
                             </div>
                             <div class="widget-inner">
                                 <ul class="list-unstyled">
-                                    <li><a href="#">发放出入证，精准识别</a></li>
-                                    <li><a href="#">设立检查点，体温监测</a></li>
-                                    <li><a href="#">封闭式管理，外来人员禁入</a></li>
+                                    <li>
+                                        <a href="https://baijiahao.baidu.com/s?id=1658172044602323644&wfr=spider&for=pc">发放出入证，精准识别</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://baijiahao.baidu.com/s?id=1658172044602323644&wfr=spider&for=pc">设立检查点，体温监测</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://baijiahao.baidu.com/s?id=1658172044602323644&wfr=spider&for=pc">封闭式管理，外来人员禁入</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -760,19 +842,18 @@
     <!-- END: #main -->
     <script language="JavaScript">
         <?php $this->beginBlock('js_end') ?>
-        function match(source,id){
-            if(source === undefined)document.getElementById(id).innerText = "待国家卫健委数据公布中";
-            else if(parseInt(source)<0){
-                document.getElementById(id).innerText =  source;
-            }
-            else if(parseInt(source) === 0){
+        function match(source, id) {
+            if (source === undefined) document.getElementById(id).innerText = "待国家卫健委数据公布中";
+            else if (parseInt(source) < 0) {
+                document.getElementById(id).innerText = source;
+            } else if (parseInt(source) === 0) {
                 document.getElementById(id).innerText = "无变化";
-            }
-            else document.getElementById(id).innerText = "+" + source;
+            } else document.getElementById(id).innerText = "+" + source;
         }
+
         function data() {
             var dataApi = "http://49.232.173.220:3001/data/getStatisticsService";
-            $.getJSON(dataApi, function (newpneumoniadata){
+            $.getJSON(dataApi, function (newpneumoniadata) {
                 //世界数据
                 var summaryDataIn = newpneumoniadata["globalStatistics"];
                 var currentConfirmedCount = summaryDataIn["currentConfirmedCount"];
@@ -783,14 +864,14 @@
                 var confirmedIncr = summaryDataIn["confirmedIncr"];
                 var curedIncr = summaryDataIn["curedIncr"];
                 var deadIncr = summaryDataIn["deadIncr"];
-                document.getElementById("globalTotal").setAttribute("data-number",confirmedCount);
-                document.getElementById("globalToday").setAttribute("data-number",confirmedIncr);
+                document.getElementById("globalTotal").setAttribute("data-number", confirmedCount);
+                document.getElementById("globalToday").setAttribute("data-number", confirmedIncr);
                 console.log(confirmedIncr);
-                document.getElementById("globalNow").setAttribute("data-number",currentConfirmedCount);
-                document.getElementById("globalDeath").setAttribute("data-number",deadCount);
+                document.getElementById("globalNow").setAttribute("data-number", currentConfirmedCount);
+                document.getElementById("globalDeath").setAttribute("data-number", deadCount);
                 document.getElementById("globalDeathToday").setAttribute("data-number", deadIncr);
-                var deathRank = (parseInt(deadCount) * 100 /parseInt(confirmedCount)).toFixed(1)+ "";
-                var cureRank = (parseInt(curedCount) * 100/parseInt(confirmedCount)).toFixed(1) + "";
+                var deathRank = (parseInt(deadCount) * 100 / parseInt(confirmedCount)).toFixed(1) + "";
+                var cureRank = (parseInt(curedCount) * 100 / parseInt(confirmedCount)).toFixed(1) + "";
                 document.getElementById("globalDeathRank").setAttribute("data-number", deathRank);
                 document.getElementById("globalCure").setAttribute("data-number", curedCount);
                 document.getElementById("globalCureToday").setAttribute("data-number", curedIncr);
@@ -801,17 +882,18 @@
                 document.getElementById("inputTotal").setAttribute("data-number", nationData["suspectedCount"]);
                 document.getElementById("cureTotal").setAttribute("data-number", nationData["curedCount"]);
                 document.getElementById("deathTotal").setAttribute("data-number", nationData["deadCount"]);
-                match(nationData["confirmedIncr"],"confirmToday");
-                match(nationData["suspectedIncr"],"inputToday");
-                match(nationData["curedIncr"],"cureToday");
-                match(nationData["deadIncr"],"deathToday");
+                match(nationData["confirmedIncr"], "confirmToday");
+                match(nationData["suspectedIncr"], "inputToday");
+                match(nationData["curedIncr"], "cureToday");
+                match(nationData["deadIncr"], "deathToday");
             })
         }
-        window.onbeforeunload = function(){
+
+        window.onbeforeunload = function () {
             document.documentElement.scrollTop = 0;  //ie下
             document.body.scrollTop = 0;  //非ie
         }
 
         <?php $this->endBlock(); ?>
     </script>
-<?php $this->registerJs($this->blocks['js_end'],\yii\web\View::POS_END);//将编写的js代码注册到页面底部 ?>
+<?php $this->registerJs($this->blocks['js_end'], \yii\web\View::POS_END);//将编写的js代码注册到页面底部 ?>
