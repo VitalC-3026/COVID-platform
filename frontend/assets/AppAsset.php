@@ -37,7 +37,8 @@ class AppAsset extends AssetBundle
 //        'assets/frontend/js/jquery.easing.1.3.js',
 //        'assets/frontend/js/main.js'
         'assets/js/echarts.min.js',
-        'assets/js/china.js'
+        'assets/js/china.js',
+        'assets/js/world.js',
     ];
     public $depends = [
 //        'yii\web\YiiAsset',
