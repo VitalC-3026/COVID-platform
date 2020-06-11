@@ -4667,3 +4667,318 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1591843827.2
     'REQUEST_TIME' => 1591843827
 ]
+2020-06-11 07:32:01 [::1][-][rh0p17b4gb6s4osbqiahhdb6k6][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php:705
+Stack trace:
+#0 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(705): PDO->__construct('mysql:host=loca...', 'root', 'Nku1811499CS', NULL)
+#1 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1022): yii\db\Connection->open()
+#3 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(255): yii\db\Connection->getSlavePdo()
+#5 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(1154): yii\db\Command->prepare(true)
+#6 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(401): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('User')
+#10 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%User}}', 'schema', false)
+#11 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(435): yii\db\Schema->getTableSchema('{{%User}}')
+#12 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(262): yii\db\ActiveRecord::getTableSchema()
+#13 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(234): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#14 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#15 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#16 C:\Users\User\Desktop\COVID-platform\common\models\User.php(49): yii\db\BaseActiveRecord::findOne(Array)
+#17 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(690): common\models\User::findIdentity('610122200000000...')
+#18 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#19 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#20 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#21 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\panels\UserPanel.php(83): yii\base\Component->__get('isGuest')
+#22 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#23 [internal function]: yii\base\BaseObject->__construct(Array)
+#24 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#25 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#26 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#27 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(247): yii\BaseYii::createObject(Array)
+#28 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(218): yii\debug\Module->initPanels()
+#29 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#30 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct(Array)
+#31 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#32 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#33 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#34 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#35 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject(Array, Array)
+#36 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('debug')
+#37 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#38 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#39 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#40 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct(Array)
+#41 C:\Users\User\Desktop\COVID-platform\frontend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#42 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php:637
+Stack trace:
+#0 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1022): yii\db\Connection->open()
+#1 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(255): yii\db\Connection->getSlavePdo()
+#3 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(1154): yii\db\Command->prepare(true)
+#4 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(401): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('User')
+#8 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%User}}', 'schema', false)
+#9 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(435): yii\db\Schema->getTableSchema('{{%User}}')
+#10 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(262): yii\db\ActiveRecord::getTableSchema()
+#11 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(234): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#12 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#13 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#14 C:\Users\User\Desktop\COVID-platform\common\models\User.php(49): yii\db\BaseActiveRecord::findOne(Array)
+#15 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(690): common\models\User::findIdentity('610122200000000...')
+#16 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#17 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#18 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#19 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\panels\UserPanel.php(83): yii\base\Component->__get('isGuest')
+#20 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#23 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#24 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#25 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(247): yii\BaseYii::createObject(Array)
+#26 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(218): yii\debug\Module->initPanels()
+#27 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#28 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct(Array)
+#29 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#30 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#31 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#32 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#33 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject(Array, Array)
+#34 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('debug')
+#35 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#36 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#37 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#38 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct(Array)
+#39 C:\Users\User\Desktop\COVID-platform\frontend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#40 {main}
+Additional Information:
+
+2020-06-11 07:32:01 [::1][-][rh0p17b4gb6s4osbqiahhdb6k6][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-f62ebc2' => 'd0354eee-5891-409e-8185-add4706e2b84'
+    'advanced-frontend' => 'rh0p17b4gb6s4osbqiahhdb6k6'
+    '_identity-frontend' => 'fd865f8038726af8099095ad78c6968f3fe367cc9f34e9ae459f298242eef808a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"610122200000000000\",\"cdwNybq-skr08iSzDL4gLzdAB06p5ffr\",2592000]\";}'
+    '_csrf-frontend' => '69f5b80d8173a1b2333b7b15bbb82859fce51c1b265bd0c3abbffeeb8461ff75a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8Rx7TCw29zSeUJExFo_8QuNu5nPSh64H\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '610122200000000000'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-f62ebc2=d0354eee-5891-409e-8185-add4706e2b84; advanced-frontend=rh0p17b4gb6s4osbqiahhdb6k6; _identity-frontend=fd865f8038726af8099095ad78c6968f3fe367cc9f34e9ae459f298242eef808a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22610122200000000000%22%2C%22cdwNybq-skr08iSzDL4gLzdAB06p5ffr%22%2C2592000%5D%22%3B%7D; _csrf-frontend=69f5b80d8173a1b2333b7b15bbb82859fce51c1b265bd0c3abbffeeb8461ff75a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228Rx7TCw29zSeUJExFo_8QuNu5nPSh64H%22%3B%7D'
+    'PATH' => 'D:\\XShell\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;D:\\Git\\cmd;D:\\Tex Live\\texlive\\2020\\bin\\win32;D:\\MinGW64\\MinGW64\\bin;D:\\xampp\\php;D:\\xampp\\mysql\\bin;D:\\Anaconda3;D:\\Anaconda3\\Library\\mingw-w64\\bin;D:\\Anaconda3\\Library\\usr\\bin;D:\\Anaconda3\\Library\\bin;D:\\Anaconda3\\Scripts;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Microsoft VS Code\\bin;C:\\Program Files\\Bandizip\\;D:\\JetBrain\\PhpStorm 2020.1\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/Users/User/Desktop/COVID-platform/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/Users/User/Desktop/COVID-platform/frontend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/Users/User/Desktop/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '6892'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1591853521.14
+    'REQUEST_TIME' => 1591853521
+]
+2020-06-11 07:32:01 [::1][-][rh0p17b4gb6s4osbqiahhdb6k6][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php:705
+Stack trace:
+#0 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(705): PDO->__construct('mysql:host=loca...', 'root', 'Nku1811499CS', NULL)
+#1 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1022): yii\db\Connection->open()
+#3 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(255): yii\db\Connection->getSlavePdo()
+#5 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(1154): yii\db\Command->prepare(true)
+#6 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(401): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('User')
+#10 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%User}}', 'schema', false)
+#11 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(435): yii\db\Schema->getTableSchema('{{%User}}')
+#12 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(262): yii\db\ActiveRecord::getTableSchema()
+#13 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(234): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#14 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#15 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#16 C:\Users\User\Desktop\COVID-platform\common\models\User.php(49): yii\db\BaseActiveRecord::findOne(Array)
+#17 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(690): common\models\User::findIdentity('610122200000000...')
+#18 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#19 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#20 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#21 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\panels\UserPanel.php(83): yii\base\Component->__get('isGuest')
+#22 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#23 [internal function]: yii\base\BaseObject->__construct(Array)
+#24 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#25 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#26 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#27 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(247): yii\BaseYii::createObject(Array)
+#28 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(218): yii\debug\Module->initPanels()
+#29 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#30 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct(Array)
+#31 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#32 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#33 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#34 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#35 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject(Array, Array)
+#36 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('debug')
+#37 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#38 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#39 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#40 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct(Array)
+#41 C:\Users\User\Desktop\COVID-platform\frontend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#42 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php:637
+Stack trace:
+#0 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1022): yii\db\Connection->open()
+#1 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(255): yii\db\Connection->getSlavePdo()
+#3 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(1154): yii\db\Command->prepare(true)
+#4 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Command.php(401): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('User')
+#8 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%User}}', 'schema', false)
+#9 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(435): yii\db\Schema->getTableSchema('{{%User}}')
+#10 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(262): yii\db\ActiveRecord::getTableSchema()
+#11 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(234): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#12 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#13 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#14 C:\Users\User\Desktop\COVID-platform\common\models\User.php(49): yii\db\BaseActiveRecord::findOne(Array)
+#15 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(690): common\models\User::findIdentity('610122200000000...')
+#16 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#17 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#18 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#19 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\panels\UserPanel.php(83): yii\base\Component->__get('isGuest')
+#20 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#23 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#24 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#25 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(247): yii\BaseYii::createObject(Array)
+#26 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2-debug\src\Module.php(218): yii\debug\Module->initPanels()
+#27 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#28 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct(Array)
+#29 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#30 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#31 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\di\Container.php(159): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#32 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#33 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject(Array, Array)
+#34 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('debug')
+#35 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#36 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#37 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#38 C:\Users\User\Desktop\COVID-platform\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct(Array)
+#39 C:\Users\User\Desktop\COVID-platform\frontend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#40 {main}
+Additional Information:
+
+2020-06-11 07:32:01 [::1][-][rh0p17b4gb6s4osbqiahhdb6k6][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-f62ebc2' => 'd0354eee-5891-409e-8185-add4706e2b84'
+    'advanced-frontend' => 'rh0p17b4gb6s4osbqiahhdb6k6'
+    '_identity-frontend' => 'fd865f8038726af8099095ad78c6968f3fe367cc9f34e9ae459f298242eef808a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:65:\"[\"610122200000000000\",\"cdwNybq-skr08iSzDL4gLzdAB06p5ffr\",2592000]\";}'
+    '_csrf-frontend' => '69f5b80d8173a1b2333b7b15bbb82859fce51c1b265bd0c3abbffeeb8461ff75a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8Rx7TCw29zSeUJExFo_8QuNu5nPSh64H\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '610122200000000000'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'Phpstorm-f62ebc2=d0354eee-5891-409e-8185-add4706e2b84; advanced-frontend=rh0p17b4gb6s4osbqiahhdb6k6; _identity-frontend=fd865f8038726af8099095ad78c6968f3fe367cc9f34e9ae459f298242eef808a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A65%3A%22%5B%22610122200000000000%22%2C%22cdwNybq-skr08iSzDL4gLzdAB06p5ffr%22%2C2592000%5D%22%3B%7D; _csrf-frontend=69f5b80d8173a1b2333b7b15bbb82859fce51c1b265bd0c3abbffeeb8461ff75a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228Rx7TCw29zSeUJExFo_8QuNu5nPSh64H%22%3B%7D'
+    'PATH' => 'D:\\XShell\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;D:\\Git\\cmd;D:\\Tex Live\\texlive\\2020\\bin\\win32;D:\\MinGW64\\MinGW64\\bin;D:\\xampp\\php;D:\\xampp\\mysql\\bin;D:\\Anaconda3;D:\\Anaconda3\\Library\\mingw-w64\\bin;D:\\Anaconda3\\Library\\usr\\bin;D:\\Anaconda3\\Library\\bin;D:\\Anaconda3\\Scripts;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Microsoft VS Code\\bin;C:\\Program Files\\Bandizip\\;D:\\JetBrain\\PhpStorm 2020.1\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/Users/User/Desktop/COVID-platform/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/Users/User/Desktop/COVID-platform/frontend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/Users/User/Desktop/COVID-platform/frontend/web/index.php'
+    'REMOTE_PORT' => '6893'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1591853521.516
+    'REQUEST_TIME' => 1591853521
+]
