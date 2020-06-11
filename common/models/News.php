@@ -14,6 +14,8 @@ use yii\db\ActiveRecord;
  * @property string $abstract       摘要
  * @property string $content        正文
  * @property string $link           链接
+ * @property int    $cnt            浏览次数
+ * @property bool   $visible        是否可见
  */
 class News extends ActiveRecord
 {
@@ -127,12 +129,7 @@ class News extends ActiveRecord
         return true;
     }
 
-    /**
-     * set方法整合
-     *
-     * @param {$value} - 要设置的参数
-     * @return bool - set成功返回true，否则false
-     */
+    // basic setters
     public function setDate($date)
     {
         $f = $this->checkDate($date);
@@ -147,18 +144,20 @@ class News extends ActiveRecord
     }
     public function setTitle($title) { $this->title = $title; }
     public function setAbstract($abstract) { $this->abstract = $abstract; }
+    public function setContent($content) { $this->content = content; }
     public function setLink($link) { if ($this->checkLink($link)) $this->link = $link; }
+    public function setCnt($cnt) { $this->cnt = cnt; }
+    public function setVisible($visible)   { $this->visible = $visible; }
 
-    /**
-     * get
-     *
-     * @return string
-     */
+    // basic getters
     public function getDate() { return $this->date; }
     public function getTime() { return $this->time; }
     public function getTitle() { return $this->title; }
     public function getAbstract() { return $this->abstract; }
+    public function getContent() { return $this->content; }
     public function getLink() { return $this->link; }
+    public function getCnt() { return $this->cnt; }
+    public function isVisible() { return $this->visible; }
 
     /**
      * 查询获得所有的新闻
