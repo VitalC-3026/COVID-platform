@@ -25,10 +25,10 @@ use yii\web\IdentityInterface;
  * @property string $password      登录时传入的密码，未加密
  * @property string $auth_key      认证信息
  * @property string $name          姓名
- * @property bool   $sex           性别
- * @property int    $age           年龄
+ * @property bool $sex           性别
+ * @property int $age           年龄
  * @property string $tel           联系方式
- * @property int    $type          权限类别
+ * @property int $type          权限类别
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -40,6 +40,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return '{{%User}}';
     }
+
     /*
      * 通过身份证号寻找唯一的用户
      * 返回一个MyUser类
@@ -56,6 +57,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->getPrimaryKey();
     }
+
     /*
      * 传入参数为待验证密码
      */
@@ -71,6 +73,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
+
     /*
      * 验证认证信息是否正确
      */
@@ -78,6 +81,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->getAuthKey() === $authKey;
     }
+
     /*
      * 生成一个长度为32的验证信息string
      */
@@ -85,6 +89,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
+
     /*
      * 返回当前用户的认证信息
      */
@@ -131,18 +136,34 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     // basic setters
-    public function setAccount($account) { $this->account = $account; }
-    public function setName($name) { $this->name = $name; }
-    public function setSex($sex) { $this->sex; }
-    public function setAge($age) { $this->age; }
-    public function setTel($tel) { $this->tel; }
-    public function setType($type) { $this->type = $type; }
+    public function setAccount($account)
+    {
+        $this->account = $account;
+    }
 
-    // basic getters
-    public function getAccount() { return $this->account; }
-    public function getName() { return $this->name; }
-    public function getSex() { return $this->sex; }
-    public function getAge() { return $this->age; }
-    public function getTel() { return $this->tel; }
-    public function getType() { return $this->type; }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function setSex($sex)
+    {
+        $this->sex = $sex;
+    }
+
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
 }

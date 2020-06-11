@@ -18,7 +18,10 @@ class ModifyForm extends Model
     public $account;
     public $password;
     public $user;
-
+    public $tel;
+    public $name;
+    public $sex;
+    public $age;
     /*
      * 表单验证规则，修改的account必须已经存在，并且密码正确
      * 密码和用户名规则仍然同以前一样
@@ -38,7 +41,18 @@ class ModifyForm extends Model
             ['password', 'string'],
 
             ['newpassword', 'required', 'message' => '新密码不能为空'],
-            ['newpassword', 'string', 'min' => 4, 'tooShort' => "密码长度必须大于等于4位"]
+            ['newpassword', 'string', 'min' => 4, 'tooShort' => "密码长度必须大于等于4位"],
+
+            ['name', 'required', 'message' => '姓名不能为空'],
+            ['name', 'string', 'min' => 2, 'tooShort' => "姓名长度至少为两位"],
+
+            ['sex', "required",'message'=>'性别不能为空'],
+            ['age',"required",'message'=>'年龄不能为空'],
+            ['age', 'number', 'min' => 1, 'max' => 150, 'message' => "请填写正确的年龄", 'tooBig'=>"请填写正确的年龄",'tooSmall'=>"请填写正确的年龄" ],
+
+            ['tel', 'required', 'message' => '联系方式不能为空'],
+            ['tel', 'number', 'min' => 10000000000, 'max' => 19999999999, 'message' => "请填写正确的联系方式", 'tooBig'=>"请填写正确的联系方式",'tooSmall'=>"请填写正确的联系方式" ],
+
         ];
     }
 
@@ -61,6 +75,10 @@ class ModifyForm extends Model
     {
         $this->user->setPassword($this->newpassword);
         $this->user->setUsername($this->newusername);
+        $this->user->setTel($this->tel);
+        $this->user->setAge($this->age);
+        $this->user->setSex($this->sex);
+        $this->user->setName($this->name);
         $this->user->generateAuthKey();
         $this->user->save();
     }

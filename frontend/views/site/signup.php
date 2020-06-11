@@ -53,7 +53,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $form->field($model, 'account',['labelOptions' => ['label' => '账户']])->textInput(['autofocus' => true]) ?>
                 </div>
                 <div class="form-group">
-                    <?= $form->field($model, 'username',['labelOptions' => ['label' => '用户名']])->textInput(['autofocus' => true]) ?>
+                    <?= $form->field($model, 'username',['labelOptions' => ['label' => '用户名/昵称']])->textInput(['autofocus' => true]) ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'tel',['labelOptions' => ['label' => '联系方式']])->textInput(['autofocus' => true]) ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'name',['labelOptions' => ['label' => '真实姓名']])->textInput(['autofocus' => true]) ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'age',['labelOptions' => ['label' => '年龄']])->textInput(['autofocus' => true]) ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'sex',['labelOptions' => ['label' => '性别']])->radioList([1=>'男',0=>'女']) ?>
                 </div>
                 <div class="form-group">
                     <?= $form->field($model, 'password',['labelOptions' => ['label' => '密码']])->passwordInput() ?>
