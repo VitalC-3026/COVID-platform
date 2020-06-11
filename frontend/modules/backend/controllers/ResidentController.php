@@ -49,7 +49,7 @@ class ResidentController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
             return $this->goHome();
         $resident = new ResidentSearch();
         $provider = $resident->search(Yii::$app->request->get());
@@ -72,7 +72,7 @@ class ResidentController extends Controller
 
     // 创建新居民
     public function actionCreate() {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
             return $this->goHome();
         $model = new ResidentForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -91,7 +91,7 @@ class ResidentController extends Controller
 
     // 更新居民数据
     public function actionUpdate($id) {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
             return $this->goHome();
         $model = new ResidentForm();
         $resident = Resident::findOne($id);

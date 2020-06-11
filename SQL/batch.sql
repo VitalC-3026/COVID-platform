@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/6/9 9:55:41                             */
+/* Created on:     2020/6/11 10:00:47                           */
 /*==============================================================*/
 
 
@@ -86,6 +86,7 @@ create table News
    content              text,
    link                 varchar(50),
    cnt                  int,
+   visible              bool,
    primary key (id)
 );
 
@@ -116,9 +117,9 @@ create table PriorityType
 create table Resident
 (
    account              char(18) not null,
-   building             varchar(5),
-   unit                 varchar(5),
-   room                 varchar(5),
+   building             int,
+   unit                 int,
+   room                 int,
    primary key (account)
 );
 

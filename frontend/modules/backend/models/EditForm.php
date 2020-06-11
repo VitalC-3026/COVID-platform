@@ -47,7 +47,7 @@ class EditForm extends Model
         $news->content = $this->content;
         $news->date = $date;
         $news->time = $time;
-        $news->id = News::find()->count();
+        $news->id = News::find()->max('id') + 1;
         return $news->save();
     }
 

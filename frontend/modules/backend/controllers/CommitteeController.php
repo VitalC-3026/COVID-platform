@@ -43,7 +43,7 @@ class CommitteeController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
             return $this->goHome();
         $committee = new CommitteeSearch();
         $provider = $committee->search(Yii::$app->request->get());
@@ -66,7 +66,7 @@ class CommitteeController extends Controller
 
     // 添加新职员
     public function actionCreate() {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
             return $this->goHome();
         $model = new CommitteeForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -86,7 +86,7 @@ class CommitteeController extends Controller
 
     // 更新职员数据
     public function actionUpdate($id) {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
             return $this->goHome();
         $model = new CommitteeForm();
         $committee = Committee::findOne($id);

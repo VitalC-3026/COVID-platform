@@ -36,10 +36,10 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/ckeditor/ck
                         <?= $form->field($model, 'title',['labelOptions' => ['label' => '标题']])->textInput(['class' => 'textarea form-control', 'autofocus' => true]) ?>
                     </div>
                     <div class="form-group">
-                        <?= $form->field($model, 'abstract',['labelOptions' => ['label' => '摘要']])->textInput(['class' => 'textarea form-control', 'row' => 10, 'cols' => 80, 'autofocus' => true]) ?>
+                        <?= $form->field($model, 'abstract',['labelOptions' => ['label' => '摘要']])->textArea(['class' => ' form-control', 'autofocus' => true, 'sytle' => 'max-width: 100%']) ?>
                     </div>
                     <div class="form-group">
-                        <?= $form->field($model, 'content',['labelOptions' => ['label' => '正文内容']])->textInput(['id' => 'editor', 'class' => 'textarea form-control ckeditor', 'autofocus' => true, 'placeholder' => '请输入文字 ...']) ?>
+                        <?= $form->field($model, 'content',['labelOptions' => ['label' => '正文内容']])->textArea(['class' => 'form-control ckeditor', 'autofocus' => true, 'placeholder' => '请输入文字 ...', 'style' => 'max-width: 100%']) ?>
                     </div>
                     <div class="row" style="margin: 10px" align="right">
                         <?= Html::submitButton('提交审核', ['class' => 'btn btn-primary', 'name' => 'submitButton']) ?>
@@ -52,9 +52,6 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/ckeditor/ck
                                 console.error( error );
                             } );
                     </script>
-                    <div class="row" style="margin: 10px" align="right">
-                        <button type="button" class="btn btn-primary">提交审核</button>
-                    </div>
                 </div>
             </div>
         </div>

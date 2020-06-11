@@ -45,3 +45,7 @@ phpunit.phar
 # SpaceLab后台模板
 /SpaceLab/*
 /SpaceLab/
+
+# runtime
+/frontend/runtime/*
+/frontend/runtime
