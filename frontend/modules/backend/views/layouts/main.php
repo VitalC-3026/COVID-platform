@@ -207,7 +207,7 @@ AppAsset_b::register($this);
                 <ul class="nano-content">
                     <?php //TODO: 路由跳转?>
                     <li class="active">
-                        <a href="<?= \yii\helpers\Url::to(['\backend\site\index']); ?>"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                     </li>
 
                     <li class="active">
@@ -215,13 +215,13 @@ AppAsset_b::register($this);
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['\backend\resident\index']); ?>">居民数据库</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/resident/index']); ?>">居民数据库</a>
                             </li>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['\backend\committee\index']); ?>">职员数据库</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/committee/index']); ?>">职员数据库</a>
                             </li>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['\backend\site\rights']); ?>">职员权限分配</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/site/rights']); ?>">职员权限分配</a>
                             </li>
                         </ul>
                     </li>
@@ -230,10 +230,10 @@ AppAsset_b::register($this);
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['\backend\news\edit']); ?>">信息编辑</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/edit']); ?>">信息编辑</a>
                             </li>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['\backend\news\index']); ?>">信息审核</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/index']); ?>">信息审核</a>
                             </li>
                         </ul>
                     </li>
@@ -242,10 +242,10 @@ AppAsset_b::register($this);
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['\backend\site\healthreport']); ?>">健康日报</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/site/healthreport']); ?>">健康日报</a>
                             </li>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['\backend\site\requestlist']); ?>">求助信息</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/site/requestlist']); ?>">求助信息</a>
                             </li>
                         </ul>
                     </li>

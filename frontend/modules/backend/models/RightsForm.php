@@ -10,7 +10,7 @@ use common\models\PriorityList;
 
 class RightsForm extends Model
 {
-    public $rights;
+    public $rights = [];
     public $account;
 
     /**

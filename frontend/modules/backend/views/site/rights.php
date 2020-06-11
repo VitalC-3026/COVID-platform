@@ -113,7 +113,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                         'id' => 'rights-form',
                                         'options' => ['class' => 'form-horizontal'],
                                     ]); ?>
-                                    <?= $form->field($rightsForm, 'rights[]')->checkboxList($rightsArray, ['value' => $oldRights])->label('权限分配'); ?>
+                                    <?= $form->field($rightsForm, 'rights')->checkboxList($rightsArray, ['value' => $oldRights])->label('权限分配'); ?>
                                     <div class="form-group" align="right">
                                         
                                         <?= Html::submitButton('确认提交', ['class' => 'btn btn-primary']) ?>
