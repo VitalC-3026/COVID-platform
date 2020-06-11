@@ -168,5 +168,22 @@ class News extends ActiveRecord
 
     }
 
+    /**
+     * 合并时间
+     */
+    public function getDateTime() 
+    {
+        $datetime = $this->date." ".$this->time;
+        return $datetime;
 
+    }
+
+    /**
+     * 返回最早的修改的新闻
+    */
+    public static function getEarliestNews()
+    {
+        $minId = self::find()->where(['visible' => 0])->min('id');
+        return self::findOne($minId);
+    } 
 }
