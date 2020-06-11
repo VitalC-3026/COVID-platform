@@ -33,7 +33,7 @@
                 <div class="last-record d-flex justify-content-between">
                     <div class="data">
                         <span class="caption">今日确诊</span>
-                        <span class="number">+ <span class="number-counter" id="globalToday">0</span></span>
+                        <span class="number" id="confirmSign">+ <span class="number-counter">0</span></span>
                     </div>
                     <div class="data">
                         <span class="caption">现存确诊</span>
@@ -52,7 +52,7 @@
                 <div class="last-record d-flex justify-content-between">
                     <div class="data">
                         <span class="caption number-counter">今日死亡</span>
-                        <span class="number">+<span class="number-counter" id="globalDeathToday">0</span></span>
+                        <span class="number" id="deathSign">+<span class="number-counter">0</span></span>
                     </div>
                     <div class="data">
                         <span class="caption">病死率(%)</span>
@@ -68,7 +68,7 @@
                 <div class="last-record d-flex justify-content-between">
                     <div class="data">
                         <span class="caption">今日治愈</span>
-                        <span class="number">+<span class="number-counter" id="globalCureToday">0</span></span>
+                        <span class="number" id="cureSign">+<span class="number-counter">0</span></span>
                     </div>
                     <div class="data">
                         <span class="caption">治愈率(%)</span>
@@ -753,6 +753,22 @@
             }
             else document.getElementById(id).innerText = "+" + source;
         }
+        function worldMatch(source,signId) {
+            var sign = document.getElementById(signId);
+            if(source === undefined){
+                sign.innerText = "待公布";
+                sign.getElementsByTagName('span').innerText = "";
+            }
+            else if(parseInt(source)<0){
+                sign.innerText =  "-";
+                sign.getElementsByTagName('span').setAttribute("data-number",source);
+            }
+            else{
+                sign.innerText =  "+";
+                console.log(document.getElementById(signId).getElementById(id));
+                sign.getElementsByTagName('span').setAttribute("data-number",source);
+            }
+        }
         function data() {
             var dataApi = "http://49.232.173.220:3001/data/getStatisticsService";
             $.getJSON(dataApi, function (newpneumoniadata){
@@ -767,16 +783,15 @@
                 var curedIncr = summaryDataIn["curedIncr"];
                 var deadIncr = summaryDataIn["deadIncr"];
                 document.getElementById("globalTotal").setAttribute("data-number",confirmedCount);
-                document.getElementById("globalToday").setAttribute("data-number",confirmedIncr);
-                console.log(confirmedIncr);
+                worldMatch(confirmedIncr,"confirmSign");
                 document.getElementById("globalNow").setAttribute("data-number",currentConfirmedCount);
                 document.getElementById("globalDeath").setAttribute("data-number",deadCount);
-                document.getElementById("globalDeathToday").setAttribute("data-number", deadIncr);
+                worldMatch(deadIncr,"deathSign");
                 var deathRank = (parseInt(deadCount) * 100 /parseInt(confirmedCount)).toFixed(1)+ "";
                 var cureRank = (parseInt(curedCount) * 100/parseInt(confirmedCount)).toFixed(1) + "";
                 document.getElementById("globalDeathRank").setAttribute("data-number", deathRank);
                 document.getElementById("globalCure").setAttribute("data-number", curedCount);
-                document.getElementById("globalCureToday").setAttribute("data-number", curedIncr);
+                worldMatch(curedIncr,"cureSign");
                 document.getElementById("globalCureRank").setAttribute("data-number", cureRank);
 
                 var nationData = newpneumoniadata;
@@ -862,18 +877,9 @@
                     url: "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5",
                     dataType: "jsonp",
                     success: function (data) {
-                        //  console.log(data.data)
                         var res = data.data || "";
                         res = JSON.parse(res);
                         var newArr = [];
-                        //newArr的数据格式为：
-                        // [{
-                        //   name: '北京11',
-                        //   value: 212
-                        // }, {
-                        //   name: '天津',
-                        //   value: 60
-                        // }]
                         if (res) {
                             //获取到各个省份的数据
                             var province = res.areaTree[0].children;
@@ -884,13 +890,11 @@
                                 }
                                 newArr.push(json)
                             }
-                            //console.log(newArr)
-                            //console.log(JSON.stringify(newArr))
                             //使用指定的配置项和数据显示图表
                             myChart.setOption({
                                 series: [
                                     {
-                                        name: '确诊数',
+                                        name: '现存确诊数',
                                         type: 'map',
                                         mapType: 'china',
                                         roam: false,
@@ -1203,8 +1207,6 @@
 
 
                 $.getJSON(dataApi, function (data){
-                    //console.log(data);
-                    //获取到各个国家的数据
                     var newArr = [];
                     for (var i = 0; i < data.length; i++) {
                             var json = {
@@ -1213,8 +1215,6 @@
                         }
                     newArr.push(json);
                     }
-                    //console.log(newArr);
-                    console.log(JSON.stringify(newArr));
                     //使用指定的配置项和数据显示图表
                     myChart.setOption({
                         series: [
