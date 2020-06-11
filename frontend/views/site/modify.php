@@ -47,6 +47,12 @@ $model->sex = Yii::$app->user->getIdentity()->sex;
     </div>
     <!-- END: .cover -->
     <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h3 class="section-heading line-primary">实时更新，保持联络</h3>
+            </div>
+        </div>
         <div class="row justify-content-between">
             <div class="col-lg-6 mb-4 mb-lg-0">
 

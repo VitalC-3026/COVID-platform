@@ -2,8 +2,9 @@
 
 namespace frontend\controllers;
 
-use common\models\MyUser;
+use common\models\User;
 use frontend\models\ModifyForm;
+use frontend\models\HealthForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -218,6 +219,24 @@ class SiteController extends Controller
     public function actionCommunity()
     {
         return $this->render('community');
+    }
+
+    public function actionHealthreport()
+    {
+        if (Yii::$app->user->isGuest)
+            return $this->goHome();
+        $model = new HealthForm();
+        date_default_timezone_set('prc');
+        $time = date('Y-m-d H:i:s', time());
+        Yii::$app->view->params['time'] = $time;
+        Yii::$app->view->params['info'] = '';
+        if ($model->load(Yii::$app->request->post())) {
+            // 为什么数据无法传送？
+            return $this->render('index', [
+                'message' => "健康日报填写成功，你可以浏览其他页面了。"
+            ]);
+        }
+        return $this->render('healthreport', ['model' => $model,]);
     }
 
 }

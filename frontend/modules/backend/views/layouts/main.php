@@ -241,9 +241,9 @@ AppAsset_b::register($this);
                         <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span><i
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-                            <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/site/healthreport']); ?>">健康日报</a>
-                            </li>
+<!--                            <li>-->
+<!--                                <a href="--><?//= \yii\helpers\Url::to(['/backend/site/healthreport']); ?><!--">健康日报</a>-->
+<!--                            </li>-->
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/site/requestlist']); ?>">求助信息</a>
                             </li>

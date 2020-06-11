@@ -92,6 +92,7 @@ AppAsset_b::register($this);
                                 $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
                                 $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
                             } else {
+                                $menuItems[] = ['label' => '健康日报', 'url' => ['/site/healthreport']];
                                 $menuItems[] = ['label' => '修改信息', 'url' => ['/site/modify']];
 
                                 if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2) {
