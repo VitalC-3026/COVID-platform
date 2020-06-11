@@ -562,15 +562,15 @@
 
                             </div> <!-- .accordion-item -->
                             <div class="accordion-item">
-                                <h2 class="mb-0" id="headingFive">
+                                <h2 class="mb-0" id="headingSix">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                            data-target="#collapseFive" aria-expanded="false"
-                                            aria-controls="collapseFive">
+                                            data-target="#collapseSix" aria-expanded="false"
+                                            aria-controls="collapseSix">
                                         疫苗研发大概需要多久？
                                     </button>
                                 </h2>
 
-                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
                                      data-parent="#accordion_1">
                                     <div class="accordion-body">
                                         已有多家公司和机构正在研制疫苗。初步试验后，可能需要几个月甚至几年的时间来进行广泛测试，以证明疫苗安全性。
