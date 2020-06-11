@@ -54,82 +54,6 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    /**
-     * Residence Information page.
-     *
-     * @return mixed
-     */
-    public function actionResinfo()
-    {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
-        $resident = new ResidentSearch();
-        $provider = $resident->search(Yii::$app->request->get());
-
-        return $this->render('resinfo', [
-            'model' => $resident,
-            'provider' => $provider,
-        ]);
-    }
-
-    /**
-     * Workers Information page.
-     *
-     * @return mixed
-     */
-    public function actionAdmininfo()
-    {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
-        $committee = new CommitteeSearch();
-        $provider = $committee->search(Yii::$app->request->get());
-        return $this->render('admininfo', [
-            'model' => $committee,
-            'provider' => $provider,
-        ]);
-    }
-
-    /**
-     * Workers Information page.
-     *
-     * @return mixed
-     */
-    public function actionAddres()
-    {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
-        $model = new ResidentForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($model->addResident()) {
-                Yii::$app->session->setFlash('success', '成功添加新居民');
-                $resident = new ResidentSearch();
-                $provider = $resident->search(Yii::$app->request->get());
-                return $this->render('resinfo', ['message' => '成功添加新居民', 'model' => $resident, 'provider' => $provider]);
-            } else {
-                return $this->render('addres', ['model' => $model,]);
-            }
-
-        }
-        return $this->render('addres', ['model' => $model,]);
-    }
-
-    public function actionAddadmin()
-    {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
-        $model = new AdminForm();
-        if ($model->load(Yii::$app->request->post())) {
-            date_default_timezone_set('prc');
-            if ($model->addAdministator(date('Y-m-d', time()))) {
-                Yii::$app->session->setFlash('success', '成功添加新职员');
-                $committee = new CommitteeSearch();
-                $provider = $committee->search(Yii::$app->request->get());
-                return $this->render('admininfo', ['message' => '成功添加新职员', 'model' => $committee, 'provider' => $provider]);
-            }
-        }
-        return $this->render('addadmin', ['model' => $model,]);
-    }
-
     public function actionRights()
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
@@ -176,12 +100,12 @@ class SiteController extends Controller
             $time = date('H:i:s', time());
             if ($model->edit(Yii::$app->user->identity->account, $date, $time)) {
                 $dataProvider = new ActiveDataProvider([
-                    'query' => News::find(),
+                    'query' => News::find()->where(['visible' => 0])->orderBY(['id' => SORT_DESC]),
                     'pagination' => [
                         'pagesize' => 4
                     ]
                 ]);
-                return $this->render('censor', ['provider' => $dataProvider]);
+                return $this->render('index', ['provider' => $dataProvider]);
             }
         }
 
@@ -202,6 +126,7 @@ class SiteController extends Controller
         } 
         
         Yii::$app->view->params['news'] = $news;
+        Yii::$app->view->params['id'] = $id;
         $dataProvider = new ActiveDataProvider([
             'query' => News::find()->where(['visible' => 0])->orderBY(['id' => SORT_DESC]),
             'pagination' => [
@@ -213,33 +138,12 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionDeleteResident($id){
-        $model = Resident::findOne($id);
-        if ($model !== null) {
-            $model->delete();
-            
-        }
-        $resident = new ResidentSearch();
-        $provider = $resident->search(Yii::$app->request->get());
-        return $this->render('resinfo', ['model' => $resident, 'provider' => $provider]);
-    }
-
-    public function actionUpd(){
-        $model = new ResidentSearch();
-        if ($model->load(Yii::$app->request->post())) {
-            
-            $result = Resident::find()->where(['account' => $model->account])->all();
-            $result->delete();
-            
-        }
-        return $this->render('index');
-    }
-
-    public function actionDeleteNews($id) {
+    public function actionDeleteNews($id){
         $model = News::findOne($id);
         if ($model !== null) {
             $model->delete();
         }
-        return $this->render('index');
+        return $this->redirect(['censor']);
     }
+
 }

@@ -7,7 +7,7 @@ use yii\db\ActiveRecord;
 
 /**
  * 新闻模型
- *
+ * @property int    $id             主键（自增）
  * @property string $date           日期
  * @property string $time           时间
  * @property string $title          标题
@@ -147,6 +147,7 @@ class News extends ActiveRecord
     }
     public function setTitle($title) { $this->title = $title; }
     public function setAbstract($abstract) { $this->abstract = $abstract; }
+    public function setContent($content) {$this->content = $content; }
     public function setLink($link) { if ($this->checkLink($link)) $this->link = $link; }
 
     /**
@@ -159,6 +160,7 @@ class News extends ActiveRecord
     public function getTitle() { return $this->title; }
     public function getAbstract() { return $this->abstract; }
     public function getLink() { return $this->link; }
+    public function getId() { return $this->id; }
 
     /**
      * 查询获得所有的新闻
@@ -168,6 +170,25 @@ class News extends ActiveRecord
         return self::find()->asArray()->all();
 
     }
+
+    /**
+     * 合并时间
+     */
+    public function getDateTime() 
+    {
+        $datetime = $this->date." ".$this->time;
+        return $datetime;
+
+    }
+
+    /**
+     * 返回最早的修改的新闻
+    */
+    public static function getEarliestNews()
+    {
+        $minId = self::find()->where(['visible' => 0])->min('id');
+        return self::findOne($minId);
+    } 
 
 
 }

@@ -1,11 +1,14 @@
 <?php 
 use frontend\assets\AppAsset_b;
 use yii\widgets\ListView;
+use yii\widgets\DetailView;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Html;
 
+AppAsset_b::register($this);
 AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
 ?>
+<?= Html::csrfMetaTags() ?>
 <section id="main-content">
     <div class="row">
         <div class="col-md-12">
@@ -71,19 +74,35 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                             <div class="view-mail-reply pull-right">
                                 <button class="btn btn-sm btn-primary"><i class="fa fa-reply"></i> 发布</button>
 
-                                <button class="btn btn-danger btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title="Trash"><i class="fa fa-trash-o"></i>
-                                </button>
-                                <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['deleteNews', 'id' => $this->params['id']], ['title' => '查看']) ?>
+                                <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $id], ['title' => '查看']) ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
-
                             <div class="panel view-mail-body">
                                 <div class="panel-body">
-                                    <p><?php echo $this->params['news']->content  ?></p>
+                                    <?= DetailView::widget([
+                                        'model' => $model,
+                                        'attributes' => [                                           
+                                            ['attribute' => 'title',
+                                            'label' => '标题'],                                           
+                                            ['attribute' => 'abstract',
+                                            'label' => '摘要',],
+                                            ['attribute' => 'content',
+                                            'label' => '正文内容'],
+                                            ['attribute' => 'date',
+                                            'label' => '修改时间',
+                                            'value' => $model->getDateTime(), 
+                                            ],
+                                        ],
+                                        'template' => '<tr style = "border: 10px; width: 100%"><th style="height: 50px; width: 100px"><strong>{label}</strong></th><td style = "height: 50px; width: 80%"" text-align="center"><div align="center">{value}</div></td></tr>', 
+                                        'options' => ['class1' => 'table table-striped table-bordered',
+                                            'style' => 'border: 2px'
+                                        ],
+
+                                    ]) ?>
                                 </div>
                             </div>
                         </div>
