@@ -12,6 +12,8 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Modify';
 $this->params['breadcrumbs'][] = $this->title;
+
+$model->sex = Yii::$app->user->getIdentity()->sex;
 ?>
 <div class="site-modify">
     <!-- BEGIN: .cover -->
@@ -55,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ]); ?>
                 <div class="form-group">
-                    <?= $form->field($model, 'account', ['labelOptions' => ['label' => '账户']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->account]) ?>
+                    <?= $form->field($model, 'account', ['labelOptions' => ['label' => '账户']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->account,'readOnly'=>true]) ?>
                 </div>
                 <div class="form-group">
                     <?= $form->field($model, 'password', ['labelOptions' => ['label' => '旧密码']])->passwordInput() ?>
@@ -65,8 +67,24 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $form->field($model, 'newpassword', ['labelOptions' => ['label' => '新密码']])->passwordInput() ?>
                 </div>
                 <div class="form-group">
-                    <?= $form->field($model, 'newusername', ['labelOptions' => ['label' => '新用户名']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->username]) ?>
+                    <?= $form->field($model, 'newusername', ['labelOptions' => ['label' => '新用户名/昵称']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->username]) ?>
                 </div>
+
+                <div class="form-group">
+                    <?= $form->field($model, 'tel', ['labelOptions' => ['label' => '联系方式']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->tel]) ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'name', ['labelOptions' => ['label' => '真实姓名']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->name]) ?>
+                </div>
+                <div class="form-group">
+                    <?= $form->field($model, 'age', ['labelOptions' => ['label' => '年龄']])->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->age]) ?>
+                </div>
+                <div class="form-group">
+
+                    <?=
+                    $form->field($model, 'sex', ['labelOptions' => ['label' => '性别']])->radioList([1 => '男', 0 => '女']) ?>
+                </div>
+
                 <div class="form-group">
                     <?= Html::submitButton('提交修改', ['class' => 'btn btn-primary', 'name' => 'modify-button']) ?>
                 </div>

@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 use frontend\assets\AppAsset_b;
 
 /*AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/countTo/jquery.countTo.js');
@@ -36,7 +37,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-red">
                 <div class="content">
                     <h1 class="text-left timer" data-from="0" data-to="180" data-speed="2500"></h1>
-                    <p>New Users</p>
+                    <p>新增访客</p>
                 </div>
                 <div class="icon"><i class="fa fa-users"></i>
                 </div>
@@ -46,7 +47,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-turquoise">
                 <div class="content">
                     <h1 class="text-left timer" data-from="0" data-to="56" data-speed="2500"></h1>
-                    <p>New Comments</p>
+                    <p>访客总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-comments"></i>
                 </div>
@@ -56,7 +57,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-blue">
                 <div class="content">
                     <h1 class="text-left timer" data-from="0" data-to="32" data-speed="2500"></h1>
-                    <p>New Messages</p>
+                    <p>新增居民</p>
                 </div>
                 <div class="icon"><i class="fa fa fa-envelope"></i>
                 </div>
@@ -66,7 +67,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-purple">
                 <div class="content">
                     <h1 class="text-left timer" data-to="105" data-speed="2500"></h1>
-                    <p>New Sales</p>
+                    <p>居民总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-bar-chart-o"></i>
                 </div>
@@ -74,44 +75,12 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         </div>
     </div>
     <!--tiles end-->
-    <!--dashboard charts and map start-->
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Sales for 2014</h3>
-                    <div class="actions pull-right">
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-times"></i>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div id="sales-chart" style="height: 250px;"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Office locations</h3>
-                    <div class="actions pull-right">
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-times"></i>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="map" id="map" style="height: 250px;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--dashboard charts and map end-->
     <!--ToDo start-->
     <div class="row">
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">To do list</h3>
+                    <h3 class="panel-title">社区待办</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-chevron-down"></i>
                         <i class="fa fa-times"></i>
@@ -121,13 +90,13 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input id="new-todo" type="text" class="form-control" placeholder="What needs to be done?">
+                                <input id="new-todo" type="text" class="form-control" placeholder="居民小任务？">
                                 <section id='main'>
                                     <ul id='todo-list'></ul>
                                 </section>
                             </div>
                             <div class="form-group">
-                                <button id="todo-enter" class="btn btn-primary pull-right">Submit</button>
+                                <button id="todo-enter" class="btn btn-primary pull-right">提交</button>
                                 <div id='todo-count'></div>
                             </div>
                         </div>
@@ -140,7 +109,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Server Status</h3>
+                            <h3 class="panel-title">体温分布</h3>
                             <div class="actions pull-right">
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
@@ -148,19 +117,19 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                         </div>
                         <div class="panel-body">
 
-                            <span class="sublabel">Memory Usage</span>
+                            <span class="sublabel">体温(<36.3℃)</span>
                             <div class="progress progress-striped">
                                 <div class="progress-bar progress-bar-info" style="width: 20%">20%</div>
                             </div>
                             <!-- progress -->
 
-                            <span class="sublabel">CPU Usage</span>
+                            <span class="sublabel">体温(36.3℃~37.2℃)</span>
                             <div class="progress progress-striped">
                                 <div class="progress-bar progress-bar-default" style="width: 60%">60%</div>
                             </div>
                             <!-- progress -->
 
-                            <span class="sublabel">Disk Usage</span>
+                            <span class="sublabel">体温(>37.2℃)</span>
                             <div class="progress progress-striped">
                                 <div class="progress-bar progress-bar-primary" style="width: 80%">80%</div>
                             </div>
@@ -175,7 +144,8 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         <div class="col-md-4">
             <div class="panel panel-solid-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Weather</h3>
+                    <br>
+                    <h3 class="text-center">健康登记 在线管理</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-chevron-down"></i>
                         <i class="fa fa-times"></i>
@@ -184,28 +154,30 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3 class="text-center small-thin uppercase">Today</h3>
+                            <h4 class="text-center small-thin uppercase">与阳光同在</h4>
+                            <br>
                             <div class="text-center">
                                 <canvas id="clear-day" width="110" height="110"></canvas>
-                                <h4>62°C</h4>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="text-center small-thin uppercase">Tonight</h3>
+                            <h4 class="text-center small-thin uppercase">与夜晚同安</h4>
+                            <br>
                             <div class="text-center">
                                 <canvas id="partly-cloudy-night" width="110" height="110"></canvas>
-                                <h4>44°C</h4>
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                 </div>
+
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-md-2">
                             <h6 class="text-center small-thin uppercase">Mon</h6>
                             <div class="text-center">
                                 <canvas id="partly-cloudy-day" width="32" height="32"></canvas>
-                                <span>48°C</span>
                             </div>
                         </div>
 
@@ -213,7 +185,6 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                             <h6 class="text-center small-thin uppercase">Mon</h6>
                             <div class="text-center">
                                 <canvas id="rain" width="32" height="32"></canvas>
-                                <span>39°C</span>
                             </div>
                         </div>
 
@@ -221,7 +192,6 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                             <h6 class="text-center small-thin uppercase">Tue</h6>
                             <div class="text-center">
                                 <canvas id="sleet" width="32" height="32"></canvas>
-                                <span>32°C</span>
                             </div>
                         </div>
 
@@ -229,7 +199,6 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                             <h6 class="text-center small-thin uppercase">Wed</h6>
                             <div class="text-center">
                                 <canvas id="snow" width="32" height="32"></canvas>
-                                <span>28°C</span>
                             </div>
                         </div>
 
@@ -237,7 +206,6 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                             <h6 class="text-center small-thin uppercase">Thu</h6>
                             <div class="text-center">
                                 <canvas id="wind" width="32" height="32"></canvas>
-                                <span>40°C</span>
                             </div>
                         </div>
 
@@ -245,7 +213,6 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
                             <h6 class="text-center small-thin uppercase">Fri</h6>
                             <div class="text-center">
                                 <canvas id="fog" width="32" height="32"></canvas>
-                                <span>42°C</span>
                             </div>
                         </div>
                     </div>
@@ -254,13 +221,123 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">咨询信息</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
                 <div class="panel-body">
-                    <h4>Browser Summary</h4>
-                    <div id="donut-example"></div>
+                    <div class="row">
+                        <div class="col-lg-6 pl-lg-5 mb-5">
+
+                            <!-- BEGIN: .custom-accordion -->
+                            <div class="custom-accordion" id="accordion_1">
+                                <div class="accordion-item">
+                                    <h2 class="mb-0" id="headingOne">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                            健康日报的填写时间限制？
+                                        </button>
+                                    </h2>
+
+                                </div> <!-- .accordion-item -->
+                                <hr>
+                                <div class="accordion-item">
+                                    <h2 class="mb-0" id="headingTwo">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                            体温超出正常范围应该如何？
+                                        </button>
+                                    </h2>
+                                </div> <!-- .accordion-item -->
+                                <hr>
+                                <div class="accordion-item">
+                                    <h2 class="mb-0" id="headingThree">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                            哪些医院是定点发热门诊？
+                                        </button>
+                                    </h2>
+                                </div> <!-- .accordion-item -->
+                                <hr>
+                                <div class="accordion-item">
+                                    <h2 class="mb-0" id="headingFour">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour">
+                                            如何快速判断是否患有新冠肺炎？
+                                        </button>
+                                    </h2>
+                                </div> <!-- .accordion-item -->
+                                <hr>
+                                <div class="accordion-item">
+                                    <h2 class="mb-0" id="headingFive">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseFive" aria-expanded="false"
+                                                aria-controls="collapseFive">
+                                            本小区是否有隔离患者？
+                                        </button>
+                                    </h2>
+
+                                </div>
+                                <!-- END: .custom-accordion -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--ToDo end-->
+
+    <!--dashboard charts and map start-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">天津市现存确诊曲线</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="sales-chart" style="height: 260px;"></div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">天津市新增确诊曲线</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="buy-chart" style="height: 260px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">天津市各区定点发热门诊图</h3>
+                </div>
+                <div class="panel-body" style="height: 650px;">
+                    <div class="img-wrap">
+                        <img src="assets/frontend/images/hospital.png" alt="Image"
+                             class="d-block">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--ToDo end-->
+    <!--dashboard charts and map end-->
 </div>

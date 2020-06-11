@@ -13,7 +13,7 @@ use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
 use frontend\modules\backend\models\EditForm;
-use frontend\modules\backend\models\CensorForm;
+use frontend\modules\backend\models\SearchForm;
 use frontend\modules\backend\models\RightsForm;
 use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\CommitteeSearch;
@@ -61,38 +61,55 @@ class SiteController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $committee = new CommitteeSearch();
-        if ($committee->load(Yii::$app->request->post()) && $committee->searchByAccount($committee->account) !== null) {
-            $id = $committee->searchByAccount($committee->account)->account;
+        $search = new SearchForm();
+        if ($search->load(Yii::$app->request->post())) {
+            if ($search->searchByAccount()) {
+                $id = $search->searchByAccount();
+            } else {
+                $id = Yii::$app->user->identity->account;
+            }
         } else {
             $id = Yii::$app->user->identity->account;
+        }
+        $rightsForm = new RightsForm();
+        $rightsForm->account = $id;
+        if($rightsForm->load(Yii::$app->request->post())) {
+            $rrights = $_POST['RightsForm']['rights'];
+            if($rightsForm->setRights() == 1){
+                Yii::$app->getSession()->setFlash('error', '1:接收不到值');
+
+            } else if ($rightsForm->setRights() == 2) {
+                Yii::$app->getSession()->setFlash('error', '1:接收到的值不是数组');
+            } else {
+                Yii::$app->getSession()->setFlash('success', '成功');
+            }
         }
         $user = new ActiveDataProvider([
             'query' => User::find()->where(['account' => $id]),
         ]); 
+        $user->setSort(false);
         $priorityType = new ActiveDataProvider([
             'query' => PriorityType::find(),
             
         ]);
         $priority = PriorityType::find()->all();
-        $rights = array();
-        $i = 0;
         foreach ($priority as $p) {
-            $rights[$i] = $p->priority;
-            $i++;
+            $rightsArray[$p['priority']] = $p['name'];
         }
         $i = 0;
-        $old = PriorityList::find()->where(["account" => $id]);
-        $oldRights = array();
+        $old = PriorityList::find()->where(["account" => $id])->all();
         foreach ($old as $o) {
-            $oldRights[$i] = $o->priority;
+            $oldRights[$i] = $o['priority'];
             $i++;
         }
-        $rightsForm = new RightsForm();
+        if(empty($old)) {
+            $oldRights = array();
+        }
+        
         return $this->render('rights', [
             'provider' => $user, 'priorityProvider' => $priorityType,
-            'searchForm' => $committee, 'rightsForm' => $rightsForm,
-            'rights' => $rights, 'oldRights' => $oldRights
+            'searchForm' => $search, 'rightsForm' => $rightsForm,
+            'rightsArray' => $rightsArray, 'oldRights' => $oldRights
         ]);
     }
 

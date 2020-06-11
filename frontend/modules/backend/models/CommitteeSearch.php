@@ -60,16 +60,4 @@ class CommitteeSearch extends User
         return $provider;
     } 
 
-    public function searchByAccount($account) {
-        $priority = PriorityType::find()->where(['name' => '分配权限']);
-        if (PriorityList::find($account)->where(['priority' => $priority]) === null) {
-            return null;
-        }
-        $user = User::findOne($account);
-        if ($user->type === 1 || $uesr->type === 2) {
-            return $user;
-        }
-        return null;
-    }
-
 }

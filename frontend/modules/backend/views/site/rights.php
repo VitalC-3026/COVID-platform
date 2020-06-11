@@ -10,6 +10,17 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/nan
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/jquery.dataTables.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
+<?php if(\Yii::$app->getSession()->hasFlash('success')):?>
+        <script>
+            alert("<?php echo \Yii::$app->getSession()->getFlash('success')?>");
+        </script>
+<?php endif?>
+ 
+<?php if(\Yii::$app->getSession()->hasFlash('error')):?>
+    <script>
+        alert("<?php echo \Yii::$app->getSession()->getFlash('error')?>");
+    </script>
+<?php endif?>
 <div id="main-content">
     <div class="row">
         <div class="col-md-12">
@@ -43,13 +54,11 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                 <div class="panel-body">
                     <div role="grid" id="example_wrapper" class="dataTables_wrapper form-inline no-footer">
                     
-                        <div class="row" margin-top="10px">
+                        <div class="row" margin="10px">
                             <?php $form = ActiveForm::begin(); ?>
-                                <?= $form->field($searchForm, 'account')->textInput(['autofocus' => true])->label('身份证号') ?>
-                                <div class="form-group">
-                                    <div class="col-sm-6" align="right">
-                                        <?= Html::submitButton('<i class="fa fa-search"></i>', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
-                                    </div>
+                                <div style="margin-left: 20px; margin-bottom: 10px">
+                                    <?= $form->field($searchForm, 'account')->textInput(['autofocus' => true, 'placeholder' => '请输入职员编号'])->label('') ?>
+                                    <?= Html::submitButton('<i class="fa fa-search"></i>', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
                                 </div>
                             <?php ActiveForm::end(); ?>
                         </div>
@@ -104,11 +113,11 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                         'id' => 'rights-form',
                                         'options' => ['class' => 'form-horizontal'],
                                     ]); ?>
-                                    <?= $form->field($rightsForm, 'rights')->checkboxList($rights, ['value' => $oldRights]); ?>
-                                    <div class="form-group">
-                                        <div class="col-lg-offset-1 col-lg-11">
-                                            <?= Html::submitButton('确认', ['class' => 'btn btn-primary']) ?>
-                                        </div>
+                                    <?= $form->field($rightsForm, 'rights')->checkboxList($rightsArray, ['value' => $oldRights])->label('权限分配'); ?>
+                                    <div class="form-group" align="right">
+                                        
+                                        <?= Html::submitButton('确认提交', ['class' => 'btn btn-primary']) ?>
+                                        
                                     </div>
                                 <?php ActiveForm::end(); ?>
                               </div>
