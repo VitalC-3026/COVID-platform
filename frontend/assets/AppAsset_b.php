@@ -39,7 +39,8 @@ class AppAsset_b extends AssetBundle
 //        'assets/plugins/waypoints/waypoints.min.js',
 //        'assets/js/application.js'
         'assets/js/echarts.min.js',
-        'assets/js/china.js'
+        'assets/js/china.js',
+        'assets/js/world.js',
 
     ];
     public $depends = [
