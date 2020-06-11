@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
 //        'assets/frontend/css/jquery.lavalamp.css',
 //        'assets/frontend/css/jquery.fancybox.min.css',
 //        'assets/frontend/css/style.css'
+
     ];
     public $js = [
 //        'assets/frontend/js/jquery-3.4.1.min.js',
@@ -35,6 +36,8 @@ class AppAsset extends AssetBundle
 //        'assets/frontend/js/jquery.validate.min.js',
 //        'assets/frontend/js/jquery.easing.1.3.js',
 //        'assets/frontend/js/main.js'
+        'assets/js/echarts.min.js',
+        'assets/js/china.js'
     ];
     public $depends = [
 //        'yii\web\YiiAsset',

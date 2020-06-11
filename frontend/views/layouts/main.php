@@ -4,6 +4,7 @@
 
 /* @var $content string */
 
+use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -12,6 +13,7 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+AppAsset_b::register($this);
 ?>
 <?php $this->beginPage() ?>
 
@@ -274,7 +276,8 @@ AppAsset::register($this);
     <script src="assets/frontend/js/jquery.validate.min.js"></script>
     <script src="assets/frontend/js/jquery.easing.1.3.js"></script>
     <script src="assets/frontend/js/main.js"></script>
-    <!-- END: JavaScripts -->
+    <script src="assets/frontend/js/echarts.min.js"></script>
+    <script src="assets/frontend/js/china.js"></script>
     <?php $this->endBody() ?>
     </body>
     </html>

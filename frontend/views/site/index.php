@@ -3,7 +3,7 @@
  * @var $message string 通知信息
  */
 ?>
-    <body onload="data()">
+
     <!-- BEGIN: .cover -->
     <div class="cover overlay" style="background-image: url('assets/frontend/images/hero_bg_2.jpg');">
         <div class="container">
@@ -96,15 +96,8 @@
             <h2 class="section-heading line-primary text-center">全球疫情数据</h2>
 
             <!-- BEGIN: .feature-29103 -->
-            <div class="cover overlay" style="background-image: url('assets/frontend/images/hero_bg_2.jpg');">
-                <div class="container">
+            <div class="cover overlay" id="worldMap">
 
-                    <div class="row align-items-center">
-                        <div class="col-4 col-lg-7">
-                            <h2>这里是世界地图</h2>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- BEGIN: .feature-29103 -->
 
@@ -175,16 +168,7 @@
             <!-- END: .section-counter-78529 -->
         </div>
 
-        <div class="container">
-            <div class="cover overlay" style="background-image: url('assets/frontend/images/hero_bg_2.jpg');">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-12 col-lg-7">
-                            <h2>这里是中国地图</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="cover overlay" id="ChinaMap" style="background:#fff">
         </div>
         <!-- BEGIN: .section-21219 -->
         <div class="section-21219 bg-light">
@@ -756,7 +740,6 @@
         <!-- END: .site-section -->
 
     </div>
-    </body>
     <!-- END: #main -->
     <script language="JavaScript">
         <?php $this->beginBlock('js_end') ?>
@@ -811,7 +794,242 @@
             document.documentElement.scrollTop = 0;  //ie下
             document.body.scrollTop = 0;  //非ie
         }
+        function chinaMap() {
+            var myChart = echarts.init(document.getElementById("ChinaMap"));
 
+            // 指定图表的配置项和数据
+            var option = {
+                backgroundColor: '#ffffff',
+                title: {
+                    text: '中国疫情图',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['中国疫情图']
+                },
+                visualMap: {
+                    type: 'piecewise',
+                    pieces: [
+                        { min: 1000, max: 1000000, label: '大于等于1000人', color: '#372a28' },
+                        { min: 500, max: 999, label: '确诊500-999人', color: '#4e160f' },
+                        { min: 100, max: 499, label: '确诊100-499人', color: '#974236' },
+                        { min: 10, max: 99, label: '确诊10-99人', color: '#ee7263' },
+                        { min: 1, max: 9, label: '确诊1-9人', color: '#f5bba7' },
+                        { min: 0 ,max: 0, label: '无现存确诊',color: '#ebd9bc' }
+                    ],
+                    color: ['#E0022B', '#E09107', '#A3E00B']
+                },
+                toolbox: {
+                    show: true,
+                    orient: 'vertical',
+                    left: 'right',
+                    top: 'center',
+                    feature: {
+                        mark: { show: true },
+                        dataView: { show: true, readOnly: false },
+                        restore: { show: true },
+                        saveAsImage: { show: true }
+                    }
+                },
+                roamController: {
+                    show: true,
+                    left: 'right',
+                    mapTypeControl: {
+                        'china': true
+                    }
+                },
+                series: [
+                    {
+                        name: '现存确诊数',
+                        type: 'map',
+                        mapType: 'china',
+                        roam: false,
+                        label: {
+                            show: true,
+                            color: 'rgb(249, 249, 249)'
+                        },
+                        data: []
+                    }
+                ]
+            };
+
+            //使用指定的配置项和数据显示图表
+            myChart.setOption(option);
+            //获取数据
+            function getData() {
+                $.ajax({
+                    url: "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5",
+                    dataType: "jsonp",
+                    success: function (data) {
+                        //  console.log(data.data)
+                        var res = data.data || "";
+                        res = JSON.parse(res);
+                        var newArr = [];
+                        //newArr的数据格式为：
+                        // [{
+                        //   name: '北京11',
+                        //   value: 212
+                        // }, {
+                        //   name: '天津',
+                        //   value: 60
+                        // }]
+                        if (res) {
+                            //获取到各个省份的数据
+                            var province = res.areaTree[0].children;
+                            for (var i = 0; i < province.length; i++) {
+                                var json = {
+                                    name: province[i].name,
+                                    value: province[i].total.confirm
+                                }
+                                newArr.push(json)
+                            }
+                            console.log(newArr)
+                            console.log(JSON.stringify(newArr))
+                            //使用指定的配置项和数据显示图表
+                            myChart.setOption({
+                                series: [
+                                    {
+                                        name: '确诊数',
+                                        type: 'map',
+                                        mapType: 'china',
+                                        roam: false,
+                                        label: {
+                                            show: true,
+                                            color: 'rgb(249, 249, 249)'
+                                        },
+                                        data: newArr
+                                    }
+                                ]
+                            });
+                        }
+                    }
+
+                })
+            }
+            getData();
+        }
+        // function worldMap(){
+        //     var myChart = echarts.init(document.getElementById("worldMap"));
+        //
+        //     // 指定图表的配置项和数据
+        //     var option = {
+        //         backgroundColor: '#ffffff',
+        //         title: {
+        //             text: '世界疫情图',
+        //             left: 'center'
+        //         },
+        //         tooltip: {
+        //             trigger: 'item'
+        //         },
+        //         legend: {
+        //             orient: 'vertical',
+        //             left: 'left',
+        //             data: ['世界疫情图']
+        //         },
+        //         visualMap: {
+        //             type: 'piecewise',
+        //             pieces: [
+        //                 { min: 1000, max: 1000000, label: '大于等于1000人', color: '#372a28' },
+        //                 { min: 500, max: 999, label: '确诊500-999人', color: '#4e160f' },
+        //                 { min: 100, max: 499, label: '确诊100-499人', color: '#974236' },
+        //                 { min: 10, max: 99, label: '确诊10-99人', color: '#ee7263' },
+        //                 { min: 1, max: 9, label: '确诊1-9人', color: '#f5bba7' },
+        //                 { min: 0 ,max: 0, label: '无现存确诊',color: '#ebd9bc' }
+        //             ],
+        //             color: ['#E0022B', '#E09107', '#A3E00B']
+        //         },
+        //         toolbox: {
+        //             show: true,
+        //             orient: 'vertical',
+        //             left: 'right',
+        //             top: 'center',
+        //             feature: {
+        //                 mark: { show: true },
+        //                 dataView: { show: true, readOnly: false },
+        //                 restore: { show: true },
+        //                 saveAsImage: { show: true }
+        //             }
+        //         },
+        //         roamController: {
+        //             show: true,
+        //             left: 'right',
+        //             mapTypeControl: {
+        //                 'china': true
+        //             }
+        //         },
+        //         series: [
+        //             {
+        //                 name: '现存确诊数',
+        //                 type: 'map',
+        //                 mapType: 'world',
+        //                 roam: false,
+        //                 label: {
+        //                     show: true,
+        //                     color: 'rgb(249, 249, 249)'
+        //                 },
+        //                 data: []
+        //             }
+        //         ]
+        //     };
+        //
+        //     //使用指定的配置项和数据显示图表
+        //     myChart.setOption(option);
+        //     //获取数据
+        //     function getData() {
+        //         $.ajax({
+        //             url: "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5",
+        //             dataType: "jsonp",
+        //             success: function (data) {
+        //                 //  console.log(data.data)
+        //                 var res = data.data || "";
+        //                 res = JSON.parse(res);
+        //                 var newArr = [];
+        //                 if (res) {
+        //                     //获取到各个国家的数据
+        //                     var province = res.areaTree[0].children;
+        //                     for (var i = 0; i < province.length; i++) {
+        //                         var json = {
+        //                             name: province[i].name,
+        //                             value: province[i].total.confirm
+        //                         }
+        //                         newArr.push(json)
+        //                     }
+        //                     console.log(newArr)
+        //                     console.log(JSON.stringify(newArr))
+        //                     //使用指定的配置项和数据显示图表
+        //                     myChart.setOption({
+        //                         series: [
+        //                             {
+        //                                 name: '确诊数',
+        //                                 type: 'map',
+        //                                 mapType: 'world',
+        //                                 roam: false,
+        //                                 label: {
+        //                                     show: true,
+        //                                     color: 'rgb(249, 249, 249)'
+        //                                 },
+        //                                 data: newArr
+        //                             }
+        //                         ]
+        //                     });
+        //                 }
+        //             }
+        //
+        //         })
+        //     }
+        //     getData();
+        // }
+        window.onLoad = function(){
+            data();
+            chinaMap();
+        }
         <?php $this->endBlock(); ?>
     </script>
 <?php $this->registerJs($this->blocks['js_end'],\yii\web\View::POS_END);//将编写的js代码注册到页面底部 ?>
+
+

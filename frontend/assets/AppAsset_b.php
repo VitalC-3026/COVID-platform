@@ -38,6 +38,9 @@ class AppAsset_b extends AssetBundle
 //        'assets/plugins/bootstrap/js/bootstrap.min.js',
 //        'assets/plugins/waypoints/waypoints.min.js',
 //        'assets/js/application.js'
+        'assets/js/echarts.min.js',
+        'assets/js/china.js'
+
     ];
     public $depends = [
         /* bootstrap.js ������
@@ -50,7 +53,7 @@ class AppAsset_b extends AssetBundle
     ];
     public static function addScript($view, $jsfile)
     {
-        $view->registerJsFile($jsfile, [AppAsset::className(), 'depends' => 'frontend\assets\AppAsset_b']);
+        $view->registerJsFile($jsfile, [AppAsset::className(), 'depends' => 'frontend\assets\AppAsset_b','position' => $view::POS_HEAD]);
     }
     
     public static function addCss($view, $cssfile)
