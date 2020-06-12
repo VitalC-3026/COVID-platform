@@ -1,9 +1,11 @@
 <?php
 
 use frontend\controllers\NewsController;
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
-$sudo = new NewsController();
-$sudo->setBtMark(1);
+$cnt = 1;
 ?>
 
 <!-- BEGIN: .cover -->
@@ -37,130 +39,34 @@ $sudo->setBtMark(1);
   <div class="site-section section-29101 overflow-hidden">
     <div class="container">
       <div class="row">
+          <?php foreach ($news as $news): ?>
         <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
           <!-- BEGIN: .post-entry-big-22796 -->
           <div class="post-entry-big-22796">
-            <a href="#" class="img-link"><img src="assets/frontend/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+            <a href="#" class="img-link"><img src="assets/frontend/images/img_<?= 1 + $news->id % 6 ?>.jpg" alt="Image" class="img-fluid"></a>
             <div class="post-content">
               <div class="post-meta">
-                <a href="#">June 6, 2019</a>
+                <a href="#"><?= Html::encode("{$news->date} ({$news->time})") ?></a>
                 <span class="mx-1">/</span>
-                <a href="#">Health</a>, <a href="#">News</a>
+                <a href="#"><?= Html::encode("{$news->cnt}") ?></a>
               </div>
-              <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h3 class="post-heading"><a href="<?=Url::to(['site/comments', 'id' => $news->id])?>"><?= Html::encode("{$news->title}") ?></a></h3>
+              <p><?= Html::encode("{$news->abstract}") ?></p>
             </div>
           </div>
           <!-- END: .post-entry-big-22796 -->
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-          <!-- BEGIN: .post-entry-big-22796 -->
-          <div class="post-entry-big-22796">
-            <a href="#" class="img-link"><img src="assets/frontend/images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <div class="post-content">
-              <div class="post-meta">
-                <a href="#">June 6, 2019</a>
-                <span class="mx-1">/</span>
-                <a href="#">Health</a>, <a href="#">News</a>
-              </div>
-              <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-          </div>
-          <!-- END: .post-entry-big-22796 -->
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-          <!-- BEGIN: .post-entry-big-22796 -->
-          <div class="post-entry-big-22796">
-            <a href="#" class="img-link"><img src="assets/frontend/images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <div class="post-content">
-              <div class="post-meta">
-                <a href="#">June 6, 2019</a>
-                <span class="mx-1">/</span>
-                <a href="#">Health</a>, <a href="#">News</a>
-              </div>
-              <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-          </div>
-          <!-- END: .post-entry-big-22796 -->
-        </div>
-
-        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-          <!-- BEGIN: .post-entry-big-22796 -->
-          <div class="post-entry-big-22796">
-            <a href="#" class="img-link"><img src="assets/frontend/images/img_4.jpg" alt="Image" class="img-fluid"></a>
-            <div class="post-content">
-              <div class="post-meta">
-                <a href="#">June 6, 2019</a>
-                <span class="mx-1">/</span>
-                <a href="#">Health</a>, <a href="#">News</a>
-              </div>
-              <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-          </div>
-          <!-- END: .post-entry-big-22796 -->
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-          <!-- BEGIN: .post-entry-big-22796 -->
-          <div class="post-entry-big-22796">
-            <a href="#" class="img-link"><img src="assets/frontend/images/img_5.jpg" alt="Image" class="img-fluid"></a>
-            <div class="post-content">
-              <div class="post-meta">
-                <a href="#">June 6, 2019</a>
-                <span class="mx-1">/</span>
-                <a href="#">Health</a>, <a href="#">News</a>
-              </div>
-              <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-          </div>
-          <!-- END: .post-entry-big-22796 -->
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-          <!-- BEGIN: .post-entry-big-22796 -->
-          <div class="post-entry-big-22796">
-            <a href="#" class="img-link"><img src="assets/frontend/images/img_6.jpg" alt="Image" class="img-fluid"></a>
-            <div class="post-content">
-              <div class="post-meta">
-                <a href="#">June 6, 2019</a>
-                <span class="mx-1">/</span>
-                <a href="#">Test</a>, <a href="#">Test</a>
-              </div>
-              <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-          </div>
-          <!-- END: .post-entry-big-22796 -->
-        </div>
-
+          <?php endforeach; ?>
       </div>
 
       <div class="row">
         <div class="col-12 text-center">
           <ul class="pagination-76993">
-              <?php
-                $mark = $sudo->getBtMark();
-                for ($i = 1; $i <= 4; $i++)
-                {
-                    echo "<li id='b$i'>";
-                    if ($i == $mark)
-                        echo "<span>$i</span>";
-                    else
-                    {
-                        echo "<a href='#' onclick='$";
-                        echo "sudo->setMark($i);'>$i</a>";
-                    }
-                        
-                    echo "</li>";
-                }
-              ?>
+              <?= LinkPager::widget(['pagination' => $pagination]) ?>
           </ul>
         </div>
-
-
       </div>
+
     </div>
   </div>
   <!-- END: .site-section -->

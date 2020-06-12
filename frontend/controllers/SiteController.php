@@ -225,7 +225,22 @@ class SiteController extends Controller
      */
     public function actionNews()
     {
-        return $this->render('news');
+        $query = News::find();
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 3,
+            'totalCount' => $query->count(),
+        ]);
+
+        $news = $query->orderBy('date DESC')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('news', [
+            'news' => $news,
+            'pagination' => $pagination,
+        ]);
     }
 
     /**
@@ -262,4 +277,13 @@ class SiteController extends Controller
         return $this->render('healthreport', ['model' => $model,]);
     }
 
+    public function actionComments($id)
+    {
+        // find certain news
+        $news = News::findAll(['id' => $id]);
+
+        return $this->render('comments', [
+            'news' => $news,
+        ]);
+    }
 }

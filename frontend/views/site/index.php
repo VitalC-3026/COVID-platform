@@ -602,7 +602,7 @@ $cnt = 2;
                         <div class="col-lg-6">
                         <?php foreach ($news as $news): ?>
                             <div class="post-entry-big-22796 horizontal d-flex mb-4">
-                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/img_<?=$cnt?>.jpg"
+                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/img_<?=$cnt++?>.jpg"
                                                                        alt="Image" class="img-fluid"></a>
                                 <div class="post-content">
                                     <div class="post-meta">
@@ -616,7 +616,6 @@ $cnt = 2;
                                     </h3>
                                 </div>
                             </div>
-                        <?php $cnt++; ?>
                         <?php endforeach; ?>
 
                         </div>
