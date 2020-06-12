@@ -303,27 +303,23 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">天津市现存确诊曲线</h3>
+                    <h3 class="panel-title">天津市各区疫情数据一览</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-chevron-down"></i>
                         <i class="fa fa-times"></i>
+
                     </div>
                 </div>
-                <div class="panel-body">
-                    <div id="sales-chart" style="height: 260px;"></div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">天津市新增确诊曲线</h3>
-                    <div class="actions pull-right">
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-times"></i>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div id="buy-chart" style="height: 260px;"></div>
-                </div>
+                <table id="areaCondition" class="table" style="height: 650px">
+                    <tr>
+                        <th>区名</th>
+                        <th>现存确诊</th>
+                        <th>累计确诊</th>
+                        <th>境外输入</th>
+                        <th>治愈人数</th>
+                        <th>死亡人数</th>
+                    </tr>
+                </table>
             </div>
         </div>
         <div class="col-md-6">
@@ -342,3 +338,38 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
     </div>
     <!--dashboard charts and map end-->
 </div>
+<script language="JavaScript">
+    <?php $this->beginBlock('js_end') ?>
+    function dataShowInTable(){
+        var dataApi = "http://49.232.173.220:3001/data/getAreaStat/%E5%A4%A9%E6%B4%A5";
+        $.getJSON(dataApi, function (data) {
+            var newArr = [];
+            for (var i = 0; i < data[0]["cities"].length; i++) {
+                var json = {
+                    name:data[0]["cities"][i]["cityName"],
+                    now: data[0]["cities"][i]["currentConfirmedCount"],
+                    total: data[0]["cities"][i]["confirmedCount"],
+                    input:data[0]["cities"][i]["suspectedCount"],
+                    cure:data[0]["cities"][i]["curedCount"],
+                    death:data[0]["cities"][i]["deadCount"],
+            };
+                newArr.push(json);
+            }
+            var rows = newArr.length;
+            for(var i = 0;i < rows; i ++){
+                var x = document.getElementById("areaCondition").insertRow(i + 1);
+                console.log(newArr[i]["name"]);
+                x.insertCell(0).innerHTML = newArr[i]["name"];
+                x.insertCell(1).innerHTML = newArr[i]["now"];
+                x.insertCell(2).innerHTML = newArr[i]["total"];
+                x.insertCell(3).innerHTML = newArr[i]["input"];
+                x.insertCell(4).innerHTML = newArr[i]["cure"];
+                x.insertCell(5).innerHTML = newArr[i]["death"];
+            }
+
+        });
+    }
+    dataShowInTable();
+    <?php $this->endBlock(); ?>
+</script>
+<?php $this->registerJs($this->blocks['js_end'], \yii\web\View::POS_END);//将编写的js代码注册到页面底部 ?>
