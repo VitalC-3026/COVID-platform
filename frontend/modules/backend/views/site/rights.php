@@ -4,12 +4,14 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ListView;
 use yii\widgets\ActiveForm;
+use yii\helpers\BaseArrayHelpers;
 
 AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/jquery.dataTables.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
+<?= Html::csrfMetaTags() ?>
 <?php if(\Yii::$app->getSession()->hasFlash('success')):?>
         <script>
             alert("<?php echo \Yii::$app->getSession()->getFlash('success')?>");
@@ -108,17 +110,24 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   ],
                                 ]); ?>
                               </div>
-                              <div class="col-lg-6">
+                              <div class="col-lg-4-offset-2 col-md-6">
                                   <?php $form = ActiveForm::begin([
                                         'id' => 'rights-form',
-                                        'options' => ['class' => 'form-horizontal'],
+                                        
+                                        'fieldConfig' => [
+                                            'template' => '{label}<hr>{input}',
+                                            'options' => ['class' => 'form-horizontal'],
+                                        ]
                                     ]); ?>
-                                    <?= $form->field($rightsForm, 'rights')->checkboxList($rightsArray, ['value' => $oldRights])->label('权限分配'); ?>
-                                    <div class="form-group" align="right">
+                                    
+                                    <?= $form->field($rightsForm, 'rights[]')->checkboxList($rightsArray, ['value' => $oldRights])->label('权限分配'); ?>
+
+                                    <div class="form-group" text-align="right">
                                         
                                         <?= Html::submitButton('确认提交', ['class' => 'btn btn-primary']) ?>
                                         
                                     </div>
+                                    <?= Html::activeHiddenInput($rightsForm,'account',['value' => $id]) ?>
                                 <?php ActiveForm::end(); ?>
                               </div>
                             </div>
@@ -150,46 +159,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                         'nextPageLabel' => '<i class="fa fa-angle-double-right"></i>',
                                         'lastPageLabel' => '尾页'
                                     ]
-                                ]); ?>    
-                                <!-- <div class="panel-group accordion" id="accordion">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">Collapsible Group Item #1</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseOne" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Collapsible Group Item #3</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseThree" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                                                               
+                                ]); ?>                                                   
                             </div>
                         </div>
                     </div>

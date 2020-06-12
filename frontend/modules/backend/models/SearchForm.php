@@ -34,7 +34,7 @@ class SearchForm extends Model
             return false;
         }
         $user = User::find()->where(['account' =>$this->account])->one();
-        if (!empty($user) && ($user->type === 1 || $uesr->type === 2)) {
+        if (!empty($user) && ($user->type === 1 || $user->type === 2)) {
             return $user->account;
         }
         return false;

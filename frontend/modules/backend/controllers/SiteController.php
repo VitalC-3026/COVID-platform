@@ -73,20 +73,29 @@ class SiteController extends Controller
         }
         $rightsForm = new RightsForm();
         $rightsForm->account = $id;
-        if($rightsForm->load(Yii::$app->request->post())) {
-            $rrights = $_POST['RightsForm']['rights'];
-            if($rightsForm->setRights() == 1){
-                Yii::$app->getSession()->setFlash('error', '1:接收不到值');
-
-            } else if ($rightsForm->setRights() == 2) {
-                Yii::$app->getSession()->setFlash('error', '1:接收到的值不是数组');
-            } else {
-                Yii::$app->getSession()->setFlash('success', '成功');
-            }
-        }
+        
         $user = new ActiveDataProvider([
             'query' => User::find()->where(['account' => $id]),
         ]); 
+        if($rightsForm->load(Yii::$app->request->post())) {
+            $res = $rightsForm->setRights();
+            if($res) {
+                Yii::$app->getSession()->setFlash('success', '成功分配权限'.$rightsForm->account.implode(',', $rightsForm->rights));
+            }
+            $id = $rightsForm->account;
+            $user = new ActiveDataProvider([
+                'query' => User::find()->where(['account' => $id]),
+            ]); 
+        }
+        $old = PriorityList::find()->where(["account" => $id])->all();
+        $i = 0;
+        foreach ($old as $o) {
+            $oldRights[$i] = $o['priority'];
+            $i++;
+        }
+        if(empty($old)) {
+            $oldRights = array();
+        }
         $user->setSort(false);
         $priorityType = new ActiveDataProvider([
             'query' => PriorityType::find(),
@@ -96,20 +105,10 @@ class SiteController extends Controller
         foreach ($priority as $p) {
             $rightsArray[$p['priority']] = $p['name'];
         }
-        $i = 0;
-        $old = PriorityList::find()->where(["account" => $id])->all();
-        foreach ($old as $o) {
-            $oldRights[$i] = $o['priority'];
-            $i++;
-        }
-        if(empty($old)) {
-            $oldRights = array();
-        }
-        
         return $this->render('rights', [
             'provider' => $user, 'priorityProvider' => $priorityType,
             'searchForm' => $search, 'rightsForm' => $rightsForm,
-            'rightsArray' => $rightsArray, 'oldRights' => $oldRights
+            'rightsArray' => $rightsArray, 'oldRights' => $oldRights, 'id' => $id
         ]);
     }
 
