@@ -236,7 +236,7 @@ AppAsset_b::register($this);
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/site/requestlist']); ?>">求助信息</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/site/requestList']); ?>">体温异常人员信息</a>
                             </li>
                         </ul>
                     </li>
