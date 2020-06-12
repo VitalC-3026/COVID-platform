@@ -277,8 +277,6 @@ AppAsset_b::register($this);
     <script src="assets/frontend/js/jquery.validate.min.js"></script>
     <script src="assets/frontend/js/jquery.easing.1.3.js"></script>
     <script src="assets/frontend/js/main.js"></script>
-    <script src="assets/frontend/js/echarts.min.js"></script>
-    <script src="assets/frontend/js/china.js"></script>
     <?php $this->endBody() ?>
     </body>
     </html>

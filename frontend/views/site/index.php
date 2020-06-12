@@ -31,9 +31,9 @@
                 <span class="number number-counter" id="globalTotal">0</span>
                 <span class="caption d-block mb-5">累计确诊</span>
                 <div class="last-record d-flex justify-content-between">
-                    <div class="data">
+                    <div class="data" id = "tt">
                         <span class="caption">今日确诊</span>
-                        <span class="number" id="confirmSign">+ <span class="number-counter">0</span></span>
+                        <span class="number" id="deathSign">+<span class="number-counter" id="todayC">0</span></span>
                     </div>
                     <div class="data">
                         <span class="caption">现存确诊</span>
@@ -52,7 +52,7 @@
                 <div class="last-record d-flex justify-content-between">
                     <div class="data">
                         <span class="caption number-counter">今日死亡</span>
-                        <span class="number" id="deathSign">+<span class="number-counter">0</span></span>
+                        <span class="number" >+<span class="number-counter" id="todayD">0</span></span>
                     </div>
                     <div class="data">
                         <span class="caption">病死率(%)</span>
@@ -68,7 +68,7 @@
                 <div class="last-record d-flex justify-content-between">
                     <div class="data">
                         <span class="caption">今日治愈</span>
-                        <span class="number" id="cureSign">+<span class="number-counter">0</span></span>
+                        <span class="number" >+<span class="number-counter"id="cureSign">0</span></span>
                     </div>
                     <div class="data">
                         <span class="caption">治愈率(%)</span>
@@ -753,20 +753,13 @@
             }
             else document.getElementById(id).innerText = "+" + source;
         }
-        function worldMatch(source,signId) {
-            var sign = document.getElementById(signId);
+        function worldMatch(source,id) {
+            var sign = document.getElementById(id);
             if(source === undefined){
-                sign.innerText = "待公布";
-                sign.getElementsByTagName('span').innerText = "";
-            }
-            else if(parseInt(source)<0){
-                sign.innerText =  "-";
-                sign.getElementsByTagName('span').setAttribute("data-number",source);
+                sign.innerText = "0(待公布)";
             }
             else{
-                sign.innerText =  "+";
-                console.log(document.getElementById(signId).getElementById(id));
-                sign.getElementsByTagName('span').setAttribute("data-number",source);
+                sign.setAttribute("data-number",source);
             }
         }
         function data() {
@@ -783,10 +776,10 @@
                 var curedIncr = summaryDataIn["curedIncr"];
                 var deadIncr = summaryDataIn["deadIncr"];
                 document.getElementById("globalTotal").setAttribute("data-number",confirmedCount);
-                worldMatch(confirmedIncr,"confirmSign");
+                worldMatch(confirmedIncr,"todayC");
                 document.getElementById("globalNow").setAttribute("data-number",currentConfirmedCount);
                 document.getElementById("globalDeath").setAttribute("data-number",deadCount);
-                worldMatch(deadIncr,"deathSign");
+                worldMatch(deadIncr,"todayD");
                 var deathRank = (parseInt(deadCount) * 100 /parseInt(confirmedCount)).toFixed(1)+ "";
                 var cureRank = (parseInt(curedCount) * 100/parseInt(confirmedCount)).toFixed(1) + "";
                 document.getElementById("globalDeathRank").setAttribute("data-number", deathRank);
