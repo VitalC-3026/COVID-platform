@@ -45,7 +45,6 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                                 'class' => 'col-lg-12'
                             ],
                             'pager' => [
-                                /*'maxButtonCount' => 5,*/
                                 'firstPageLabel' => '首页',
                                 'prevPageLabel' => '<i class="fa fa-angle-double-left"></i>',
                                 'nextPageLabel' => '<i class="fa fa-angle-double-right"></i>',
@@ -72,9 +71,15 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                         </div>
                         <div class="col-md-4">
                             <div class="view-mail-reply pull-right">
-                                <button class="btn btn-sm btn-primary"><i class="fa fa-reply"></i> 发布</button>
+                                <?= Html::a('<span class="glyphicon glyphicon-check"></span>', ['publish', 'id' => $id], ['title' => '通过']) ?>
 
-                                <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $id], ['title' => '查看']) ?>
+                                <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $id], [
+                                    'title' => '删除',
+                                    'data' => [
+                                        'confirm' => '您确定要删除吗？',
+                                        'method' => 'post',
+                                    ] 
+                                ]) ?>
                             </div>
                         </div>
                     </div>
@@ -116,22 +121,3 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
     </div>
     <!--mail wrapper end-->
 </section>
-
-<script>
-    $(document).ready(function() {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_flat-green'
-        });
-        $('.tooltips').tooltip()
-        $('.textarea').wysihtml5();
-        $('.ccLink').click(function() {
-            $(this).hide();
-            $('#form-group-cc').slideDown();
-        });
-        $('.bccLink').click(function() {
-            $(this).hide();
-            $('#form-group-bcc').slideDown();
-        });
-
-    });
-</script>

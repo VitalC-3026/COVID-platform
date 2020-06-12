@@ -1,7 +1,7 @@
 <?php
 
 use frontend\assets\AppAsset_b;
-
+use common\widgets\Alert;
 /*AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/countTo/jquery.countTo.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/weather/js/skycons.js');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.min.js');
@@ -30,6 +30,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/jvecto
 AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/todo/css/todos.css');
 AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris/css/morris.css');*/
 ?>
+<?= Alert::widget() ?>
 <div id="main-content">
     <!--tiles start-->
     <div class="row">

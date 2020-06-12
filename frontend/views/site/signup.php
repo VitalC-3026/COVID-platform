@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- END: .cover -->
     <div class="container">
+        <p></p>
         <div class="row">
             <div class="col">
                 <h3 class="section-heading line-primary">快注册成为社区会员吧</h3>

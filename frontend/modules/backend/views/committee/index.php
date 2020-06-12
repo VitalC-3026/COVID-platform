@@ -32,7 +32,6 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
               <div class="col-md-6" align="right">
                   <button id="addWorker" type="button" class="btn btn-primary" onclick="javascript:jump()">添加新职员</button>
                   <script type="text/javascript">
-                      <?php //TODO: 通过路由跳转地址 ?>
                       function jump(){ window.location.href="<?= \yii\helpers\Url::to(['/backend/committee/create']); ?>"; }
                   </script>
               </div>

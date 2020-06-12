@@ -37,7 +37,7 @@ use yii\helpers\Html;
     </div>
     <!-- END: .cover -->
     <div class="container">
-
+        <p></p>
         <div class="row">
             <div class="col">
                 <h3 class="section-heading line-primary">细心填报，大家安心！</h3>
@@ -57,11 +57,9 @@ use yii\helpers\Html;
 
                 <div class="form-group">
                     <?= $form->field($model, 'account')->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->account, 'readOnly' => true])->label('身份证号'); ?>
-
                 </div>
                 <div class="form-group">
                     <?= $form->field($model, 'name')->textInput(['autofocus' => true, 'value' => Yii::$app->user->getIdentity()->name, 'readOnly' => true])->label('真实姓名'); ?>
-
                 </div>
 
                 <div class="form-group">

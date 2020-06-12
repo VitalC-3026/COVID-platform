@@ -19,6 +19,8 @@ use frontend\modules\backend\models\CommitteeSearch;
 use common\models\PriorityType;
 use common\models\Resident;
 use common\models\User;
+use common\models\Committee;
+use yii\helpers\Url;
 
 /**
  * Site controller
@@ -49,8 +51,13 @@ class ResidentController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }  
         $resident = new ResidentSearch();
         $provider = $resident->search(Yii::$app->request->get());
 
@@ -63,6 +70,15 @@ class ResidentController extends Controller
 
     // 删除社区居民
     public function actionDelete($id) {
+
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+            return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }
+
         $model = Resident::findOne($id);
         if ($model !== null) {
             $model->delete();
@@ -72,8 +88,15 @@ class ResidentController extends Controller
 
     // 创建新居民
     public function actionCreate() {
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
+
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }
+
         $model = new ResidentForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($model->addResident()) {
@@ -91,8 +114,16 @@ class ResidentController extends Controller
 
     // 更新居民数据
     public function actionUpdate($id) {
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
+
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }
+
+
         $model = new ResidentForm();
         $resident = Resident::findOne($id);
         $user = User::findOne($id);

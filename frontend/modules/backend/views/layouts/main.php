@@ -171,31 +171,22 @@ AppAsset_b::register($this);
                     </li>
                     <li class="dropdown settings">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Mike Adams <i class="fa fa-angle-down"></i>
+                            <?= Yii::$app->user->identity->username ?> <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu animated fadeInDown">
                             <li>
                                 <a href="#"><i class="fa fa-user"></i> Profile</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-danager" id="user-inbox">5</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                <a href="javascript:;" onclick="javascript:logout();"><i class="fa fa-power-off"></i> Logout</a>
+                                <script type="text/javascript">
+                                    function logout(){
+                                         window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";
+                                    }
+                                </script>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <div class="toggle-navigation toggle-right">
-                            <button type="button" class="btn btn-default" id="toggle-right">
-                                <i class="fa fa-comment"></i>
-                            </button>
-                        </div>
-                    </li>
-
                 </ul>
             </div>
         </header>
@@ -207,7 +198,7 @@ AppAsset_b::register($this);
                 <ul class="nano-content">
                     <?php //TODO: 路由跳转?>
                     <li class="active">
-                        <a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>"><i class="fa fa-dashboard"></i><span>首页</span></a>
                     </li>
 
                     <li class="active">
@@ -230,10 +221,13 @@ AppAsset_b::register($this);
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/news/edit']); ?>">信息编辑</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/edit']); ?>">新闻公告编辑</a>
                             </li>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/news/index']); ?>">信息审核</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/index']); ?>">新闻公告审核</a>
+                            </li>
+                            <li>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/comments']); ?>">评论审核</a>
                             </li>
                         </ul>
                     </li>
@@ -241,9 +235,6 @@ AppAsset_b::register($this);
                         <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span><i
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-<!--                            <li>-->
-<!--                                <a href="--><?//= \yii\helpers\Url::to(['/backend/site/healthreport']); ?><!--">健康日报</a>-->
-<!--                            </li>-->
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/site/requestlist']); ?>">求助信息</a>
                             </li>

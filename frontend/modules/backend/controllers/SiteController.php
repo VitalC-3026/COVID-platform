@@ -15,13 +15,9 @@ use frontend\modules\backend\models\HealthForm;
 use frontend\modules\backend\models\EditForm;
 use frontend\modules\backend\models\SearchForm;
 use frontend\modules\backend\models\RightsForm;
-use frontend\modules\backend\models\ResidentSearch;
-use frontend\modules\backend\models\CommitteeSearch;
-use common\models\PriorityType;
-use common\models\PriorityList;
-use common\models\Resident;
-use common\models\News;
 use common\models\User;
+use common\models\PriorityType;
+use common\models\Committee;
 
 /**
  * Site controller
@@ -59,8 +55,16 @@ class SiteController extends Controller
 
     public function actionRights()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-            return $this->goHome();
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1)){
+            return $this->goHome();            
+        }
+        
+        $priority = PriorityType::find()->where(['name' => '分配权限']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['index']);
+        }    
+        
         $search = new SearchForm();
         if ($search->load(Yii::$app->request->post())) {
             if ($search->searchByAccount()) {
@@ -80,7 +84,7 @@ class SiteController extends Controller
         if($rightsForm->load(Yii::$app->request->post())) {
             $res = $rightsForm->setRights();
             if($res) {
-                Yii::$app->getSession()->setFlash('success', '成功分配权限'.$rightsForm->account.implode(',', $rightsForm->rights));
+                Yii::$app->getSession()->setFlash('success', '成功分配权限');
             }
             $id = $rightsForm->account;
             $user = new ActiveDataProvider([
@@ -111,24 +115,4 @@ class SiteController extends Controller
             'rightsArray' => $rightsArray, 'oldRights' => $oldRights, 'id' => $id
         ]);
     }
-
-//    public function actionHealthreport()
-//    {
-//        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-//            return $this->goHome();
-//        $model = new HealthForm();
-//        date_default_timezone_set('prc');
-//        $time = date('Y-m-d H:i:s', time());
-//        Yii::$app->view->params['time'] = $time;
-//        Yii::$app->view->params['info'] = '';
-//        if ($model->load(Yii::$app->request->post())) {
-//            // 为什么数据无法传送？
-//            Yii::$app->view->params['info'] = $model->createTime;
-//            Yii::$app->session->setFlash('success', '你成功填写了健康日报');
-//            return $this->redirect(['admininfo']);
-//        }
-//        return $this->render('healthreport', ['model' => $model,]);
-//    }
-
-
 }

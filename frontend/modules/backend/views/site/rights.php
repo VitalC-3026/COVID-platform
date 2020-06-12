@@ -5,6 +5,7 @@ use yii\grid\GridView;
 use yii\widgets\ListView;
 use yii\widgets\ActiveForm;
 use yii\helpers\BaseArrayHelpers;
+use common\widgets\Alert;
 
 AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -12,6 +13,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <?= Html::csrfMetaTags() ?>
+<?= Alert::widget() ?>
 <?php if(\Yii::$app->getSession()->hasFlash('success')):?>
         <script>
             alert("<?php echo \Yii::$app->getSession()->getFlash('success')?>");
