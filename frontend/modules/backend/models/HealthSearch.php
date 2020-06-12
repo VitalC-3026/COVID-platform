@@ -13,15 +13,18 @@ use common\models\Health;
 class HealthSearch extends User
 {
     public float $temperature;
-    public function rules(){
+
+    public function rules()
+    {
         return [
             [['temperature'], 'safe'],
         ];
     }
+
     public function search($params)
     {
         $query = User::find();
-        $query->joinWith('health', true, 'INNER JOIN');
+        $query->joinWith('health', true, 'INNER JOIN')->where(['or', 'health.temperature>37.2', 'health.temperature<36.3']);
         $provider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -51,7 +54,7 @@ class HealthSearch extends User
             return $provider;
         }
 
-        $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like','username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age])->andFilterWhere(['tel' => $this->tel]);
+        $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like', 'username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age])->andFilterWhere(['tel' => $this->tel]);
 
         return $provider;
     }

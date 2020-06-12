@@ -137,7 +137,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getHealth()
     {
-        return $this->hasMany(Health::className(), ['account' => 'account']);
+        return $this->hasOne(Health::className(), ['account' => 'account']);
     }
 
 
