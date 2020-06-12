@@ -13,6 +13,7 @@ use frontend\modules\backend\models\CommitteeForm;
 use frontend\modules\backend\models\CommitteeSearch;
 use common\models\Committee;
 use common\models\User;
+use common\models\PriorityType;
 
 /**
  * Site controller
@@ -43,8 +44,14 @@ class CommitteeController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }
+
         $committee = new CommitteeSearch();
         $provider = $committee->search(Yii::$app->request->get());
 
@@ -57,6 +64,15 @@ class CommitteeController extends Controller
     
     // 删除职员
     public function actionDelete($id) {
+
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+            return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }
+
         $model = Committee::findOne($id);
         if ($model !== null) {
             $model->delete();
@@ -66,8 +82,15 @@ class CommitteeController extends Controller
 
     // 添加新职员
     public function actionCreate() {
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
+        
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }
+
         $model = new CommitteeForm();
         if ($model->load(Yii::$app->request->post())) {
             date_default_timezone_set('prc');
@@ -86,8 +109,15 @@ class CommitteeController extends Controller
 
     // 更新职员数据
     public function actionUpdate($id) {
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2)
+
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['/backend/site/index']);
+        }
+
         $model = new CommitteeForm();
         $committee = Committee::findOne($id);
         $user = User::findOne($id);

@@ -39,6 +39,24 @@ class Committee extends ActiveRecord
         return true;
     }
 
+    public static function hasPriority($account, $priority) 
+    {
+        $priority = $priority->one();
+        if($priority->name === '查看社区数据库' && 
+            User::find()->where(['account' => $account])->one()->type === 2) {
+            return true;
+        }
+        $rights = PriorityList::find()->where(['account' => $account])->all();
+        $i = 0;
+        foreach ($rights as $r) {
+            $rightsList[$i++] = $r['priority'];
+        }
+        if(isset($rightsList) && in_array($priority->priority, $rightsList)) {
+            return true;
+        }
+        return false;
+    }
+
     // basic setters
     public function setInDate($inDate) { $this->in_date = $inDate; }
     public function setIsAdmin($isAdmin) { $this->is_admin = $isAdmin; }

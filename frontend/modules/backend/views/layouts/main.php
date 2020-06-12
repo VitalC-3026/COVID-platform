@@ -187,20 +187,6 @@ AppAsset_b::register($this);
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <div class="toggle-navigation toggle-right">
-                            <button type="button" class="btn btn-default" onclick="javascript:jumpFront()" id="toggle-right">
-                                <i class="fa fa-reply-all" style="color: #797979"></i>
-                            </button>
-                            <script type="text/javascript">
-                                function jumpFront(){                                
-                                    window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";
-                                }
-                            </script>                          
-                        </div>
-                        
-                    </li>
-
                 </ul>
             </div>
         </header>
@@ -212,7 +198,7 @@ AppAsset_b::register($this);
                 <ul class="nano-content">
                     <?php //TODO: 路由跳转?>
                     <li class="active">
-                        <a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>"><i class="fa fa-dashboard"></i><span>首页</span></a>
                     </li>
 
                     <li class="active">
@@ -249,9 +235,6 @@ AppAsset_b::register($this);
                         <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span><i
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
-<!--                            <li>-->
-<!--                                <a href="--><?//= \yii\helpers\Url::to(['/backend/site/healthreport']); ?><!--">健康日报</a>-->
-<!--                            </li>-->
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/site/requestlist']); ?>">求助信息</a>
                             </li>
