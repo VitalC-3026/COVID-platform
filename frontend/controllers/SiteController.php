@@ -149,9 +149,9 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            return $this->render('index', [
+            return $this->redirect(array('/site/index',
                 'message' => "您已成功注册成为社区会员，请登录您的账户。"
-            ]);
+            ));
         }
 
         return $this->render('signup', [
@@ -173,9 +173,9 @@ class SiteController extends Controller
             if ($model->setMyUser()) {
                 $model->setInfo();
                 Yii::$app->user->logout();
-                return $this->render('index', [
+                return $this->redirect(array('/site/index',
                     'message' => "信息修改成功，请重新登录。"
-                ]);
+                ));
             } else {
                 return $this->render('modify', [
                     'model' => $model,
