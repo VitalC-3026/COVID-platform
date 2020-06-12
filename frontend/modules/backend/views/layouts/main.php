@@ -171,29 +171,37 @@ AppAsset_b::register($this);
                     </li>
                     <li class="dropdown settings">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Mike Adams <i class="fa fa-angle-down"></i>
+                            <?= Yii::$app->user->identity->username ?> <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu animated fadeInDown">
                             <li>
                                 <a href="#"><i class="fa fa-user"></i> Profile</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-danager" id="user-inbox">5</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                <a href="javascript:;" onclick="javascript:logout();"><i class="fa fa-power-off"></i> Logout</a>
+                                <script type="text/javascript">
+                                    function logout(){
+                                        <?php
+                                            Yii::$app->user->logout();
+                                         ?>
+                                         window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";
+                                    }
+                                </script>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <div class="toggle-navigation toggle-right">
-                            <button type="button" class="btn btn-default" id="toggle-right">
-                                <i class="fa fa-comment"></i>
+                            <button type="button" class="btn btn-default" onclick="javascript:jumpFront()" id="toggle-right">
+                                <i class="fa fa-reply-all" style="color: #797979"></i>
                             </button>
+                            <script type="text/javascript">
+                                function jumpFront(){                                
+                                    window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";
+                                }
+                            </script>                          
                         </div>
+                        
                     </li>
 
                 </ul>
