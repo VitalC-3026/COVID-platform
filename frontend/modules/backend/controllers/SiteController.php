@@ -9,7 +9,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
-use frontend\modules\backend\models\ResidentForm;
+use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
 use frontend\modules\backend\models\EditForm;
@@ -117,6 +117,19 @@ class SiteController extends Controller
             'provider' => $user, 'priorityProvider' => $priorityType,
             'searchForm' => $search, 'rightsForm' => $rightsForm,
             'rightsArray' => $rightsArray, 'oldRights' => $oldRights, 'id' => $id
+        ]);
+    }
+
+    public function actionRequestlist()
+    {
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+            return $this->goHome();
+        $health = new ResidentSearch();
+        $provider = $health->search(Yii::$app->request->get());
+
+        return $this->render('requestlist', [
+            "model" => $health,
+            'provider' => $provider
         ]);
     }
 }

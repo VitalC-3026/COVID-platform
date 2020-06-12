@@ -92,11 +92,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'tel',
                                             'format' => 'raw',
                                         ],
-                                        [
-                                            'label' => '今日体温',
-                                            'attribute' => '℃',
-                                            'format' => 'raw',
-                                        ],
+                                        
                                     ],
                                 ]); ?>
                             </div>

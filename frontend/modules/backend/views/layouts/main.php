@@ -202,8 +202,7 @@ AppAsset_b::register($this);
                     </li>
 
                     <li class="active">
-                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>社区数据库</span><i
-                                    class="arrow fa fa-angle-right pull-right"></i></a>
+                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>社区数据库</span></a>
                         <ul>
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/resident/index']); ?>">居民数据库</a>
@@ -217,8 +216,7 @@ AppAsset_b::register($this);
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>信息发布</span><i
-                                    class="arrow fa fa-angle-right pull-right"></i></a>
+                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>信息发布</span></a>
                         <ul>
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/news/edit']); ?>">新闻公告编辑</a>
@@ -232,11 +230,10 @@ AppAsset_b::register($this);
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span><i
-                                    class="arrow fa fa-angle-right pull-right"></i></a>
+                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/site/requestList']); ?>">体温异常人员信息</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/site/requestlist']); ?>">体温异常人员信息</a>
                             </li>
                         </ul>
                     </li>
