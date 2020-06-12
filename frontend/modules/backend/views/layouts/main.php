@@ -181,9 +181,6 @@ AppAsset_b::register($this);
                                 <a href="javascript:;" onclick="javascript:logout();"><i class="fa fa-power-off"></i> Logout</a>
                                 <script type="text/javascript">
                                     function logout(){
-                                        <?php
-                                            Yii::$app->user->logout();
-                                         ?>
                                          window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";
                                     }
                                 </script>
