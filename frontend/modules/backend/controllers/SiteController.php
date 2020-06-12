@@ -2,6 +2,7 @@
 
 namespace frontend\modules\backend\controllers;
 
+use frontend\modules\backend\models\CommitteeSearch;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -55,7 +56,11 @@ class SiteController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        return $this->render('index');
+        $resident = new ResidentSearch();
+        $committee = new CommitteeSearch();
+        $health = new HealthSearch();
+        return $this->render('index',[
+            'model' => [$resident->count(),$resident->visitors(),$committee->count(),$health->count()]]);
     }
 
     public function actionRights()

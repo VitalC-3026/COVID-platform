@@ -37,7 +37,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-purple">
                 <div class="content">
-                    <h1 class="text-left timer" data-from="0" data-to="180" data-speed="2500"></h1>
+                    <h1 class="text-left timer" data-from="0" data-to="<?php echo $model[0]?>" data-speed="2500"></h1>
                     <p>居民总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-users"></i>
@@ -47,8 +47,8 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-turquoise">
                 <div class="content">
-                    <h1 class="text-left timer" data-from="0" data-to="56" data-speed="2500"></h1>
-                    <p>员工总数</p>
+                    <h1 class="text-left timer" data-from="0" data-to="<?php echo $model[1]?>" data-speed="2500"></h1>
+                    <p>访客总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-comments"></i>
                 </div>
@@ -57,8 +57,8 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-blue">
                 <div class="content">
-                    <h1 class="text-left timer" data-from="0" data-to="32" data-speed="2500"></h1>
-                    <p>公告总数</p>
+                    <h1 class="text-left timer" data-from="0" data-to="<?php echo $model[2]?>" data-speed="2500"></h1>
+                    <p>员工总数</p>
                 </div>
                 <div class="icon"><i class="fa fa fa-envelope"></i>
                 </div>
@@ -67,7 +67,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
         <div class="col-md-3 col-sm-6">
             <div class="dashboard-tile detail tile-red">
                 <div class="content">
-                    <h1 class="text-left timer" data-to="105" data-speed="2500"></h1>
+                    <h1 class="text-left timer" data-to="<?php echo $model[3]?>" data-speed="2500"></h1>
                     <p>体温异常人员总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-bar-chart-o"></i>

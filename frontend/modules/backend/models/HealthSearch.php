@@ -58,4 +58,8 @@ class HealthSearch extends User
 
         return $provider;
     }
+    public function count(){
+        $query = User::find()->joinWith('health', true, 'INNER JOIN')->where(['or', 'health.temperature>37.2', 'health.temperature<36.3'])->all();
+        return count($query);
+    }
 }
