@@ -823,10 +823,10 @@
                 visualMap: {
                     type: 'piecewise',
                     pieces: [
-                        { min: 1000, max: 1000000, label: '大于等于1000人', color: '#372a28' },
-                        { min: 500, max: 999, label: '确诊500-999人', color: '#4e160f' },
-                        { min: 100, max: 499, label: '确诊100-499人', color: '#974236' },
-                        { min: 10, max: 99, label: '确诊10-99人', color: '#ee7263' },
+                        { min: 1000, max: 1000000, label: '大于等于1000人', color: '#5e0d00' },
+                        { min: 500, max: 999, label: '确诊500-999人', color: '#900701' },
+                        { min: 100, max: 499, label: '确诊100-499人', color: '#d6493c' },
+                        { min: 10, max: 99, label: '确诊10-99人', color: '#f97364' },
                         { min: 1, max: 9, label: '确诊1-9人', color: '#f5bba7' },
                         { min: 0 ,max: 0, label: '无现存确诊',color: '#ebd9bc' }
                     ],
@@ -933,10 +933,10 @@
                 visualMap: {
                     type: 'piecewise',
                     pieces: [
-                        { min: 1000, max: 100000000, label: '大于等于1000人', color: '#372a28' },
-                        { min: 500, max: 999, label: '确诊500-999人', color: '#4e160f' },
-                        { min: 100, max: 499, label: '确诊100-499人', color: '#974236' },
-                        { min: 10, max: 99, label: '确诊10-99人', color: '#ee7263' },
+                        { min: 1000, max: 100000000, label: '大于等于1000人', color: '#891200' },
+                        { min: 500, max: 999, label: '确诊500-999人', color: '#cb2b18' },
+                        { min: 100, max: 499, label: '确诊100-499人', color: '#d6493c' },
+                        { min: 10, max: 99, label: '确诊10-99人', color: '#f97364' },
                         { min: 1, max: 9, label: '确诊1-9人', color: '#f5bba7' },
                         { min: 0 ,max: 0, label: '无现存确诊',color: '#ebd9bc' }
                     ],
