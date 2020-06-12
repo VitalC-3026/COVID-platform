@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- END: .cover -->
     <div class="container">
+        <p></p>
         <div class="row justify-content-between">
             <div class="col-lg-6 mb-4 mb-lg-0">
 
