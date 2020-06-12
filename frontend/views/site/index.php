@@ -2,6 +2,9 @@
 /**
  * @var $message string 通知信息
  */
+use yii\helpers\Html;
+use yii\widgets\LinkPager;
+$cnt = 2;
 ?>
 
 <!-- BEGIN: .cover -->
@@ -586,7 +589,7 @@
                 <!-- BEGIN: news -->
                 <div class="col-lg-9 mb-4 mb-lg-0">
                     <div class="section-heading">
-                        <h2 class="section-heading line-black heading-sm">实时播报</h2>
+                        <h2 class="section-heading line-black heading-sm">实时新闻</h2>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 mb-4 mb-lg-0">
@@ -597,52 +600,25 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
+                        <?php foreach ($news as $news): ?>
                             <div class="post-entry-big-22796 horizontal d-flex mb-4">
-                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/img_2.jpg"
+                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/img_<?=$cnt?>.jpg"
                                                                        alt="Image" class="img-fluid"></a>
                                 <div class="post-content">
                                     <div class="post-meta">
-                                        <a href="#">6.09, 2020</a>
+                                        <a href="#"><?= Html::encode("{$news->date} ({$news->time})") ?></a>
                                         <span class="mx-1">/</span>
-                                        <a href="#">Covid</a>, <a href="#">News</a>
+                                        <a href="#"><?= Html::encode("{$news->cnt}") ?></a>
                                     </div>
                                     <h3 class="post-heading"><a
                                                 href="http://baijiahao.baidu.com/s?id=1669064014333218250&wfr=newsapp">
-                                            湖北鄂州开展核酸检测筛查</a>
+                                        <?= Html::encode("{$news->title}") ?></a>
                                     </h3>
                                 </div>
                             </div>
+                        <?php $cnt++; ?>
+                        <?php endforeach; ?>
 
-                            <div class="post-entry-big-22796 horizontal d-flex mb-4">
-                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/img_3.jpg"
-                                                                       alt="Image" class="img-fluid"></a>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <a href="#">6.08, 2020</a>
-                                        <span class="mx-1">/</span>
-                                        <a href="#">Health</a>, <a href="#">News</a>
-                                    </div>
-                                    <h3 class="post-heading"><a
-                                                href="https://baijiahao.baidu.com/s?id=1668999359026391729&wfr=spider&for=pc">
-                                            阿布扎比酋长国宣布延长一周人员流动禁令</a>
-                                    </h3>
-                                </div>
-                            </div>
-
-                            <div class="post-entry-big-22796 horizontal d-flex mb-4">
-                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/img_4.jpg"
-                                                                       alt="Image" class="img-fluid"></a>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <a href="#">6.06, 2020</a>
-                                        <span class="mx-1">/</span>
-                                        <a href="#">Health</a>, <a href="#">News</a>
-                                    </div>
-                                    <h3 class="post-heading"><a
-                                                href="http://finance.sina.com.cn/roll/2020-06-09/doc-iirczymk6047865.shtml">
-                                            200余名员工感染新冠病毒 巴西淡水河谷暂停伊塔比拉综合矿区业务</a></h3>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

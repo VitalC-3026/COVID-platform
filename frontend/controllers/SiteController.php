@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use common\models\News;
+use yii\data\Pagination;
 use common\models\User;
 use frontend\models\ModifyForm;
 use frontend\models\HealthForm;
@@ -75,7 +77,22 @@ class SiteController extends Controller
     public function actionIndex()
     {
         // $resident = new Resident();
-        return $this->render('index');
+        $query = News::find();
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 3,
+            'totalCount' => $query->count(),
+        ]);
+
+        $news = $query->orderBy('date DESC')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('index', [
+            'news' => $news,
+            'pagination' => $pagination,
+        ]);
     }
 
     /**
