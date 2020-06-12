@@ -64,6 +64,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                               'dataProvider' => $provider,
                               //设置筛选模型
                               'filterModel' => $model,
+                              'emptyText' => '无结果',
                               'summary' => '第{page}页，共{pageCount}页，{totalCount}条数据',
                               'columns' => [
                                 //显示序号列

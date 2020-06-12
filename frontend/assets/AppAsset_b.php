@@ -44,8 +44,8 @@ class AppAsset_b extends AssetBundle
 
     ];
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
-        'yii\web\YiiAsset',
+        /*'yii\bootstrap\BootstrapAsset',
+        'yii\web\YiiAsset',*/
      
     ];
     public static function addScript($view, $jsfile)

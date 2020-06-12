@@ -42,8 +42,7 @@ class Committee extends ActiveRecord
     public static function hasPriority($account, $priority) 
     {
         $priority = $priority->one();
-        if($priority->name === '查看社区数据库' && 
-            User::find()->where(['account' => $account])->one()->type === 2) {
+        if(User::find()->where(['account' => $account])->one()->type === 2) {
             return true;
         }
         $rights = PriorityList::find()->where(['account' => $account])->all();

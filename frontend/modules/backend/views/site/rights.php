@@ -117,7 +117,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                         'id' => 'rights-form',
                                         
                                         'fieldConfig' => [
-                                            'template' => '{label}<hr>{input}',
+                                            'template' => '<div class="row"><div class="col-md-4">{label}</div><div class="col-md-6-offset-2">{error}</div></div><hr>{input}',
                                             'options' => ['class' => 'form-horizontal'],
                                         ]
                                     ]); ?>

@@ -49,7 +49,8 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                                 'prevPageLabel' => '<i class="fa fa-angle-double-left"></i>',
                                 'nextPageLabel' => '<i class="fa fa-angle-double-right"></i>',
                                 'lastPageLabel' => '尾页'
-                            ]
+                            ],
+                            'emptyText' => '无结果',
                         ]); ?>
                     </div>
                 </div>
@@ -75,10 +76,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
 
                                 <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $id], [
                                     'title' => '删除',
-                                    'data' => [
-                                        'confirm' => '您确定要删除吗？',
-                                        'method' => 'post',
-                                    ] 
+                                    'onclick' => 'return confirm("删除后将无法恢复数据 确认删除？");'
                                 ]) ?>
                             </div>
                         </div>
@@ -91,15 +89,25 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                                     <?= DetailView::widget([
                                         'model' => $model,
                                         'attributes' => [                                           
-                                            ['attribute' => 'title',
-                                            'label' => '标题'],                                           
-                                            ['attribute' => 'abstract',
-                                            'label' => '摘要',],
-                                            ['attribute' => 'content',
-                                            'label' => '正文内容'],
-                                            ['attribute' => 'date',
-                                            'label' => '修改时间',
-                                            'value' => $model->getDateTime(), 
+                                            [
+                                                'attribute' => 'title',
+                                                'label' => '标题',
+                                                'value' => $model->title !== null ? $model->title : ''
+                                            ],                                           
+                                            [
+                                                'attribute' => 'abstract',
+                                                'label' => '摘要',
+                                                'value' => $model->abstract !== null ? $model->abstract : ''
+                                            ],
+                                            [
+                                                'attribute' => 'content',
+                                                'label' => '正文内容',
+                                                'value' => $model->content !== null ? $model->content : ''
+                                            ],
+                                            [   
+                                                'attribute' => 'date',
+                                                'label' => '修改时间',
+                                                'value' => $model->title !== null ? $model->getDateTime() : '',
                                             ],
                                         ],
                                         'template' => '<tr style = "border: 10px; width: 100%"><th style="height: 50px; width: 100px"><strong>{label}</strong></th><td style = "height: 50px; width: 80%"" text-align="center"><div align="center">{value}</div></td></tr>', 

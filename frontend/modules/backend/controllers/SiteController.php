@@ -17,6 +17,7 @@ use frontend\modules\backend\models\SearchForm;
 use frontend\modules\backend\models\RightsForm;
 use common\models\User;
 use common\models\PriorityType;
+use common\models\PriorityList;
 use common\models\Committee;
 
 /**

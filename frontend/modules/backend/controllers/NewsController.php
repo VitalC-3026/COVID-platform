@@ -49,7 +49,7 @@ class NewsController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex($id = 0)
+    public function actionIndex($id = -1)
     {
         
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
@@ -63,7 +63,7 @@ class NewsController extends Controller
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s', time());
         Yii::$app->view->params['time'] = $time;
-        if ($id === 0) {
+        if ($id === -1) {
             $news = News::getEarliestNews();
         } else {
             $news = News::findOne($id);
@@ -74,10 +74,13 @@ class NewsController extends Controller
                 'pagesize' => 4
             ]
         ]);
+        if($news === null) {
+            $news = new News();
+        }
         return $this->render('index', [
             'provider' => $dataProvider,
             'model' => $news,
-            'id' => $news->id,
+            'id' => $id,
         ]);
     }
 
@@ -141,7 +144,7 @@ class NewsController extends Controller
 
     public function actionDelete($id){
 
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2 || Yii::$app->user->identity->type != 1)
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '发布公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
@@ -149,57 +152,64 @@ class NewsController extends Controller
             return $this->redirect(['/backend/site/index']);
         }
 
+        if($id === -1) {
+            return $this->redirect(['index']);
+        }
         Comments::deleteAll(['New_id' => $id]);
         $model = News::findOne($id);
         // $commets = Comments::findOne($model->id);
         if ($model !== null) {
             $model->delete();
         }
-        return $this->redirect(['index']);
+        return $this->redirect(['/backend/news/index']);
     }
 
     public function actionView($id) {
-
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2 || Yii::$app->user->identity->type != 1)
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '发布公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
         }
-        return $this->redirect(['index', 'id' => $id]);
+        return $this->redirect(['/backend/news/index', 'id' => $id]);
     }
 
     public function actionCheck($id) {
 
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2 || Yii::$app->user->identity->type != 1)
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '审核评论']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
         }
-
+        
         $model = Comments::findOne($id);
+        if($id === -1 || $model === null) {
+            return $this->redirect(['index']);
+        }
         $model->visible = 1;
         $model->update();
-        return $this->redirect(['comments']);
+        return $this->redirect(['/backend/news/comments']);
     }
 
     public function actionPublish($id) {
-
-        if (Yii::$app->user->isGuest || Yii::$app->user->identity->type != 2 || Yii::$app->user->identity->type != 1)
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '发布公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
         }
-
+        
         $model = News::findOne($id);
+        if($id === -1 || $model === null) {
+            return $this->redirect(['index']);
+        }
         $model->visible = 1;
         $model->update();
-        return $this->redirect(['index']);
+        return $this->redirect(['/backend/news/index']);
     }
 
 }

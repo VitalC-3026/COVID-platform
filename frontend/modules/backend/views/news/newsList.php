@@ -25,10 +25,8 @@ use yii\helpers\Url;
       <?= Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['view', 'id' => $model->id], ['title' => '查看',]) ?>
       <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id],[
           'title' => '删除',
-          'data' => [
-            'confirm' => '您确定要删除吗？',
-            'method' => 'post',
-          ] 
+          /*'onclick' => 'if(confirm("删除后将无法恢复数据 确认删除？") === true) {window.location.href("<?= \yii\helpers\Url::to(["/backend/committee/create"]); ?>");}'*/
+          'onclick' => 'return confirm("删除后将无法恢复数据 确认删除？");'
         ])
       ?>
     </p>
