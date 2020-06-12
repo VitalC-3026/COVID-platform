@@ -60,7 +60,8 @@ class SiteController extends Controller
         $committee = new CommitteeSearch();
         $health = new HealthSearch();
         return $this->render('index',[
-            'model' => [$resident->count(),$resident->visitors(),$committee->count(),$health->count()]]);
+            'model' => [$resident->count(),$resident->visitors(),$committee->count(),$health->count(),
+            $health->countLow(),$health->countNormal(),$health->countHigh()]]);
     }
 
     public function actionRights()

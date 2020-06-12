@@ -62,4 +62,22 @@ class HealthSearch extends User
         $query = User::find()->joinWith('health', true, 'INNER JOIN')->where(['or', 'health.temperature>37.2', 'health.temperature<36.3'])->all();
         return count($query);
     }
+
+    public function countLow(){
+        $query = User::find()->joinWith('health', true, 'INNER JOIN')->where(['and','health.temperature<36.3'])->all();
+        $result = count($query)/count(User::find()->all());
+        return round($result,4) * 100;
+    }
+
+    public function countNormal(){
+        $query = User::find()->joinWith('health', true, 'INNER JOIN')->where(['and','health.temperature>=36.3','health.temperature<=37.2'])->all();
+        $result = count($query)/count(User::find()->all());
+        return round($result,4) * 100;
+    }
+
+    public function  countHigh(){
+        $query = User::find()->joinWith('health', true, 'INNER JOIN')->where(['and','health.temperature>37.2'])->all();
+        $result = count($query)/count(User::find()->all());
+        return round($result,4) * 100;
+    }
 }

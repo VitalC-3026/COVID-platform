@@ -120,19 +120,19 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
 
                             <span class="sublabel">体温(<36.3℃)</span>
                             <div class="progress progress-striped">
-                                <div class="progress-bar progress-bar-info" style="width: 20%">20%</div>
+                                <div class="progress-bar progress-bar-info" style="width: <?php echo $model[4]?>%"><?php echo $model[4]?>%</div>
                             </div>
                             <!-- progress -->
 
                             <span class="sublabel">体温(36.3℃~37.2℃)</span>
                             <div class="progress progress-striped">
-                                <div class="progress-bar progress-bar-default" style="width: 60%">60%</div>
+                                <div class="progress-bar progress-bar-default" style="width: <?php echo $model[5]?>%"><?php echo $model[5]?>%</div>
                             </div>
                             <!-- progress -->
 
                             <span class="sublabel">体温(>37.2℃)</span>
                             <div class="progress progress-striped">
-                                <div class="progress-bar progress-bar-primary" style="width: 80%">80%</div>
+                                <div class="progress-bar progress-bar-primary" style="width: <?php echo $model[6]?>%"><?php echo $model[6]?>%</div>
                             </div>
                             <!-- progress -->
 
