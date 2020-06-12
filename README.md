@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/VitalC-3026/COVID-platform" target="_blank">
-        <img src="./frontend/web/assets/frontend/images/logo.png">
+        <img src="https://cdn.luogu.com.cn/upload/image_hosting/y2nqaxla.png?x-oss-process=image/resize,m_lfit,h_170,w_225">
     </a>
     <h1 align="center">平安社区网站系统</h1>
     <br>
