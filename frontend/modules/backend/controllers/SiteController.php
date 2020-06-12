@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
 use frontend\modules\backend\models\ResidentSearch;
+
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\TeamMemberForm;
 use frontend\modules\backend\models\EditForm;
@@ -20,6 +21,8 @@ use common\models\PriorityType;
 use common\models\PriorityList;
 use common\models\Committee;
 use common\models\TeamMember;
+use frontend\modules\backend\models\HealthSearch;
+
 
 /**
  * Site controller
@@ -125,7 +128,7 @@ class SiteController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $health = new ResidentSearch();
+        $health = new HealthSearch();
         $provider = $health->search(Yii::$app->request->get());
 
         return $this->render('requestlist', [
