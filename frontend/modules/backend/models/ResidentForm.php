@@ -32,7 +32,7 @@ class ResidentForm extends Model
 
             ['username', 'trim'],
             ['username', 'required','message' => '姓名不能为空'],
-            ['username', 'string', 'min' => 2, 'max' => 10,'tooShort'=> '用户名的长度必须在2到10之间','tooLong' => '用户名的长度必须在2到10之间'],
+            ['username', 'string', 'min' => 2, 'max' => 10,'tooShort'=> '姓名的长度必须在2到10之间','tooLong' => '姓名的长度必须在2到10之间'],
 
             ['tel', 'required','message' => '联系方式不能为空'],
             ['tel', 'string', 'min' => 11, 'max' => 11, 'tooShort' => '联系方式长度必须等于11位', 'tooLong' => '联系方式长度必须等于11位'],
@@ -70,7 +70,9 @@ class ResidentForm extends Model
         $room2 = '/[1-2][0-9]0[1-6]/';
         if (preg_match($room1, $this->room) === 0 && preg_match($room2, $this->room) === 0) {
             $this->addError($attribute, '请输入正确的房间号，示例：304');
+            return false;
         }
+        return true;
     }
 
     /**

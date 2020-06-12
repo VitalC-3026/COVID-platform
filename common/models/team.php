@@ -9,18 +9,18 @@ use yii\db\ActiveRecord;
 /**
  * 团队相关数据，用于在前台显示
  * @property int $id             团队id
- * @property string $name           团队名称
- * @property string $abstract       团队简介
+ * @property string $name        团队名称
+ * @property string $abstract    团队简介
  * @property int $gitCnt         git次数
  * @property int $memCnt         成员数
  * @property int $days           花费时间
  * @property int $files          项目文件数
  */
-class team extends ActiveRecord
+class Team extends ActiveRecord
 {
     public static function tableName()
     {
-        return '{{%team}}';
+        return '{{%Team}}';
     }
 
     public function setId($id)

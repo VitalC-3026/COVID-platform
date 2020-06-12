@@ -6,7 +6,6 @@ use yii\helpers\Html;
 use yii\widgets\LinkPager;
 $cnt = 2;
 ?>
-
 <!-- BEGIN: .cover -->
 <div class="cover overlay" style="background-image: url('assets/frontend/images/hero_bg_2.jpg');">
     <div class="container">

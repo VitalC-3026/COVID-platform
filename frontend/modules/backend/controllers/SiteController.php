@@ -11,7 +11,7 @@ use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
 use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\AdminForm;
-use frontend\modules\backend\models\HealthForm;
+use frontend\modules\backend\models\TeamMemberForm;
 use frontend\modules\backend\models\EditForm;
 use frontend\modules\backend\models\SearchForm;
 use frontend\modules\backend\models\RightsForm;
@@ -19,6 +19,7 @@ use common\models\User;
 use common\models\PriorityType;
 use common\models\PriorityList;
 use common\models\Committee;
+use common\models\TeamMember;
 
 /**
  * Site controller
@@ -130,6 +131,33 @@ class SiteController extends Controller
         return $this->render('requestlist', [
             "model" => $health,
             'provider' => $provider
+        ]);
+    }
+
+    public function actionProfile()
+    {
+        $teammember = new TeamMemberForm();
+        $t = TeamMember::findOne(Yii::$app->user->identity->account);
+        $teammember->initMember($t);
+        if($teammember->load(Yii::$app->request->post())) {
+            if($teammember->password !== null) {
+                if($teammember->setUser()) {
+                    $teammember->setProfile(Yii::$app->user->identity->account);
+                    Yii::$app->user->logout();
+                    return $this->redirect(['/site/index', 'message' => '身为专业团队成员的你，成功完成了挂靠账号修改，现在需要重新登录喔！']);
+                } else {
+                    Yii::$app->getSession()->setFlash('error', '修改挂靠账户失败！');
+                }
+            } else {
+                if($teammember->updateProfile()){
+                    Yii::$app->getSession()->setFlash('success', '修改个人简历成功！');
+                } else {
+                    Yii::$app->getSession()->setFlash('error', '修改个人简历失败！');
+                }
+            }
+        }
+        return $this->render('profile',[
+            'model' => $teammember,
         ]);
     }
 }

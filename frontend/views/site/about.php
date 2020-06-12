@@ -1,5 +1,5 @@
 <?php
-$tmp = \common\models\team::findAll(['id' => 1]);
+$tmp = \common\models\Team::findAll(['id' => 1]);
 if (sizeof($tmp) != 0)
     $tmp = $tmp[0];
 else $tmp = null;
