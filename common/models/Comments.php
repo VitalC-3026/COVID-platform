@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\widgets\ContentDecorator;
+use common\models\News;
 
 /**
  * Class Comments
@@ -23,6 +24,8 @@ class Comments extends ActiveRecord
     }
 
     // basic setters
+    public function setId($id) { $this->id = $id; }
+    public function setNew_id($New_id) { $this->New_id = $New_id; }
     public function setContent($content) { $this->content = $content; }
     public function setAuthor($author) { $this->author = $author; }
     public function setVisible($visible) { $this->visible = $visible; }
@@ -33,4 +36,9 @@ class Comments extends ActiveRecord
     public function getContent() { return $this->content; }
     public function getAuthor() { return $this->author; }
     public function isVisible() { return $this->visible; }
+
+    // 联表查询（Comments x News）
+    public function getNews() {
+        return $this->hasOne(News::className(), ['id' => 'New_id']);
+    }
 }

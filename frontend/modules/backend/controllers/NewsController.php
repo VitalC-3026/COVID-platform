@@ -15,9 +15,9 @@ use frontend\modules\backend\models\HealthForm;
 use frontend\modules\backend\models\EditForm;
 use frontend\modules\backend\models\CensorForm;
 use frontend\modules\backend\models\ResidentSearch;
-use frontend\modules\backend\models\CommitteeSearch;
+use frontend\modules\backend\models\CommentsSearch;
 use common\models\PriorityType;
-use common\models\Resident;
+use common\models\Comments;
 use common\models\News;
 
 /**
@@ -101,6 +101,18 @@ class NewsController extends Controller
         return $this->render('edit', ['model' => $model]);
     }
 
+    public function actionComments($id = 0){
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+            return $this->goHome();
+        $comments = new CommentsSearch();
+        $provider = $comments->search(Yii::$app->request->get());
+
+        return $this->render('comments', [
+            'model' => $comments,
+            'provider' => $provider
+        ]);
+    }
+
 
     public function actionDelete($id){
         $model = News::findOne($id);
@@ -113,6 +125,15 @@ class NewsController extends Controller
 
     public function actionView($id) {
         return $this->redirect(['index', 'id' => $id]);
+    }
+
+    public function actionCheck($id) {
+        $model = Comments::findOne($id);
+        $model->visible = 1;
+        $model->update();
+        $comments = new CommentsSearch();
+        $provider = $comments->search(Yii::$app->request->get());
+        return $this->redirect(['comments']);
     }
 
 }

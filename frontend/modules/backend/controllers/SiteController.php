@@ -111,24 +111,4 @@ class SiteController extends Controller
             'rightsArray' => $rightsArray, 'oldRights' => $oldRights, 'id' => $id
         ]);
     }
-
-//    public function actionHealthreport()
-//    {
-//        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
-//            return $this->goHome();
-//        $model = new HealthForm();
-//        date_default_timezone_set('prc');
-//        $time = date('Y-m-d H:i:s', time());
-//        Yii::$app->view->params['time'] = $time;
-//        Yii::$app->view->params['info'] = '';
-//        if ($model->load(Yii::$app->request->post())) {
-//            // 为什么数据无法传送？
-//            Yii::$app->view->params['info'] = $model->createTime;
-//            Yii::$app->session->setFlash('success', '你成功填写了健康日报');
-//            return $this->redirect(['admininfo']);
-//        }
-//        return $this->render('healthreport', ['model' => $model,]);
-//    }
-
-
 }

@@ -230,10 +230,13 @@ AppAsset_b::register($this);
                                     class="arrow fa fa-angle-right pull-right"></i></a>
                         <ul>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/news/edit']); ?>">信息编辑</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/edit']); ?>">新闻公告编辑</a>
                             </li>
                             <li>
-                                <a href="<?= \yii\helpers\Url::to(['/backend/news/index']); ?>">信息审核</a>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/index']); ?>">新闻公告审核</a>
+                            </li>
+                            <li>
+                                <a href="<?= \yii\helpers\Url::to(['/backend/news/comments']); ?>">评论审核</a>
                             </li>
                         </ul>
                     </li>

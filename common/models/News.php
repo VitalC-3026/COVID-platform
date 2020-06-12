@@ -7,7 +7,7 @@ use yii\db\ActiveRecord;
 
 /**
  * 新闻模型
- *
+ * @property int    $id             新闻id
  * @property string $date           日期
  * @property string $time           时间
  * @property string $title          标题
@@ -142,6 +142,8 @@ class News extends ActiveRecord
         if ($f) $this->time = $time;
         return $f;
     }
+    // basic setters
+    public function setId($id) { $this->id = $id; }
     public function setTitle($title) { $this->title = $title; }
     public function setAbstract($abstract) { $this->abstract = $abstract; }
     public function setContent($content) { $this->content = content; }
@@ -150,6 +152,7 @@ class News extends ActiveRecord
     public function setVisible($visible)   { $this->visible = $visible; }
 
     // basic getters
+    public function getId() { return $this->id; }
     public function getDate() { return $this->date; }
     public function getTime() { return $this->time; }
     public function getTitle() { return $this->title; }
