@@ -28,8 +28,7 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                 <div class="panel-heading">
                     <h3 class="panel-title">新增社区职员</h3>
                     <div class="actions pull-right">
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-times"></i>
+                        <a href="<?= \yii\helpers\Url::to(['/backend/committee/index']); ?>"><i class="fa fa-reply"></i></a>
                     </div>
                 </div>
                 <div class="panel-body">

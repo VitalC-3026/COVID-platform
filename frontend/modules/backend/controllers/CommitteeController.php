@@ -46,7 +46,7 @@ class CommitteeController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
@@ -67,7 +67,7 @@ class CommitteeController extends Controller
 
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
@@ -85,7 +85,7 @@ class CommitteeController extends Controller
         
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
@@ -102,7 +102,6 @@ class CommitteeController extends Controller
             } else {
                 return $this->render('create', ['model' => $model,]);
             }
-
         }
         return $this->render('create', ['model' => $model,]);
     }
@@ -112,7 +111,7 @@ class CommitteeController extends Controller
 
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);

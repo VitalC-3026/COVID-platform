@@ -45,10 +45,6 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
           <div class="panel panel-default">
               <div class="panel-heading">
                   <h3 class="panel-title">社区职员信息</h3>
-                  <div class="actions pull-right">
-                      <i class="fa fa-chevron-down"></i>
-                      <i class="fa fa-times"></i>
-                  </div>
               </div>
 
               
@@ -85,6 +81,9 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   'label' => '姓名',
                                   'attribute' => 'username',
                                   'format' => 'raw',
+                                  'value' => function($data){
+                                    return ($data->username !== null) ? $data->username : '';
+                                  }
                                 ],
                                 [
                                   'label' => '性别',
@@ -106,11 +105,17 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   'headerOptions' => [
                                     'style' => 'width:60px;',
                                   ],
+                                  'value' => function($data){
+                                    return ($data->age !== null) ? $data->age : '';
+                                  }
                                 ],
                                 [
                                   'label' => '联系方式',
                                   'attribute' => 'tel',
                                   'format' => 'raw',
+                                  'value' => function($data){
+                                    return ($data->tel !== null) ? $data->tel : '';
+                                  }
                                 ],
                                 [
                                   'label' => '入职时间',
@@ -123,7 +128,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   'format' => 'raw',
                                   'value' => function($data) {
                                       return ($data->type === 2) ? '超级管理员' : '普通管理员' ;
-                                  }
+                                  },
                                 ],
                                 [
                                   'header' => '操作',
@@ -133,10 +138,10 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   //下面的按钮设置，与上面的模板设置相关联
                                   'buttons' => [
                                     'del' => function ($url, $model, $key) {
-                                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
+                                      return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
                                           'data' => [
-                                              'confirm' => '您确定要删除这条信息?',
-                                              'method' => 'post',
+                                            'confirm' => '删除将导致永久丢失信息，您确定要删除？',
+                                            'method' => 'post',
                                           ],
                                       ]);
                                     },

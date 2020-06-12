@@ -48,10 +48,6 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
           <div class="panel panel-default">
               <div class="panel-heading">
                   <h3 class="panel-title">居民信息</h3>
-                  <div class="actions pull-right">
-                      <i class="fa fa-chevron-down"></i>
-                      <i class="fa fa-times"></i>
-                  </div>
               </div>
               <div class="panel-body">
                   
@@ -86,11 +82,9 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'label' => '姓名',
                                   'attribute' => 'username',
                                   'format' => 'raw',
-                                  /*'value' => function($data) {
-                                    $arr = ArrayHelper::map(User::find()->all(), 'account', 'name');
-                                    return $arr[$data->account];
-                                  },*/
-                                  /*'filter' => Helps::get_correspond_list('get_name_list','account', 'name'),*/
+                                  'value' => function($data) {
+                                      return ($data->username !== null) ? $data->username : '' ;
+                                  },
                                 ],
                                 [
                                   'label' => '性别',
@@ -112,27 +106,46 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'headerOptions' => [
                                     'style' => 'width:60px;',
                                   ],
+                                  'value' => function($data) {
+                                      return ($data->age !== null) ? $data->age : '' ;
+                                  },
                                 ],
                                 [
                                   'label' => '联系方式',
                                   'attribute' => 'tel',
                                   'format' => 'raw',
+                                  'value' => function($data) {
+                                      return ($data->tel !== null) ? $data->tel : '' ;
+                                  },
+                                  'headerOptions' => [
+                                    'style' => 'width:150px;',
+                                  ],
                                 ],
+
                                 [
                                   'label' => '单元号',
                                   'attribute' => 'resident.unit',
                                   'format' => 'raw',
+                                  'headerOptions' => [
+                                    'style' => 'width:60px;',
+                                  ],
                                 ],
                                 
                                 [
                                   'label' => '楼',
                                   'attribute' => 'resident.building',
                                   'format' => 'raw',
+                                  'headerOptions' => [
+                                    'style' => 'width:60px;',
+                                  ],
                                 ],
                                 [
                                   'label' => '房间号',
                                   'attribute' => 'resident.room',
                                   'format' => 'raw',
+                                  'headerOptions' => [
+                                    'style' => 'width:100px;',
+                                  ],
                                 ],
                                 [
                                   'header' => '操作',
@@ -142,11 +155,11 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   //下面的按钮设置，与上面的模板设置相关联
                                   'buttons' => [
                                     'del' => function ($url, $model, $key) {
-                                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
-                                          'data' => [
-                                              'confirm' => '您确定要删除这条信息?',
-                                              'method' => 'post',
-                                          ],
+                                      return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
+                                        'data' => [
+                                            'confirm' => '删除将导致永久丢失信息，您确定要删除？',
+                                            'method' => 'post',
+                                        ]
                                       ]);
                                     },
                                   ],

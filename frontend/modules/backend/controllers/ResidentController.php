@@ -53,7 +53,7 @@ class ResidentController extends Controller
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
@@ -73,7 +73,7 @@ class ResidentController extends Controller
 
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
@@ -91,7 +91,7 @@ class ResidentController extends Controller
 
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
@@ -117,7 +117,7 @@ class ResidentController extends Controller
 
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
-        $priority = PriorityType::find()->where(['name' => '查看社区数据库']);
+        $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
@@ -128,10 +128,8 @@ class ResidentController extends Controller
         $resident = Resident::findOne($id);
         $user = User::findOne($id);
         if ($resident !== null && $user !== null) {
-            $building = substr($resident->building, 0, strlen($resident->building) - 6);
-            $model->building = $building;
-            $unit = substr($resident->unit, 0, strlen($resident->unit) - 6);
-            $model->unit = $unit;
+            $model->building = $resident->building;
+            $model->unit = $resident->unit;
             $model->room = $resident->room;
             $model->account = $resident->account;
             $model->tel = $user->tel;

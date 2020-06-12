@@ -76,7 +76,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'dataProvider' => $provider,
                                   /*//设置筛选模型
                                   'filterModel' => $model,*/
-                                  'emptyText' => '数据库中无数据',
+                                  'emptyText' => '无结果',
                                   'showOnEmpty' => true,
                                   'summary' => '',
                                   'columns' => [
@@ -102,11 +102,17 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                       'headerOptions' => [
                                         'style' => 'width:60px;',
                                       ],
+                                      'value' => function($data){
+                                        return ($data->age !== null) ? $data->age : '';
+                                      }
                                     ],
                                     [
                                       'label' => '联系方式',
                                       'attribute' => 'tel',
                                       'format' => 'raw',
+                                      'value' => function($data){
+                                        return ($data->tel !== null) ? $data->tel : '';
+                                      }
                                     ],
 
                                   ],
@@ -148,6 +154,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                 <?php echo ListView::widget([
                                     'dataProvider' => $priorityProvider,
                                     'itemView' => 'priorityList',
+                                    'emptyText' => '无结果',
                                     'viewParams' => [
                                     ],
                                     'layout' => '{items}',

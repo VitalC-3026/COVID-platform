@@ -110,6 +110,9 @@ class SiteController extends Controller
         foreach ($priority as $p) {
             $rightsArray[$p['priority']] = $p['name'];
         }
+        if (empty($priority)) {
+            $rightsArray = [];
+        }
         return $this->render('rights', [
             'provider' => $user, 'priorityProvider' => $priorityType,
             'searchForm' => $search, 'rightsForm' => $rightsForm,

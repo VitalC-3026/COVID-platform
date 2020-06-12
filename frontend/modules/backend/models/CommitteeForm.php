@@ -6,6 +6,8 @@ use Yii;
 use yii\base\Model;
 use common\models\User;
 use common\models\Committee;
+use common\models\PriorityList;
+use common\models\PriorityType;
 
 class CommitteeForm extends Model
 {
@@ -53,10 +55,11 @@ class CommitteeForm extends Model
      */
     public function addCommittee($in_date) 
     {
-        if(!$this->validate()) {
+        if(!$this->validate() || $committee->getCommitteeByIdentity($this->account)) {
             return false;
         }
 
+        // 更新用户表
         $user = new User();
         $committee = new Committee();
         if($user->findIdentity($this->account)) {
@@ -91,17 +94,25 @@ class CommitteeForm extends Model
             $user->age = $this->age;
             $user->insert();
         }
-        if($committee->getCommitteeByIdentity($this->account)) {
-            return false;
+        
+        // 更新职员表
+        $committee->account = $this->account;
+        if($this->priority === 2) {
+            $committee->is_admin = 1;
         } else {
-            $committee->account = $this->account;
-            if($this->priority === 2) {
-                $committee->is_admin = 1;
-            } else {
-                $committee->is_admin = 0;
+            $committee->is_admin = 0;
+        }
+        $committee->in_date = $in_date;
+        $committee->insert(); 
+        
+        $priorityType = PriorityType::find()->all();
+        if($this->priority === 2) {
+            foreach ($priorityType as $p) {
+                $priorityList = new PriorityList();
+                $priorityList->account = $this->account;
+                $priorityList->priority = $p->priority;
+                $priorityList->save();
             }
-            $committee->in_date = $in_date;
-            $committee->insert(); 
         }
         return true;
     }

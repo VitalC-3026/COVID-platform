@@ -120,8 +120,8 @@ class ResidentForm extends Model
             return false;
         } else {
             $resident->account = $this->account;
-            $resident->unit = $this->unit."单元";
-            $resident->building = $this->building."号楼";
+            $resident->unit = $this->unit;
+            $resident->building = $this->building;
             $resident->room = $this->room;
             $resident->insert();
         }
@@ -154,8 +154,8 @@ class ResidentForm extends Model
 
         if($resident !== null) {
             $resident->room = $this->room;
-            $resident->unit = $this->unit."单元";
-            $resident->building = $this->building."号楼";
+            $resident->unit = $this->unit;
+            $resident->building = $this->building;
             $resident->update();
         }
         
