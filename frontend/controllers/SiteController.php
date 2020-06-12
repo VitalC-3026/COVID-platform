@@ -231,14 +231,15 @@ class SiteController extends Controller
         Yii::$app->view->params['time'] = $time;
         Yii::$app->view->params['info'] = '';
         if ($model->load(Yii::$app->request->post())) {
-            if($model->submit()) {
-                return $this->render('index', [
+            if ($model->submit()) {
+                return $this->redirect(array('/site/index',
                     'message' => "健康日报填写成功，你可以浏览其他页面了。"
-                ]);
-            }else{
-                return $this->render('index', [
+                ));
+
+            } else {
+                return $this->redirect(array('/site/index',
                     'message' => "填写失败，请重新填写。"
-                ]);
+                ));
             }
         }
         return $this->render('healthreport', ['model' => $model,]);

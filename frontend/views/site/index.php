@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @var $message string 通知信息
  */
 ?>
@@ -14,6 +14,8 @@
                 <?php
                 if (isset($message))
                     echo "<h1 class=\"heading\">" . $message . "</h1>";
+                if(isset($_GET['message']))
+                    echo "<h1 class=\"heading\">" . $_GET['message'] . "</h1>";
                 else echo "<h1 class=\"heading\">守护社区平安，我们在行动</h1>";
                 ?>
             </div>
