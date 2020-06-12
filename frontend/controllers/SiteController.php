@@ -261,5 +261,4 @@ class SiteController extends Controller
         }
         return $this->render('healthreport', ['model' => $model,]);
     }
-
 }

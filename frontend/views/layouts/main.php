@@ -86,6 +86,7 @@ AppAsset_b::register($this);
                                 ['label' => '主页', 'url' => ['/site/index']],
                                 ['label' => '关于', 'url' => ['/site/about']],
                                 ['label' => '联系我们', 'url' => ['/site/contact']],
+                                ['label' => '新闻', 'url' => ['/site/news']],
                             ];
 
                             if (Yii::$app->user->isGuest) {
@@ -170,11 +171,11 @@ AppAsset_b::register($this);
                         <div class="widget">
                             <h3>功能</h3>
                             <ul class="nav-link">
-                                <li><a href="#">主页</a></li>
-                                <li><a href="#">关于</a></li>
-                                <li><a href="#">联系我们</a></li>
-                                <li><a href="#">注册</a></li>
-                                <li><a href="#">登录</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/index']); ?>">主页</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/about']); ?>">关于</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/news']); ?>">新闻</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/error']); ?>">404页面</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/contact']); ?>">联系我们</a></li>
                             </ul>
                         </div>
                         <!-- END: .widget -->

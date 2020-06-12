@@ -1,60 +1,59 @@
 <p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
+    <a href="https://github.com/VitalC-3026/COVID-platform" target="_blank">
+        <img src="./frontend/web/assets/frontend/images/logo.png">
     </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
+    <h1 align="center">平安社区网站系统</h1>
     <br>
 </p>
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+本网站系统基于`yii2`框架开发，使用部分网站的`css`和`js`进行样式设计。
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
 
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+如果想要在本地架设本框架，请运行根目录下的`install.php`, 我们将会进行傻瓜式指导安装，在其中我们会配置你的数据库和初始的管理员账号。
 
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
+之后请将`Apache`的解析路径配置在`./frontend/web/index.php`才能正常使用。
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Build Status](https://travis-ci.com/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.com/yiisoft/yii2-app-advanced)
+部署环境：
+```c++
+MySQL >= 7.0
+PHP >= 5.6
+```
 
-DIRECTORY STRUCTURE
--------------------
 
+
+部分文件功能说明
 ```
 common
-    config/              contains shared configurations
+    config/              部分项目配置文件，其中有数据库连接的配置文件main-local.php
     mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for frontend application
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
+    models/              公共使用模型，一般为连接数据库使用
+    tests/               测试使用的类  
+
+data
+    install.sql          数据库的安装脚本
+    team/                团队文档存放文件夹
+    personal/            个人作业存放文件夹
+
+console                  yii2原始控制台使用程序，本次项目未使用
+    config/              控制台的配置功能
+    controllers/         控制台操作使用的控制器
+    migrations/          迁移数据库设置
+    models/              控制台使用的模型
+   
+backend                  yii2原始后台，本次项目中未使用
+
+
+frontend                 yii2前台，本次项目重点文件
+    assets/              资源文件的配置
+    config/              配置文件，其中包括本地部分加密字符串等等
+    controllers/         前台控制器
+    models/              模型文件，主要为接受表单信息的model
+    modules/             增添的模块，本次项目进行前后台分立，增添后台模块
+    views/               视图文件，包含主要的html显示效果
+    web/                 包含入口脚本和网站资源文件
+vendor/                  yii2依赖的第三方包
+environments/            环境配置
+
+install.php             安装指导文件
+
 ```

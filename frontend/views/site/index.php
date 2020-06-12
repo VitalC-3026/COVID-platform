@@ -1,6 +1,7 @@
 <?php
 /**
  * @var $message string 通知信息
+ * @var $news    mixed  新闻信息
  */
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
