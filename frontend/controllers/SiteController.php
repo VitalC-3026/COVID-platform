@@ -231,8 +231,11 @@ class SiteController extends Controller
 
     public function actionHealthreport()
     {
-        if (Yii::$app->user->isGuest)
-            return $this->goHome();
+        if (Yii::$app->user->isGuest){
+            return $this->redirect(array('/site/index',
+                'message' => "请先登录再填报健康日报。"
+            ));
+        }
         $model = new HealthForm();
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s', time());
@@ -255,6 +258,8 @@ class SiteController extends Controller
 
     public function actionComments($id)
     {
+        if (Yii::$app->user->isGuest)
+            return $this->goHome();
         // find certain news
         $news = News::findAll(['id' => $id]);
         $comments = Comments::findAll(['New_id' => $id]);

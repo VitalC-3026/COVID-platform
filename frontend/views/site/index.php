@@ -447,12 +447,12 @@ $cnt = 2;
                         <figure class="video">
                             <!-- BEGIN: .video-play-button -->
                             <!-- Add '.bottom' class to make the button at the bottom position -->
-                            <a href="https://vimeo.com/45830194" class="video-play-button bottom" data-fancybox=""
+                            <a href="assets/frontend/video/video3.mp4" class="video-play-button bottom" data-fancybox=""
                                data-ratio="2">
                                 <span class="icon icon-play"></span>
                             </a>
                             <!-- END: .video-play-button -->
-                            <img src="assets/frontend/images/person_transparent_2.png" alt="Image"
+                            <img src="assets/frontend/images/mask.png" alt="Image"
                                  class="img-fluid">
                         </figure>
                     </div>
@@ -595,7 +595,7 @@ $cnt = 2;
                     <div class="row">
                         <div class="col-lg-6 mb-4 mb-lg-0">
                             <div class="post-entry-big-22796">
-                                <a href="#" class="img-link"><img src="assets/frontend/images/img_1.jpg" alt="Image"
+                                <a href="#" class="img-link"><img src="assets/frontend/images/battle_01.png" alt="Image"
                                                                   class="img-fluid"></a>
 
                             </div>
@@ -603,7 +603,7 @@ $cnt = 2;
                         <div class="col-lg-6">
                         <?php foreach ($news as $news): ?>
                             <div class="post-entry-big-22796 horizontal d-flex mb-4">
-                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/img_<?=$cnt++?>.jpg"
+                                <a href="#" class="img-link mr-4"><img src="assets/frontend/images/doctor_0<?=$cnt++?>.png"
                                                                        alt="Image" class="img-fluid"></a>
                                 <div class="post-content">
                                     <div class="post-meta">
