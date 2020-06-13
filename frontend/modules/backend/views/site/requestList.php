@@ -70,7 +70,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'username',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -78,7 +78,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'age',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -91,7 +91,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                                 return ($data->sex === 1) ? '男' : '女';
                                             },
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -99,7 +99,15 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'tel',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
+                                            ],
+                                        ],
+                                        [
+                                            'label' => '填报日期',
+                                            'attribute' => 'health.last_date',
+                                            'format' => 'raw',
+                                            'headerOptions' => [
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -107,7 +115,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'health.temperature',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                     ],
