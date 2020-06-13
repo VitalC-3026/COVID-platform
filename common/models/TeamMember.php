@@ -7,7 +7,7 @@ use yii\db\ActiveRecord;
 
 /**
  * 健康模型
- *
+ * @property int    $Team_id    团队编号
  * @property string $id         编号
  * @property string $link       作业链接
  * @property string $info       个人简介

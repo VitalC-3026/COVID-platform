@@ -17,12 +17,14 @@ use frontend\modules\backend\models\TeamMemberForm;
 use frontend\modules\backend\models\EditForm;
 use frontend\modules\backend\models\SearchForm;
 use frontend\modules\backend\models\RightsForm;
+use frontend\modules\backend\models\HealthSearch;
+use frontend\modules\backend\models\TeamForm;
 use common\models\User;
 use common\models\PriorityType;
 use common\models\PriorityList;
 use common\models\Committee;
 use common\models\TeamMember;
-use frontend\modules\backend\models\HealthSearch;
+
 
 
 /**
@@ -173,7 +175,7 @@ class SiteController extends Controller
         $t = TeamMember::findOne(Yii::$app->user->identity->account);
         $teammember->initMember($t);
         if($teammember->load(Yii::$app->request->post())) {
-            if($teammember->password !== null) {
+            if($teammember->password !== '') {
                 if($teammember->setUser()) {
                     $teammember->setProfile(Yii::$app->user->identity->account);
                     Yii::$app->user->logout();
@@ -189,8 +191,22 @@ class SiteController extends Controller
                 }
             }
         }
+        $team = TeamMember::find()->asArray()->all();
+        for ($i = 0; $i < sizeof($team); $i++) {
+            $user = User::findOne($team[$i]['account']);
+            $team[$i]['name'] = $user->name;
+        }
+        $isLeader = TeamMember::findOne(Yii::$app->user->identity->account)->is_Leader;
+        $teamForm = new TeamForm();
+        $teamForm->initTeam();
+        if($teamForm->load(Yii::$app->request->post()) && $teamForm->edit()){
+            Yii::$app->getSession()->setFlash('success', '修改团队信息成功！');
+        }
         return $this->render('profile',[
             'model' => $teammember,
+            'team' => $team,
+            'isLeader' => $isLeader,
+            'teamForm' => $teamForm
         ]);
     }
 }

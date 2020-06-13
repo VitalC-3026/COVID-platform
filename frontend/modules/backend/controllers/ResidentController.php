@@ -75,14 +75,16 @@ class ResidentController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
 
-        $model = Resident::findOne($id);
-        if ($model !== null) {
-            $model->delete();
+        if(Resident::deleteResident($id)){
+            Yii::$app->getSession()->setFlash('success', '您成功删除一条居民信息。');
+        } else {
+            Yii::$app->getSession()->setFlash('error', '出现了不可名状的错误，删除失败。');
         }
+        
         return $this->redirect(['index']);
     }
 

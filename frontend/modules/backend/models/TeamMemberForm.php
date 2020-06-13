@@ -21,7 +21,7 @@ class TeamMemberForm extends Model
     public $info;       
     public $is_Leader;  
     public $account;
-    public $password;    
+    public string $password = '';    
 
     // rules
     public function rules(){
@@ -72,9 +72,26 @@ class TeamMemberForm extends Model
     } 
 
     public function setProfile($id) {
-        $user = User::findOne($id);
-        $user->type = 3;
+        $user = User::findOne($this->account);
+        $user->type = 4;
         $user->update();
+        $committee = Committee::findOne($id);
+        if ($committee !== null) {
+            $user = User::findOne($this->account);
+            $committee->is_admin === 0 ? $user->type = 1 : $user->type = 2;
+            $user->update();
+        } else {
+            $resident = Resident::findOne($id);
+            if ($resident !== null) {
+                $user = User::findOne($this->account);
+                $user->type = 0;
+                $user->update();
+            } else {
+                $user = User::findOne($this->account);
+                $user->type = 3;
+                $user->update();
+            }
+        }
         $teammember = TeamMember::findOne($id);
         $teammember->account = $this->account;
         $teammember->update();

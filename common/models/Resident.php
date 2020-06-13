@@ -52,4 +52,14 @@ class Resident extends ActiveRecord
     public static function getResidentByIdentity($account) {
         return static::findOne(['account' => $account]);
     }
+
+    // 删除一条居民信息
+    public static function deleteResident($id) {
+        $model = Resident::findOne($id);
+        if ($model !== null) {
+            return $model->delete();
+        }
+        return false;
+    }
+
 }
