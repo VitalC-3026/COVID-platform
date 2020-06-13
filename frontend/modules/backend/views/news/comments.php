@@ -15,7 +15,7 @@ use common\widgets\Alert;
       <div class="col-md-12">
           <!--breadcrumbs start -->
           <ul class="breadcrumb">
-              <li><a href="#">首页</a>
+              <li><a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>">首页</a>
               </li>
               <li>信息发布</li>
               <li class="active">评论审核</li>

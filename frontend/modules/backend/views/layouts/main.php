@@ -191,6 +191,13 @@ AppAsset_b::register($this);
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <div class="toggle-navigation toggle-right">
+                            <button type="button" class="btn btn-default" id="toggle-right" onclick="window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";">
+                                <i class="fa fa-reply-all" style="color: #797979"></i>
+                            </button>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </header>
@@ -206,7 +213,7 @@ AppAsset_b::register($this);
                     </li>
 
                     <li class="active">
-                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>社区数据库</span></a>
+                        <a href="javascript:void(0);"><i class="fa fa-sitemap"></i><span>社区数据库</span></a>
                         <ul>
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/resident/index']); ?>">居民数据库</a>
@@ -220,7 +227,7 @@ AppAsset_b::register($this);
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>信息发布</span></a>
+                        <a href="javascript:void(0);"><i class="fa fa-chain"></i><span>信息发布</span></a>
                         <ul>
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/news/edit']); ?>">新闻公告编辑</a>
@@ -234,7 +241,7 @@ AppAsset_b::register($this);
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>同心协力战疫情</span></a>
+                        <a href="javascript:void(0);"><i class="fa fa-heart"></i><span>同心协力战疫情</span></a>
                         <ul>
                             <li>
                                 <a href="<?= \yii\helpers\Url::to(['/backend/site/requestlist']); ?>">体温异常人员信息</a>

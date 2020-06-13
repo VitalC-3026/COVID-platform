@@ -22,7 +22,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
       <div class="col-md-12">
           <!--breadcrumbs start -->
           <ul class="breadcrumb">
-              <li><a href="#">首页</a>
+              <li><a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>">首页</a>
               </li>
               <li>社区数据库</li>
               <li class="active">社区职员信息</li>

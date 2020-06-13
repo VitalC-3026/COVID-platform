@@ -265,22 +265,24 @@ use yii\helpers\Html;
                             <h3 class="panel-title" align="center">个人信息</h3>
                         </div>
                         <div class="panel-body" align="center">
-                            <div class="row" text-align="center">
+                            <div style="margin-left: 10px">
                                 <?php $form = ActiveForm::begin(['id' => 'profile-form',
                                     'options' => [
                                         'class'=>'form-horizontal',
-                                        'align' => 'center',    
+                                        'style' => 'width: 93%'
                                     ],
                                     'fieldConfig' => [
-                                            'template' => '<div>{label}</div><div>{input}</div><div class="col-lg-10">{error}</div><div class="col-lg-10">{hint}</div>',
-                                            'labelOptions' => ['class'=>'col-lg-3 control-label' ],
-                                            'inputOptions' => ['class'=>'form-control col-lg-6', 'align'=>'center', 'style'=>'width: 60%; max-width: 70%'],
+                                            'template' => '<div align="left">{label}{input}</div><div class="col-lg-10 col-lg-offset-2">{error}</div>{hint}',
+                                            'labelOptions' => [
+                                                'align'=>"left"
+                                            ]
+                                            
                                          ],]); ?>
                                     <?= $form->field($model, 'account')->textInput(['autofocus' => true, 'readonly' => true])->label('用户账号'); ?>
                                     <?= $form->field($model, 'name')->textInput(['autofocus' => true, 'readonly' => true])->label('姓名')->hint('修改用户信息可在前台页面完成'); ?>
                                     <?= $form->field($model, 'id')->textInput(['autofocus' => true])->label('编号'); ?>
                                     <?= $form->field($model, 'link')->textInput(['autofocus' => true])->label('作业链接'); ?>
-                                    <?= $form->field($model, 'info')->textArea(['autofocus' => true, 'style'=>'width: 60%; max-width: 70%'])->label('简介'); ?>
+                                    <?= $form->field($model, 'info')->textArea(['autofocus' => true, 'style'=>' max-width: 100%'])->label('简介'); ?>
                                     <div class="form-group">
                                         <div class="col-sm-6" align="right">
                                             <?= Html::submitButton('修改', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
@@ -290,6 +292,7 @@ use yii\helpers\Html;
                                     </div>
                                 <?php ActiveForm::end(); ?>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="panel panel-info">
@@ -301,11 +304,13 @@ use yii\helpers\Html;
                                 <?php $form = ActiveForm::begin(['id' => 'profile-form',
                                     'method' => 'post',
                                     'options' => [
-                                        'class'=>'form-horizontal'],
+                                        'class'=>'form-horizontal',
+                                        'style' => 'margin-left: 30px'    
+                                    ],
                                     'fieldConfig' => [
                                             'template' => '<div>{label}</div><div>{input}</div><div class="col-lg-10">{error}</div><div class="col-lg-10 col-lg-offset-2">{hint}</div>',
-                                            'labelOptions' => ['class'=>'col-lg-3 control-label' ],
-                                            'inputOptions' => ['class'=>'form-control col-lg-6', 'align'=>'center', 'style'=>'width: 60%; max-width: 70%'],
+                                            'labelOptions' => ['align'=>'left' ],
+                                            'inputOptions' => ['class'=>'form-control col-lg-6', 'align'=>'center', 'style'=>'width: 90%'],
                                          ],]); ?>
                                     <?= $form->field($model, 'account')->textInput(['autofocus' => true])->label('用户账号'); ?>
                                     <?= $form->field($model, 'password')->passwordInput()->label('密码')->hint('请输入密码进行验证，以改变挂靠账户'); ?>
