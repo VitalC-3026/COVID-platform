@@ -3,6 +3,15 @@ $tmp = \common\models\Team::findAll(['id' => 1]);
 if (sizeof($tmp) != 0)
     $tmp = $tmp[0];
 else $tmp = null;
+
+$leader = \common\models\TeamMember::findOne(['is_Leader'=>1]);
+$leader_user=null;
+if($leader!=null)
+    $leader_user=\common\models\User::findIdentity($leader->account);
+
+$teamers=\common\models\TeamMember::findAll(['is_Leader'=>0]);
+if(sizeof($teamers)!=4)
+    $teamers=null;
 ?>
 
 <!-- BEGIN: .cover -->
@@ -46,22 +55,16 @@ else $tmp = null;
                 </div>
 
                 <div class="col-md-6 pl-md-5">
-                    <h3 class="section-heading line-primary mb-4  ">What is NoCoV?</h3>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-
-                    <p class="mb-4">It is a paradisematic country, in which roasted parts of sentences fly into your
-                        mouth.</p>
+                    <h3 class="section-heading line-primary mb-4  ">团队简介</h3>
+                    <p ><?=$tmp==null?"你的数据库没有团队简介":$tmp->abstract?></p>
 
                     <blockquote class="blockquote-19210">
 
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                            It is a paradisematic country, in which roasted parts of sentences fly into your mouth. It
-                            is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <p><?=$leader==null?"你的数据库没有队长":$leader->info?></p>
                         <p class="mb-0 d-flex align-items-center">
                             <img class="img-fluid mr-3" src="assets/frontend/images/person_man_1.jpg" alt="Image">
                             <cite>
-                                &mdash; John Doe, Mayor of Local Gov.
+                                &mdash; <?= $leader_user==null?"你的数据库里面没有队长":$leader_user->name?>
                             </cite>
                         </p>
                     </blockquote>
@@ -136,7 +139,7 @@ else $tmp = null;
             <div class="row justify-content-between">
                 <div class="col-md-8 col-lg-8">
                     <!-- Add '.heading-sm' to make heading smaller  -->
-                    <h2 class="section-heading line-primary mb-4 mb-md-4 mb-lg-5">专业团队</h2>
+                    <h2 class="section-heading line-primary mb-4 mb-md-4 mb-lg-5"><?=$tmp==null?"专业团队":$tmp->name?></h2>
                 </div>
                 <div class="col-md-4 text-md-right col-lg-4 mb-4">
                     <a href="#" class="slider-21934-prev" id="team-prev">
@@ -281,6 +284,7 @@ else $tmp = null;
                     <p>作业中主要包括3次个人作业和7份团队作业，部分作业在本页面均有github链接，下面为小组成员的个人作业展示。</p>
                 </div>
             </div>
+            <h5 align="center"><?=$teamers==null?"你的团队人数不太合适，样式会乱的呀":''?></h5>
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                     <!-- BEGIN: .widget-29182 -->
