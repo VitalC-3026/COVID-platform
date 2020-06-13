@@ -8,6 +8,7 @@ use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use common\models\User;
 use common\models\Resident;
+use common\widgets\Alert;
 
 AppAsset_b::addCss($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -15,6 +16,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
 AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <?= Html::csrfMetaTags() ?>
+<?= Alert::widget() ?>
 <div id="main-content">
   <div class="row">
       <div class="col-md-12">
@@ -151,10 +153,10 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'header' => '操作',
                                   'class' => 'yii\grid\ActionColumn',
                                   //设置显示模板
-                                  'template' => '{update} {del}',
+                                  'template' => '{update} {delete}',
                                   //下面的按钮设置，与上面的模板设置相关联
                                   'buttons' => [
-                                    'del' => function ($url, $model, $key) {
+                                    'delete' => function ($url, $model, $key) {
                                       return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
                                         'data' => [
                                             'confirm' => '删除将导致永久丢失信息，您确定要删除？',

@@ -3,10 +3,12 @@
 
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
+use common\widgets\Alert;
 
 AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -14,6 +16,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/jquery.dataTables
 AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <?= Html::csrfMetaTags() ?>
+<?= Alert::widget() ?>
 <div id="main-content">
   <div class="row">
       <div class="col-md-12">
@@ -134,10 +137,10 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   'header' => '操作',
                                   'class' => 'yii\grid\ActionColumn',
                                   //设置显示模板
-                                  'template' => '{update} {del}',
+                                  'template' => '{update} {delete}',
                                   //下面的按钮设置，与上面的模板设置相关联
                                   'buttons' => [
-                                    'del' => function ($url, $model, $key) {
+                                    'delete' => function ($url, $model, $key) {
                                       return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
                                           'data' => [
                                             'confirm' => '删除将导致永久丢失信息，您确定要删除？',
@@ -146,6 +149,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                       ]);
                                     },
                                   ],
+                                  
                                 ],
                               ],
                             ]); ?>
@@ -156,5 +160,22 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
           </div>
       </div>
   </div>
-
 </div>
+<!-- Form Modal -->
+
+
+<!-- <?php
+  use yii\bootstrap\Modal;
+  Modal::begin([
+      'id' => 'delete-modal',
+      'header' => '<h4 class="modal-title">选择交接工作的职员</h4>',
+      'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
+  ]);
+  $js = <<<JS
+    $(document).on('click', '#del', function () {
+        aUrl = $(this).attr('data-url');
+        $.get(aUrl, {}, function (data) { $('.modal-body').html(data); } );
+    });
+JS;
+$this->registerJs($js);
+?> -->

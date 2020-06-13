@@ -72,11 +72,7 @@ class CommitteeController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
         }
-
-        $model = Committee::findOne($id);
-        if ($model !== null) {
-            $model->delete();
-        }
+        Committee::deleteCommittee($id);
         return $this->redirect(['index']);
     }
 

@@ -56,7 +56,7 @@ class NewsController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '发布公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
 
@@ -91,7 +91,7 @@ class NewsController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '编辑公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
 
@@ -128,7 +128,7 @@ class NewsController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '审核评论']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
         
@@ -148,7 +148,7 @@ class NewsController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '发布公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
 
@@ -169,7 +169,7 @@ class NewsController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '发布公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
         return $this->redirect(['/backend/news/index', 'id' => $id]);
@@ -181,7 +181,7 @@ class NewsController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '审核评论']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
         
@@ -199,16 +199,11 @@ class NewsController extends Controller
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '发布公告']);
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
-            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
-        
-        $model = News::findOne($id);
-        if($id === -1 || $model === null) {
-            return $this->redirect(['index']);
-        }
-        $model->visible = 1;
-        $model->update();
+        News::publish($id);
+        Yii::$app->getSession()->setFlash('success', '发布新闻成功！');
         return $this->redirect(['/backend/news/index']);
     }
 

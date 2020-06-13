@@ -2,8 +2,10 @@
 use frontend\assets\AppAsset_b;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use common\widgets\Alert;
 AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
 ?>
+<?= Alert::widget() ?>
 <section id="main-content">
     <div class="row">
         <div class="col-md-12">
