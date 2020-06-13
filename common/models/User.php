@@ -172,4 +172,8 @@ class User extends ActiveRecord implements IdentityInterface
         $this->type = $type;
     }
 
+    public function visitors(){
+        $query = User::find()->where(['type' => 3])->all();
+        return count($query);
+    }
 }

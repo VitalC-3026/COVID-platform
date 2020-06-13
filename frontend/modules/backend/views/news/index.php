@@ -4,11 +4,13 @@ use yii\widgets\ListView;
 use yii\widgets\DetailView;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Html;
+use common\widgets\Alert;
 
 AppAsset_b::register($this);
 AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
 ?>
 <?= Html::csrfMetaTags() ?>
+<?= Alert::widget() ?>
 <section id="main-content">
     <div class="row">
         <div class="col-md-12">

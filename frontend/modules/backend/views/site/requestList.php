@@ -7,6 +7,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
+use common\widgets\Alert;
 
 AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -14,6 +15,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/jquery.dataTables
 AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <?= Html::csrfMetaTags() ?>
+<?= Alert::widget() ?>
 <div id="main-content">
     <div class="row">
         <div class="col-md-12">
@@ -68,7 +70,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'username',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -76,7 +78,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'age',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -89,7 +91,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                                 return ($data->sex === 1) ? '男' : '女';
                                             },
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -97,7 +99,15 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'tel',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
+                                            ],
+                                        ],
+                                        [
+                                            'label' => '填报日期',
+                                            'attribute' => 'health.last_date',
+                                            'format' => 'raw',
+                                            'headerOptions' => [
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                         [
@@ -105,7 +115,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                             'attribute' => 'health.temperature',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:200px;',
+                                                'style' => 'width:180px;',
                                             ],
                                         ],
                                     ],

@@ -11,7 +11,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
 use frontend\modules\backend\models\ResidentSearch;
-
+use frontend\modules\backend\models\CommentsSearch;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\TeamMemberForm;
 use frontend\modules\backend\models\EditForm;
@@ -54,28 +54,29 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1 && Yii::$app->user->identity->type != 4))
             return $this->goHome();
         $resident = new ResidentSearch();
         $committee = new CommitteeSearch();
         $health = new HealthSearch();
-        return $this->render('index',[
-            'model' => [$resident->count(),$resident->visitors(),$committee->count(),$health->count(),
-            $health->countLow(),$health->countNormal(),$health->countHigh()]]);
+        $user = new User();
+        return $this->render('index', [
+            'model' => [$user->visitors(), $resident->count(), $committee->count(), $health->count(),
+                $health->countLow(), $health->countNormal(), $health->countHigh()]]);
     }
 
     public function actionRights()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1)){
-            return $this->goHome();            
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1)) {
+            return $this->goHome();
         }
-        
+
         $priority = PriorityType::find()->where(['name' => '分配权限']);
-        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+        if (!Committee::hasPriority(Yii::$app->user->identity->account, $priority)) {
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['index']);
-        }    
-        
+        }
+
         $search = new SearchForm();
         if ($search->load(Yii::$app->request->post())) {
             if ($search->searchByAccount()) {
@@ -88,19 +89,19 @@ class SiteController extends Controller
         }
         $rightsForm = new RightsForm();
         $rightsForm->account = $id;
-        
+
         $user = new ActiveDataProvider([
             'query' => User::find()->where(['account' => $id]),
-        ]); 
-        if($rightsForm->load(Yii::$app->request->post())) {
+        ]);
+        if ($rightsForm->load(Yii::$app->request->post())) {
             $res = $rightsForm->setRights();
-            if($res) {
+            if ($res) {
                 Yii::$app->getSession()->setFlash('success', '成功分配权限');
             }
             $id = $rightsForm->account;
             $user = new ActiveDataProvider([
                 'query' => User::find()->where(['account' => $id]),
-            ]); 
+            ]);
         }
         $old = PriorityList::find()->where(["account" => $id])->all();
         $i = 0;
@@ -108,13 +109,13 @@ class SiteController extends Controller
             $oldRights[$i] = $o['priority'];
             $i++;
         }
-        if(empty($old)) {
+        if (empty($old)) {
             $oldRights = array();
         }
         $user->setSort(false);
         $priorityType = new ActiveDataProvider([
             'query' => PriorityType::find(),
-            
+
         ]);
         $priority = PriorityType::find()->all();
         foreach ($priority as $p) {
@@ -130,10 +131,34 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionUpdate($id) 
+    {
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+            return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '分配权限']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['index']);
+        }
+        if (Yii::$app->user->identity->type === 1) {
+            Yii::$app->getSession()->setFlash('error', '您的等级过低，无法晋升超级管理员！');
+            return $this->redirect(['index']);
+        }
+        Committee::updatePriority($id);
+        Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
+        return $this->redirect(['rights']);
+    }
+
     public function actionRequestlist()
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '追踪体温异常病例']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['index']);
+        } 
+
         $health = new HealthSearch();
         $provider = $health->search(Yii::$app->request->get());
 
@@ -148,24 +173,24 @@ class SiteController extends Controller
         $teammember = new TeamMemberForm();
         $t = TeamMember::findOne(Yii::$app->user->identity->account);
         $teammember->initMember($t);
-        if($teammember->load(Yii::$app->request->post())) {
-            if($teammember->password !== null) {
-                if($teammember->setUser()) {
+        if ($teammember->load(Yii::$app->request->post())) {
+            if ($teammember->password !== null) {
+                if ($teammember->setUser()) {
                     $teammember->setProfile(Yii::$app->user->identity->account);
                     Yii::$app->user->logout();
-                    return $this->redirect(['/site/index', 'message' => '身为专业团队成员的你，成功完成了挂靠账号修改，现在需要重新登录喔！']);
+                    return $this->redirect(['/site/index', 'message' => 'hi社区贡献者，你成功完成了挂靠账号修改，现在需要重新登录喔！']);
                 } else {
                     Yii::$app->getSession()->setFlash('error', '修改挂靠账户失败！');
                 }
             } else {
-                if($teammember->updateProfile()){
+                if ($teammember->updateProfile()) {
                     Yii::$app->getSession()->setFlash('success', '修改个人简历成功！');
                 } else {
                     Yii::$app->getSession()->setFlash('error', '修改个人简历失败！');
                 }
             }
         }
-        return $this->render('profile',[
+        return $this->render('profile', [
             'model' => $teammember,
         ]);
     }

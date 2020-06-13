@@ -189,4 +189,19 @@ class News extends ActiveRecord
         $minId = self::find()->where(['visible' => 0])->min('id');
         return self::findOne($minId);
     } 
+
+    // 发布新闻
+    public static function publish($id){
+        $model = static::findOne($id);
+        if($id === -1 || $model === null) {
+            return $this->redirect(['index']);
+        }
+        $model->visible = 1;
+        $committee = Committee::findOne(Yii::$app->user->identity->account);
+        $model->account = $committee->account;
+        $model->Com_id = $committee->id;
+        $model->cnt = 0;
+        $model->update();
+    }
+
 }

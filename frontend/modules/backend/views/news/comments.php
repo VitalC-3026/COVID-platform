@@ -5,9 +5,11 @@ use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
+use common\widgets\Alert;
 
 ?>
 <?= Html::csrfMetaTags() ?>
+<?= Alert::widget() ?>
 <div id="main-content">
   <div class="row">
       <div class="col-md-12">

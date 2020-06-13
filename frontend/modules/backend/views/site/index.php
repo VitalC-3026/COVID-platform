@@ -2,33 +2,6 @@
 
 use frontend\assets\AppAsset_b;
 use common\widgets\Alert;
-/*AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/countTo/jquery.countTo.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/weather/js/skycons.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.resize.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.canvas.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.image.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.categories.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.crosshair.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.errorbars.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.fillbetween.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.navigate.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.pie.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.selection.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.stack.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.symbol.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.threshold.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.colorhelpers.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.time.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/flot/js/jquery.flot.example.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/morris/js/morris.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/morris/js/raphael.2.1.0.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js');
-AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/todo/js/todos.js');
-AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/jvectormap/css/jquery-jvectormap-1.2.2.css');
-AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/todo/css/todos.css');
-AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris/css/morris.css');*/
 ?>
 <?= Alert::widget() ?>
 <div id="main-content">
@@ -38,7 +11,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-purple">
                 <div class="content">
                     <h1 class="text-left timer" data-from="0" data-to="<?php echo $model[0]?>" data-speed="2500"></h1>
-                    <p>居民总数</p>
+                    <p>访客总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-users"></i>
                 </div>
@@ -48,7 +21,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-turquoise">
                 <div class="content">
                     <h1 class="text-left timer" data-from="0" data-to="<?php echo $model[1]?>" data-speed="2500"></h1>
-                    <p>访客总数</p>
+                    <p>居民总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-comments"></i>
                 </div>
