@@ -202,15 +202,6 @@ class SiteController extends Controller
         return $this->render('prevention');
     }
 
-    /**
-     * Displays symptoms page.
-     *
-     * @return mixed
-     */
-    public function actionSymptoms()
-    {
-        return $this->render('symptoms');
-    }
 
     /**
      * Displays news page.
@@ -237,15 +228,6 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Displays community page.
-     *
-     * @return mixed
-     */
-    public function actionCommunity()
-    {
-        return $this->render('community');
-    }
 
     public function actionHealthreport()
     {

@@ -204,11 +204,11 @@ AppAsset_b::register($this);
                         <div class="widget">
                             <h3>防疫小贴士</h3>
                             <ul class="nav-link">
-                                <li><a href="#">勤洗手</a></li>
-                                <li><a href="#">戴口罩</a></li>
-                                <li><a href="#">宅家中</a></li>
-                                <li><a href="#">量体温</a></li>
-                                <li><a href="#">护家人</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/prevention']); ?>">勤洗手</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/prevention']); ?>">戴口罩</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/prevention']); ?>">宅家中</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/prevention']); ?>">量体温</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/prevention']); ?>">护家人</a></li>
                             </ul>
                         </div>
                         <!-- END: .widget -->

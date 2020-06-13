@@ -247,7 +247,7 @@
             <!-- BEGIN: .feature-29103 -->
             <div class="row no-gutters mt-0 pt-0 pb-0 mb-3 feature-29103 align-items-stretch">
                 <div class="col">
-                    <a  class="feature-item-29103 h-100">
+                    <a class="feature-item-29103 h-100">
             <span class="d-block img-wrap">
               <img src="assets/frontend/images/flaticon/svg/001-virus.svg" alt="Virus">
             </span>
@@ -257,7 +257,7 @@
                     </a>
                 </div>
                 <div class="col">
-                    <a href="#" class="feature-item-29103 h-100">
+                    <a class="feature-item-29103 h-100">
             <span class="d-block img-wrap">
               <img src="assets/frontend/images/flaticon/svg/035-airplane.svg" alt="Virus">
             </span>
@@ -267,7 +267,7 @@
                     </a>
                 </div>
                 <div class="col">
-                    <a href="#" class="feature-item-29103 h-100">
+                    <a class="feature-item-29103 h-100">
             <span class="d-block img-wrap">
               <img src="assets/frontend/images/flaticon/svg/012-temperature.svg" alt="Virus">
             </span>
@@ -277,7 +277,7 @@
                     </a>
                 </div>
                 <div class="col">
-                    <a href="#" class="feature-item-29103 h-100">
+                    <a class="feature-item-29103 h-100">
             <span class="d-block img-wrap">
               <img src="assets/frontend/images/flaticon/svg/025-epidemic-1.svg" alt="Virus">
             </span>

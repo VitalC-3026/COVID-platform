@@ -400,22 +400,23 @@ $cnt = 2;
                         </div>
 
                         <div class="widget-inner">
-                            <ul class="list-unstyled">
-                                <li><a href="#">实时动态信息发布</a></li>
-                                <li><a href="#">风险实时预测</a></li>
-                                <li><a href="#">在线沟通协作</a></li>
-                                <li><a href="#">趋势分析研判</a></li>
-                                <li><a href="#">远程医疗辅助</a></li>
+                            <!-- <ul class="list-unstyled"> -->
+                            <ul>
+                                <li><a>实时动态信息发布</a></li>
+                                <li><a>风险实时预测</a></li>
+                                <li><a>在线沟通协作</a></li>
+                                <li><a>趋势分析研判</a></li>
+                                <li><a>远程医疗辅助</a></li>
                             </ul>
                         </div>
                     </div>
                     <!-- END: .widget-29182 -->
 
-                    <a href="#" class="btn btn-primary btn-block text-center has-icon d-flex"><span
-                                class="mx-auto d-flex align-items-center"><span class="lni lni-stethoscope mr-3"></span> <span>I have Covid19</span></span></a>
-                    <a href="#" class="btn btn-primary btn-block text-center has-icon d-flex"><span
+                    <a href="<?= \yii\helpers\Url::to(['/site/healthreport']); ?>" class="btn btn-primary btn-block text-center has-icon d-flex"><span
+                                class="mx-auto d-flex align-items-center"><span class="lni lni-stethoscope mr-3"></span> <span>我身体不适</span></span></a>
+                    <a href="https://github.com/VitalC-3026/COVID-platform/issues" class="btn btn-primary btn-block text-center has-icon d-flex"><span
                                 class="mx-auto d-flex align-items-center"><span
-                                    class="lni lni-envelope mr-3"></span> <span>Get In Touch</span></span></a>
+                                    class="lni lni-envelope mr-3"></span> <span>联系我们，及时反馈</span></span></a>
                 </div>
             </div>
         </div>
@@ -628,13 +629,13 @@ $cnt = 2;
                     <div class="section-heading">
                         <h2 class="section-heading heading-sm line-black">宣传小视频</h2>
                     </div>
-                    <a href="assets/video/video1.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                    <a href="assets/frontend/video/video1.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
             <span class="play">
               <span class="icon-play"></span>
             </span>
                         <img src="assets/frontend/images/img_sm_7.jpg" alt="Image" class="img-fluid">
                     </a>
-                    <a href="assets/video/video2.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                    <a href="assets/frontend/video/video2.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
             <span class="play">
               <span class="icon-play"></span>
             </span>
