@@ -65,6 +65,9 @@ if (sizeof($news) != 0)
                     <div class="h5" style="color: #000000;"><?=Html::encode("{$news->content}")?></div>
                 </div>
             </div>
+            <div class="row">
+                <div class="h1"
+            </div>
             <?php
                 function getColor() {
                     $colors = ['#2e86c1', '#2e741d', '#aa00ff', '#d41020', '#00ad35', '#4e79cc', '#dcd400', '#ece312'];
@@ -75,6 +78,7 @@ if (sizeof($news) != 0)
             <?php foreach ($comments as $comment):
                 if (!$comment->visible) continue; ?>
                 <div class="row">
+                    <div style="width: 20px;"></div>
                     <div class="h3" style="color: <?=getColor();?> ">
                         <?=Html::encode("{$comment->author}")?></div>
                     <div style="width: 100px"></div>

@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/6/12 18:34:31                           */
+/* Created on:     2020/6/13 14:07:06                           */
 /*==============================================================*/
 
 
@@ -31,7 +31,7 @@ drop table if exists User;
 /*==============================================================*/
 create table Comments
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    New_id               int not null,
    content              text,
    author               varchar(10),
@@ -45,10 +45,11 @@ create table Comments
 create table Committee
 (
    account              char(18) not null,
-   id                   int not null,
+   id                   int auto_increment,
    in_date              date,
    is_admin             bool,
-   primary key (account, id)
+   primary key (account),
+   key AK_Identifier_1 (id)
 );
 
 /*==============================================================*/
@@ -56,7 +57,7 @@ create table Committee
 /*==============================================================*/
 create table Health
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    account              char(18) not null,
    last_date            date,
    last_time            time,
@@ -69,9 +70,8 @@ create table Health
 /*==============================================================*/
 create table News
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    account              char(18) not null,
-   Com_id               int not null,
    date                 date,
    time                 time,
    title                varchar(100),
@@ -89,9 +89,8 @@ create table News
 create table PriorityList
 (
    account              char(18) not null,
-   id                   int not null,
    priority             int not null,
-   primary key (account, id, priority)
+   primary key (account, priority)
 );
 
 /*==============================================================*/
@@ -99,7 +98,7 @@ create table PriorityList
 /*==============================================================*/
 create table PriorityType
 (
-   priority             int not null,
+   priority             int not null auto_increment,
    name                 varchar(20),
    information          text,
    primary key (priority)
@@ -122,7 +121,7 @@ create table Resident
 /*==============================================================*/
 create table Team
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    name                 varchar(20),
    abstract             text,
    gitCnt               int,
@@ -138,11 +137,14 @@ create table Team
 create table TeamMember
 (
    account              char(18) not null,
-   id                   char(7) not null,
+   Tea_id               int,
+   id                   char(7),
    link                 varchar(100),
    info                 text,
    is_Leader            bool,
-   primary key (account, id)
+   icon                 text,
+   primary key (account),
+   key AK_Identifier_1 (id)
 );
 
 /*==============================================================*/
@@ -150,7 +152,7 @@ create table TeamMember
 /*==============================================================*/
 create table Transactions
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    account              char(18) not null,
    start_time           datetime,
    end_time             datetime,
@@ -176,31 +178,33 @@ create table User
    primary key (account)
 );
 
-alter table Comments add constraint FK_Commentary foreign key (New_id)
+alter table Comments add constraint FK_Commentary_News foreign key (New_id)
       references News (id) on delete restrict on update restrict;
 
-alter table Committee add constraint FK_isA_committee foreign key (account)
+alter table Committee add constraint FK_isA_Committee foreign key (account)
       references User (account) on delete restrict on update restrict;
 
-alter table Health add constraint FK_HealthCard foreign key (account)
+alter table Health add constraint FK_HealthCard_User foreign key (account)
       references User (account) on delete restrict on update restrict;
 
-alter table News add constraint FK_Publish_account foreign key (account, Com_id)
-      references Committee (account, id) on delete restrict on update restrict;
+alter table News add constraint FK_Publish_Committee foreign key (account)
+      references Committee (account) on delete restrict on update restrict;
 
-alter table PriorityList add constraint FK_PriorityList_account foreign key (account, id)
-      references Committee (account, id) on delete restrict on update restrict;
+alter table PriorityList add constraint FK_PriorityList_Committee foreign key (account)
+      references Committee (account) on delete restrict on update restrict;
 
-alter table PriorityList add constraint FK_PriorityList_priority foreign key (priority)
+alter table PriorityList add constraint FK_PriorityList_Type foreign key (priority)
       references PriorityType (priority) on delete restrict on update restrict;
 
-alter table Resident add constraint FK_isA_resident foreign key (account)
+alter table Resident add constraint FK_isA_Resident foreign key (account)
       references User (account) on delete restrict on update restrict;
 
-alter table TeamMember add constraint FK_isA foreign key (account)
+alter table TeamMember add constraint FK_in_Team foreign key (Tea_id)
+      references Team (id) on delete restrict on update restrict;
+
+alter table TeamMember add constraint FK_isA_TeamMember foreign key (account)
       references User (account) on delete restrict on update restrict;
 
-alter table Transactions add constraint FK_affair foreign key (account)
+alter table Transactions add constraint FK_affair_Transactions foreign key (account)
       references User (account) on delete restrict on update restrict;
-
 
