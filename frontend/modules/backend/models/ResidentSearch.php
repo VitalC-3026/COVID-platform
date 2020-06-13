@@ -83,9 +83,6 @@ class ResidentSearch extends User
         return count($query);
     }
 
-    public function visitors(){
-        $query = User::find()->where(['type' => 3])->all();
-        return count($query);
-    }
+
 
 }

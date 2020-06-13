@@ -38,7 +38,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-purple">
                 <div class="content">
                     <h1 class="text-left timer" data-from="0" data-to="<?php echo $model[0]?>" data-speed="2500"></h1>
-                    <p>居民总数</p>
+                    <p>访客总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-users"></i>
                 </div>
@@ -48,7 +48,7 @@ AppAsset_b::addCss($this, 'yii/COVID-platform/web/frontend/assets/plugins/morris
             <div class="dashboard-tile detail tile-turquoise">
                 <div class="content">
                     <h1 class="text-left timer" data-from="0" data-to="<?php echo $model[1]?>" data-speed="2500"></h1>
-                    <p>访客总数</p>
+                    <p>居民总数</p>
                 </div>
                 <div class="icon"><i class="fa fa-comments"></i>
                 </div>
