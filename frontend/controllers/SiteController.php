@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Comments;
 use common\models\News;
+use frontend\models\CommentForm;
 use yii\data\Pagination;
 use common\models\User;
 use frontend\models\ModifyForm;
@@ -283,9 +284,24 @@ class SiteController extends Controller
         // find certain news
         $news = News::findAll(['id' => $id]);
         $comments = Comments::findAll(['New_id' => $id]);
+        $model = new CommentForm();
+        if ($model->load(Yii::$app->request->post()))
+        {
+            if ($model->submit())
+            {
+                $comments = Comments::findAll(['New_id' => $id]);
+                return $this->redirect('site/comments', [
+                    'news' => $news,
+                    'comments' => $comments,
+                    'model' => $model,
+                ]);
+            }
+        }
+
         return $this->render('comments', [
             'news' => $news,
-            'comments' => $comments
+            'comments' => $comments,
+            'model' => $model,
         ]);
     }
 }

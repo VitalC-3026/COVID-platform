@@ -8,6 +8,7 @@ use yii\db\ActiveRecord;
 /**
  * 新闻模型
  * @property int    $id             新闻id
+ * @property string $account        账号
  * @property string $date           日期
  * @property string $time           时间
  * @property string $title          标题
@@ -153,6 +154,7 @@ class News extends ActiveRecord
 
     // basic getters
     public function getId() { return $this->id; }
+    public function getAccount() { return $this->account; }
     public function getDate() { return $this->date; }
     public function getTime() { return $this->time; }
     public function getTitle() { return $this->title; }

@@ -3,6 +3,7 @@
 use frontend\controllers\NewsController;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 use yii\widgets\LinkPager;
 
 if (sizeof($news) != 0)
@@ -65,8 +66,12 @@ if (sizeof($news) != 0)
                     <div class="h5" style="color: #000000;"><?=Html::encode("{$news->content}")?></div>
                 </div>
             </div>
+            <br>
             <div class="row">
-                <div class="h1"
+                <div style="width: 20px"></div>
+                <div class="h1">
+                    评论区
+                </div>
             </div>
             <?php
                 function getColor() {
@@ -75,18 +80,33 @@ if (sizeof($news) != 0)
                     return $colors[$p];
                 }
             ?>
+            <!-- START: comments -->
             <?php foreach ($comments as $comment):
                 if (!$comment->visible) continue; ?>
-                <div class="row">
-                    <div style="width: 20px;"></div>
-                    <div class="h3" style="color: <?=getColor();?> ">
+                <div class="row" style="height: 50px">
+                    <div style="width: 50px;"></div>
+                    <div class="h3" style="color: <?=getColor();?>">
                         <?=Html::encode("{$comment->author}")?></div>
-                    <div style="width: 100px"></div>
-                    <div class="h5" style="color: #000000">
+                    <div style="width: <?=200 - 10 * strlen($comment->author)?>px"></div>
+                    <div class="h5" style="color: #000000;">
                         <?=Html::encode("{$comment->content}")?>
                     </div>
                 </div>
             <?php endforeach; ?>
+            <!-- END: comments -->
+
+            <?php $form = ActiveForm::begin(); ?>
+            <?= $form->field($model, 'content')->label("我要评论")?>
+            <div class="form-group" style="display: none">
+                <?= $form->field($model, 'New_id')->textInput(['value' => $news->id])?>
+                <?= $form->field($model, 'author')->textInput([
+                        'value' => Yii::$app->user->getIsGuest() ? "anonymous" : Yii::$app->user->getIdentity()->name])?>
+            </div>
+            <div class="form-group">
+                <?= Html::submitButton('提交', ['class' => 'btn btn-primary'])?>
+            </div>
+            <?php ActiveForm::end(); ?>
+
         </div>
     </div>
     <!-- END: .site-section -->

@@ -11,11 +11,8 @@ use yii\db\ActiveRecord;
  * @property string $id             标号
  * @property string $last_date       最后填报日期
  * @property string $last_time       最后填报时间
-<<<<<<< HEAD
  * @property float $temperature     体温
  * @property string $account        填写的用户
-=======
->>>>>>> 36f74e88951b20815e7299ccba5d78dd06fc28c0
  */
 class Health extends ActiveRecord
 {
