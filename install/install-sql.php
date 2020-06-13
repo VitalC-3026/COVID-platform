@@ -27,7 +27,7 @@
             </td>
         </tr>
         <tr>
-            <th scope="row"><label for="user_login">选项</label></th>
+            <th scope="row"><label for="user_login">密码</label></th>
             <td>
                 <input name="sql_password" type="password" id="user_login" size="25" value="<?= isset($_POST['sql_password']) ? $_POST['sql_password'] : '' ?>"/>
                 <p>账号密码</p>

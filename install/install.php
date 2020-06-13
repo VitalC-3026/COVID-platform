@@ -99,7 +99,6 @@ if (isset($_POST["sql_password"])) {
                     } else {
                         $is_ok = false;
                         echo $contents[$i];
-                        echo 
                         break;
                     }
                 }
