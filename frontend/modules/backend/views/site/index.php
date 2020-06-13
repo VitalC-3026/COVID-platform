@@ -2,6 +2,9 @@
 
 use frontend\assets\AppAsset_b;
 use common\widgets\Alert;
+AppAsset_b::addScript($this, 'assets/plugins/morris/js/morris.min.js');
+AppAsset_b::addScript($this, 'assets/plugins/morris/js/raphael.2.1.0.min.js');
+AppAsset_b::addScript($this, '@web'.'/assets/plugins/morris/js/morris-example.js');
 ?>
 <?= Alert::widget() ?>
 <div id="main-content">
@@ -75,7 +78,11 @@ use common\widgets\Alert;
                             </div>
                         </div>
                     </div>
+                    <div id="donut"></div>
 
+                    <script type="text/javascript">
+                        $("#donut").({ element: 'graph', data: [ {value: 70, label: 'foo'}, {value: 15, label: 'bar'}, {value: 10, label: 'baz'}, {value: 5, label: 'A really really long label'} ], backgroundColor: '#ccc', labelColor: '#060', colors: [ '#0BA462', '#39B580', '#67C69D', '#95D7BB' ], formatter: function (x) { return x + "%"} });
+                    </script>
                 </div>
             </div>
 
@@ -90,7 +97,6 @@ use common\widgets\Alert;
                             </div>
                         </div>
                         <div class="panel-body">
-
                             <span class="sublabel">体温(<36.3℃)</span>
                             <div class="progress progress-striped">
                                 <div class="progress-bar progress-bar-info" style="width: <?php echo $model[4]?>%"><?php echo $model[4]?>%</div>

@@ -247,7 +247,7 @@ $cnt = 2;
                                                     <span class="number d-block">3</span>
                                                 </div>
                                                 <h3>干咳</h3>
-                                                <p>伴有痰音、喘息，影响睡眠</p>
+                                                <p>伴有痰音、喘息，<br>影响睡眠</p>
                                             </div>
                                             <!-- END: .symptom -->
                                         </div>
@@ -628,17 +628,17 @@ $cnt = 2;
                     <div class="section-heading">
                         <h2 class="section-heading heading-sm line-black">宣传小视频</h2>
                     </div>
-                    <a href="https://vimeo.com/45830194" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                    <a href="assets/video/video1.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
             <span class="play">
               <span class="icon-play"></span>
             </span>
-                        <img src="assets/frontend/images/img_sm_1.jpg" alt="Image" class="img-fluid">
+                        <img src="assets/frontend/images/img_sm_7.jpg" alt="Image" class="img-fluid">
                     </a>
-                    <a href="https://vimeo.com/45830194" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                    <a href="assets/video/video2.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
             <span class="play">
               <span class="icon-play"></span>
             </span>
-                        <img src="assets/frontend/images/img_sm_8.jpg" alt="Image" class="img-fluid">
+                        <img src="assets/frontend/images/prevention.jpg" alt="Image" class="img-fluid" width="200" height="200">
                     </a>
                 </div>
                 <!-- BEGIN: videos -->
@@ -704,7 +704,7 @@ $cnt = 2;
                         <div class="widget-inner">
                             <h3>采买生活用品</h3>
                         </div>
-                        <div class="widget-inner"><img src="assets/frontend/images/img_sm_2.jpg" alt="Image"
+                        <div class="widget-inner"><img src="assets/frontend/images/img_7.jpg" alt="Image"
                                                        class="img-mb-2 img-fluid">
                         </div>
                         <div class="widget-inner">

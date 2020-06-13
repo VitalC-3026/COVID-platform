@@ -231,29 +231,11 @@ if(sizeof($teamers)!=4)
                                     </figure>
                                 </a>
                                 <div class="media-29191-body">
-                                    <h2>Becky Kenny</h2>
+                                    <a href="https://github.com/VitalC-3026/COVID-platform/issues"><h2>Becky Kenny</h2></a>
                                     <span class="d-block position">VP &amp; Co-Founder</span>
                                 </div>
                             </div>
                         </div>
-                        <!-- END: .item -->
-
-                        <!-- BEGIN: .item -->
-                        <!--            <div class="i-->
-                        <!-- END: tem">-->
-                        <!--              <div class="media-29191">-->
-                        <!--                <a href="#">-->
-                        <!--                  <figure>-->
-                        <!--                    <img src="assets/frontend/images/person_woman_1.jpg" alt="Image" class="img-fluid">-->
-                        <!--                  </figure> -->
-                        <!--                </a>-->
-                        <!--                <div class="media-29191-body">-->
-                        <!--                  <h2>Joann Byers</h2>-->
-                        <!--                  <span class="d-block position">VP &amp; Co-Founder</span>-->
-                        <!--                </div>-->
-                        <!--              </div>-->
-                        <!--            </div>.item -->
-
                     </div>
                     <!-- END: .slider-21934 -->
                 </div>
@@ -293,41 +275,13 @@ if(sizeof($teamers)!=4)
                     -->
                     <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
 
-                        <div class="widget-inner"><img src="assets/frontend/images/img_sm_1.jpg" alt="Image"
-                                                       class="img-mb-2 img-fluid">
+                        <div class="widget-inner"><img src="assets/frontend/images/about_individual_01.jpg" alt="Image" class="img-mb-2 img-fluid">
                         </div>
 
                         <div class="widget-inner">
-                            <h3>Community Guidelines</h3>
+                            <h3>Web前端初探</h3>
                         </div>
 
-
-                        <div class="widget-inner">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Executive Order from the Mayor</a></li>
-                                <li><a href="#">Business &amp; Industry Advice</a></li>
-                                <li><a href="#">Home Quarantine</a></li>
-                                <li><a href="#">Community Food Supply</a></li>
-                                <li><a href="#">Community Lockdown</a></li>
-                                <li><a href="#">Skeletal Work Force Arrangement</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END: .widget-29182 -->
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                    <!-- BEGIN: .widget-29182 -->
-                    <!--
-                      Add '.widget-29182-v2' class for v2 style
-                    -->
-                    <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
-
-                        <div class="widget-inner"><img src="assets/frontend/images/img_sm_2.jpg" alt="Image"
-                                                       class="img-mb-2 img-fluid">
-                        </div>
-                        <div class="widget-inner">
-                            <h3>City Guidelines</h3>
-                        </div>
 
                         <div class="widget-inner">
                             <ul class="list-unstyled">
@@ -348,11 +302,37 @@ if(sizeof($teamers)!=4)
                       Add '.widget-29182-v2' class for v2 style
                     -->
                     <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
-                        <div class="widget-inner"><img src="assets/frontend/images/img_sm_3.jpg" alt="Image"
+
+                        <div class="widget-inner"><img src="assets/frontend/images/about_individual_02.jpg" alt="Image" class="img-mb-2 img-fluid">
+                        </div>
+                        <div class="widget-inner">
+                            <h3>Web前端设计</h3>
+                        </div>
+
+                        <div class="widget-inner">
+                            <ul class="list-unstyled">
+                                <li><a href="assets/pdf/lab1.pdf" target="_blank">我的作业</a></li>
+                                <li><a href="#">Business &amp; Industry Advice</a></li>
+                                <li><a href="#">Home Quarantine</a></li>
+                                <li><a href="#">Community Food Supply</a></li>
+                                <li><a href="#">Community Lockdown</a></li>
+                                <li><a href="#">Skeletal Work Force Arrangement</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END: .widget-29182 -->
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <!-- BEGIN: .widget-29182 -->
+                    <!--
+                      Add '.widget-29182-v2' class for v2 style
+                    -->
+                    <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                        <div class="widget-inner"><img src="assets/frontend/images/about_individual_03.jpg" alt="Image"
                                                        class="img-mb-2 img-fluid">
                         </div>
                         <div class="widget-inner">
-                            <h3>Lockdown Guidelines</h3>
+                            <h3>开源建站工具初试</h3>
                         </div>
 
                         <div class="widget-inner">
@@ -375,11 +355,11 @@ if(sizeof($teamers)!=4)
                       Add '.widget-29182-v2' class for v2 style
                     -->
                     <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
-                        <div class="widget-inner"><img src="assets/frontend/images/img_sm_4.jpg" alt="Image"
+                        <div class="widget-inner"><img src="assets/frontend/images/about_team.png" alt="Image"
                                                        class="img-mb-2 img-fluid">
                         </div>
                         <div class="widget-inner">
-                            <h3>Home Quarantine Guidelines</h3>
+                            <h3>团队作业开发文档</h3>
                         </div>
 
                         <div class="widget-inner">

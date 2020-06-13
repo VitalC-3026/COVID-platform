@@ -50,10 +50,6 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">分配职员权限</h3>
-                    <div class="actions pull-right">
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-times"></i>
-                    </div>
                 </div>
                 <div class="panel-body">
                     <div role="grid" id="example_wrapper" class="dataTables_wrapper form-inline no-footer">

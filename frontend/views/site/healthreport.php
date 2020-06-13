@@ -1,6 +1,6 @@
 <?php
 
-use frontend\assets\AppAsset_b;
+use frontend\assets\AppAsset;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
@@ -48,7 +48,7 @@ use yii\helpers\Html;
             <div class="col-lg-6 mb-4 mb-lg-0">
 
 
-                <?php $form = ActiveForm::begin(['id' => 'modify-form',
+                <?php $form = ActiveForm::begin(['id' => 'healthreport-form',
                     'fieldConfig' => [
                         'errorOptions' => ['class' => 'text-danger']
                     ]
@@ -119,6 +119,16 @@ use yii\helpers\Html;
                             </div>
                         </li>
 
+                        <li class="d-flex w-100">
+                            <div class="wrap-icon">
+                                <span class="icon-github"></span>
+                            </div>
+                            <div>
+                                <span class="d-block">问题反馈：</span>
+                                <a href="https://github.com/VitalC-3026/COVID-platform/issues">您有任何问题要反馈，点我！</a>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
                 <!-- END: .quick-contact-info-91921 -->
@@ -131,16 +141,22 @@ use yii\helpers\Html;
                     </p>
 
                 </div>
-
                 <!-- END: .social-wrap -->
                 <div class="d-block social-wrap">
                     <h3 class="section-heading heading-xs mb-4 line-primary">关注我们</h3>
                     <ul class="list-unstyled d-flex social-29021 primary">
-                        <li><a href="#"><span class="icon-qq"></span></a></li>
+                        <li><a href="assets/frontend/images/prevention.jpg"><span class="icon-qq" ></span></a></li>
                         <li><a href="#"><span class="icon-weixin"></span></a></li>
                         <li><a href="#"><span class="icon-weibo"></span></a></li>
-                        <li><a href="#"><span class="icon-television"></span></a></li>
+                        <li><a href="#"><span class="icon-github"></span></a></li>
                     </ul>
+                    <script type="text/javascript">
+                        $('#qq').click(){
+                            window.location.href="https://www.baidu.com";
+                        }
+                         
+                    </script>
+                        
                 </div>
                 <!-- END: .social-wrap -->
 

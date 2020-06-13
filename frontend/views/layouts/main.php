@@ -86,7 +86,6 @@ AppAsset_b::register($this);
                                 ['label' => '主页', 'url' => ['/site/index']],
                                 ['label' => '新闻', 'url' => ['/site/news']],
                                 ['label' => '关于', 'url' => ['/site/about']],
-                                ['label' => '联系我们', 'url' => ['/site/contact']]
                             ];
 
                             if (Yii::$app->user->isGuest) {

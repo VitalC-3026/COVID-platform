@@ -40,10 +40,6 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">体温异常人员信息</h3>
-                    <div class="actions pull-right">
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-times"></i>
-                    </div>
                 </div>
 
 

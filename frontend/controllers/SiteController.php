@@ -8,6 +8,7 @@ use yii\data\Pagination;
 use common\models\User;
 use frontend\models\ModifyForm;
 use frontend\models\HealthForm;
+use frontend\models\ContactForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -189,15 +190,6 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return mixed
-     */
-    public function actionContact()
-    {
-        return $this->render('contact');
-    }
 
     /**
      * Displays prevention page.
