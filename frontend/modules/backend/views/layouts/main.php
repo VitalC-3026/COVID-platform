@@ -175,7 +175,12 @@ AppAsset_b::register($this);
                         </a>
                         <ul class="dropdown-menu animated fadeInDown">
                             <li>
-                                <a href="#"><i class="fa fa-user"></i> Profile</a>
+                                <?php if(Yii::$app->user->identity->type === 4 || 
+                                    Yii::$app->user->identity->type === 2):  ?>
+                                    
+                                    <a href="<?= \yii\helpers\Url::to(['/backend/site/profile']); ?>"><i class="fa fa-user"></i> Profile</a>
+                                    
+                                <?php endif ?>
                             </li>
                             <li>
                                 <a href="javascript:;" onclick="javascript:logout();"><i class="fa fa-power-off"></i> Logout</a>

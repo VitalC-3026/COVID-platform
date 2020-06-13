@@ -135,6 +135,12 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(Committee::className(), ['account' => 'account']);
     }
 
+    public function getHealth()
+    {
+        return $this->hasOne(Health::className(), ['account' => 'account']);
+    }
+
+
     // basic setters
     public function setAccount($account)
     {

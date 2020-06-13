@@ -6,6 +6,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use common\models\User;
+use common\models\Resident;
 
 /**
  * 居民检索模型
@@ -76,6 +77,15 @@ class ResidentSearch extends User
         
         $query = User::find()->joinWith(Resident::className(), ['account' => 'account'], true, 'INNER_JOIN')->asArray()->all();
         return $query;
+    }
+    public function count(){
+        $query = Resident::find()->all();
+        return count($query);
+    }
+
+    public function visitors(){
+        $query = User::find()->where(['type' => 3])->all();
+        return count($query);
     }
 
 }

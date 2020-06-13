@@ -71,6 +71,8 @@ class SignupForm extends Model
 
         if (Resident::getResidentByIdentity($this->account) != null)
             $user->setType(0);
+        else
+            $user->setType(3);
         $user->generateAuthKey();
         return $user->save();
     }

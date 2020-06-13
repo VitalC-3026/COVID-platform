@@ -6,6 +6,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use common\models\User;
+use common\models\Committee;
 use common\models\PriorityType;
 use common\models\PriorityList;
 /**
@@ -58,6 +59,10 @@ class CommitteeSearch extends User
         $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like', 'username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
 
         return $provider;
-    } 
+    }
+    public function count(){
+        $query = Committee::find()->all();
+        return count($query);
+    }
 
 }

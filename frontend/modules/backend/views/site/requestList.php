@@ -62,37 +62,52 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                     'columns' => [
                                         //显示序号列
                                         ['class' => 'yii\grid\SerialColumn'],
-                                        [
-                                            //设置字段显示标题
-                                            'label' => '身份证号码',
-                                            //字段名
-                                            'attribute' => 'account',
-                                            //格式化
-                                            'format' => 'raw',
-                                            //设置单元格样式
-                                            'headerOptions' => [
-                                                'style' => 'width:180px;',
-                                            ],
-                                        ],
+
                                         [
                                             'label' => '姓名',
                                             'attribute' => 'username',
                                             'format' => 'raw',
+                                            'headerOptions' => [
+                                                'style' => 'width:200px;',
+                                            ],
                                         ],
                                         [
                                             'label' => '年龄',
                                             'attribute' => 'age',
                                             'format' => 'raw',
                                             'headerOptions' => [
-                                                'style' => 'width:60px;',
+                                                'style' => 'width:200px;',
+                                            ],
+                                        ],
+                                        [
+                                            'label' => '性别',
+                                            //设置筛选选项
+                                            'filter' => [1 => '男', 0 => '女'],
+                                            'attribute' => 'sex',
+                                            'format' => 'raw',
+                                            'value' => function ($data) {
+                                                return ($data->sex === 1) ? '男' : '女';
+                                            },
+                                            'headerOptions' => [
+                                                'style' => 'width:200px;',
                                             ],
                                         ],
                                         [
                                             'label' => '联系方式',
                                             'attribute' => 'tel',
                                             'format' => 'raw',
+                                            'headerOptions' => [
+                                                'style' => 'width:200px;',
+                                            ],
                                         ],
-                                        
+                                        [
+                                            'label' => '体温',
+                                            'attribute' => 'health.temperature',
+                                            'format' => 'raw',
+                                            'headerOptions' => [
+                                                'style' => 'width:200px;',
+                                            ],
+                                        ],
                                     ],
                                 ]); ?>
                             </div>

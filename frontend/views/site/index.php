@@ -1,12 +1,12 @@
 <?php
 /**
  * @var $message string 通知信息
+ * @var $news    mixed  新闻信息
  */
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 $cnt = 2;
 ?>
-
 <!-- BEGIN: .cover -->
 <div class="cover overlay" style="background-image: url('assets/frontend/images/hero_bg_2.jpg');">
     <div class="container">
