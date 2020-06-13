@@ -96,7 +96,7 @@ AppAsset_b::register($this);
                                 $menuItems[] = ['label' => '健康日报', 'url' => ['/site/healthreport']];
                                 $menuItems[] = ['label' => '修改信息', 'url' => ['/site/modify']];
 
-                                if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2) {
+                                if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2 || Yii::$app->user->identity->type == 4) {
                                     $menuItems[] = ['label' => '后台管理', 'url' => ['/backend/site/index']];
                                 }
 

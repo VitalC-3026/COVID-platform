@@ -19,7 +19,7 @@ use yii\helpers\Html;
             <div class="row"><h1 class="h1">个人主页</h1></div>
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title" align="center">和你一起007的筒子</h3>
@@ -43,12 +43,14 @@ use yii\helpers\Html;
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="profile0">
-                                                <p><?= sizeof($team) > 0 ? $team[0]['info'] : '无结果'; ?>
-                                                </p>
-                                            </div>
+                                            <div style="font-size: 20px"><i class="fa fa-comment">    看看Ta想说什么？</i></div>
+                                            <p style="font-size: 15px"><?= sizeof($team) > 0 ? $team[0]['info'] : '无结果'; ?>
+                                            </p>
+                                        </div>
                                         <?php for($i = 1; $i < sizeof($team); $i++): ?>
                                             <div class="tab-pane" id="<?php echo 'profile'.$i ?>">
-                                                <p><?= $team[$i]['info']; ?>
+                                                <div style="font-size: 20px"><strong><i class="fa fa-comment">    看看Ta想说什么？</i></strong></div>
+                                                <p style="font-size: 15px"><?= $team[$i]['info']; ?>
                                                 </p>
                                             </div>
                                         <?php endfor ?>
@@ -92,82 +94,162 @@ use yii\helpers\Html;
                                                 </div>
                                             <?php ActiveForm::end(); ?>
                                         <?php else: ?>
+                                            <div class="row" style="width: 95%; margin-left: 10px">
+                                                <div class="tab-wrapper tab-left" >
+                                                    <ul class="nav nav-tabs" margin-left="20px">
+                                                        <li class="active">
+                                                                <a href="#description" data-toggle="tab">
+                                                                    团队简介</a>
+                                                        </li>
+                                                        <li>                                
+                                                            <a href="#experience" data-toggle="tab">
+                                                                开发记录</a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active" id="description">
+                                                            <div class="row" style="margin-left: 5px">
+                                                                <div style="font-size: 20px">
+                                                                    <i class="fa fa-bullhorn">    <?php echo $teamForm->name?></i>
+                                                                </div>
+                                                                <br>
+                                                                <div style="font-size: 20px">
+                                                                    <i class="fa fa-fire">    团队简介</i>
+                                                                </div>
+                                                                <div>
+                                                                    <?php echo $teamForm->abstract?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="experience">
+                                                            <div class="row" style="margin-left: 5px">
+                                                                <div class="row">
+                                                                    <div class="col-md-7">
+                                                                        <div style="font-size: 20px">
+                                                                            <i class="fa fa-github">    git提交次数</i>
+                                                                        </div>
+                                                                        <div>
+                                                                            算算你git的时候闯了几次祸?
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="wrapper">
+                                                                            <div class="z">
+                                                                            <?php echo $teamForm->gitCnt?>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                    <div class="col-md-7">
+                                                                        <div style="font-size: 20px">
+                                                                            <i class="fa fa-group">    团队人数</i>
+                                                                        </div>
+                                                                        <div>
+                                                                            我们总共有几个人?
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="wrapper">
+                                                                            <div class="z">
+                                                                            <?php echo $teamForm->memCnt?>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                    <div class="col-md-7">
+                                                                        <div style="font-size: 20px">
+                                                                            <i class="fa fa-flag-o">    开发天数</i>
+                                                                        </div>
+                                                                        <div>
+                                                                            想想你拖了ddl多少天?
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="wrapper">
+                                                                            <div class="z">
+                                                                            <?php echo $teamForm->days?>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                    <div class="col-md-7">
+                                                                        <div style="font-size: 20px">
+                                                                            <i class="fa fa-file-text">    文档总数</i>
+                                                                        </div>
+                                                                        <div>
+                                                                            算算代码多还是文档多?
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="wrapper">
+                                                                            <div class="z">
+                                                                            <?php echo $teamForm->files?>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <style>
+                                                                    .wrapper{
+                                                                        width: 60px;
+                                                                        height:60px;
+                                                                        background: #00000000;
+                                                                        display: flex;
+                                                                        justify-content: center;
+                                                                        align-items: center;
+                                                                    }
+                                                                     
+                                                                    .z{
+                                                                        display: inline-block;
+                                                                        height: 40px;
+                                                                        width: 40px;
+                                                                        text-align: center;
+                                                                        size: 20px;
+                                                                        background: #F8F8F8;
+                                                                        color: #000000;
+                                                                        border-radius: 100%;
+                                                                        margin: 6px;
+                                                                        border: 2px solid #2fcbce;
+                                                                        border-bottom-color: transparent;
+                                                                        vertical-align: middle;
+                                                                        -webkit-animation: rotate 1.5s linear infinite;
+                                                                        animation: rotate 1.5s linear infinite;
+                                                                    }
+                                                                    @-webkit-keyframes rotate {
+                                                                        0% {
+                                                                            -webkit-transform: rotate(0deg);
+                                                                        }
+                                                                        50% {
+                                                                            -webkit-transform: rotate(180deg);
+                                                                        }
+                                                                        100% {
+                                                                            -webkit-transform: rotate(360deg);
+                                                                        }
+                                                                    }
+                                                                    @keyframes rotate {
+                                                                        0% {
+                                                                            transform: rotate(0deg);
+                                                                        }
+                                                                        50% {
+                                                                            transform: rotate(180deg);
+                                                                        }
+                                                                        100% {
+                                                                            transform: rotate(360deg);
+                                                                        }
+                                                                    }
+                                                                </style>
 
-                                            <table border="1" cellspacing="30px" cellpadding="30px" align="center" style="border: 5px; " class="altrowstable control-label" id="alternatecolor">
-                                                <tr>
-                                                  <td class="control-label">团队名称</td>
-                                                  <td><?php echo $teamForm->name ?></td>
-                                                </tr>
-                                                <tr>
-                                                  <td>团队简介</td>
-                                                  <td><?php echo $teamForm->id ?></td>
-                                                </tr>
-                                                <tr>
-                                                  <td>git提交次数</td>
-                                                  <td><?php echo $teamForm->gitCnt ?></td>
-                                                </tr>
-                                                <tr>
-                                                  <td>成员数</td>
-                                                  <td><?php echo $teamForm->memCnt ?></td>
-                                                </tr>
-                                                <tr>
-                                                  <td>开发天数</td>
-                                                  <td><?php echo $teamForm->days ?></td>
-                                                </tr>
-                                                <tr>
-                                                  <td>文档总数</td>
-                                                  <td><?php echo $teamForm->files ?></td>
-                                                </tr>
-                                            </table>
-                                            <style type="text/css">
-                                                table.altrowstable {
-                                                    font-family: verdana,arial,sans-serif;
-                                                    font-size:11px;
-                                                    color:#333333;
-                                                    border-width: 1px;
-                                                    border-color: #a9c6c9;
-                                                    border-collapse: collapse;
-                                                }
-                                                table.altrowstable th {
-                                                    border-width: 1px;
-                                                    padding: 8px;
-                                                    border-style: solid;
-                                                    border-color: #a9c6c9;
-                                                }
-                                                table.altrowstable td {
-                                                    border-width: 1px;
-                                                    padding: 8px;
-                                                    border-style: solid;
-                                                    border-color: #a9c6c9;
-                                                }
-                                                .oddrowcolor{
-                                                    background-color:#d4e3e5;
-                                                }
-                                                .evenrowcolor{
-                                                    background-color:#c3dde0;
-                                                }
-                                            </style>
-                                            <script type="text/javascript">
-                                                function altRows(id){
-                                                    if(document.getElementsByTagName){ 
-                                                         
-                                                        var table = document.getElementById(id); 
-                                                        var rows = table.getElementsByTagName("tr");
-                                                          
-                                                        for(i = 0; i < rows.length; i++){         
-                                                            if(i % 2 == 0){
-                                                                rows[i].className = "evenrowcolor";
-                                                            }else{
-                                                                rows[i].className = "oddrowcolor";
-                                                            }     
-                                                        }
-                                                    }
-                                                }
-                                                 
-                                                window.onload=function(){
-                                                    altRows('alternatecolor');
-                                                }
-                                            </script>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <?php endif ?>
                                     </div>
                                     
@@ -177,7 +259,7 @@ use yii\helpers\Html;
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title" align="center">个人信息</h3>
