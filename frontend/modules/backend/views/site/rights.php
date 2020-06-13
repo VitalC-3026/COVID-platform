@@ -138,7 +138,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   ],
                                 ]); ?>
                               </div>
-                              <div class="col-lg-4-offset-2 col-md-6">
+                              <div class="col-lg-4">
                                   <?php $form = ActiveForm::begin([
                                         'id' => 'rights-form',
                                         
@@ -149,10 +149,11 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                     ]); ?>
                                     
                                     <?= $form->field($rightsForm, 'rights[]')->checkboxList($rightsArray, ['value' => $oldRights])->label('权限分配'); ?>
+                                    <br>
 
-                                    <div class="form-group" text-align="right">
+                                    <div class="form-group" align="right">
                                         
-                                        <?= Html::submitButton('确认提交', ['class' => 'btn btn-primary']) ?>
+                                      <?= Html::submitButton('确认提交', ['class' => 'btn btn-primary']) ?>
                                         
                                     </div>
                                     <?= Html::activeHiddenInput($rightsForm,'account',['value' => $id]) ?>

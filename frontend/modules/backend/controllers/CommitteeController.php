@@ -99,7 +99,17 @@ class CommitteeController extends Controller
                 return $this->render('create', ['model' => $model,]);
             }
         }
-        return $this->render('create', ['model' => $model,]);
+
+        $priority = PriorityType::find()->all();
+        foreach ($priority as $p) {
+            $rightsArray[$p['priority']] = $p['name'];
+        }
+        if (empty($priority)) {
+            $rightsArray = [];
+        }
+        return $this->render('create', ['model' => $model,
+            'rightsArray' => $rightsArray,
+        ]);
     }
 
     // 更新职员数据

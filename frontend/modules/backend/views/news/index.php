@@ -106,6 +106,11 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                                                 'label' => '正文内容',
                                                 'value' => $model->content !== null ? $model->content : ''
                                             ],
+                                            [
+                                                'attribute' => 'link',
+                                                'label' => '新闻链接',
+                                                'value' => $model->link !== null ? $model->link : ''
+                                            ],
                                             [   
                                                 'attribute' => 'date',
                                                 'label' => '修改时间',

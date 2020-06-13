@@ -36,6 +36,9 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/ckeditor/ck
                         <?= $form->field($model, 'title',['labelOptions' => ['label' => '标题']])->textInput(['class' => 'textarea form-control', 'autofocus' => true]) ?>
                     </div>
                     <div class="form-group">
+                        <?= $form->field($model, 'link',['labelOptions' => ['label' => '链接']])->textInput(['class' => ' form-control', 'autofocus' => true, 'sytle' => 'max-width: 100%']) ?>
+                    </div>
+                    <div class="form-group">
                         <?= $form->field($model, 'abstract',['labelOptions' => ['label' => '摘要']])->textArea(['class' => ' form-control', 'autofocus' => true, 'sytle' => 'max-width: 100%']) ?>
                     </div>
                     <div class="form-group">

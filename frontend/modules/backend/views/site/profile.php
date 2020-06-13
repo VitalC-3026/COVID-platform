@@ -69,7 +69,7 @@ use yii\helpers\Html;
                                 <div class="panel-body">
                                     <div class="row">
                                         <?php if($isLeader): ?>
-                                            <?php $form = ActiveForm::begin(['id' => 'profile-form',
+                                            <?php $form = ActiveForm::begin(['id' => 'team-form',
                                                 'method' => 'post',
                                                 'options' => [
                                                     'class'=>'form-horizontal'],

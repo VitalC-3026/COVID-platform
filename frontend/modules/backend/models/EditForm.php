@@ -11,7 +11,8 @@ class EditForm extends Model
 {
     public $title;
     public $abstract;
-    public $content;    
+    public $content;
+    public $link;    
 
     /**
      * {@inheritdoc}
@@ -24,8 +25,8 @@ class EditForm extends Model
             ['title', 'string', 'min' => 1, 'max' => 20, 'tooShort' => '标题长度不得超过20个字', 'tooLong' => '标题长度不得超过20个字'],
             ['abstract', 'trim'],
             ['abstract', 'string', 'min' => 1, 'max' => 50, 'tooShort' => '摘要长度不得超过50个字', 'tooLong' => '摘要长度不得超过50个字'],
-            ['content', 'required', 'message' => '内容不能为空']
-
+            ['content', 'required', 'message' => '内容不能为空'],
+            ['link', 'url', 'message' => '请输入正确的链接地址'],
         ];
     }
 
@@ -39,12 +40,13 @@ class EditForm extends Model
         $news->account = $account;
         $news->title = $this->title;
         $news->content = $this->content;
+        $news->link = $this->link;
+        $news->cnt = 0;
         if ($this->abstract === null) {
             $news->abstract = substr($this->content, 0, 15);
         } else {
             $news->abstract = $this->abstract;
         }
-        $news->content = $this->content;
         $news->date = $date;
         $news->time = $time;
         $news->id = News::find()->max('id') + 1;

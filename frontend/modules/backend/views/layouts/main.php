@@ -193,7 +193,7 @@ AppAsset_b::register($this);
                     </li>
                     <li>
                         <div class="toggle-navigation toggle-right">
-                            <button type="button" class="btn btn-default" id="toggle-right" onclick="window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";">
+                            <button type="button" class="btn btn-default" id="toggle-right" onclick="javascript:logout();">
                                 <i class="fa fa-reply-all" style="color: #797979"></i>
                             </button>
                         </div>

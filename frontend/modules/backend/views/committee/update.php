@@ -38,22 +38,21 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                         </div>
                     </div>
                     <div class="row">
-                        <?php $form = ActiveForm::begin(['id' => 'admin-form',
+                        <?php $form = ActiveForm::begin(['id' => 'admin-uform',
                             'method' => 'post',
                             'options' => [
-                                'class'=>'form-horizontal'],
+                                'class'=>'form-horizontal',
+                                'style'=>'width: 80%; margin-left: 90px'
+                            ],
                             'fieldConfig' => [
-                                    'template' => "<div>{label}</div><div>{input}</div><div class='col-lg-10 col-lg-offset-2'>{error}</div>",
-                                    'labelOptions' => ['class'=>'col-lg-3 control-label' ],
-                                    'inputOptions' => ['class'=>'col-lg-6'],
-                                 ],
-                            ]); ?>
+                                'template' => '<div style="margin-bottom:10px">{label}</div><div>{input}</div><div class="col-lg-10 col-lg-offset-2">{error}</div>',
+                            ]
+                        ]); ?>
                             <?= $form->field($model, 'account')->textInput(['autofocus' => true])->label('身份证号'); ?>
                             <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('职员姓名'); ?>
                             <?= $form->field($model, 'sex')->radioList(['1'=>'男','0'=>'女'],['class'=>'control-label col-sm-1'])->label('性别'); ?>
                             <?= $form->field($model, 'age')->textInput(['autofocus' => true])->label('年龄'); ?>
                             <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
-                            <?= $form->field($model, 'priority')->radioList(['2'=>'超级管理员','1'=>'普通职员'],['class'=>'control-label col-sm-2'])->label('权限分配'); ?>
                             <div class="form-group">
                                 <div class="col-sm-6" align="right">
                                     <?= Html::submitButton('提交', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>

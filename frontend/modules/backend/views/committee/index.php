@@ -58,7 +58,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                           <div class="col-lg-12">
                             <?php echo GridView::widget([
                               //设置GridView的ID
-                              'id' => 'residentGridView',
+                              'id' => 'committeeGridView',
                               //设置数据提供器
                               'dataProvider' => $provider,
                               //设置筛选模型
@@ -79,6 +79,14 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   'headerOptions' => [
                                     'style' => 'width:180px;',
                                   ],
+                                ],
+                                [
+                                  //设置字段显示标题
+                                  'label' => '职员编号',
+                                  //字段名
+                                  'attribute' => 'committee.id',
+                                  //格式化
+                                  'format' => 'raw',
                                 ],
                                 [
                                   'label' => '姓名',
@@ -161,21 +169,4 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
       </div>
   </div>
 </div>
-<!-- Form Modal -->
 
-
-<!-- <?php
-  use yii\bootstrap\Modal;
-  Modal::begin([
-      'id' => 'delete-modal',
-      'header' => '<h4 class="modal-title">选择交接工作的职员</h4>',
-      'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">关闭</a>',
-  ]);
-  $js = <<<JS
-    $(document).on('click', '#del', function () {
-        aUrl = $(this).attr('data-url');
-        $.get(aUrl, {}, function (data) { $('.modal-body').html(data); } );
-    });
-JS;
-$this->registerJs($js);
-?> -->

@@ -17,11 +17,12 @@ class CommitteeSearch extends User
 {
     public string $in_date;
     public bool $is_admin;
+    public int $id;
 
     // rules
     public function rules(){
         return [
-          [['in_date', 'is_admin'], 'safe'],
+          [['in_date', 'is_admin', 'id'], 'safe'],
         ];
     }
 
@@ -48,6 +49,11 @@ class CommitteeSearch extends User
                         'asc' => ['committee.in_date' => SORT_ASC],
                         'desc' => ['committee.in_date' => SORT_DESC],
                         'label' => '入职日期'
+                    ],
+                    'committee.id' => [
+                        'asc' => ['committee.id' => SORT_ASC],
+                        'desc' => ['committee.id' => SORT_DESC],
+                        'label' => '职员编号'
                     ],
                 ]
             ]   

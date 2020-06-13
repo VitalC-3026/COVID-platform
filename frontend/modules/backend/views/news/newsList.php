@@ -17,6 +17,7 @@ use yii\helpers\Url;
   </p>
     
   <p class="info" style="margin: 15px 0">
+    新闻链接：<?= $model->link === null ? '' : $model->link ?><br>
     发布时间：<?= $model->date?> <?= $model->time?>
   </p>
     

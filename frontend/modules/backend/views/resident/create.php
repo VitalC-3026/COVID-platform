@@ -28,27 +28,29 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                 <div class="panel-heading">
                     <h3 class="panel-title">新增社区居民</h3>
                     <div class="actions pull-right">
-                        <a href="<?= \yii\helpers\Url::to(['/backend/committee/index']); ?>"><i class="fa fa-reply"></i></a>
+                        <a href="<?= \yii\helpers\Url::to(['/backend/resident/index']); ?>"><i class="fa fa-reply"></i></a>
                     </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top: -10px">
                             <h2 class="title">基本信息</h2>
                         </div>
                     </div>
-                    <div class="row">
-                        <?php $form = ActiveForm::begin(['id' => 'resident-form',
+                    
+                        <?php $form = ActiveForm::begin(['id' => 'resident-cform',
                             'options' => [
-                                'class'=>'form-horizontal'],
+                                'class'=>'form-horizontal',
+                                'style'=>'width: 80%; margin-left: 90px'
+                            ],
                             'fieldConfig' => [
-                                    'template' => "<div>{label}</div><div>{input}</div><div class='col-lg-10 col-lg-offset-2'>{error}</div>",
-                                    'labelOptions' => ['class'=>'col-lg-3 control-label' ],
-                                    'inputOptions' => ['class'=>'col-lg-6'],
+                                    'template' => '<div style="margin-bottom:10px">{label}</div><div>{input}</div><div class="col-lg-10 col-lg-offset-2">{error}</div>',
+                                    /*'labelOptions' => ['class'=>'col-lg-3 control-label' ],
+                                    'inputOptions' => ['class'=>'col-lg-6'],*/
                                  ],]); ?>
                         <?= $form->field($model, 'account')->textInput(['autofocus' => true])->label('身份证号'); ?>
                         <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('居民姓名'); ?>
-                        <?= $form->field($model, 'sex')->radioList(['1'=>'男','0'=>'女'],['class'=>'control-label col-sm-1'])->label('性别'); ?>
+                        <?= $form->field($model, 'sex')->radioList(['1'=>'男','0'=>'女'],[])->label('性别'); ?>
                         <?= $form->field($model, 'age')->textInput(['autofocus' => true])->label('年龄'); ?>
                         <?= $form->field($model, 'tel')->textInput(['autofocus' => true])->label('联系方式'); ?>
                         <?= $form->field($model, 'unit')->textInput(['autofocus' => true])->label('单元号'); ?>
@@ -64,7 +66,7 @@ AppAsset_b::addScript($this, 'assets/plugins/wizard/js/loader.min.js');
                         </div>
                                                            
                         <?php ActiveForm::end(); ?>
-                    </div>
+                    
                 </div>
             </div>
         </div>
