@@ -26,5 +26,20 @@ class PriorityList extends ActiveRecord
     public function getPriority() { return $this->priority; }
     public function getAccount() { return $this->account; }
 
+    public function isExists(){
+        if($this->account === null && $this->priority === null) {
+            return false;
+        }
+        $p = PriorityList::find()->where(['account'=>'account', 'priority'=>'priority']);
+        return $p !== null ? true : false;
+    }
+
+    public function getCommittee(){
+        return $this->hasOne(Committee::className(), ['account' => 'account']);
+    }
+
+    public function getUser(){
+        return $this->hasOne(User::className(), ['account' => 'account']);
+    }
 
 }

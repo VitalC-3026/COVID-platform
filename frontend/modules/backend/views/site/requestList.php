@@ -7,6 +7,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
+use common\widgets\Alert;
 
 AppAsset_b::addCss($this, 'web/assets/plugins/dataTables/css/dataTables.css');
 AppAsset_b::addScript($this, 'web/assets/plugins/nanoScroller/jquery.nanoscroller.min.js');
@@ -14,6 +15,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/jquery.dataTables
 AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootstrap.js');
 ?>
 <?= Html::csrfMetaTags() ?>
+<?= Alert::widget() ?>
 <div id="main-content">
     <div class="row">
         <div class="col-md-12">

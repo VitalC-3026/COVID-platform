@@ -81,6 +81,19 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'summary' => '',
                                   'columns' => [
                                     [
+                                      'header' => '提升权限',
+                                      'class' => 'yii\grid\ActionColumn',
+                                      //设置显示模板
+                                      'template' => '{update}',
+                                      //下面的按钮设置，与上面的模板设置相关联
+                                      'buttons' => [
+                                        'update' => function ($url, $model, $key) {
+                                          return Html::a('<span class="glyphicon glyphicon-check"></span>', ['update', 'id' => $model->account], 
+                                          );
+                                        },
+                                      ],
+                                    ],
+                                    [
                                       'label' => '姓名',
                                       'attribute' => 'name',
                                       'format' => 'raw',
@@ -114,7 +127,14 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                         return ($data->tel !== null) ? $data->tel : '';
                                       }
                                     ],
-
+                                    [
+                                      'label' => '职位',
+                                      'attribute' => 'type',
+                                      'format' => 'raw',
+                                      'value' => function($data){
+                                        return ($data->type === 2) ? '超级管理员' : '普通职员';
+                                      }
+                                    ],
                                   ],
                                 ]); ?>
                               </div>

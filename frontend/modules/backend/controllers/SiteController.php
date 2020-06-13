@@ -54,7 +54,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1 && Yii::$app->user->identity->type != 4))
             return $this->goHome();
         $resident = new ResidentSearch();
         $committee = new CommitteeSearch();
@@ -130,10 +130,34 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionUpdate($id) 
+    {
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+            return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '分配权限']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['index']);
+        }
+        if (Yii::$app->user->identity->type === 1) {
+            Yii::$app->getSession()->setFlash('error', '您的等级过低，无法晋升超级管理员！');
+            return $this->redirect(['index']);
+        }
+        Committee::updatePriority($id);
+        Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
+        return $this->redirect(['rights']);
+    }
+
     public function actionRequestlist()
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
+        $priority = PriorityType::find()->where(['name' => '追踪体温异常病例']);
+        if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+            Yii::$app->getSession()->setFlash('error', '您没有权限访问');
+            return $this->redirect(['index']);
+        } 
+
         $health = new HealthSearch();
         $provider = $health->search(Yii::$app->request->get());
 
@@ -153,7 +177,7 @@ class SiteController extends Controller
                 if($teammember->setUser()) {
                     $teammember->setProfile(Yii::$app->user->identity->account);
                     Yii::$app->user->logout();
-                    return $this->redirect(['/site/index', 'message' => '身为专业团队成员的你，成功完成了挂靠账号修改，现在需要重新登录喔！']);
+                    return $this->redirect(['/site/index', 'message' => 'hi社区贡献者，你成功完成了挂靠账号修改，现在需要重新登录喔！']);
                 } else {
                     Yii::$app->getSession()->setFlash('error', '修改挂靠账户失败！');
                 }

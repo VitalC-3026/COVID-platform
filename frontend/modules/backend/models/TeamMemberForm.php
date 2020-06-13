@@ -72,7 +72,9 @@ class TeamMemberForm extends Model
     } 
 
     public function setProfile($id) {
-        
+        $user = User::findOne($id);
+        $user->type = 3;
+        $user->update();
         $teammember = TeamMember::findOne($id);
         $teammember->account = $this->account;
         $teammember->update();

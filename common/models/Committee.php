@@ -56,6 +56,45 @@ class Committee extends ActiveRecord
         return false;
     }
 
+    public static function updatePriority($account) {
+        $user = User::findOne($account);
+        $user->type = 2;
+        $user->update();
+        $committee = static::findOne($account);
+        $committee->is_admin = 1;
+        $committee->update();
+        $priority = PriorityType::findAll($account);
+        foreach ($priority as $p) {
+            $priorityList = new PriorityList();
+            $priorityList->account = $account;
+            $priorityList->priority = $p->priority;
+            if(!$priorityList->isExists()) {
+                $priorityList->save();
+            }
+        }
+    }
+
+    public static function deleteCommittee($account) {
+        $committees = PriorityList::find()->where(['priority' => 3])->joinWith('committee')->orderBy(['in_date' => SORT_DESC])->all();
+        foreach ($committees as $c) {
+            if($c->account !== $account) {
+                $newsList = News::find()->where(['account'=>$account])->all();
+                if($newsList === null || !isset($newsList)) break;
+                foreach ($newsList as $n) {
+                    $n->account = $c->account;
+                    $n->Com_id = $c->id;
+                    $n->update();
+                }
+                break;
+            }
+        }
+        $committee = Committee::find()->where(['account' => $account])->one();
+        $committee->delete();
+        $user = User::findOne($account);
+        $user->type = 3;
+        $user->update();
+    }
+
     // basic setters
     public function setInDate($inDate) { $this->in_date = $inDate; }
     public function setIsAdmin($isAdmin) { $this->is_admin = $isAdmin; }
