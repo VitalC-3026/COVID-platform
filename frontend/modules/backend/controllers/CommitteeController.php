@@ -53,7 +53,7 @@ class CommitteeController extends Controller
         }
 
         $committee = new CommitteeSearch();
-        $provider = $committee->search(Yii::$app->request->get());
+        $provider = $committee->search(Yii::$app->request->post());
 
         return $this->render('index', [
             'model' => $committee,

@@ -59,7 +59,7 @@ class ResidentController extends Controller
             return $this->redirect(['/backend/site/index']);
         }  
         $resident = new ResidentSearch();
-        $provider = $resident->search(Yii::$app->request->get());
+        $provider = $resident->search(Yii::$app->request->post());
 
         return $this->render('index', [
             'model' => $resident,
@@ -105,8 +105,9 @@ class ResidentController extends Controller
                 Yii::$app->session->setFlash('success', '成功添加新居民');
                 $resident = new ResidentSearch();
                 $provider = $resident->search(Yii::$app->request->get());
-                return $this->render('index', ['message' => '成功添加新居民', 'model' => $resident, 'provider' => $provider]);
+                return $this->redirect(['index', 'message' => '成功添加新居民']);
             } else {
+                Yii::$app->session->setFlash('error', '添加新居民失败');
                 return $this->render('create', ['model' => $model,]);
             }
 
@@ -139,10 +140,15 @@ class ResidentController extends Controller
             $model->username = $user->name;
             $model->age = $user->age;
         }
-        if ($model->load(Yii::$app->request->post()) && $model->updateResident($id)) {
-            $res = new ResidentSearch();
-            $provider = $res->search(Yii::$app->request->get());
-            return $this->render('index', ['model' => $res, 'provider' => $provider]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->updateResident($id)) {
+                Yii::$app->getSession()->setFlash('success', '修改居民信息成功');
+                return $this->redirect(['index']);
+            } else {
+                Yii::$app->getSession()->setFlash('error', '修改居民信息失败');
+                return $this->render('update', ['model' => $model]);
+            }
+            
         }
         return $this->render('update', ['model' => $model]);
     }

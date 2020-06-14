@@ -9,7 +9,7 @@ use common\models\PriorityList;
 use common\models\User;
 
 /**
- * Search form
+ * 权限列表界面根据职员编号进行搜索的表单
  */
 class SearchForm extends Model
 {

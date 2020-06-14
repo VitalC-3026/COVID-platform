@@ -16,9 +16,9 @@ class CommitteeForm extends Model
     public $age;
     public $tel;
     public $sex;
-    public $priority;
+    public $priority;  // 等级
     public $enterdate;
-    public $rights;
+    public $rights;   // 权限
     
 
     /**
@@ -49,9 +49,9 @@ class CommitteeForm extends Model
     }
 
     /**
-     * Add committee.
+     * 添加职员.
      *
-     * @return bool whether the creating new committee is successful
+     * @return bool 返回是否添加成功
      */
     public function addCommittee($in_date) 
     {
@@ -64,63 +64,67 @@ class CommitteeForm extends Model
         $committee = new Committee();
         if($user->findIdentity($this->account)) {
             $user->account = $this->account;
-            $user->type = $this->priority;
-            $user->name = $this->username;
-            if ($user->username === null) {
-                $user->username = $this->username;
-            }
-            $user->tel = $this->tel;
-            if ($this->sex !== null) {
-                $user->sex = $this->sex; 
+            if($this->priority === 2) {
+                $user->setType(2);
             } else {
-                $user->sex = 1;
+                $user->setType(1);
             }
-            $user->age = $this->age;
-            $user->update();
+            $user->setName($this->username);
+            if ($user->username === null) {
+                $user->setUsername($this->username);
+            }
+            $user->setTel($this->tel);
+            $user->setSex($this->sex); 
+            $user->setAge($this->age);
+            $u = $user->update();
         } else {
             $user->account = $this->account;
-            $user->password_hash = Yii::$app->security->generatePasswordHash(substr($this->account, 11, 6));
-            $user->type = $this->priority;
-            $user->name = $this->username;
-            if ($user->username === null) {
-                $user->username = $this->username;
-            }
-            $user->tel = $this->tel;
-            if ($this->sex !== null) {
-                $user->sex = $this->sex; 
+            $user->setPassword(substr($this->account, 11, 6));
+            if($this->priority === 2) {
+                $user->setType(2);
             } else {
-                $user->sex = 1;
+                $user->setType(1);
             }
-            $user->age = $this->age;
-            $user->insert();
+            $user->setName($this->username);
+            $user->setUsername($this->username);
+            $user->setTel($this->tel);
+            $user->setSex($this->sex); 
+            $user->setAge($this->age);
+            $user->generateAuthKey();
+            $u = $user->insert();
         }
         
         // 更新职员表
         $committee->account = $this->account;
         if($this->priority === 2) {
-            $committee->is_admin = 1;
+            $committee->setIsAdmin(1);
         } else {
-            $committee->is_admin = 0;
+            $committee->setIsAdmin(0);
         }
-        $committee->in_date = $in_date;
-        $committee->insert(); 
+        $committee->setInDate($in_date);
+        $c = $committee->insert(); 
         
         $priorityType = PriorityType::find()->all();
         if($this->priority === 2) {
             foreach ($priorityType as $p) {
                 $priorityList = new PriorityList();
-                $priorityList->account = $this->account;
-                $priorityList->priority = $p->priority;
-                $priorityList->save();
+                $priorityList->setAccount($this->account);
+                $priorityList->setPriority($p->priority);
+                $p = $priorityList->save();
             }
         }
-        return true;
+        if($p !== null && $c != null && $u != null) {
+            return true;
+        } else {
+            return false;
+        }
+        
     }
 
     /**
-     * Add committee.
+     * 更新职员数据.
      *
-     * @return bool whether the creating new committee is successful
+     * @return bool 返回是否更新成功
      */
     public function updateCommittee($id) 
     {
@@ -130,27 +134,19 @@ class CommitteeForm extends Model
             return false;
         }
         
+        $user->setName($this->username);
         $user->account = $this->account;
-        $user->type = $this->priority;
-        $user->name = $this->username;
         if ($user->username === null) {
-            $user->username = $this->username;
+            $user->setUsername($this->username);
         }
-        $user->tel = $this->tel;
-        $user->sex = $this->sex;     
-        $user->age = $this->age;
-        $user->update();
+        $user->setTel($this->tel);
+        $user->setSex($this->sex); 
+        $user->setAge($this->age);
+        $u = $user->update();
         
-        if($committee !== null) {
-            if($this->priority === 2) {
-                $committee->is_admin = 1;
-            } else {
-                $committee->is_admin = 0;
-            }
-            $committee->update();
-        } else {
-            return false;
+        if($u !== null) {
+            return true;
         }
-        return true;
+        return false;
     }
 }

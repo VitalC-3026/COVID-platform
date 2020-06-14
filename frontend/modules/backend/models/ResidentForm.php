@@ -36,6 +36,8 @@ class ResidentForm extends Model
 
             ['tel', 'required','message' => '联系方式不能为空'],
             ['tel', 'string', 'min' => 11, 'max' => 11, 'tooShort' => '联系方式长度必须等于11位', 'tooLong' => '联系方式长度必须等于11位'],
+
+            ['sex', 'required','message' => '性别不能为空'],
             
             ['age', 'required','message' => '年龄不能为空'],
             ['age', 'number', 'min' => 0, 'max' => 150,'tooSmall'=> '年龄必须在0-150岁之间','tooBig' => '年龄必须在0-150岁之间'],
@@ -90,45 +92,41 @@ class ResidentForm extends Model
         $resident = new Resident();
         if($user->findIdentity($this->account)) {
             $user->account = $this->account;
-            $user->type = 0;
-            $user->name = $this->username;
+            $user->setType(0);
+            $user->setName($this->username);
             if ($user->username === null) {
-                $user->username = $this->username;
+                $user->setUsername($this->username);
             }
-            $user->tel = $this->tel;
-            if ($this->sex !== null) {
-                $user->sex = $this->sex; 
-            } else {
-                $user->sex = 1;
-            }
-            $user->age = $this->age;
-            $user->update();
+            $user->setTel($this->tel);
+            $user->setSex($this->sex); 
+            $user->setAge($this->age);
+            $u = $user->update();
         } else {
             $user->account = $this->account;
-            $user->password_hash = Yii::$app->security->generatePasswordHash(substr($this->account, 11, 6));
-            $user->type = 0;
-            $user->name = $this->username;
-            $user->username = $this->username;
-            $user->tel = $this->tel;
-            if ($this->sex !== null) {
-                $user->sex = $this->sex; 
-            } else {
-                $user->sex = 1;
-            }
-            $user->age = $this->age;
-            $user->insert();
+            $user->setPassword(substr($this->account, 11, 6));
+            $user->setType(0);
+            $user->setName($this->username);
+            $user->setUsername($this->username);
+            $user->setTel($this->tel);
+            $user->setSex($this->sex); 
+            $user->setAge($this->age);
+            $user->generateAuthKey();
+            $u = $user->insert();
         }
         if($resident->getResidentByIdentity($this->account)) {
             return false;
         } else {
-            $resident->account = $this->account;
-            $resident->unit = $this->unit;
-            $resident->building = $this->building;
-            $resident->room = $this->room;
-            $resident->insert();
+            $resident->setAccount($this->account);
+            $resident->setUnit($this->unit);
+            $resident->setBuilding($this->building);
+            $resident->setRoom($this->room);
+            $r = $resident->insert();
         }
         
-        return true;
+        if($u !== null && $r !== null) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -145,19 +143,17 @@ class ResidentForm extends Model
 
         
         if($user !== null) {
-            $user->name = $this->username;
-            $user->tel = $this->tel;
-            if ($this->sex !== null) {
-                $user->sex = $this->sex; 
-            }
-            $user->age = $this->age;
+            $user->setName($this->username);
+            $user->setTel($this->tel);
+            $user->setSex($this->sex); 
+            $user->setAge($this->age);
             $user->update();
         }
 
         if($resident !== null) {
-            $resident->room = $this->room;
-            $resident->unit = $this->unit;
-            $resident->building = $this->building;
+            $resident->setRoom($this->room);
+            $resident->setUnit($this->unit) ;
+            $resident->setBuilding($this->building);
             $resident->update();
         }
         
