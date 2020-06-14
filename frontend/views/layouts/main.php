@@ -170,7 +170,7 @@ AppAsset_b::register($this);
                                 <li><a href="<?= \yii\helpers\Url::to(['/site/about']); ?>">关于</a></li>
                                 <li><a href="<?= \yii\helpers\Url::to(['/site/news']); ?>">新闻</a></li>
                                 <li><a href="<?= \yii\helpers\Url::to(['/site/error']); ?>">404页面</a></li>
-                                <li><a href="<?= \yii\helpers\Url::to(['/site/contact']); ?>">联系我们</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/site/prevention']); ?>">防疫教学</a></li>
                             </ul>
                         </div>
                         <!-- END: .widget -->
