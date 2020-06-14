@@ -394,7 +394,13 @@ public function countLow(){
 
 ### 4.6 体温异常人员信息列表
 其MVC过程与居民职员数据库几乎完全一致，只需在联表查询时加入条件只显示体温异常人员。这里就不再赘述。
-
+```php
+public function search($params)
+    {
+        $query = User::find();
+        $query->joinWith('health', true, 'INNER JOIN')->where(['or', 'health.temperature>37.2', 'health.temperature<36.3'])->orderBy(['health.last_date'=>SORT_DESC]);
+      }        
+```
 
 
 
