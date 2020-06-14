@@ -162,6 +162,8 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                 [
                                   'header' => '操作',
                                   'class' => 'yii\grid\ActionColumn',
+                                  'headerOptions' => [
+                                    'style' => 'width:60px;',],
                                   //设置显示模板
                                   'template' => '{update} {delete}',
                                   //下面的按钮设置，与上面的模板设置相关联

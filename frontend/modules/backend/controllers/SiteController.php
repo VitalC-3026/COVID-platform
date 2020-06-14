@@ -25,6 +25,7 @@ use common\models\PriorityType;
 use common\models\PriorityList;
 use common\models\Committee;
 use common\models\TeamMember;
+use common\models\Transactions;
 
 
 
@@ -63,12 +64,20 @@ class SiteController extends Controller
         $committee = new CommitteeSearch();
         $health = new HealthSearch();
         $user = new User();
-        $transactions = new TransactionsSearch();
+        $transactions = Transactions::findAll(Yii::$app->user->identity->account);
+        $info = [];
+        $time = [];
+        $i = 0;
+        foreach ($transactions as $t) {
+            $info[$i] = $t->info;
+            $time[$i] = $t->start_time;
+        }
+        // $provider = $transactions->search(Yii::$app->request->get());
         return $this->render('index', [
             'model' => [$user->visitors(), $resident->count(), $committee->count(), $health->count(),
-                $health->countLow(), $health->countNormal(), $health->countHigh(),$transactions],
-            'transactions'=>$transactions,
-            'provider'=>$transactions->search(Yii::$app->request->get()),
+                $health->countLow(), $health->countNormal(), $health->countHigh()],
+            'info' => $info,
+            'time' => $time,
         ]);
     }
 
