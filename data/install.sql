@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/6/14 11:38:26                           */
+/* Created on:     2020/6/14 17:07:29                           */
 /*==============================================================*/
 
 
@@ -137,7 +137,7 @@ create table Team
 create table TeamMember
 (
    account              char(18) not null,
-   Tea_id               int,
+   Team_id              int,
    id                   char(7),
    link                 varchar(100),
    info                 text,
@@ -199,7 +199,7 @@ alter table PriorityList add constraint FK_PriorityList_Type foreign key (priori
 alter table Resident add constraint FK_isA_Resident foreign key (account)
       references User (account) on delete restrict on update restrict;
 
-alter table TeamMember add constraint FK_in_Team foreign key (Tea_id)
+alter table TeamMember add constraint FK_in_Team foreign key (Team_id)
       references Team (id) on delete restrict on update restrict;
 
 alter table TeamMember add constraint FK_isA_TeamMember foreign key (account)
