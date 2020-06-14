@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 职员检索模型 model
+*/
+
 namespace frontend\modules\backend\models;
 
 use Yii;
@@ -9,10 +15,8 @@ use common\models\User;
 use common\models\Committee;
 use common\models\PriorityType;
 use common\models\PriorityList;
-/**
- * 职员检索模型
- * 
- */
+
+
 class CommitteeSearch extends User
 {
     public string $in_date;

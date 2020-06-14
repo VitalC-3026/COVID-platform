@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 戚晓睿
+ * 权限类型 model
+*/
+
 namespace common\models;
 
 use Yii;

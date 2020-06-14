@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 信息编辑视图 view
+*/
+
 use frontend\assets\AppAsset_b;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;

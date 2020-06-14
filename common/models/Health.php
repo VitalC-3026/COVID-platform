@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 文静静
+ * 健康 model
+*/
+
 namespace common\models;
 
 use Yii;

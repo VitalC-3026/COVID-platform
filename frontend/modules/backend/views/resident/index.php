@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 居民数据库视图 view
+*/
 // @var $provider
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;

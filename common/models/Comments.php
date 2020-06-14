@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 戚晓睿
+ * 评论 model
+*/
+
 namespace common\models;
 
 use Yii;

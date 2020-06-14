@@ -1,3 +1,11 @@
+<?php
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 职权简介视图 view 用于ListView
+*/
+?>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">

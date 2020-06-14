@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 新闻公告发布模块主要处理器 controller
+*/
+
 namespace frontend\modules\backend\controllers;
 
 use frontend\modules\backend\models\TransactionsSearch;
@@ -14,7 +20,6 @@ use frontend\modules\backend\models\ResidentForm;
 use frontend\modules\backend\models\AdminForm;
 use frontend\modules\backend\models\HealthForm;
 use frontend\modules\backend\models\EditForm;
-use frontend\modules\backend\models\CensorForm;
 use frontend\modules\backend\models\ResidentSearch;
 use frontend\modules\backend\models\CommentsSearch;
 use common\models\PriorityType;

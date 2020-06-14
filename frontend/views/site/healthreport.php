@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team: NoCov
+ * Coding by: 冯杰康
+ * 健康日报视图 view
+*/
 
 use frontend\assets\AppAsset;
 use yii\bootstrap\ActiveForm;

@@ -1,4 +1,11 @@
 <?php 
+
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 分配视图 view
+*/
+
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
 use yii\grid\GridView;

@@ -1,12 +1,18 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 戚晓睿
+ * 团队成员 model
+*/
+
 namespace common\models;
 
 use Yii;
 use yii\db\ActiveRecord;
 
 /**
- * 健康模型
+ * 团队成员模型
  * @property int    $Team_id    团队编号
  * @property string $id         编号
  * @property string $link       作业链接

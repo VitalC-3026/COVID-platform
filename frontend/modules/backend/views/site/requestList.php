@@ -1,5 +1,10 @@
 <?php
 // @var $provider
+/**
+ * Team: NoCov
+ * Coding by: 文静静
+ * 温度异常人员数据库视图 view
+*/
 
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;

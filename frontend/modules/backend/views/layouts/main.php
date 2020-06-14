@@ -1,5 +1,9 @@
 <?php
-/* @var $content string */
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 后台主框架 view
+*/
 
 use frontend\assets\AppAsset_b;
 use yii\grid\GridView;

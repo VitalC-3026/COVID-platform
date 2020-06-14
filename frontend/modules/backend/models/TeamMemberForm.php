@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 团队成员信息编辑表格 model
+*/
+
 namespace frontend\modules\backend\models;
 
 use Yii;
@@ -9,10 +15,7 @@ use yii\db\ActiveRecord;
 use common\models\TeamMember;
 use common\models\User;
 
-/**
- * 评论审核检索模型
- * 
- */
+
 class TeamMemberForm extends Model
 {
     public $name;

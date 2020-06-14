@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 文静静
+ * 健康异常人员数据表格 model
+*/
+
 namespace frontend\modules\backend\models;
 
 use Yii;

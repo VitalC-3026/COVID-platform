@@ -1,5 +1,10 @@
 <?php
 // @var $provider
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 评论审核视图 view
+*/
 
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;

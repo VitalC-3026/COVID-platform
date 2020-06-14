@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 新闻列表小视图 view 用于ListView
+*/
+
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;

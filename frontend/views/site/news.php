@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 戚晓睿
+ * 新闻视图 view
+*/
+
 use frontend\controllers\NewsController;
 use yii\helpers\Html;
 use yii\helpers\Url;

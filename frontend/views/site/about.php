@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Team: NoCov
+ * Coding by: 冯杰康
+ * 关于团队视图 view
+*/
+
 $tmp = \common\models\Team::findAll(['id' => 1]);
 if (sizeof($tmp) != 0)
     $tmp = $tmp[0];

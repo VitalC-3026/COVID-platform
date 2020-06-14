@@ -1,8 +1,10 @@
 <?php
 
-/* @var $this \yii\web\View */
-
-/* @var $content string */
+/**
+ * Team: NoCov
+ * Coding by: 所有人
+ * 前台主视图 view
+*/
 
 use frontend\assets\AppAsset_b;
 use yii\helpers\Html;
