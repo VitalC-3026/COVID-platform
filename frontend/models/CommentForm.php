@@ -16,13 +16,17 @@ class CommentForm extends Model
     public function rules()
     {
         return [
-            [['New_id', 'content', 'author', 'visible'], 'required'],
+            ['New_id', 'required'],
+            ['content', 'required'],
+            ['author', 'required'],
+            ['visible', 'required'],
         ];
     }
 
     public function submit()
     {
         $comment = new Comments();
+        $comment->setId(Comments::find()->max('id') + 1);
         $comment->setNew_id($this->New_id);
         $comment->setContent($this->content);
         $comment->setAuthor($this->author);

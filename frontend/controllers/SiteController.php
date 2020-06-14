@@ -261,11 +261,7 @@ class SiteController extends Controller
         {
             if ($model->submit())
             {
-                return $this->redirect('site/comments', [
-                    'news' => $news,
-                    'comments' => $comments,
-                    'model' => $model
-                ]);
+                return $this->redirect(array('/site/comments', 'message' => '发布成功！', 'id' => $id));
             }
         }
 
