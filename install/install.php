@@ -48,7 +48,7 @@ if ($database_config) {
 
 <?php
 if (isset($_POST["sql_password"])) {
-    $conn = new mysqli($_POST["sql_ip"], $_POST["sql_account"], $_POST["sql_password"]);
+    $conn = new mysqli($_POST["sql_ip"], $_POST["sql_account"], $_POST["sql_password"], null, $_POST["sql_port"]);
     if ($conn->connect_error) {
         echo "<h1 style='color: #EE0000;'>数据库连接失败，请重新配置</h1>";
     } else {
@@ -103,9 +103,10 @@ if (isset($_POST["sql_password"])) {
                     }
                 }
 
-//                $admin="INSERT INTO User (account, type, ) VALUES ('000000000000000000',2, );";
+                $password_hash =password_hash($_POST["admin_password"], PASSWORD_DEFAULT, ['cost' => 13]);
+                $admin = "INSERT INTO User (account, type, password_hash, auth_key) VALUES ('000000000000000000',2,'$password_hash','nS7srBBk1qUOQvaYtVif494hdoTNSkAc')";
 
-                if ($is_ok === TRUE) {
+                if ($is_ok === TRUE && $conn->query($admin) === TRUE) {
                     echo "<h1 style='color: #66ccff;'>数据导入完成，正在配置local文件。。。</h1>";
 
                     $myfile = fopen("../common/config/main-local.php", "w");
@@ -113,7 +114,7 @@ if (isset($_POST["sql_password"])) {
                     $contents = "<?php \n return [ \n 'components' => [ \n
         'db' => [ \n
             'class' => 'yii\db\Connection', \n
-            'dsn' => 'mysql:host=" . $_POST["sql_ip"] . ";dbname=" . $_POST["sql_name"] . "',  \n
+            'dsn' => 'mysql:host=" . $_POST["sql_ip"] . ";port=" . $_POST["sql_port"] . ";dbname=" . $_POST["sql_name"] . "',  \n
             'username' => '" . $_POST["sql_account"] . "',  \n
             'password' => '" . $_POST["sql_password"] . "', \n
             'charset' => 'utf8mb4'   \n],\n],\n];\n";
@@ -136,7 +137,7 @@ if (isset($_POST["sql_password"])) {
             'cookieValidationKey' => 'lXfAJ_cFiUH-Ze0SsHpXrpmwmn_sAonW', \n ], \n], \n];   return \$config;";
                     fwrite($myfile, $contents);
                     fclose($myfile);
-                    echo "<h1 style='color: #EE0000;'>如果上述操作没有产生错误，那么您的安装已经完成，可以退出此界面了，
+                    echo "<h1 style='color: #99DD00;'>如果上述操作没有产生错误信息，那么您的安装已经完成，可以退出此界面了，
                     之后进入frontend/web/index.php 即可正常使用此网站</h1>";
 
                 } else

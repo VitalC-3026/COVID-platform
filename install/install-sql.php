@@ -13,6 +13,12 @@
             </td>
         </tr>
         <tr>
+            <th scope="row"><label for="weblog_title">数据库连接端口</label></th>
+            <td><input name="sql_port" type="number" id="weblog_title" size="25" value="<?= isset($_POST['sql_port']) ? $_POST['sql_port'] : 3306 ?>"/>
+                <p>确保设置正确的端口以方便连接</p>
+            </td>
+        </tr>
+        <tr>
             <th scope="row"><label for="user_login">库名</label></th>
             <td>
                 <input name="sql_name" type="text" id="user_login" size="25" value="<?= isset($_POST['sql_name']) ? $_POST['sql_name'] : 'yii2advancedtest' ?>"/>
@@ -37,8 +43,8 @@
         <tr>
             <th scope="row"><label for="user_login">安装模式</label></th>
             <td>
-        <label><input name="chose" type="radio" value="sample"/>简洁 </label>
-        <label><input name="chose" type="radio" value="complete" checked/>完整 </label>
+        <label><input name="chose" type="radio" value="sample" <?= $_POST["chose"]=='sample'?'checked':''?>/>简洁 </label>
+        <label><input name="chose" type="radio" value="complete" <?= $_POST["chose"]!='sample'?'checked':''?>/>完整 </label>
                 <p>简洁版我们将导入少量数据，表格基本为空，用于从头开始使用本项目进行社区管理的人。</p>
                 <p>完整版我们将导入大量随机生成数据，用于演示网站的最佳显示模式。</p>
             </td>

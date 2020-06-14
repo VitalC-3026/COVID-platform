@@ -9,7 +9,7 @@
 本网站系统基于`yii2`框架开发，使用部分网站的`css`和`js`进行样式设计。
 
 
-如果想要在本地架设本框架，请运行根目录下的`install.php`, 我们将会进行傻瓜式指导安装，在其中我们会配置你的数据库和初始的管理员账号。
+如果想要在本地架设本框架，请运行根目录下的`install/install.php`, 我们将会进行傻瓜式指导安装，在其中我们会配置你的数据库和初始的管理员账号。
 
 之后请将`Apache`的解析路径配置在`./frontend/web/index.php`才能正常使用。
 
@@ -31,6 +31,8 @@ common
 
 data
     install.sql          数据库的安装脚本
+    samlpe.sql           简易安装的数据脚本
+    complete.sql         完整安装的数据脚本
     team/                团队文档存放文件夹
     personal/            个人作业存放文件夹
 
@@ -54,6 +56,9 @@ frontend                 yii2前台，本次项目重点文件
 vendor/                  yii2依赖的第三方包
 environments/            环境配置
 
-install.php             安装指导文件
+install          
+    install.php          安装指导文件入口
+    install-admin.php    安装辅助文件，用户无需操作
+    install-sql.php      安装辅助文件，用户无需操作
 
 ```
