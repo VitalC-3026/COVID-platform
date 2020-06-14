@@ -23,7 +23,6 @@ class CommentForm extends Model
     public function submit()
     {
         $comment = new Comments();
-        $comment->setId(Comments::find()->max('id') + 1);
         $comment->setNew_id($this->New_id);
         $comment->setContent($this->content);
         $comment->setAuthor($this->author);

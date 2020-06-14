@@ -4,6 +4,7 @@
  * @var $news    mixed  新闻信息
  */
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\LinkPager;
 $cnt = 2;
 ?>
@@ -612,7 +613,7 @@ $cnt = 2;
                                         <a href="#"><?= Html::encode("{$news->cnt}") ?></a>
                                     </div>
                                     <h3 class="post-heading"><a
-                                                href="http://baijiahao.baidu.com/s?id=1669064014333218250&wfr=newsapp">
+                                                href="<?= Url::to(['site/comments', 'id' => $news->id])?>">
                                         <?= Html::encode("{$news->title}") ?></a>
                                     </h3>
                                 </div>
