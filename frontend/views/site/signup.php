@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NoCov
+ * Coding by: 冯杰康
+ * 注册视图 view
+*/
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 

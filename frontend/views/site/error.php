@@ -1,3 +1,10 @@
+<?php 
+/**
+ * Team: NoCov
+ * Coding by: 冯杰康
+ * 404 view
+*/
+?>
 <head>
     <!-- Stylesheets -->
     <link href="assets/frontend/404/css/bootstrap.css" rel="stylesheet">

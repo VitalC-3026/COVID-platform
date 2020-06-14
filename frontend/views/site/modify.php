@@ -1,5 +1,11 @@
 <?php
 
+
+/**
+ * Team: NoCov
+ * Coding by: 冯杰康
+ * 信息修改视图 view
+*/
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 

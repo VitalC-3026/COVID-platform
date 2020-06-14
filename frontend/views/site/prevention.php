@@ -1,3 +1,10 @@
+<?php
+/**
+ * Team: NoCov
+ * Coding by: 文静静
+ * 防御措施视图 view
+*/
+?>
 <!-- BEGIN: .cover -->
 <div class="page-heading-85912" style="background-image: url('assets/frontend/images/hero_bg_3.jpg')">
     <div class="container">

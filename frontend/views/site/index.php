@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Team: NoCov
+ * Coding by: 所有人
+ * 主页视图 view
+*/
 /**
  * @var $message string 通知信息
  * @var $news    mixed  新闻信息
