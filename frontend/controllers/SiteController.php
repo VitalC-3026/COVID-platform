@@ -169,9 +169,9 @@ class SiteController extends Controller
             if ($model->setMyUser()) {
                 $model->setInfo();
                 Yii::$app->user->logout();
-                return $this->render('index', [
+                return $this->redirect(array('/site/index',
                     'message' => "信息修改成功，请重新登录。"
-                ]);
+                ));
             } else {
                 return $this->render('modify', [
                     'model' => $model,
