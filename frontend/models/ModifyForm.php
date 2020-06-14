@@ -1,5 +1,8 @@
 <?php
-/*
+/**
+ *
+ * Team：NoCov
+ * Coding By：冯杰康
  * 本模型用于修改用户信息，因为修改完成信息和修改之前信息都为MyUser类，因此只用继承MyUser类即可
  * 新增变量$newpassword,$newusername，用来表示修改后的值
  */

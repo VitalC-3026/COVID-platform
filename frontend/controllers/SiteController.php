@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team：NoCov
+ * Coding By：冯杰康，麦隽韵，戚晓睿
+ * 前端主控制器，用于连接前端各个页面，并且进行数据检验和控制接受等等工作
+ */
 namespace frontend\controllers;
 
 use common\models\Comments;

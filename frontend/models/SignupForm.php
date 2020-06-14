@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team：NoCov
+ * Coding By：冯杰康
+ * 注册用户时的表单信息，接受并检验结果
+ */
 namespace frontend\models;
 
 use common\models\Resident;

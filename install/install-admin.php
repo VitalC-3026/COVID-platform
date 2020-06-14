@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Team: NoCov
+ * Coding By: 冯杰康
+ * 安装引导程序的一个界面，用于设置管理员账户
+ */
+
 global $password_ok;
 global $database_config;
 ?>

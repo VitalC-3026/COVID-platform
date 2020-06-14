@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Team：NoCov
+ * Coding By：冯杰康
+ * 本用于接受前台健康日报的表单数据，后由/common/Health.php存入数据库
+ */
 namespace frontend\models;
 
 use common\models\Health;
