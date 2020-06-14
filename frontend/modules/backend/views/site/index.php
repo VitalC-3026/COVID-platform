@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 肖中遥 文静静
+ * 后台主页 view
+*/
+
 use frontend\assets\AppAsset_b;
 use common\widgets\Alert;
 use yii\grid\GridView;

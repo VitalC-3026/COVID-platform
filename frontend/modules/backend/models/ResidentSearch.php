@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 居民检索模型 model
+*/
+
 namespace frontend\modules\backend\models;
 
 use Yii;
@@ -8,10 +14,7 @@ use yii\db\ActiveRecord;
 use common\models\User;
 use common\models\Resident;
 
-/**
- * 居民检索模型
- * 
- */
+
 class ResidentSearch extends User
 {
     public $building;

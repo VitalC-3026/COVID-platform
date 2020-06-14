@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 肖中遥 文静静 麦隽韵
+ * 后台主要处理器 controller
+*/
+
 namespace frontend\modules\backend\controllers;
 
 use frontend\modules\backend\models\CommitteeSearch;

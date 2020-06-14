@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 信息编辑模型 model
+*/
+
 namespace frontend\modules\backend\models;
 
 use Yii;

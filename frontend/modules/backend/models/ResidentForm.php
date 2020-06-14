@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 居民数据表格 model
+*/
+
 namespace frontend\modules\backend\models;
 
 use Yii;

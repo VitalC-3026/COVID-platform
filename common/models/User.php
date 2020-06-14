@@ -8,6 +8,12 @@
  *
  */
 
+/**
+ * Team: NoCov
+ * Coding by: 冯杰康
+ * 用户 model
+*/
+
 namespace common\models;
 
 use frontend\modules\backend\models\TransactionsSearch;

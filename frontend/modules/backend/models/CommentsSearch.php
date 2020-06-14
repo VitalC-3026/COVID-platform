@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team: NoCov
+ * Coding by: 麦隽韵
+ * 评论审核检索模型 model
+*/
 
 namespace frontend\modules\backend\models;
 
