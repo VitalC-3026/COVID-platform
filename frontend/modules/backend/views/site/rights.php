@@ -82,7 +82,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                       //下面的按钮设置，与上面的模板设置相关联
                                       'buttons' => [
                                         'update' => function ($url, $model, $key) {
-                                          return Html::a('<span class="glyphicon glyphicon-check"></span>', ['update', 'id' => $model->account], 
+                                          return Html::a('<span class="glyphicon glyphicon-check"></span>', ['update', 'id' => $model->account], ['hidden'=>true]
                                           );
                                         },
                                       ],

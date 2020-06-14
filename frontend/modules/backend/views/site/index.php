@@ -3,6 +3,8 @@
 use frontend\assets\AppAsset_b;
 use common\widgets\Alert;
 use yii\grid\GridView;
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 ?>
 <?= Alert::widget() ?>
@@ -75,6 +77,7 @@ use yii\grid\GridView;
                                 <button id="todo-enter" class="btn btn-primary pull-right">提交</button>
                                 <div id='todo-count'></div>
                             </div>
+                            
                         </div>
                     </div>
                     <div id="donut"></div>
@@ -154,42 +157,42 @@ use yii\grid\GridView;
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-md-2">
-                            <h6 class="text-center small-thin uppercase">Mon</h6>
+                            <!-- <h6 class="text-center small-thin uppercase">Mon</h6> -->
                             <div class="text-center">
                                 <canvas id="partly-cloudy-day" width="32" height="32"></canvas>
                             </div>
                         </div>
 
                         <div class="col-md-2">
-                            <h6 class="text-center small-thin uppercase">Mon</h6>
+                            <!-- <h6 class="text-center small-thin uppercase">Mon</h6> -->
                             <div class="text-center">
                                 <canvas id="rain" width="32" height="32"></canvas>
                             </div>
                         </div>
 
                         <div class="col-md-2">
-                            <h6 class="text-center small-thin uppercase">Tue</h6>
+                            <!-- <h6 class="text-center small-thin uppercase">Tue</h6> -->
                             <div class="text-center">
                                 <canvas id="sleet" width="32" height="32"></canvas>
                             </div>
                         </div>
 
                         <div class="col-md-2">
-                            <h6 class="text-center small-thin uppercase">Wed</h6>
+                            <!-- <h6 class="text-center small-thin uppercase">Wed</h6> -->
                             <div class="text-center">
                                 <canvas id="snow" width="32" height="32"></canvas>
                             </div>
                         </div>
 
                         <div class="col-md-2">
-                            <h6 class="text-center small-thin uppercase">Thu</h6>
+                            <!-- <h6 class="text-center small-thin uppercase">Thu</h6> -->
                             <div class="text-center">
                                 <canvas id="wind" width="32" height="32"></canvas>
                             </div>
                         </div>
 
                         <div class="col-md-2">
-                            <h6 class="text-center small-thin uppercase">Fri</h6>
+                            <!-- <h6 class="text-center small-thin uppercase">Fri</h6> -->
                             <div class="text-center">
                                 <canvas id="fog" width="32" height="32"></canvas>
                             </div>
@@ -207,37 +210,28 @@ use yii\grid\GridView;
                         <i class="fa fa-times"></i>
                     </div>
                 </div>
-                <div>
-<!--                    --><?php //echo GridView::widget([
-//                        //设置GridView的ID
-//                        'id' => 'healthGridView',
-//                        //设置数据提供器
-//                        'dataProvider' => $provider,
-//                        //设置筛选模型
-//                        'filterModel' => $transactions,
-//                        'emptyText' => '任务已清空',
-//                        'showHeader'=>false,
-//                        'summary' => '第{page}页，共{pageCount}页，{totalCount}条任务',
-//                        'columns' => [
-//                            //显示序号列
-//                            [
-//                                'label' => '任务描述',
-//                                'attribute' => 'info',
-//                                'format' => 'raw',
-//                                'headerOptions' => [
-//                                    'style' => 'width:180px;',
-//                                ],
-//                            ],
-//                            [
-//                                'label' => '开始时间',
-//                                'attribute' => 'start_time',
-//                                'format' => 'raw',
-//                                'headerOptions' => [
-//                                    'style' => 'width:180px;',
-//                                ],
-//                            ],
-//                        ],
-//                    ]); ?>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <?php if(sizeof($info) === 0): ?>
+                                <span>暂无待办事务！</span>
+                            <?php endif ?>
+                            <?php for($t = 0; $t < sizeof($info); $t++):?>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <span><?php $info[$t] ?></span>
+                                    </div> 
+                                    <div class="col-md-2">
+                                        <span>|</span>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <span><?php $time[$t] ?></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            <?php endfor ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * 本模型为接受前台新闻评论的数据模型，接收完数据后由/common/comments.php传入数据库
+ */
+
 namespace frontend\models;
 
 use common\models\Comments;

@@ -99,4 +99,8 @@ class Transactions extends ActiveRecord
     {
         return $this->is_finished;
     }
+
+    public function getUser(){
+        return $this->hasOne(User::className(), ['account' => 'account']);
+    }
 }
