@@ -3,6 +3,7 @@
 namespace frontend\modules\backend\controllers;
 
 use frontend\modules\backend\models\CommitteeSearch;
+use frontend\modules\backend\models\TransactionsSearch;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -62,6 +63,17 @@ class SiteController extends Controller
         $committee = new CommitteeSearch();
         $health = new HealthSearch();
         $user = new User();
+        $transactions = new TransactionsSearch();
+        $arr1 = array();
+        $arr2 = array();
+        foreach($transactions as $val)
+        {
+            if(!is_object($val)) { continue; } // Skip non-object rows
+            $arr1[]=$val->info;
+            $arr2[]=$val->start_time;
+        }
+        Yii::$app->view->params['infos'] = $arr1;
+        Yii::$app->view->params['times'] = $arr2;
         return $this->render('index', [
             'model' => [$user->visitors(), $resident->count(), $committee->count(), $health->count(),
                 $health->countLow(), $health->countNormal(), $health->countHigh()]]);
@@ -79,9 +91,15 @@ class SiteController extends Controller
             return $this->redirect(['index']);
         }
 
+
         if($id === ''){
             $id = Yii::$app->user->identity->account;
         } 
+
+
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
 
         $search = new SearchForm();
         if ($search->load(Yii::$app->request->post())) {
@@ -134,7 +152,7 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionUpdate($id) 
+    public function actionUpdate($id)
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
@@ -147,6 +165,12 @@ class SiteController extends Controller
             Yii::$app->getSession()->setFlash('error', '您的等级过低，无法晋升超级管理员！');
             return $this->redirect(['index']);
         }
+
+
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
+        
         $committee = Committee::findOne($id);
         if($committee !== null) {
             $committee->updatePriority();
@@ -156,6 +180,7 @@ class SiteController extends Controller
         }
         
         return $this->redirect(['rights', 'id' => $id]);
+
     }
 
     public function actionRequestlist()
@@ -166,8 +191,10 @@ class SiteController extends Controller
         if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['index']);
-        } 
-
+        }
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         $health = new HealthSearch();
         $provider = $health->search(Yii::$app->request->get());
 
@@ -204,12 +231,16 @@ class SiteController extends Controller
             $user = User::findOne($team[$i]['account']);
             $team[$i]['name'] = $user->name;
         }
+
         $isLeader = TeamMember::findOne(Yii::$app->user->identity->account)->is_Leader;
         $teamForm = new TeamForm();
         $teamForm->initTeam();
         if($teamForm->load(Yii::$app->request->post()) && $teamForm->edit()){
             Yii::$app->getSession()->setFlash('success', '修改团队信息成功！');
         }
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->render('profile', [
             'model' => $teammember,
             'team' => $team,

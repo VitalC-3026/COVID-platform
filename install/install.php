@@ -106,8 +106,8 @@ if (isset($_POST["sql_password"])) {
 
                 $password_hash =password_hash($_POST["admin_password"], PASSWORD_DEFAULT, ['cost' => 13]);
                 $admin = "INSERT INTO User (account, type, password_hash, auth_key,name,username) VALUES ('000000000000000000',2,'$password_hash','nS7srBBk1qUOQvaYtVif494hdoTNSkAc','admin','admin')";
-
-                if ($is_ok === TRUE && $conn->query($admin) === TRUE) {
+                $committee="INSERT INTO Committee (account,in_date,is_admin) VALUES('000000000000000000', '1970-01-01',1)";
+                if ($is_ok === TRUE && $conn->query($admin) === TRUE && $conn->query($committee) === TRUE) {
                     echo "<h1 style='color: #66ccff;'>数据导入完成，正在配置local文件。。。</h1>";
 
                     $myfile = fopen("../common/config/main-local.php", "w");

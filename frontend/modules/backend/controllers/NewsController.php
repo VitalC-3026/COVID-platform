@@ -2,6 +2,7 @@
 
 namespace frontend\modules\backend\controllers;
 
+use frontend\modules\backend\models\TransactionsSearch;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -59,7 +60,9 @@ class NewsController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
-
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         date_default_timezone_set('prc');
         $time = date('Y-m-d H:i:s', time());
         Yii::$app->view->params['time'] = $time;
@@ -67,7 +70,7 @@ class NewsController extends Controller
             $news = News::getEarliestNews();
         } else {
             $news = News::findOne($id);
-        } 
+        }
         $dataProvider = new ActiveDataProvider([
             'query' => News::find()->orderBY(['id' => SORT_DESC]),
             'pagination' => [
@@ -112,13 +115,16 @@ class NewsController extends Controller
                     ]);
                     $news = News::getEarliestNews();
                     return $this->render('index', [
-                        'provider' => $dataProvider, 
+                        'provider' => $dataProvider,
                         'model' => $news,
                         'id' => $news->id,
                     ]);
-                }               
+                }
             }
         }
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->render('edit', ['model' => $model]);
     }
 
@@ -131,10 +137,12 @@ class NewsController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
-        
+
         $comments = new CommentsSearch();
         $provider = $comments->search(Yii::$app->request->get());
-
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->render('comments', [
             'model' => $comments,
             'provider' => $provider
@@ -161,6 +169,9 @@ class NewsController extends Controller
         if ($model !== null) {
             $model->delete();
         }
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->redirect(['/backend/news/index']);
     }
 
@@ -172,6 +183,9 @@ class NewsController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->redirect(['/backend/news/index', 'id' => $id]);
     }
 
@@ -184,13 +198,16 @@ class NewsController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
             return $this->redirect(['/backend/site/index']);
         }
-        
+
         $model = Comments::findOne($id);
         if($id === -1 || $model === null) {
             return $this->redirect(['index']);
         }
         $model->visible = 1;
         $model->update();
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->redirect(['/backend/news/comments']);
     }
 
@@ -204,6 +221,9 @@ class NewsController extends Controller
         }
         News::publish($id);
         Yii::$app->getSession()->setFlash('success', '发布新闻成功！');
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->redirect(['/backend/news/index']);
     }
 

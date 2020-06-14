@@ -2,6 +2,7 @@
 
 namespace frontend\modules\backend\controllers;
 
+use frontend\modules\backend\models\TransactionsSearch;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -59,8 +60,10 @@ class ResidentController extends Controller
             return $this->redirect(['/backend/site/index']);
         }  
         $resident = new ResidentSearch();
-        $provider = $resident->search(Yii::$app->request->post());
-
+        $provider = $resident->search(Yii::$app->request->get());
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->render('index', [
             'model' => $resident,
             'provider' => $provider,
@@ -84,7 +87,9 @@ class ResidentController extends Controller
         } else {
             Yii::$app->getSession()->setFlash('error', '出现了不可名状的错误，删除失败。');
         }
-        
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->redirect(['index']);
     }
 
@@ -98,16 +103,17 @@ class ResidentController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
         }
-
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         $model = new ResidentForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($model->addResident()) {
                 Yii::$app->session->setFlash('success', '成功添加新居民');
                 $resident = new ResidentSearch();
                 $provider = $resident->search(Yii::$app->request->get());
-                return $this->redirect(['index', 'message' => '成功添加新居民']);
+                return $this->render('index', ['message' => '成功添加新居民', 'model' => $resident, 'provider' => $provider]);
             } else {
-                Yii::$app->session->setFlash('error', '添加新居民失败');
                 return $this->render('create', ['model' => $model,]);
             }
 
@@ -126,7 +132,9 @@ class ResidentController extends Controller
             return $this->redirect(['/backend/site/index']);
         }
 
-
+        $transactions = new TransactionsSearch();
+        Yii::$app->view->params['model'] = $transactions;
+        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         $model = new ResidentForm();
         $resident = Resident::findOne($id);
         $user = User::findOne($id);
@@ -140,15 +148,10 @@ class ResidentController extends Controller
             $model->username = $user->name;
             $model->age = $user->age;
         }
-        if ($model->load(Yii::$app->request->post())) {
-            if ($model->updateResident($id)) {
-                Yii::$app->getSession()->setFlash('success', '修改居民信息成功');
-                return $this->redirect(['index']);
-            } else {
-                Yii::$app->getSession()->setFlash('error', '修改居民信息失败');
-                return $this->render('update', ['model' => $model]);
-            }
-            
+        if ($model->load(Yii::$app->request->post()) && $model->updateResident($id)) {
+            $res = new ResidentSearch();
+            $provider = $res->search(Yii::$app->request->get());
+            return $this->render('index', ['model' => $res, 'provider' => $provider]);
         }
         return $this->render('update', ['model' => $model]);
     }

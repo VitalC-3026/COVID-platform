@@ -25,7 +25,7 @@
             <td>
                 <input name="sql_name" type="text" id="user_login" size="25"
                        value="<?= isset($_POST['sql_name']) ? $_POST['sql_name'] : 'yii2advancedtest' ?>"/>
-                <p>我们的数据表格所要使用的库，请保证你所填的库中数据没有他用，否则会导致数据丢失。</p>
+                <p>我们的数据表格所要使用的库，请确保数据库中没有同名库或同名库数据没有用，否则会导致数据丢失。</p>
             </td>
         </tr>
         <tr>
