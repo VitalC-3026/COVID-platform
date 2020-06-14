@@ -20,16 +20,20 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/ckeditor/ck
                 <li class="active">信息编辑</li>
             </ul>
             <!--breadcrumbs end -->
-            <h1 class="h1">图文信息</h1>
+            <h1 class="h1">新闻公告编辑</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <?php $form = ActiveForm::begin(['id' => 'news-edit',
+                    <?php $form = ActiveForm::begin([
+                        'id' => 'news-edit',
+                        'options' => [
+                            'style'=>'width:95%; margin-left: 20px',
+                        ],
                         'fieldConfig' =>[
-                            'errorOptions' => ['class' => 'text-danger']
+                            'errorOptions' => ['class' => 'text-danger'],
                         ]
                     ]); ?>
                     <div class="form-group">

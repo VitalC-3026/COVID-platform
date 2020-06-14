@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+use common\models\TeamMember;
 
 AppAsset_b::register($this);
 ?>
@@ -256,14 +257,14 @@ AppAsset_b::register($this);
                         </a>
                         <ul class="dropdown-menu animated fadeInDown">
                             <li>
-                                <?php if(Yii::$app->user->identity->type === 4):  ?>
+                                <?php if(TeamMember::findOne(Yii::$app->user->identity->account) !== null):  ?>
                                     
-                                    <a href="<?= \yii\helpers\Url::to(['/backend/site/profile']); ?>"><i class="fa fa-user"></i> Profile</a>
+                                    <a href="<?= \yii\helpers\Url::to(['/backend/site/profile']); ?>"><i class="fa fa-user"></i> 个人信息</a>
                                     
                                 <?php endif ?>
                             </li>
                             <li>
-                                <a href="javascript:;" onclick="javascript:logout();"><i class="fa fa-power-off"></i> Logout</a>
+                                <a href="javascript:;" onclick="javascript:logout();"><i class="fa fa-power-off"></i> 登出</a>
                                 <script type="text/javascript">
                                     function logout(){
                                          window.location.href="<?php echo Yii::$app->getHomeUrl(); ?>";

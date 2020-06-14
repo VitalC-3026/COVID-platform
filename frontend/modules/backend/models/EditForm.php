@@ -49,7 +49,7 @@ class EditForm extends Model
         }
         $news->date = $date;
         $news->time = $time;
-        $news->id = News::find()->max('id') + 1;
+        // $news->id = News::find()->max('id') + 1; 因为id是自增的，所以无需插入，让数据库自行判断并生成
         return $news->save();
     }
 

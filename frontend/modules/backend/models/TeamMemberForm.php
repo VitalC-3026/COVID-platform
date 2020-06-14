@@ -21,6 +21,7 @@ class TeamMemberForm extends Model
     public $info;       
     public $is_Leader;  
     public $account;
+    public $icon;
     public string $password = '';    
 
     // rules
@@ -42,6 +43,9 @@ class TeamMemberForm extends Model
             
             ['link', 'required','message' => '作业链接不能为空'],
             ['link', 'string','message' => '请输入正确的链接'],
+
+            ['icon', 'required','message' => '头像链接不能为空'],
+            ['icon', 'string','message' => '请输入正确的链接'],
             
             ['id', 'required','message' => '编号不能为空'],
             ['id', 'string', 'min' => 7, 'max' => 7,'tooShort'=> '长度为7位','tooLong' => '长度为7位'],
@@ -65,6 +69,7 @@ class TeamMemberForm extends Model
             $teammember->id = $this->id;
             $teammember->link = $this->link;
             $teammember->info = $this->info;
+            $teammember->icon = $this->icon;
             return $teammember->update();
              
         }
@@ -107,12 +112,23 @@ class TeamMemberForm extends Model
         if($t !== null) {
             if($t->id !== null) {
                 $this->id = $t->id;
+            } else{
+                $this->id = '';
             }
             if($t->link !== null) {
                 $this->link = $t->link;
+            } else{
+                $this->link = '';
             }
             if($t->info !== null) {
                 $this->info = $t->info;
+            } else{
+                $this->info = '';
+            }
+            if($t->icon !== null) {
+                $this->icon = $t->icon;
+            } else{
+                $this->icon = '';
             }
             $user = User::findIdentity($t->account);
             $this->account = $t->account;

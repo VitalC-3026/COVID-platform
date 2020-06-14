@@ -87,18 +87,22 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'value' => function($data) {
                                       return ($data->username !== null) ? $data->username : '' ;
                                   },
+                                  'headerOptions' => [
+                                    'style' => 'width:100px;',
+                                  ],
+                                  'contentOptions' => [
+                                      'width'=>'120px'
+                                  ]
                                 ],
                                 [
                                   'label' => '性别',
-                                  //设置筛选选项
-                                  'filter' => [1 => '男', 0 => '女'],
                                   'attribute' => 'sex',
                                   'format' => 'raw',
                                   'value' => function($data){
                                     return ($data->sex === 1) ? '男' : '女';
                                   },
                                   'headerOptions' => [
-                                    'style' => 'width:60px;',
+                                    'style' => 'width:80px;',
                                   ],
                                 ],
                                 [
@@ -106,7 +110,10 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'attribute' => 'age',
                                   'format' => 'raw',
                                   'headerOptions' => [
-                                    'style' => 'width:60px;',
+                                    'style' => 'width:80px;',
+                                  ],
+                                  'contentOptions' => [
+                                      'width'=>'80px'
                                   ],
                                   'value' => function($data) {
                                       return ($data->age !== null) ? $data->age : '' ;
@@ -131,6 +138,9 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'headerOptions' => [
                                     'style' => 'width:60px;',
                                   ],
+                                  'contentOptions' => [
+                                      'width'=>'80px'
+                                  ]
                                 ],
                                 
                                 [
@@ -138,7 +148,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'attribute' => 'resident.building',
                                   'format' => 'raw',
                                   'headerOptions' => [
-                                    'style' => 'width:60px;',
+                                    'style' => 'width:80px;',
                                   ],
                                 ],
                                 [
@@ -146,7 +156,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'attribute' => 'resident.room',
                                   'format' => 'raw',
                                   'headerOptions' => [
-                                    'style' => 'width:100px;',
+                                    'style' => 'width:120px;',
                                   ],
                                 ],
                                 [
@@ -156,6 +166,13 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'template' => '{update} {delete}',
                                   //下面的按钮设置，与上面的模板设置相关联
                                   'buttons' => [
+                                    'update' => function ($url, $model, $key) {
+                                      return Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['update', 'id' => $model->account], [
+                                        'data' => [
+                                            'method' => 'post',
+                                        ]
+                                      ]);
+                                    },
                                     'delete' => function ($url, $model, $key) {
                                       return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->account], [
                                         'data' => [

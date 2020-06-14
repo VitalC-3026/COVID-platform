@@ -14,22 +14,22 @@ use common\models\Resident;
  */
 class ResidentSearch extends User
 {
-    public string $building;
-    public string $unit;
-    public string $room;
+    public $building;
+    public $unit;
+    public $room;
 
     // rules
     public function rules(){
         return [
           [['building', 'unit', 'room'], 'safe'],
+          [['account','username'],'string',"message" => "请正确输入"],
+          [['account','username'],'trim']
         ];
     }
 
     public function search($params) {
         $query = User::find();
         $query->joinWith('resident', true, 'INNER JOIN');
-        // $query = self::find()->with('user');
-        // $query = self::find()->where(['account' => Yii::$app->user->identity->account]);
         $provider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -68,7 +68,7 @@ class ResidentSearch extends User
             return $provider;
         }
 
-        $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like', 'username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
+        $query->andFilterWhere(['like', 'resident.account', $this->account])->andFilterWhere(['like', 'username', $this->username]);
 
         return $provider;
     } 
@@ -82,7 +82,4 @@ class ResidentSearch extends User
         $query = Resident::find()->all();
         return count($query);
     }
-
-
-
 }

@@ -11,6 +11,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use common\models\TeamMember;
 
 AppAsset::register($this);
 AppAsset_b::register($this);
@@ -38,6 +39,7 @@ AppAsset_b::register($this);
         <link rel="stylesheet" href="assets/frontend/css/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="assets/frontend/css/tiny-slider.css">
         <link rel="stylesheet" href="assets/frontend/fonts/lineicons/LineIcons.min.css">
+
         <link rel="stylesheet" href="assets/frontend/fonts/icomoon/style.css">
         <link rel="stylesheet" href="assets/frontend/css/animate.min.css">
         <link rel="stylesheet" href="assets/frontend/css/jquery.lavalamp.css">
@@ -95,7 +97,8 @@ AppAsset_b::register($this);
                                 $menuItems[] = ['label' => '健康日报', 'url' => ['/site/healthreport']];
                                 $menuItems[] = ['label' => '修改信息', 'url' => ['/site/modify']];
 
-                                if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2 || Yii::$app->user->identity->type == 4) {
+
+                                if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2 || \common\models\TeamMember::isMember(Yii::$app->user->identity->account)) {
                                     $menuItems[] = ['label' => '后台管理', 'url' => ['/backend/site/index']];
                                 }
 
@@ -122,21 +125,14 @@ AppAsset_b::register($this);
             </nav>
         </header>
         <!-- END: #site-header -->
-
-
         <!--      这里是页面显示的部分-->
         <div>
             <?= $content ?>
         </div>
-
-
         <!-- BEGIN: .cover -->
-
         <!-- END: .cover -->
 
-
         <!-- BEGIN: #main -->
-
         <!-- END: #main -->
 
         <!-- BEGIN: #footer -->

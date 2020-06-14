@@ -26,36 +26,66 @@ use yii\helpers\Html;
                         </div>                        
                         <div class="panel-body">
                             <div class="row" style="width: 95%; margin-left: 10px">
-                                <div class="tab-wrapper tab-left" >
-                                    <ul class="nav nav-tabs" margin-left="20px">
-                                        <li class="active">
+                                <?php if(sizeof($team)===5):?>
+                                    <div class="tab-wrapper tab-left" >
+                                        <ul class="nav nav-tabs" margin-left="20px">
+                                            <li class="active">
                                                 <a href="#profile0" data-toggle="tab">
                                                     <?= sizeof($team) > 0 ? $team[0]['name'] : '无人' ?></a>
-                                        </li>
-                                        <li>
-                                            <?php for($i = 1; $i < sizeof($team); $i++): ?>
-                                            
-                                                <a href="<?php echo '#profile'.$i ?>" data-toggle="tab">
-                                                    <?= $team[$i]['name'] ?></a>
-                                            
-                                            <?php endfor ?>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="profile0">
-                                            <div style="font-size: 20px"><i class="fa fa-comment">    看看Ta想说什么？</i></div>
-                                            <p style="font-size: 15px"><?= sizeof($team) > 0 ? $team[0]['info'] : '无结果'; ?>
-                                            </p>
-                                        </div>
-                                        <?php for($i = 1; $i < sizeof($team); $i++): ?>
-                                            <div class="tab-pane" id="<?php echo 'profile'.$i ?>">
-                                                <div style="font-size: 20px"><strong><i class="fa fa-comment">    看看Ta想说什么？</i></strong></div>
-                                                <p style="font-size: 15px"><?= $team[$i]['info']; ?>
+                                            </li>
+                                            <li>
+                                                <a href="#profile1" data-toggle="tab">
+                                                        <?= $team[1]['name'] ?></a>
+                                            </li>
+                                            <li>
+                                                <a href="#profile2" data-toggle="tab">
+                                                        <?= $team[2]['name'] ?></a>
+                                            </li>
+                                            <li>
+                                                <a href="#profile3" data-toggle="tab">
+                                                        <?= $team[3]['name'] ?></a>
+                                            </li>
+                                            <li>
+                                                <a href="#profile4" data-toggle="tab">
+                                                        <?= $team[4]['name'] ?></a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="profile0">
+                                                <div style="font-size: 20px"><i class="fa fa-comment">    看看Ta想说什么？</i></div><hr>
+                                                <p style="font-size: 15px"><?= sizeof($team) > 0 ? $team[0]['info'] : '无结果'; ?>
                                                 </p>
                                             </div>
-                                        <?php endfor ?>
+                                            
+                                            <div class="tab-pane" id="profile1">
+                                                <div style="font-size: 20px"><i class="fa fa-comment">    看看Ta想说什么？</i></div><hr>
+                                                    <p style="font-size: 15px"><?= $team[1]['info']; ?>
+                                                    </p>
+                                            </div>
+
+                                            <div class="tab-pane" id="profile2">
+                                                <div style="font-size: 20px"><i class="fa fa-comment">    看看Ta想说什么？</i></div><hr>
+                                                    <p style="font-size: 15px"><?= $team[2]['info']; ?>
+                                                    </p>
+                                            </div>
+
+                                            <div class="tab-pane" id="profile3">
+                                                <div style="font-size: 20px"><i class="fa fa-comment">    看看Ta想说什么？</i></div><hr>
+                                                    <p style="font-size: 15px"><?= $team[3]['info']; ?>
+                                                    </p>
+                                            </div>
+
+                                            <div class="tab-pane" id="profile4">
+                                                <div style="font-size: 20px"><i class="fa fa-comment">    看看Ta想说什么？</i></div><hr>
+                                                    <p style="font-size: 15px"><?= $team[4]['info']; ?>
+                                                    </p>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
-                                </div>
+                                    <?php else: ?>
+                                        <div style="font-size: 20px"><i class="fa fa-bullhorn">    人数不对？你和你的团队可能走丢了！</i></div>
+                                    <?php endif ?>
                             </div>
                             
                         </div>                      
@@ -283,7 +313,9 @@ use yii\helpers\Html;
                                     <?= $form->field($model, 'id')->textInput(['autofocus' => true])->label('编号'); ?>
                                     <?= $form->field($model, 'link')->textInput(['autofocus' => true])->label('作业链接'); ?>
                                     <?= $form->field($model, 'info')->textArea(['autofocus' => true, 'style'=>' max-width: 100%'])->label('简介'); ?>
+                                    <?= $form->field($model, 'icon')->textInput(['autofocus' => true])->label('头像链接'); ?>
                                     <div class="form-group">
+
                                         <div class="col-sm-6" align="right">
                                             <?= Html::submitButton('修改', ['class' => 'btn btn-primary', 'name' => 'save-button']) ?>
                                             <?= Html::resetButton('重置', ['class' => 'btn btn-primary', 'name' => 'reset-button']) ?>

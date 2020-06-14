@@ -23,6 +23,8 @@ class CommitteeSearch extends User
     public function rules(){
         return [
           [['in_date', 'is_admin', 'id'], 'safe'],
+          [['account','username'],'string','message'=>'请正确输入字段'],
+          [['account','username'],'trim'],
         ];
     }
 
@@ -62,7 +64,7 @@ class CommitteeSearch extends User
             return $provider;
         }
 
-        $query->andFilterWhere(['account' => $this->account])->andFilterWhere(['like', 'username' => $this->username])->andFilterWhere(['sex' => $this->sex])->andFilterWhere(['age' => $this->age]);
+        $query->andFilterWhere(['like', 'account', $this->account])->andFilterWhere(['like', 'username', $this->username]);
 
         return $provider;
     }

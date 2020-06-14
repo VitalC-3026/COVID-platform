@@ -23,11 +23,13 @@ class Resident extends ActiveRecord
     }
 
     // basic setters
+    public function setAccount($account) { $this->account = $account; }
     public function setBuilding($building) { $this->building = $building; }
     public function setUnit($unit) { $this->unit = $unit; }
     public function setRoom($room) { $this->room = $room; }
 
     // basic getters
+    public function getAccount() { return $this->account; }
     public function getBuilding() { return $this->building; }
     public function getUnit() { return $this->unit; }
     public function getRoom() { return $this->room; }

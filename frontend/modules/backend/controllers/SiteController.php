@@ -57,7 +57,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1 && Yii::$app->user->identity->type != 4))
+        if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1 && TeamMember::findOne(Yii::$app->user->identity->type) !== null))
             return $this->goHome();
         $resident = new ResidentSearch();
         $committee = new CommitteeSearch();
