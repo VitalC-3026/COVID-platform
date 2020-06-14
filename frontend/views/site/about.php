@@ -306,7 +306,7 @@ else {
                                 <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A1(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip"><?= $teamers == null ? '关云长' : $teamers_user[0]->name ?>-js真有意思</a></li>
                                 <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip"><?= $teamers == null ? '黄汉升' : $teamers_user[1]->name ?>-入门？入土？</a></li>
                                 <li><a href="https://github.com/VitalC-3026/Internet"><?= $leader_user==null?'刘玄德':$leader_user->name?>-啊，大脑会了，手不会</a></li>
-                                <li><a href="#"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-大脑都不会呀</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-大脑都不会呀</a></li>
                                 <li><a href="https://github.com/Pixie-King/homework_net/blob/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811444_%E8%82%96%E4%B8%AD%E9%81%A5%EF%BC%89.pdf"><?= $teamers == null ? '赵子龙' : $teamers_user[3]->name ?>-JavaScript？我会Java</a></li>
                             </ul>
                         </div>
@@ -332,7 +332,7 @@ else {
                                 <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A2(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip"><?= $teamers == null ? '关云长' : $teamers_user[0]->name ?>-灵魂画手</a></li>
                                 <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip"><?= $teamers == null ? '黄汉升' : $teamers_user[1]->name ?>-设计了一点好康的</a></li>
                                 <li><a href="https://github.com/VitalC-3026/Internet"><?= $leader_user==null?'刘玄德':$leader_user->name?>-这就叫专业</a></li>
-                                <li><a href="#"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-八手外包设计</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-八手外包设计</a></li>
                                 <li><a href="https://github.com/Pixie-King/homework_net/blob/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811444_%E8%82%96%E4%B8%AD%E9%81%A5%EF%BC%89.pdf"><?= $teamers == null ? '赵子龙' : $teamers_user[3]->name ?>-除了好看一无是处</a></li>
                             </ul>
                         </div>
@@ -357,7 +357,7 @@ else {
                                 <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A3(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip"><?= $teamers == null ? '关云长' : $teamers_user[0]->name ?>-这个wp下载好慢</a></li>
                                 <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip"><?= $teamers == null ? '黄汉升' : $teamers_user[1]->name ?>-删库，跑路</a></li>
                                 <li><a href="https://github.com/VitalC-3026/Internet"><?= $leader_user==null?'刘玄德':$leader_user->name?>-插件拉满，看看效果</a></li>
-                                <li><a href="#"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-竟然只用鼠标点点点就行</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-竟然只用鼠标点点点就行</a></li>
                                 <li><a href="https://github.com/Pixie-King/homework_net/blob/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811444_%E8%82%96%E4%B8%AD%E9%81%A5%EF%BC%89.pdf"><?= $teamers == null ? '赵子龙' : $teamers_user[3]->name ?>-啊，我们使用的是一个开源网站吗？</a></li>
                             </ul>
                         </div>
@@ -383,7 +383,7 @@ else {
                                 <li><a href="https://github.com/fengjk12138"><?= $teamers == null ? '关云长' : $teamers_user[0]->name ?>-才不要你来我github呢</a></li>
                                 <li><a href="https://github.com/NickSkyyy"><?= $teamers == null ? '黄汉升' : $teamers_user[1]->name ?>-你看这个star竟然可以点</a></li>
                                 <li><a href="https://github.com/VitalC-3026"><?= $leader_user==null?'刘玄德':$leader_user->name?>-不就是代码么，push就是了</a></li>
-                                <li><a href="#"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-码量发量反比例</a></li>
+                                <li><a href="https://github.com/king-wk"><?= $teamers == null ? '曹孟德' : $teamers_user[2]->name ?>-码量发量反比例</a></li>
                                 <li><a href="https://github.com/Pixie-King"><?= $teamers == null ? '赵子龙' : $teamers_user[3]->name ?>-两个字形容“码怪”</a></li>
                             </ul>
                         </div>
