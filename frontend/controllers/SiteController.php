@@ -268,11 +268,10 @@ class SiteController extends Controller
         {
             if ($model->submit())
             {
-                $comments = Comments::findAll(['New_id' => $id]);
                 return $this->redirect('site/comments', [
                     'news' => $news,
                     'comments' => $comments,
-                    'model' => $model,
+                    'model' => $model
                 ]);
             }
         }
