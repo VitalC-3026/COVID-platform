@@ -2,9 +2,6 @@
 
 use frontend\assets\AppAsset_b;
 use common\widgets\Alert;
-AppAsset_b::addScript($this, 'assets/plugins/morris/js/morris.min.js');
-AppAsset_b::addScript($this, 'assets/plugins/morris/js/raphael.2.1.0.min.js');
-AppAsset_b::addScript($this, '@web'.'/assets/plugins/morris/js/morris-example.js');
 ?>
 <?= Alert::widget() ?>
 <div id="main-content">

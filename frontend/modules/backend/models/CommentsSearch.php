@@ -20,6 +20,7 @@ class CommentsSearch extends Comments
     public function rules(){
         return [
           [['abstract', 'title'], 'safe'],
+          [['title','author'],'string'],
         ];
     }
 
@@ -47,7 +48,7 @@ class CommentsSearch extends Comments
             return $provider;
         }
 
-        $query->andFilterWhere(['id' => $this->id])->andFilterWhere(['like', 'author' => $this->author]);
+        $query->andFilterWhere(['like', 'news.title', $this->title])->andFilterWhere(['like', 'author', $this->author]);
 
         return $provider;
     } 

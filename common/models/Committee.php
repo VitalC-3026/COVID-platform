@@ -93,6 +93,7 @@ class Committee extends ActiveRecord
         $user = User::findOne($account);
         $user->type = 3;
         $user->update();
+        
     }
 
     // basic setters

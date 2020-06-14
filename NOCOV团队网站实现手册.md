@@ -1,4 +1,4 @@
-# NOCOV团队网站实现手册
+# NoCov团队网站实现手册
 
 | 成员姓名 | 成员学号 | github地址 | 邮箱 |
 | -------- | -------- | ---------- | ---- |
@@ -6,7 +6,7 @@
 
 ## 一、项目部署与模板导入
 
-### 1.1 项目部署
+### 1.1 初始化项目部署
 
 首先下载yii框架的归档文件，运行init.bat选择Development开发环境。
 
@@ -15,6 +15,8 @@
 新建数据库并修改数据库配置/common/config/main-local.php，执行命令“yii.bat migrate”。
 
 以上完成了yii基础框架的部署，然后将/frontend/assets/AppAsset.php中的$depends注释掉，进行自己的模板导入。
+
+作业完成并最终进行展示的部署过程，详见部署文档。
 
 ### 1.2 模板导入
 
@@ -26,7 +28,7 @@
 
 后台的模板导入方法类似，不再赘述。
 
-(jk补充)
+# **(jk补充)**
 
 为了方便进行前后台连接，我们将后台做成了modules。
 
@@ -387,7 +389,7 @@ public function countLow(){
 
 查询后要除总数并保留四位小数再*100，即可实现百分比。
 
-<<<<<<< HEAD
+
 ### 4.2 社区数据库模块
 
 #### 4.2.1 居民数据库
@@ -594,29 +596,220 @@ public function getResident()
 }
 ```
 
-### 4.2 居民职员数据库
-
 
 
 #### 4.2.2 职员数据库
 
-职员数据库的整体设计与居民数据库无差，有一些权限上的限制，下面进行细化的的限制。
+职员数据库的整体设计与居民数据库整体上无差，有两个地方有区别，一个是修改职员信息的时候是不能修改职员的等级和分配的职权，只能修改基础信息，具体修改会在职员职权分配上实现。另一个是在新增职员时，如果职员等级是超级管理员，则自动会给他分配所有的职权；如果职员等级是普通职员，即使在新增职员时点击了查看数据库，也会在插入时去掉。具体更细化的职权限制，详见4.3职员职权分配。
+
+```php
+$priorityType = PriorityType::find()->all();
+    if($this->priority === 2) {
+        foreach ($priorityType as $p) {
+            $priorityList = new PriorityList();
+            $priorityList->setAccount($this->account);
+            $priorityList->setPriority($p->priority);
+            $priorityList->save();
+        }
+    } else {
+        for ($i = 0; $i < sizeof($this->rights); $i++) {
+        if ($this->rights[$i] == 0 || $this->rights[$i] == 1) {
+            continue;
+        }
+        $grantPriority = new PriorityList();
+        $grantPriority->account = $this->account;
+        $grantPriority->priority = $this->rights[$i];
+        $grantPriority->save();
+    }
+}
+```
+
+在职员删除时有一个细节处理，因为发布新闻的职员要对相关新闻负责，一旦这个职员离职，那么他发布新闻的将会被挂靠到其他的职员中。由于未能成功实现弹窗给用户选择交付对象，所以目前实现的是随机选择一名职员承担相关新闻。
+
+```php
+public static function deleteCommittee($account) {
+    $committees = PriorityList::find()->where(['priority' => 3])->joinWith('committee')->orderBy(['in_date' => SORT_DESC])->all();
+    foreach ($committees as $c) {
+        if($c->account !== $account) {
+            $newsList = News::find()->where(['account'=>$account])->all();
+            if($newsList === null || !isset($newsList)) break;
+            foreach ($newsList as $n) {
+                $n->account = $c->account;
+                $n->Com_id = $c->id;
+                $n->update();
+            }
+            break;
+        }
+    }
+    $committee = Committee::find()->where(['account' => $account])->one();
+    $committee->delete();
+    $user = User::findOne($account);
+    $user->type = 3;
+    $user->update();
+
+}
+```
 
 
-### 
 
-### 4.3 职员权限分配
+### 4.3 职员职权分配
+
+职员的职权分配界面如下，将分为三个板块进行实现的记录。
+
+![rights](E:\NKU\Database\team-pictures\rights.png)
+
+#### 4.3.1 搜索并显示职员信息
+
+左上方是搜索并显示职员信息的布局。其中输入框和搜索按钮是通过yii/widgets/ActiveForm进行包装，进行参数的获取和传递。因为yii本身有csrf安全保护机制，而单纯用html的form表单的话需要隐式地提交csrf的验证码，比较不可靠，所以还是直接使用ActiveForm比较合理。
+
+在siteController的actionRights函数中，对应这个表单和下面表格的处理代码如下：
+
+```php
+$search = new SearchForm();
+if ($search->load(Yii::$app->request->post())) {
+    if ($search->searchByAccount()) {
+        $id = $search->searchByAccount();
+    } else {
+        $id = Yii::$app->user->identity->account;
+    }
+} else {
+    $id = Yii::$app->user->identity->account;
+}
+...
+$user = new ActiveDataProvider([
+    'query' => User::find()->where(['account' => $id]),
+]);
+```
+
+如果当前有表单返回的信息，则根据搜索结果进行查找并显示，否则显示当前的职员自己的信息。在信息显示的地方有一个提升等级，如果当前用户是超级管理员的话，那么这个提升等级按钮会显示，如果不是的话，这个按钮就不显示。这表示只有超级管理员可以对其他职员进行等级的提升。
+
+#### 4.3.2 职权分配
+
+右上方是职权分配的多选框，当一个职员的信息在左上方显示之后，其对应的职权就会显示在右上方。默认打勾的是他目前有的职权。重新勾选就会对其职权进行重新的分配，涉及到对`priorityList`这个表的数据项的增加、查询和删除操作。这里同样是使用ActiveForm进行包装。在实际开发过程中，对checkBoxList这个ActiveField的处理，一定要注意：接收这个多选框结果值的变量需要在表单中的rules添加这样一条信息 `['rights','safe']`，否则无法返回正确值。这个表单中还隐式提交了职权所对应的职员$account，以便进行职权处理。
+
+考虑到拥有职权分配的权限是很大的权力，因此需要对职员进行相应的限制。细化的限制如下表。
+
+#### 4.3.3 职权简介
+
+下方是职权简介的介绍，通过yii/widgets/ListView更灵活的布局来实现一个可以下拉、收起的简介栏目。具体实现如下：
+
+```php
+/* View:rights */
+<div class="panel panel-default" margin-top="50px">
+    <div class="panel-heading">
+    	<h3 class="panel-title">职权简介</h3>
+    </div>
+    <div class="panel-body">
+        <?php echo ListView::widget([
+            'dataProvider' => $priorityProvider,
+            'itemView' => 'priorityList',
+            'emptyText' => '无结果',
+            'viewParams' => [
+            ],
+            'layout' => '{items}',
+            'itemOptions' => [
+                'tag' => 'div',
+                'class' => 'col-lg-12'
+            ],
+        ]); ?>                                                   
+    </div>
+</div>
+            
+            
+/* itemView 对应的priorityList */
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="<?php echo '#'.$model->priority?>" class="collapsed"><?= $model->name ?></a>
+        </h4>
+    </div>
+    <div id="<?= $model->priority?>" class="panel-collapse collapse">
+        <div class="panel-body">
+            <p><?= $model->information ?></p>
+        </div>
+    </div>
+</div>
+```
+
+
 
 
 
 ### 4.4 新闻公告模块
 
+新闻公告模块有三个部分，分别是新闻公告编辑，新闻公告审核，评论审核。拥有相应职权的职员可以点击进入，开展自己的工作。界面展示如下。
+
+新闻公告编辑主要是表单的提交。
+
+![edit](E:\NKU\Database\team-pictures\edit.png)
+
+评论审核主要是列表以及ActionColumn的操作。操作这一栏点击一个小勾，就可以完成审核，在前台页面上展示这条评论，具体前台展示评论的规则记录于 ？？
+
+- [ ] # **【QXR补充】**
+
+![comments](E:\NKU\Database\team-pictures\comments.png)
+
+新闻公告的审核界面如下。
+
+![news](E:\NKU\Database\team-pictures\news.png)
+
+左栏是通过yii/widgets/ListView进行灵活布局设计，其中使用了yii/helpers/Html设计了查看和删除信息的按钮。列表显示所有的新闻。点击眼睛就会在右栏呈现详细的信息。右半部分的时间是显示今日的日期，点击审核通过按钮就表示通过，左栏的摘要前会显示绿色钩，未审核通过的是红色叉。实现小按钮的方法如下：
+
+值得注意的是，因为外键的限制，在一条新闻删除时，它的评论也会相应删除。
+
+```php
+/*左栏的查阅与删除按钮 View: newsList*/
+<?= Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['view', 'id' => $model->id], ['title' => '查看',]) ?>
+<?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id],[
+        'title' => '删除',
+        'onclick' => 'return confirm("删除后将无法恢复数据 确认删除？");'
+    ])?>
+    
+/* 对应在newsController的action函数*/
+public function actionDelete($id){
+    if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        return $this->goHome();
+    $priority = PriorityType::find()->where(['name' => '发布公告']);
+    if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+        Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
+        return $this->redirect(['/backend/site/index']);
+    }
+
+    if($id === -1) {
+        return $this->redirect(['index']);
+    }
+    Comments::deleteAll(['New_id' => $id]);
+    $model = News::findOne($id);
+    if ($model !== null) {
+        $model->delete();
+    }
+    return $this->redirect(['/backend/news/index']);
+}
+
+public function actionView($id) {
+    if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
+        return $this->goHome();
+    $priority = PriorityType::find()->where(['name' => '发布公告']);
+    if(!Committee::hasPriority(Yii::$app->user->identity->account, $priority)){
+        Yii::$app->getSession()->setFlash('error', '您没有权限访问！');
+        return $this->redirect(['/backend/site/index']);
+    }
+    return $this->redirect(['/backend/news/index', 'id' => $id]);
+}
+```
+
+
 
 ### 4.5 专业团队的个人信息模块
 
+团队主页分成四个模块。分别是团队成员信息，团队信息，个人信息修改以及账号挂靠修改。其中团队成员信息和团队信息是通过有停靠栏的布局进行设计。团队信息中的详细情况用css做了一个简单的旋转圆形，为操劳的程序员们增添一些动感。个人信息的修改和挂靠账户的修改都是以ActiveForm封装的表单提交。如果用户是队长的话，可以修改团队信息，修改的表单同样是以ActiveForm封装的表单。更详细的界面展示请参看用户手册。
 
+![profile](E:\NKU\Database\team-pictures\profile.png)
+
+关于账户挂靠，我们允许程序员更换，但前提是需要输入的账号是已经在数据库中的注册过的用户，并且输入正确的密码进行验证。
 
 ### 4.6 齐心抗“疫”模块
+
 其MVC过程与居民职员数据库几乎完全一致，只需在联表查询时加入条件只显示体温异常人员。这里就不再赘述。
 ```php
 public function search($params)

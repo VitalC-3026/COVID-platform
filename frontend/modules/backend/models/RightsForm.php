@@ -26,20 +26,18 @@ class RightsForm extends Model
     }
 
     public function setRights(){
-        $count = PriorityList::deleteAll(['account' => $this->account]);
+        PriorityList::deleteAll(['account' => $this->account]);
         for ($i = 0; $i < sizeof($this->rights); $i++) {
                 $grantPriority = new PriorityList();
                 $grantPriority->account = $this->account;
                 $grantPriority->priority = $this->rights[$i];
-                $grantPriority->save();
-            
-            
+                $grantPriority->save();       
         }
         return true;
     }
 
 
-    public function beforeSave($insert) {
+    /*public function beforeSave($insert) {
         if($this->rights) {
             $this->rights = implode(',',$this->rights);
      
@@ -50,7 +48,7 @@ class RightsForm extends Model
     public function afterFind() {
         $this->rights = explode(',',$this->rights);
         parent::afterFind();
-    }
+    }*/
 
     
 }
