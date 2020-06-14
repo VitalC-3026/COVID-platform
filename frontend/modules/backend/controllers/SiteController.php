@@ -67,7 +67,7 @@ class SiteController extends Controller
                 $health->countLow(), $health->countNormal(), $health->countHigh()]]);
     }
 
-    public function actionRights()
+    public function actionRights($id = '')
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1)) {
             return $this->goHome();
@@ -79,16 +79,17 @@ class SiteController extends Controller
             return $this->redirect(['index']);
         }
 
+        if($id === ''){
+            $id = Yii::$app->user->identity->account;
+        } 
+
         $search = new SearchForm();
         if ($search->load(Yii::$app->request->post())) {
             if ($search->searchByAccount()) {
-                $id = $search->searchByAccount();
-            } else {
-                $id = Yii::$app->user->identity->account;
-            }
-        } else {
-            $id = Yii::$app->user->identity->account;
-        }
+                $id = $search->account;
+            } 
+        } 
+
         $rightsForm = new RightsForm();
         $rightsForm->account = $id;
 
@@ -146,9 +147,15 @@ class SiteController extends Controller
             Yii::$app->getSession()->setFlash('error', '您的等级过低，无法晋升超级管理员！');
             return $this->redirect(['index']);
         }
-        Committee::updatePriority($id);
-        Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
-        return $this->redirect(['rights']);
+        $committee = Committee::findOne($id);
+        if($committee !== null) {
+            $committee->updatePriority();
+            Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
+        } else {
+            Yii::$app->getSession()->setFlash('error', '晋升超级管理员失败！');
+        }
+        
+        return $this->redirect(['rights', 'id' => $id]);
     }
 
     public function actionRequestlist()

@@ -158,6 +158,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                   
                                 ],
                               ],
+
                             ]); ?>
                           </div>
                       </div>

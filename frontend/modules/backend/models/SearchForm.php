@@ -29,13 +29,11 @@ class SearchForm extends Model
         if(!$this->validate()) {
             return false;
         }
-        $priority = PriorityType::find()->where(['name' => '分配权限']);
-        if (Yii::$app->user->identity->type !== 2 && PriorityList::find()->where(['priority' => $priority, 'account' => Yii::$app->user->identity->account])->all() === null) {
-            return false;
-        }
+        /**/
         $user = User::find()->where(['account' =>$this->account])->one();
         if (!empty($user) && ($user->type === 1 || $user->type === 2)) {
-            return $user->account;
+            $this->account = $user->account;
+            return true;
         }
         return false;
     }

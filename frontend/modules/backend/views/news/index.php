@@ -57,7 +57,6 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
                     </div>
                 </div>
             </section>
-
         </div>
         <div class="col-md-6 col-sm-12" id="view-mail-wrapper">
             <div class="panel">

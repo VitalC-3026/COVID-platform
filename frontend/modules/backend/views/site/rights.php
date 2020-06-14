@@ -70,8 +70,6 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'id' => 'committeeRightsGridView',
                                   //设置数据提供器
                                   'dataProvider' => $provider,
-                                  /*//设置筛选模型
-                                  'filterModel' => $model,*/
                                   'emptyText' => '无结果',
                                   'showOnEmpty' => true,
                                   'summary' => '',

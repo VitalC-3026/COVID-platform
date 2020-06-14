@@ -8,8 +8,9 @@ use yii\db\ActiveRecord;
 /**
  * 社区工作者模型
  * @property string $account        身份证号
- * @property string $in_date         入职时间
- * @property bool   $is_admin        是否为超管
+ * @property string $in_date        入职时间
+ * @property bool   $is_admin       是否为超管
+ * @property bool   $id             职员编号
  */
 class Committee extends ActiveRecord
 {
@@ -56,18 +57,17 @@ class Committee extends ActiveRecord
         return false;
     }
 
-    public static function updatePriority($account) {
-        $user = User::findOne($account);
+    public function updatePriority() {
+        $user = User::findOne($this->account);
         $user->type = 2;
         $user->update();
-        $committee = static::findOne($account);
-        $committee->is_admin = 1;
-        $committee->update();
-        $priority = PriorityType::findAll($account);
+        $this->is_admin = 1;
+        $this->update();
+        $priority = PriorityType::find()->asArray()->all();
         foreach ($priority as $p) {
             $priorityList = new PriorityList();
-            $priorityList->account = $account;
-            $priorityList->priority = $p->priority;
+            $priorityList->account = $this->account;
+            $priorityList->priority = $p['priority'];
             if(!$priorityList->isExists()) {
                 $priorityList->save();
             }

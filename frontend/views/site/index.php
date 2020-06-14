@@ -448,7 +448,7 @@ $cnt = 2;
                         <figure class="video">
                             <!-- BEGIN: .video-play-button -->
                             <!-- Add '.bottom' class to make the button at the bottom position -->
-                            <a href="assets/frontend/video/video3.mp4" class="video-play-button bottom" data-fancybox=""
+                            <a href="https://vdept.bdstatic.com/6267654943624737614458777a486254/7354334378394449/70d882eed80f03bfaac60f212d7d45a1580a01dbc1752c2d63359c025c094f5cd2973035c5db6536b071f8b2a7c924bb88951790c09cfe5142c9d262a1e3e24e.mp4?auth_key=1592146213-0-0-9e1fc8785e4cf3e2d58622d1e9c8e981" class="video-play-button bottom" data-fancybox=""
                                data-ratio="2">
                                 <span class="icon icon-play"></span>
                             </a>
@@ -630,13 +630,13 @@ $cnt = 2;
                     <div class="section-heading">
                         <h2 class="section-heading heading-sm line-black">宣传小视频</h2>
                     </div>
-                    <a href="assets/frontend/video/video1.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                    <a href="https://vdept.bdstatic.com/73504a363941544e6662704b71747531/4d4c706754385463/26adf0cc5db9e21819a2c6d090fd8d01d37d1c6cba4e6b352b0e8c7066b934b62b73a2e5f0a4023b2fce5f5511e8e3e6.mp4?auth_key=1592146462-0-0-026949bf1687191f1745252f47ea4569" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
             <span class="play">
               <span class="icon-play"></span>
             </span>
                         <img src="assets/frontend/images/img_sm_7.jpg" alt="Image" class="img-fluid">
                     </a>
-                    <a href="assets/frontend/video/video2.mp4" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                    <a href="https://vdept.bdstatic.com/674876636c6e586e503651444e4b7049/314e724b47565575/59d0fabf5bc90eea186c9c0f46a156c3019242a58e54a60d0c17a5dd251e7e78eb2240d04cb5fc722ac45e302a2f1921ad32bb714a6b69cae02bfff7af560b6d.mp4?auth_key=1592146364-0-0-aca3e75c936e989b227afa92af79d029" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
             <span class="play">
               <span class="icon-play"></span>
             </span>
