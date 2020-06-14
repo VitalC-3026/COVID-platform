@@ -45,6 +45,8 @@ class CommitteeForm extends Model
             ['age', 'trim'],
             ['age', 'required','message' => '年龄不能为空'],
             ['age', 'number', 'min' => 18, 'max' => 70,'tooSmall'=> '年龄必须在18-70岁之间','tooBig' => '年龄必须在18-70岁之间'],
+
+            [['rights'], 'safe']
         ];
     }
 
@@ -110,10 +112,21 @@ class CommitteeForm extends Model
                 $priorityList = new PriorityList();
                 $priorityList->setAccount($this->account);
                 $priorityList->setPriority($p->priority);
-                $p = $priorityList->save();
+                $priorityList->save();
+            }
+        } else {
+            for ($i = 0; $i < sizeof($this->rights); $i++) {
+                if ($this->rights[$i] == 0 || $this->rights[$i] == 1) {
+                    continue;
+                }
+                $grantPriority = new PriorityList();
+                $grantPriority->account = $this->account;
+                $grantPriority->priority = $this->rights[$i];
+                $grantPriority->save();
             }
         }
-        if($p !== null && $c != null && $u != null) {
+
+        if($c != null && $u != null) {
             return true;
         } else {
             return false;

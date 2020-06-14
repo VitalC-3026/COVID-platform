@@ -73,6 +73,7 @@ class CommitteeController extends Controller
             return $this->redirect(['/backend/site/index']);
         }
         Committee::deleteCommittee($id);
+        Yii::$app->getSession()->setFlash('success', '您成功删除一条职员信息');
         return $this->redirect(['index']);
     }
 

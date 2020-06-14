@@ -34,12 +34,12 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                 <li><a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>">首页</a>
                 </li>
                 <li>社区数据库</li>
-                <li class="active">分配职员权限</li>
+                <li class="active">分配职权</li>
             </ul>
             <!--breadcrumbs end -->
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="h1">分配职员权限</h1>
+                    <h1 class="h1">分配职权</h1>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">分配职员权限</h3>
+                    <h3 class="panel-title">分配职权</h3>
                 </div>
                 <div class="panel-body">
                     <div role="grid" id="example_wrapper" class="dataTables_wrapper form-inline no-footer">
@@ -77,7 +77,7 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   'summary' => '',
                                   'columns' => [
                                     [
-                                      'header' => '提升权限',
+                                      'header' => '提升等级',
                                       'class' => 'yii\grid\ActionColumn',
                                       //设置显示模板
                                       'template' => '{update}',
@@ -134,37 +134,32 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                   ],
                                 ]); ?>
                               </div>
-                              <div class="col-lg-4">
-                                  <?php $form = ActiveForm::begin([
-                                        'id' => 'rights-form',
-                                        
-                                        'fieldConfig' => [
-                                            'template' => '<div class="row"><div class="col-md-4">{label}</div><div class="col-md-6-offset-2">{error}</div></div><hr>{input}',
-                                            'options' => ['class' => 'form-horizontal'],
-                                        ]
-                                    ]); ?>
-                                    
-                                    <?= $form->field($rightsForm, 'rights[]')->checkboxList($rightsArray, ['value' => $oldRights])->label('权限分配'); ?>
-                                    <br>
+                              <div class="col-lg-6">
+                                <?php $form = ActiveForm::begin([
+                                      'id' => 'rights-form',
+                                      'fieldConfig' => [
+                                          'template' => '<div class="row"><div class="col-md-4">{label}</div><div class="col-md-6-offset-2">{error}</div></div><hr>{input}',
+                                          'options' => ['class' => 'form-horizontal'],
+                                      ]
+                                  ]); ?>
+                                  
+                                  <?= $form->field($rightsForm, 'rights[]')->checkboxList($rightsArray, ['value' => $oldRights,'align'=>'left'])->label('职权分配'); ?>
+                                  <br>
 
-                                    <div class="form-group" align="right">
-                                        
-                                      <?= Html::submitButton('确认提交', ['class' => 'btn btn-primary']) ?>
-                                        
-                                    </div>
-                                    <?= Html::activeHiddenInput($rightsForm,'account',['value' => $id]) ?>
+                                  <div class="form-group">
+                                      
+                                    <?= Html::submitButton('确认提交', ['class' => 'btn btn-primary']) ?>
+                                      
+                                  </div>
+                                  <?= Html::activeHiddenInput($rightsForm,'account',['value' => $id]) ?>
                                 <?php ActiveForm::end(); ?>
                               </div>
                             </div>
                         </div>
 
-                        <div class="panel panel-default" margin-top="50px">
+                        <div class="panel panel-default" margin-top="50px" border="1px solid #ddd">
                             <div class="panel-heading">
                                 <h3 class="panel-title">职权简介</h3>
-                                <div class="actions pull-right">
-                                    <i class="fa fa-chevron-down"></i>
-                                    <i class="fa fa-times"></i>
-                                </div>
                             </div>
                             <div class="panel-body">
                                 
@@ -179,12 +174,6 @@ AppAsset_b::addScript($this, 'yii/COVID-platform/frontend/web/assets/plugins/dat
                                         'tag' => 'div',
                                         'class' => 'col-lg-12'
                                     ],
-                                    'pager' => [
-                                        'firstPageLabel' => '首页',
-                                        'prevPageLabel' => '<i class="fa fa-angle-double-left"></i>',
-                                        'nextPageLabel' => '<i class="fa fa-angle-double-right"></i>',
-                                        'lastPageLabel' => '尾页'
-                                    ]
                                 ]); ?>                                                   
                             </div>
                         </div>

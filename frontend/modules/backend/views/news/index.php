@@ -30,7 +30,7 @@ AppAsset_b::addCss($this, 'web/assets/plugins/icheck/css/_all.css');
 
             <section class="panel">
                 <header class="panel-heading wht-bg">
-                    <h3 class="gen-case">待审核消息
+                    <h3 class="gen-case">新闻公告列表
                     </h3>
                 </header>
                 <div class="panel-body minimal">

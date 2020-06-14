@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property string $info       个人简介
  * @property bool   $is_Leader  是否队长
  * @property string $account    挂靠的用户
+ * @property string $icon       头像链接
  */
 class TeamMember extends ActiveRecord
 {
@@ -49,6 +50,10 @@ class TeamMember extends ActiveRecord
     {
         $this->is_Leader = $is_Leader;
     }
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+    }
     /**
      * get 方法整合
      */
@@ -76,8 +81,22 @@ class TeamMember extends ActiveRecord
         return $this->is_Leader;
     }
 
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
     // 联表查询 User x TeamMember
     public function getUser() {
         return $this->hasOne(User::className(), ['account' => 'account']);
+    }
+
+    /**
+     * @param $account
+     * @return bool
+     */
+    public static function isMember($account)
+    {
+        return static::findOne(['account' => $account])!=null;
     }
 }
