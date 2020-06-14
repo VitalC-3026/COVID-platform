@@ -98,8 +98,6 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
                                 ],
                                 [
                                   'label' => '性别',
-                                  //设置筛选选项
-                                  'filter' => [1 => '男', 0 => '女'],
                                   'attribute' => 'sex',
                                   'format' => 'raw',
                                   'value' => function($data){

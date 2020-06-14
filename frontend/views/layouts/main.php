@@ -38,6 +38,7 @@ AppAsset_b::register($this);
         <link rel="stylesheet" href="assets/frontend/css/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="assets/frontend/css/tiny-slider.css">
         <link rel="stylesheet" href="assets/frontend/fonts/lineicons/LineIcons.min.css">
+
         <link rel="stylesheet" href="assets/frontend/fonts/icomoon/style.css">
         <link rel="stylesheet" href="assets/frontend/css/animate.min.css">
         <link rel="stylesheet" href="assets/frontend/css/jquery.lavalamp.css">
@@ -122,21 +123,14 @@ AppAsset_b::register($this);
             </nav>
         </header>
         <!-- END: #site-header -->
-
-
         <!--      这里是页面显示的部分-->
         <div>
             <?= $content ?>
         </div>
-
-
         <!-- BEGIN: .cover -->
-
         <!-- END: .cover -->
 
-
         <!-- BEGIN: #main -->
-
         <!-- END: #main -->
 
         <!-- BEGIN: #footer -->
