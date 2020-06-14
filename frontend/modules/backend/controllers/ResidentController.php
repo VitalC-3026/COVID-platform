@@ -61,9 +61,6 @@ class ResidentController extends Controller
         }  
         $resident = new ResidentSearch();
         $provider = $resident->search(Yii::$app->request->get());
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->render('index', [
             'model' => $resident,
             'provider' => $provider,
@@ -87,9 +84,6 @@ class ResidentController extends Controller
         } else {
             Yii::$app->getSession()->setFlash('error', '出现了不可名状的错误，删除失败。');
         }
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->redirect(['index']);
     }
 
@@ -103,9 +97,7 @@ class ResidentController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
         }
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
+
         $model = new ResidentForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($model->addResident()) {
@@ -132,9 +124,7 @@ class ResidentController extends Controller
             return $this->redirect(['/backend/site/index']);
         }
 
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
+
         $model = new ResidentForm();
         $resident = Resident::findOne($id);
         $user = User::findOne($id);

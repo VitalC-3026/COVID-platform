@@ -52,9 +52,6 @@ class CommitteeController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['/backend/site/index']);
         }
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         $committee = new CommitteeSearch();
         $provider = $committee->search(Yii::$app->request->get());
 
@@ -76,17 +73,11 @@ class CommitteeController extends Controller
             return $this->redirect(['/backend/site/index']);
         }
         Committee::deleteCommittee($id);
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->redirect(['index']);
     }
 
     // 添加新职员
     public function actionCreate() {
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '访问职员数据库']);
@@ -123,9 +114,6 @@ class CommitteeController extends Controller
 
     // 更新职员数据
     public function actionUpdate($id) {
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1))
             return $this->goHome();
         $priority = PriorityType::find()->where(['name' => '访问职员数据库']);

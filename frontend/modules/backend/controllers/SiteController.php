@@ -64,22 +64,15 @@ class SiteController extends Controller
         $health = new HealthSearch();
         $user = new User();
         $transactions = new TransactionsSearch();
-        $arr1 = array();
-        $arr2 = array();
-        foreach($transactions as $val)
-        {
-            if(!is_object($val)) { continue; } // Skip non-object rows
-            $arr1[]=$val->info;
-            $arr2[]=$val->start_time;
-        }
-        Yii::$app->view->params['infos'] = $arr1;
-        Yii::$app->view->params['times'] = $arr2;
         return $this->render('index', [
             'model' => [$user->visitors(), $resident->count(), $committee->count(), $health->count(),
-                $health->countLow(), $health->countNormal(), $health->countHigh()]]);
+                $health->countLow(), $health->countNormal(), $health->countHigh(),$transactions],
+            'transactions'=>$transactions,
+            'provider'=>$transactions->search(Yii::$app->request->get()),
+        ]);
     }
 
-    public function actionRights($id = '')
+    public function actionRights()
     {
         if (Yii::$app->user->isGuest || (Yii::$app->user->identity->type != 2 && Yii::$app->user->identity->type != 1)) {
             return $this->goHome();
@@ -90,24 +83,16 @@ class SiteController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['index']);
         }
-
-
-        if($id === ''){
-            $id = Yii::$app->user->identity->account;
-        } 
-
-
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
-
         $search = new SearchForm();
         if ($search->load(Yii::$app->request->post())) {
             if ($search->searchByAccount()) {
-                $id = $search->account;
-            } 
-        } 
-
+                $id = $search->searchByAccount();
+            } else {
+                $id = Yii::$app->user->identity->account;
+            }
+        } else {
+            $id = Yii::$app->user->identity->account;
+        }
         $rightsForm = new RightsForm();
         $rightsForm->account = $id;
 
@@ -165,22 +150,9 @@ class SiteController extends Controller
             Yii::$app->getSession()->setFlash('error', '您的等级过低，无法晋升超级管理员！');
             return $this->redirect(['index']);
         }
-
-
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
-        
-        $committee = Committee::findOne($id);
-        if($committee !== null) {
-            $committee->updatePriority();
-            Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
-        } else {
-            Yii::$app->getSession()->setFlash('error', '晋升超级管理员失败！');
-        }
-        
-        return $this->redirect(['rights', 'id' => $id]);
-
+        Committee::updatePriority($id);
+        Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
+        return $this->redirect(['rights']);
     }
 
     public function actionRequestlist()
@@ -192,9 +164,6 @@ class SiteController extends Controller
             Yii::$app->getSession()->setFlash('error', '您没有权限访问');
             return $this->redirect(['index']);
         }
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         $health = new HealthSearch();
         $provider = $health->search(Yii::$app->request->get());
 
@@ -238,9 +207,6 @@ class SiteController extends Controller
         if($teamForm->load(Yii::$app->request->post()) && $teamForm->edit()){
             Yii::$app->getSession()->setFlash('success', '修改团队信息成功！');
         }
-        $transactions = new TransactionsSearch();
-        Yii::$app->view->params['model'] = $transactions;
-        Yii::$app->view->params['provider'] = $transactions->search(Yii::$app->request->get());
         return $this->render('profile', [
             'model' => $teammember,
             'team' => $team,

@@ -56,7 +56,7 @@ AppAsset_b::register($this);
                 bottom:0;
                 margin:auto;
                 width: 360px;
-                height: 8em;
+                height: 360px;
                 float: left;
                 padding: 1em;
                 border: 1em solid transparent;
@@ -295,8 +295,28 @@ AppAsset_b::register($this);
 
                 <table class="table" id="tabl">
                     <tr>
-                        <th>任务描述</th>
-                        <th>开始时间</th>
+                        <th>信件</th>
+                        <th>发送者</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>麦子</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>天鸟老师</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>凯凯王</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>李华</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>王皮鞋</td>
                     </tr>
                 </table>
             </div>
@@ -418,17 +438,6 @@ AppAsset_b::register($this);
         }
         //document.getElementById("tran").style.display = "block"
 
-        function tableSet(){
-            var arr1 = <?php echo json_encode($this->params['infos'])?>;
-            var arr2 = <?php echo json_encode($this->params['times'])?>;
-            console.log(arr1);
-            for(var i = 0;i < arr1.length; i ++){
-                var x = document.getElementById("tabl").insertRow(i + 1);
-                x.insertCell(0).innerHTML = arr1[i];
-                x.insertCell(1).innerHTML = arr2[i];
-            }
-        }
-        tableSet();
     </script>
     <?php $this->endBody() ?>
     </body>

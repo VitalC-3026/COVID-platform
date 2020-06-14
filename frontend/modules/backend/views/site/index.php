@@ -2,6 +2,8 @@
 
 use frontend\assets\AppAsset_b;
 use common\widgets\Alert;
+use yii\grid\GridView;
+
 ?>
 <?= Alert::widget() ?>
 <div id="main-content">
@@ -199,74 +201,43 @@ use common\widgets\Alert;
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">咨询信息</h3>
+                    <h3 class="panel-title">任务清单</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-chevron-down"></i>
                         <i class="fa fa-times"></i>
                     </div>
                 </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-6 pl-lg-5 mb-5">
-
-                            <!-- BEGIN: .custom-accordion -->
-                            <div class="custom-accordion" id="accordion_1">
-                                <div class="accordion-item">
-                                    <h2 class="mb-0" id="headingOne">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                                                data-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                            健康日报的填写时间限制？
-                                        </button>
-                                    </h2>
-
-                                </div> <!-- .accordion-item -->
-                                <hr>
-                                <div class="accordion-item">
-                                    <h2 class="mb-0" id="headingTwo">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                            体温超出正常范围应该如何？
-                                        </button>
-                                    </h2>
-                                </div> <!-- .accordion-item -->
-                                <hr>
-                                <div class="accordion-item">
-                                    <h2 class="mb-0" id="headingThree">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                            哪些医院是定点发热门诊？
-                                        </button>
-                                    </h2>
-                                </div> <!-- .accordion-item -->
-                                <hr>
-                                <div class="accordion-item">
-                                    <h2 class="mb-0" id="headingFour">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseFour" aria-expanded="false"
-                                                aria-controls="collapseFour">
-                                            如何快速判断是否患有新冠肺炎？
-                                        </button>
-                                    </h2>
-                                </div> <!-- .accordion-item -->
-                                <hr>
-                                <div class="accordion-item">
-                                    <h2 class="mb-0" id="headingFive">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseFive" aria-expanded="false"
-                                                aria-controls="collapseFive">
-                                            本小区是否有隔离患者？
-                                        </button>
-                                    </h2>
-
-                                </div>
-                                <!-- END: .custom-accordion -->
-
-                            </div>
-                        </div>
-                    </div>
+                <div>
+<!--                    --><?php //echo GridView::widget([
+//                        //设置GridView的ID
+//                        'id' => 'healthGridView',
+//                        //设置数据提供器
+//                        'dataProvider' => $provider,
+//                        //设置筛选模型
+//                        'filterModel' => $transactions,
+//                        'emptyText' => '任务已清空',
+//                        'showHeader'=>false,
+//                        'summary' => '第{page}页，共{pageCount}页，{totalCount}条任务',
+//                        'columns' => [
+//                            //显示序号列
+//                            [
+//                                'label' => '任务描述',
+//                                'attribute' => 'info',
+//                                'format' => 'raw',
+//                                'headerOptions' => [
+//                                    'style' => 'width:180px;',
+//                                ],
+//                            ],
+//                            [
+//                                'label' => '开始时间',
+//                                'attribute' => 'start_time',
+//                                'format' => 'raw',
+//                                'headerOptions' => [
+//                                    'style' => 'width:180px;',
+//                                ],
+//                            ],
+//                        ],
+//                    ]); ?>
                 </div>
             </div>
         </div>
