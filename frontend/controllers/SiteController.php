@@ -25,6 +25,10 @@ use common\models\Resident;
  */
 class SiteController extends Controller
 {
+
+    public $news;
+    public $pagination;
+
     /**
      * {@inheritdoc}
      */
@@ -80,21 +84,11 @@ class SiteController extends Controller
     public function actionIndex()
     {
         // $resident = new Resident();
-        $query = News::find();
-
-        $pagination = new Pagination([
-            'defaultPageSize' => 3,
-            'totalCount' => $query->count(),
-        ]);
-
-        $news = $query->orderBy('date DESC')
-            ->offset($pagination->offset)
-            ->limit($pagination->limit)
-            ->all();
+        $this->getNews();
 
         return $this->render('index', [
-            'news' => $news,
-            'pagination' => $pagination,
+            'news' => $this->news,
+            'pagination' => $this->pagination,
         ]);
     }
 
@@ -114,7 +108,6 @@ class SiteController extends Controller
             return $this->goBack();
         } else {
             $model->password = '';
-
             return $this->render('login', [
                 'model' => $model,
             ]);
@@ -268,12 +261,7 @@ class SiteController extends Controller
         {
             if ($model->submit())
             {
-                $comments = Comments::findAll(['New_id' => $id]);
-                return $this->redirect('site/comments', [
-                    'news' => $news,
-                    'comments' => $comments,
-                    'model' => $model,
-                ]);
+                return $this->redirect(array('/site/comments', 'message' => '发布成功！', 'id' => $id));
             }
         }
 
@@ -282,5 +270,20 @@ class SiteController extends Controller
             'comments' => $comments,
             'model' => $model,
         ]);
+    }
+
+    private function getNews()
+    {
+        $query = News::find();
+
+        $this->pagination = new Pagination([
+            'defaultPageSize' => 3,
+            'totalCount' => $query->count(),
+        ]);
+
+        $this->news = $query->orderBy('date DESC')
+            ->offset($this->pagination->offset)
+            ->limit($this->pagination->limit)
+            ->all();
     }
 }

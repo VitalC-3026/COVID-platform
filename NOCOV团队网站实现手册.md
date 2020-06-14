@@ -387,6 +387,7 @@ public function countLow(){
 
 查询后要除总数并保留四位小数再*100，即可实现百分比。
 
+<<<<<<< HEAD
 ### 4.2 社区数据库模块
 
 #### 4.2.1 居民数据库
@@ -593,21 +594,37 @@ public function getResident()
 }
 ```
 
+### 4.2 居民职员数据库
+
+
+
 #### 4.2.2 职员数据库
 
 职员数据库的整体设计与居民数据库无差，有一些权限上的限制，下面进行细化的的限制。
 
-### 4.3 新闻公告模块
+
+### 
+
+### 4.3 职员权限分配
 
 
 
-### 4.4 齐心抗“疫”模块
-
+### 4.4 新闻公告模块
 
 
 ### 4.5 专业团队的个人信息模块
 
 
+
+### 4.6 齐心抗“疫”模块
+其MVC过程与居民职员数据库几乎完全一致，只需在联表查询时加入条件只显示体温异常人员。这里就不再赘述。
+```php
+public function search($params)
+    {
+        $query = User::find();
+        $query->joinWith('health', true, 'INNER JOIN')->where(['or', 'health.temperature>37.2', 'health.temperature<36.3'])->orderBy(['health.last_date'=>SORT_DESC]);
+      }        
+```
 
 
 

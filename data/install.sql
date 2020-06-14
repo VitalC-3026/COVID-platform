@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/6/13 14:07:06                           */
+/* Created on:     2020/6/14 11:38:26                           */
 /*==============================================================*/
 
 
@@ -31,7 +31,7 @@ drop table if exists User;
 /*==============================================================*/
 create table Comments
 (
-   id                   int not null auto_increment,
+   id                   int not null,
    New_id               int not null,
    content              text,
    author               varchar(10),
@@ -57,7 +57,7 @@ create table Committee
 /*==============================================================*/
 create table Health
 (
-   id                   int not null auto_increment,
+   id                   int not null,
    account              char(18) not null,
    last_date            date,
    last_time            time,
@@ -152,13 +152,13 @@ create table TeamMember
 /*==============================================================*/
 create table Transactions
 (
-   id                   int not null auto_increment,
    account              char(18) not null,
+   id                   int not null,
    start_time           datetime,
    end_time             datetime,
    info                 text,
    is_finished          bool,
-   primary key (id)
+   primary key (account, id)
 );
 
 /*==============================================================*/
