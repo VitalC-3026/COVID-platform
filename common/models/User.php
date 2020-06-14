@@ -10,6 +10,7 @@
 
 namespace common\models;
 
+use frontend\modules\backend\models\TransactionsSearch;
 use Yii;
 use yii\base\Component;
 use yii\base\NotSupportedException;
@@ -140,6 +141,10 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(Health::className(), ['account' => 'account']);
     }
 
+    public function getTransactions()
+    {
+        return $this->hasOne(Transactions::className(), ['account' => 'account']);
+    }
 
     // basic setters
     public function setAccount($account)

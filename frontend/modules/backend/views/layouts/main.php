@@ -2,6 +2,7 @@
 /* @var $content string */
 
 use frontend\assets\AppAsset_b;
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\heplers\Url;
 use yii\bootstrap\Nav;
@@ -27,6 +28,85 @@ AppAsset_b::register($this);
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>COVID-Platform</title>
+        <style>
+            /*背景层*/
+            #popLayer {
+                display: none;
+                background-color: #B3B3B3;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 10;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);/* 只支持IE6、7、8、9 */
+            }
+
+            /*弹出层*/
+            #popBox {
+                display: none;
+                z-index: 11;
+                position:fixed;
+                top:0;
+                right:0;
+                left:0;
+                bottom:0;
+                margin:auto;
+                width: 360px;
+                height: 8em;
+                float: left;
+                padding: 1em;
+                border: 1em solid transparent;
+                background: linear-gradient(white, white) padding-box,
+                repeating-linear-gradient(-45deg,
+                        red 0, red 12.5%,
+                        transparent 0, transparent 25%,
+                        #58a 0, #58a 37.5%,
+                        transparent 0, transparent 50%)
+                0 / 5em 5em;
+            }
+
+            #popBox .close{
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                display: block;
+                position: absolute;
+                right:10px;
+                top:10px;
+                font-size: 18px;
+                border-radius: 20px;
+                background: #999;
+                color: #FFF;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+                -moz-transition: linear .06s;
+                -webkit-transition: linear .06s;
+                transition: linear .06s;
+                padding: 0;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                cursor: pointer;
+            }
+            /*关闭按钮*/
+            #popBox .close a {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                left:8px;
+                top:8px;
+                color: #FFF;
+                box-shadow: 0 1px 3px rgba(209, 40, 42, .5);
+                background: #d1282a;
+                border-radius: 24px;
+                transition: all 0.2s ease-out;
+                opacity: 0.8;
+            }
+
+        </style>
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <!-- Favicon -->
@@ -75,12 +155,13 @@ AppAsset_b::register($this);
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
+
             <div class="user-nav">
                 <ul>
                     <li class="dropdown messages">
                         <span class="badge badge-danager animated bounceIn" id="new-messages">5</span>
                         <button type="button" class="btn btn-default dropdown-toggle options" id="toggle-mail"
-                                data-toggle="dropdown">
+                                onclick="popBox()">
                             <i class="fa fa-envelope"></i>
                         </button>
                         <ul class="dropdown-menu alert animated fadeInDown">
@@ -200,9 +281,25 @@ AppAsset_b::register($this);
                     </li>
                 </ul>
             </div>
+
+
         </header>
 
+        <div id="popLayer"></div>
+        <div id="popBox">
+            <div class="close">
+                <a href="javascript:void(0)" onclick="closeBox()">关闭</a>
+            </div>
+            <div class="content" id="con">
 
+                <table class="table" id="tabl">
+                    <tr>
+                        <th>任务描述</th>
+                        <th>开始时间</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <!--sidebar left start-->
         <aside class="sidebar">
             <div id="leftside-navigation" class="nano">
@@ -303,6 +400,34 @@ AppAsset_b::register($this);
             app.weather();
             app.morrisPie();
         });
+        function popBox() {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "block";
+            popLayer.style.display = "block";
+        }
+
+        /*点击关闭按钮*/
+        function closeBox() {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            document.getElementById("con").innerHTML ="";
+            popBox.style.display = "none";
+            popLayer.style.display = "none";
+        }
+        //document.getElementById("tran").style.display = "block"
+
+        function tableSet(){
+            var arr1 = <?php echo json_encode($this->params['infos'])?>;
+            var arr2 = <?php echo json_encode($this->params['times'])?>;
+            console.log(arr1);
+            for(var i = 0;i < arr1.length; i ++){
+                var x = document.getElementById("tabl").insertRow(i + 1);
+                x.insertCell(0).innerHTML = arr1[i];
+                x.insertCell(1).innerHTML = arr2[i];
+            }
+        }
+        tableSet();
     </script>
     <?php $this->endBody() ?>
     </body>
