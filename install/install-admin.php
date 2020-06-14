@@ -10,8 +10,8 @@ global $database_config;
 <p>PHP >= 5.6</p>
 <p>MySQL >= 7.0</p>
 <p>最好拥有Apache，现代浏览器等常用工具</p>
-<h2>认真填写并记住一下信息</h2>
-<p>如果您填写错误或者忘记了一下信息可以重新安装或者直接在数据库中更改，不过请提前备份数据库。</p>
+<h2>认真填写并记住以下信息</h2>
+<p>如果您填写错误或者忘记了以下信息可以重新安装或者直接在数据库中更改，不过请提前备份数据库。</p>
 <form id="setup" method="post" novalidate="novalidate">
     <table class="form-table" role="presentation">
         <tr>

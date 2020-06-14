@@ -97,7 +97,8 @@ AppAsset_b::register($this);
                                 $menuItems[] = ['label' => '健康日报', 'url' => ['/site/healthreport']];
                                 $menuItems[] = ['label' => '修改信息', 'url' => ['/site/modify']];
 
-                                if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2 || TeamMember::findOne(Yii::$app->user->identity->account) !== null) {
+
+                                if (Yii::$app->user->identity->type == 1 || Yii::$app->user->identity->type == 2 || \common\models\TeamMember::isMember(Yii::$app->user->identity->account)) {
                                     $menuItems[] = ['label' => '后台管理', 'url' => ['/backend/site/index']];
                                 }
 

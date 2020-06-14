@@ -76,6 +76,7 @@ if (isset($_POST["sql_password"])) {
                     clear_cache($conn);
                 } else {
                     $is_ok = false;
+                    echo $contents[$i];
                     break;
                 }
             }
@@ -104,7 +105,7 @@ if (isset($_POST["sql_password"])) {
                 }
 
                 $password_hash =password_hash($_POST["admin_password"], PASSWORD_DEFAULT, ['cost' => 13]);
-                $admin = "INSERT INTO User (account, type, password_hash, auth_key) VALUES ('000000000000000000',2,'$password_hash','nS7srBBk1qUOQvaYtVif494hdoTNSkAc')";
+                $admin = "INSERT INTO User (account, type, password_hash, auth_key,name,username) VALUES ('000000000000000000',2,'$password_hash','nS7srBBk1qUOQvaYtVif494hdoTNSkAc','admin','admin')";
 
                 if ($is_ok === TRUE && $conn->query($admin) === TRUE) {
                     echo "<h1 style='color: #66ccff;'>数据导入完成，正在配置local文件。。。</h1>";
@@ -141,7 +142,7 @@ if (isset($_POST["sql_password"])) {
                     之后进入frontend/web/index.php 即可正常使用此网站</h1>";
 
                 } else
-                    echo "<h1 style='color: #EE0000;'>表格创建失败，请重新配置，或检查$filename 的正确性</h1>";
+                    echo "<h1 style='color: #EE0000;'>数据导入失败，请重新配置，或检查$filename 的正确性</h1>";
             } else
                 echo "<h1 style='color: #EE0000;'>表格创建失败，请重新配置，或检查../data/install.sql的正确性</h1>";
         } else

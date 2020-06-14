@@ -90,4 +90,13 @@ class TeamMember extends ActiveRecord
     public function getUser() {
         return $this->hasOne(User::className(), ['account' => 'account']);
     }
+
+    /**
+     * @param $account
+     * @return bool
+     */
+    public static function isMember($account)
+    {
+        return static::findOne(['account' => $account])!=null;
+    }
 }
