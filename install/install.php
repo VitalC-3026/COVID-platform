@@ -106,8 +106,36 @@ if (isset($_POST["sql_password"])) {
 
                 $password_hash =password_hash($_POST["admin_password"], PASSWORD_DEFAULT, ['cost' => 13]);
                 $admin = "INSERT INTO User (account, type, password_hash, auth_key,name,username) VALUES ('000000000000000000',2,'$password_hash','nS7srBBk1qUOQvaYtVif494hdoTNSkAc','admin','admin')";
+
+                if($is_ok===TRUE)
+                {
+                    if(!$conn->query($admin)===TRUE)
+                        $is_ok=false;
+                }
+
                 $committee="INSERT INTO Committee (account,in_date,is_admin) VALUES('000000000000000000', '1970-01-01',1)";
-                if ($is_ok === TRUE && $conn->query($admin) === TRUE && $conn->query($committee) === TRUE) {
+                if($is_ok===TRUE)
+                {
+                    if(!$conn->query($committee)===TRUE)
+                        $is_ok=false;
+                }
+
+                if($is_ok===TRUE)
+                {
+                    for ($i=1;$i<=7;$i++)
+                    {
+                        $prio="INSERT INTO prioritylist (account,priority) VALUES('000000000000000000', $i)";
+                        if ($conn->query($prio) === TRUE) {
+                            clear_cache($conn);
+                        } else {
+                            $is_ok = false;
+                            echo $prio;
+                            echo $conn->error;
+                            break;
+                        }
+                    }
+                }
+                if ($is_ok === TRUE) {
                     echo "<h1 style='color: #66ccff;'>数据导入完成，正在配置local文件。。。</h1>";
 
                     $myfile = fopen("../common/config/main-local.php", "w");

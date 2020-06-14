@@ -309,12 +309,54 @@ var nameMap_all = {
 #### 2.4.1 页面设计
 
 使用页眉--描述--填写信息--确认--页脚的串联式存储模式，页面的展示部分主要是HTML标签和
-图象信息，起美观作用
+图象信息，起美观作用。主要使用后面`ActiveForm`功能实现表单的样式。
 
+填写的数据设置`rules`检测，防止非法数据写入数据库，也使用户符合注册或者登陆
+的规范，对于错误的输入信息，我们使用了`message`提示。
+
+```php
+public function rules()
+    {
+        return [
+            [['account', 'name', 'tel'], 'trim'],
+            ['account', 'required', 'message' => '账户不能为空'],
+            ['account', 'unique', 'targetClass' => '\common\models\User', 'message' => '账户已存在'],
+            ['account', 'string', 'min' => 18, 'max' => 18, 'tooShort' => '账户应为18位身份证号', 'tooLong' => '账户应为18位身份证号'],
+
+            ['username', 'trim'],
+            ['username', 'required', 'message' => '用户名不能为空'],
+            ['username', 'string', 'min' => 1, 'max' => 10, 'tooShort' => '用户名的长度必须在1到10之间', 'tooLong' => '用户名的长度必须在1到10之间'],
+
+            ['password', 'required', 'message' => '密码不能为空'],
+            ['password', 'string', 'min' => 4, 'tooShort' => "密码长度必须大于等于4位"],
+
+            ['name', 'required', 'message' => '姓名不能为空'],
+            ['name', 'string', 'min' => 2, 'tooShort' => "姓名长度至少为两位"],
+
+            ['sex', "required",'message'=>'性别不能为空'],
+            ['age',"required",'message'=>'年龄不能为空'],
+            ['age', 'number', 'min' => 1, 'max' => 150, 'message' => "请填写正确的年龄", 'tooBig'=>"请填写正确的年龄",'tooSmall'=>"请填写正确的年龄" ],
+
+            ['tel', 'required', 'message' => '联系方式不能为空'],
+            ['tel', 'number', 'min' => 10000000000, 'max' => 19999999999, 'message' => "请填写正确的联系方式", 'tooBig'=>"请填写正确的联系方式",'tooSmall'=>"请填写正确的联系方式" ],
+        ];
+    }
+```
+
+这样保证注册用户符合写入数据库规范，并且注册之后跳转首页，提示登陆。
+在首页设计了接受message功能，可以接受`$_GET`参数，之后将其显示在首页来提醒用户。
 
 #### 2.4.2 逻辑
+登陆注册逻辑使用MVC模型，首先在导航栏我们有加入`注册`等连接按钮，这些按钮均使用路由的`controller`
+进行链接，例如对于`/site/index`路由，其调用的是`SiteController`的`actionIndex`执行。
+之后，在这个`action`中会使用`render`功能渲染`views`，并且，对于拥有表单信息的`views`，需要在`action`中
+传入`model`的实例化，接受表单信息。
 
+以上即为MVC模型的调用过程，完整的调用之后，点击`views`页面设置的提交按钮，网页就会发出请求，并且我们需要在
+`action`中进行请求判断，并且验证表单信息。
 
+比如在登录时，对于登录界面来说，其会有一个接受表单信息的`model`，之后在`action`中验证，
+会有一个链接数据库的`model`，这样对比数据库信息的接受的信息，就可以完成操作。
 
 ### 2.5 健康日报表单提交
 
