@@ -1,42 +1,42 @@
 /* 建立User, Resident, Committee信息 */
-INSERT INTO User (account, username, name, sex, age, tel, type, auth_key) VALUES ('510824196606258009', '代炜', '代炜', true, '54', '16626844064', 0, 'yq4F50FYo90876o9w81Ln9wHESA1F987');
-INSERT INTO Resident (account, building, unit, room) VALUES ('510824196606258009', 93, 9, 406);
-INSERT INTO User (account, username, name, sex, age, tel, type, auth_key) VALUES ('510330193912149440', '吉馨有', '吉馨有', false, '81', '18879722088', 1, 'VFFHqt9coYN80elqo2Oit7jU8HL7XY57');
-INSERT INTO Committee (account, in_date, is_admin) VALUES ('510330193912149440', '19611027', false);
+INSERT INTO User (account, username, name, sex, age, tel, type, auth_key) VALUES ('364574196303024581', '鲁铭洁', '鲁铭洁', false, '57', '17637353324', 1, 'OeCljCSz59o4ri6EDi0O2IIXlzVI9Q9R');
+INSERT INTO Committee (account, in_date, is_admin) VALUES ('364574196303024581', '19830908', false);
+INSERT INTO User (account, username, name, sex, age, tel, type, auth_key) VALUES ('420628195512035565', '毛令毅', '毛令毅', false, '65', '18604985085', 0, '1dMps9AqMayK1gNH7LTs41Mt5fqU95OQ');
+INSERT INTO Resident (account, building, unit, room) VALUES ('420628195512035565', 42, 8, 905);
 /* 共生成用户2个*/
 
 /* 建立Health信息 */
-INSERT INTO Health (id, account, last_date, last_time, temperature) VALUES (1, '510824196606258009', '20200510', '07:52:53', 35.8);
-INSERT INTO Health (id, account, last_date, last_time, temperature) VALUES (2, '510330193912149440', '20200221', '05:20:01', 35.4);
+INSERT INTO Health (id, account, last_date, last_time, temperature) VALUES (1, '364574196303024581', '20200405', '02:52:36', 37.4);
+INSERT INTO Health (id, account, last_date, last_time, temperature) VALUES (2, '420628195512035565', '20200405', '18:00:12', 36.4);
 /* 共生成病人0个 */
 
 /* 建立News信息 */
-INSERT INTO News (account, date, time, title, abstract, content, cnt, visible) VALUES('510330193912149440', '20200417', '02:12:14', 'title 0', 'abstract 0', 'content 0', 1, true);
+INSERT INTO News (account, date, time, title, abstract, content, cnt, visible) VALUES('364574196303024581', '20200524', '23:19:50', 'title 0', 'abstract 0', 'content 0', 1, true);
 /* 共生成新闻1个 */
 
 /* 建立Comments信息 */
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(1, 1, 'content 0.1', '吉馨有', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(2, 1, 'content 0.2', '吉馨有', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(3, 1, 'content 0.3', '吉馨有', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(4, 1, 'content 0.4', '代炜', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(5, 1, 'content 0.5', '代炜', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(6, 1, 'content 0.6', '吉馨有', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(7, 1, 'content 0.7', '代炜', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(8, 1, 'content 0.8', '代炜', false);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(9, 1, 'content 0.9', '代炜', true);
-INSERT INTO Comments (id, New_id, content, author, visible) VALUES(10, 1, 'content 0.10', '吉馨有', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(1, 1, 'content 0.1', '毛令毅', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(2, 1, 'content 0.2', '毛令毅', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(3, 1, 'content 0.3', '鲁铭洁', false);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(4, 1, 'content 0.4', '鲁铭洁', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(5, 1, 'content 0.5', '鲁铭洁', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(6, 1, 'content 0.6', '鲁铭洁', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(7, 1, 'content 0.7', '毛令毅', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(8, 1, 'content 0.8', '毛令毅', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(9, 1, 'content 0.9', '毛令毅', true);
+INSERT INTO Comments (id, New_id, content, author, visible) VALUES(10, 1, 'content 0.10', '鲁铭洁', true);
 /* 共生成评论10条 */
 
 /* 建立Team信息 */
 INSERT INTO Team (name, abstract, gitCnt, memCnt, days, files) VALUES ('NoCov','两个扒数据能手，一个制造惊喜的DBA，一个全能高手，一个查缺补漏的多面手。五个人，运用过硬的信息检索能力，熟练的ctrl+c，ctrl+v能力，深入了解没有生态的yii框架，在这个信息碎片化的世界，努力为平安社区的居民们抚平疫情带来的伤痛与不安，为平安社区的职员们的高效工作提供便捷服务，让居民们第一时间掌握信息，让职员们第一时间了解社区动态。NoCov出动，使命必达！', 193, 5, 30, 6666);
 
 /* 建立Transaction信息 */
-INSERT INTO Transactions (account, start_time, end_time, info, is_finished) VALUES ('510330193912149440', '20200306,07:37:01', '20200513,11:47:43', 'info 0', false);
+INSERT INTO Transactions (account, start_time, end_time, info, is_finished) VALUES ('420628195512035565', '20200405,09:39:02', '20200423,18:13:47', 'info 0', false);
 /* 共生产代办事务1条 */
 
 /* 批量生成password_hash，初值为1234 */
-UPDATE User SET password_hash = '$2y$13$dg4FlrrcXjMmvWznC3XUhehaTTZ/xfKXNpEYbSt8o3Q/9b9xonHLC' WHERE account = '510824196606258009';
-UPDATE User SET password_hash = '$2y$13$dg4FlrrcXjMmvWznC3XUhehaTTZ/xfKXNpEYbSt8o3Q/9b9xonHLC' WHERE account = '510330193912149440';
+UPDATE User SET password_hash = '$2y$13$dg4FlrrcXjMmvWznC3XUhehaTTZ/xfKXNpEYbSt8o3Q/9b9xonHLC' WHERE account = '364574196303024581';
+UPDATE User SET password_hash = '$2y$13$dg4FlrrcXjMmvWznC3XUhehaTTZ/xfKXNpEYbSt8o3Q/9b9xonHLC' WHERE account = '420628195512035565';
 
 /* 建立PriorityType信息 */
 INSERT INTO `prioritytype` (`name`, `information`) VALUES ('访问居民数据库', '允许访问居民数据库，新增、修改和删除居民信息'), ('访问职员数据库', '允许访问职员数据库，并对职员信息进行增加、删除和修改'), ('分配权限', '给职员分配权限'), ('发布公告', '查看公告，经审核后进行发布，允许删除公告'), ('编辑公告', '新增要发布的公告'), ('审核评论', '对前台在各新闻和公告中的评论进行审核，审核通过的评论才可以在前台显示'), ('追踪体温异常病例', '查看体温异常者的信息，及时与疑似病例进行联系');
