@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/6/14 17:07:29                           */
+/* Created on:     2020/6/14 22:37:01                           */
 /*==============================================================*/
 
 
@@ -153,12 +153,13 @@ create table TeamMember
 create table Transactions
 (
    account              char(18) not null,
-   id                   int not null,
+   id                   int not null auto_increment,
    start_time           datetime,
    end_time             datetime,
    info                 text,
    is_finished          bool,
-   primary key (account, id)
+   primary key (account, id),
+   key AK_Key_2 (id)
 );
 
 /*==============================================================*/

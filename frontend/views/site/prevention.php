@@ -14,7 +14,7 @@
 
 <div class="custom-breadcrumns-23195 border-bottom">
     <div class="container">
-        <a href="index.html">主页</a>
+        <a href="<?php echo Yii::$app->getHomeUrl(); ?>">主页</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">预防</span>
     </div>
