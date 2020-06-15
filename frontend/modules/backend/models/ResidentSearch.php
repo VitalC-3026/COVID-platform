@@ -26,7 +26,8 @@ class ResidentSearch extends User
         return [
           [['building', 'unit', 'room'], 'safe'],
           [['account','username'],'string',"message" => "请正确输入"],
-          [['account','username'],'trim']
+          [['account','username'],'trim'],
+          
         ];
     }
 

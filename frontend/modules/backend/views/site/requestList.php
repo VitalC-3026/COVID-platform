@@ -28,7 +28,7 @@ AppAsset_b::addScript($this, 'web/assets/plugins/dataTables/js/dataTables.bootst
             <ul class="breadcrumb">
                 <li><a href="<?= \yii\helpers\Url::to(['/backend/site/index']); ?>">首页</a>
                 </li>
-                <li>同心协力站疫情</li>
+                <li>同心协力战疫情</li>
                 <li class="active">体温异常人员信息</li>
             </ul>
             <!--breadcrumbs end -->

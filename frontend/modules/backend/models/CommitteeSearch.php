@@ -29,6 +29,7 @@ class CommitteeSearch extends User
           [['in_date', 'is_admin', 'id'], 'safe'],
           [['account','username'],'string','message'=>'请正确输入字段'],
           [['account','username'],'trim'],
+          ['account', 'string', 'min' => 18, 'max' => 18,'tooShort'=> '身份证号应为18位','tooLong' => '身份证号应为18位'],
         ];
     }
 
@@ -68,7 +69,7 @@ class CommitteeSearch extends User
             return $provider;
         }
 
-        $query->andFilterWhere(['like', 'account', $this->account])->andFilterWhere(['like', 'username', $this->username]);
+        $query->andFilterWhere(['committee.account' => $this->account])->andFilterWhere(['like', 'username', $this->username]);
 
         return $provider;
     }

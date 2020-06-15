@@ -195,6 +195,7 @@ class NewsController extends Controller
         }
         $model->visible = 1;
         $model->update();
+        Yii::$app->getSession()->setFlash('success', '审核成功，评论已发布');
         return $this->redirect(['/backend/news/comments']);
     }
 

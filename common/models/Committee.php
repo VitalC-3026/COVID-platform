@@ -63,16 +63,17 @@ class Committee extends ActiveRecord
         return false;
     }
 
-    public function updatePriority() {
-        $user = User::findOne($this->account);
+    public static function updatePriority($account) {
+        $user = User::findOne($account);
         $user->type = 2;
         $user->update();
-        $this->is_admin = 1;
-        $this->update();
+        $committee = static::findOne($account);
+        $committee->is_admin = 1;
+        $committee->update();
         $priority = PriorityType::find()->asArray()->all();
         foreach ($priority as $p) {
             $priorityList = new PriorityList();
-            $priorityList->account = $this->account;
+            $priorityList->account = $account;
             $priorityList->priority = $p['priority'];
             if(!$priorityList->isExists()) {
                 $priorityList->save();

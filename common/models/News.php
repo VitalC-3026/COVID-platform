@@ -207,7 +207,6 @@ class News extends ActiveRecord
         $model->visible = 1;
         $committee = Committee::findOne(Yii::$app->user->identity->account);
         $model->account = $committee->account;
-        $model->Com_id = $committee->id;
         $model->cnt = 0;
         $model->update();
     }

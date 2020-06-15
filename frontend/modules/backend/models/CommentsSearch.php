@@ -18,8 +18,8 @@ use common\models\Comments;
  */
 class CommentsSearch extends Comments
 {
-    public string $abstract;
-    public string $title;
+    public $abstract;
+    public $title;
 
     // rules
     public function rules(){

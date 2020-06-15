@@ -106,7 +106,7 @@ class ResidentController extends Controller
         $model = new ResidentForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($model->addResident()) {
-                Yii::$app->session->setFlash('success', '成功添加新居民');
+                Yii::$app->session->setFlash('success', '成功添加新居民！');
                 $resident = new ResidentSearch();
                 $provider = $resident->search(Yii::$app->request->get());
                 return $this->render('index', ['message' => '成功添加新居民', 'model' => $resident, 'provider' => $provider]);
@@ -144,6 +144,7 @@ class ResidentController extends Controller
             $model->age = $user->age;
         }
         if ($model->load(Yii::$app->request->post()) && $model->updateResident($id)) {
+            Yii::$app->getSession()->setFlash('success', '更新居民数据成功！');
             $res = new ResidentSearch();
             $provider = $res->search(Yii::$app->request->get());
             return $this->render('index', ['model' => $res, 'provider' => $provider]);

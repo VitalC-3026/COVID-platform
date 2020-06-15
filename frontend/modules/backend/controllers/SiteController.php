@@ -166,7 +166,12 @@ class SiteController extends Controller
             return $this->redirect(['index']);
         }
         Committee::updatePriority($id);
-        Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
+        if(Committee::findOne($id)->is_admin){
+            Yii::$app->getSession()->setFlash('info', '已经是超级管理员，无需晋升。');
+        } else{
+            Yii::$app->getSession()->setFlash('success', '晋升超级管理员成功！');
+        }
+        
         return $this->redirect(['rights']);
     }
 

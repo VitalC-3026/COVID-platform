@@ -79,6 +79,7 @@ class CommitteeController extends Controller
             return $this->redirect(['/backend/site/index']);
         }
         Committee::deleteCommittee($id);
+        Yii::$app->getSession()->setFlash('success', '您成功删除一条用户信息');
         return $this->redirect(['index']);
     }
 
@@ -142,6 +143,7 @@ class CommitteeController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->updateCommittee($id)) {
             $com = new CommitteeSearch();
             $provider = $com->search(Yii::$app->request->get());
+            Yii::$app->getSession()->setFlash('success', '您成功更新一条用户信息');
             return $this->redirect(['index']);
         }
         return $this->render('update', ['model' => $model]);
